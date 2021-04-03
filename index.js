@@ -2,8 +2,8 @@ const Discord = require('discord.js')
 const bot = new Discord.Client();
 const fs = require("fs")
 bot.commands = new Discord.Collection();
-const db = require('../data/db.json')
-const q = require('../data/q.json')
+const db = require('./data/db.json')
+const q = require('./data/q.json')
 const Topgg = require("@top-gg/sdk")
 //const topgg = new Topgg.Api()
 
@@ -11,12 +11,12 @@ bot.on('ready', () =>
 {
     console.log('Bot online')
     bot.user.setActivity("Ghost Simulator")
-    fs.readdir('./commands', (err, files) => {
+    fs.readdir('./Uni/commands', (err, files) => {
         if(err) return console.log(err);
         let jsfile = files.filter(f => f.split(".").pop() == 'js');
         if(jsfile.length == 0) {return console.log("Could not find any commands!")}
         jsfile.forEach(f => {
-            let props = require(`./commands/${f}`)
+            let props = require(`./Uni/commands/${f}`)
             bot.commands.set(props.help.name, props)
         })
     })
@@ -29,9 +29,9 @@ bot.on('message', (message) =>
     if(!message.channel) return;
     if(!db[message.guild.id]) {
         db[message.guild.id] = {users: {}}
-        fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
+        fs.writeFile("./data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
         q[message.guild.id] = {users: {}}
-        fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
+        fs.writeFile("./data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
     }
     if(!db[message.guild.id].users[message.member.id]) {
         db[message.guild.id].users[message.member.id] = {
@@ -102,8 +102,8 @@ bot.on('message', (message) =>
             lastSell: 0,
             sellWait: 10
         }
-        fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
-        fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
+        fs.writeFile("./data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
+        fs.writeFile("./data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
         const embed = new Discord.MessageEmbed()
             .setColor(16753920)
             .setTitle("Hello there Ghost Hunter!")
