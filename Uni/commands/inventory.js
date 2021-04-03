@@ -22,7 +22,7 @@ exports.run = async (bot,message,args) => {
             {name: "Amount", value: `${strCoins}\n${strGems}\n${ez.parts}\n${ez.acorns}\n${ez.newspapers}\n${ez.tires}\n${ez.socks}\n${ez.hammers}\n${ez.badges}\n${ez.meteorites}\n${ez.gold}\n${ez.artifacts}\n${ez.doubloons}\n${ez.pearls}\n${ez.diamonds}\n${ez.tusks}`, inline: true},
         )
         .setTimestamp()
-    message.channel.send(embed)
+    message.channel.send({embed});
 }
 exports.help = {
     name: 'inventory'

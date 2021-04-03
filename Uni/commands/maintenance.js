@@ -8,7 +8,7 @@ exports.run = async (bot,message,args) => {
         .setDescription("To learn more, join the Official Uni Community Discord Server")
         .setThumbnail("https://imgur.com/bqiyB2K.png")
         .setTimestamp()
-    message.channel.send(embed)
+    message.channel.send({embed});
 }
 exports.help = {
     name: 'maintenance'

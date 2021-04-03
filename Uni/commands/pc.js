@@ -1,3 +1,5 @@
+const Discord = require(`discord.js`)
+
 exports.run = async (bot,message,args) => {
     const db = require('../../data/db.json')
     const fs = require("fs")
@@ -53,16 +55,17 @@ function pcDetails(message)
 
 function pcStats(message,w,c,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11)
 {
-    message.channel.send({embed: {
-        color: 16711680,
-        title: `Pet Crate ${w}  [Cost ${c} <:gems:825122942413045791> Gems]`,
-        fields: [
+    const embed = new Discord.MessageEmbed()
+        .setColor(16711680)
+        .setTitle(`Pet Crate ${w}  [Cost ${c} <:gems:825122942413045791> Gems]`)
+        .setThumbnail('https://imgur.com/e3b1KFS.png')
+        .addFields(
             {name: "Pet", value: `${p1}\n${p2}\n${p3}\n${p4}\n${p5}\n${p6}\n${p7}\n${p8}\n${p9}\n${p10}\n${p11}`, inline: true},
             {name: "Rarity", value: "**1** ⚔️ - C\n**1** ⚔️ - C\n**1** ⚔️ - C\n**1** ⚔️ - C\n**3** ⚔️ - U\n**3** ⚔️ - U\n**3** ⚔️ - U\n**5** ⚔️ - R\n**5** ⚔️ - R\n**7** ⚔️ - L\n**10** ⚔️ - G", inline: true},
-            {name: "Effective on Boss Type", value: `${b1}\n${b2}\n${b3}\n${b4}\n${b5}\n${b6}\n${b7}\n${b8}\n${b9}\n${b10}\n${b11}`, inline: true}
-        ]
-      } 
-    });
+            {name: "Effective on Boss Type", value: `${b1}\n${b2}\n${b3}\n${b4}\n${b5}\n${b6}\n${b7}\n${b8}\n${b9}\n${b10}\n${b11}`, inline: true},
+        )
+        .setTimestamp()
+    message.channel.send({embed});
 }
 
 function unboxedPetMessage(message,rarity,pet,attack,effective)

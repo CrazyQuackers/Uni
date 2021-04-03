@@ -23,7 +23,7 @@ exports.run = async (bot,message,args) => {
             .setThumbnail("https://imgur.com/bqiyB2K.png")
             .setFooter(`Invite sent to ${message.author.username}`)
             .setTimestamp()
-        message.author.send(embed2)
+        message.author.send({embed2});
     }
 }
 exports.help = {

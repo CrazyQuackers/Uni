@@ -129,5 +129,5 @@ function gcDetails(message,ez)
         )
         .setFooter("Open a Gem Chest with %gem chest <size>")
         .setTimestamp()
-    message.channel.send(embed)
+    message.channel.send({embed});
 }
