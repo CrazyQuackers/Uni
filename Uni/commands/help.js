@@ -12,6 +12,7 @@ exports.run = async (bot,message,args) => {
             { name: 'Action', value: "Quest progress\nCatch a ghost\nLists all the biomes\nCheck your antenna level\nSell the ghosts you caught\nCheck your pack stats\nShows pet crate info\nShows pet info\nShows boss info\nCheck your currency and items\nShows gem chest info\nShows cooldown for commands\nDaily Reward", inline: true},
         )
         .setTimestamp()
+    console.log(embed)
     message.channel.send(embed)
     const guild = bot.guilds.cache.get('823252764246147152')
     if(!(guild.members.cache.get(message.member.id))){
