@@ -1,6 +1,8 @@
 const Discord = require(`discord.js`)
 
 exports.run = async (bot,message,args) => {
+    const q = require('../../data/q.json')
+    let sm = q[message.guild.id].users[message.member.id]
     message.react("📬");
     const embed = new Discord.MessageEmbed()
         .setColor(65280)
@@ -13,17 +15,19 @@ exports.run = async (bot,message,args) => {
         )
         .setTimestamp()
     message.channel.send({embed});
-    const guild = bot.guilds.cache.get('823252764246147152')
+    const guild = bot.guilds.cache.get('192415752861646848')
     if(!(guild.members.cache.get(message.member.id))){
-        const embed2 = new Discord.MessageEmbed()
-            .setColor(9699539)
-            .setTitle("Join the Official Uni Community Discord Server!")
-            .setURL("https://discord.gg/r2RymJrcPw")
-            .setDescription("Having fun playing Uni? Found a bug? Have a cool idea?")
-            .setThumbnail("https://imgur.com/bqiyB2K.png")
-            .setFooter(`Invite sent to ${message.author.username}`)
-            .setTimestamp()
-        message.author.send({embed2});
+        if(!sm.noDM){
+            const embed2 = new Discord.MessageEmbed()
+                .setColor(9699539)
+                .setTitle("Join the Official Uni Community Discord Server!")
+                .setURL("https://discord.gg/r2RymJrcPw")
+                .setDescription("Having fun playing Uni? Found a bug? Have a cool idea?\n\`If you want to disable Uni's DM's, use the command %dm disable, same for enable %dm enable\`")
+                .setThumbnail("https://imgur.com/bqiyB2K.png")
+                .setFooter(`Invite sent to ${message.author.username}`)
+                .setTimestamp()
+            message.author.send({embed2});
+        }
     }
 }
 exports.help = {

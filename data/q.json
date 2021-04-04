@@ -3,11 +3,13 @@
         "users": {
             "352558373016698881": {
                 "lastSell": 1617122725186,
-                "sellWait": 20
+                "sellWait": 20,
+                "noDM": false
             },
             "309712398317649931": {
                 "lastSell": 1617181989748,
-                "sellWait": 10
+                "sellWait": 10,
+                "noDM": false
             }
         }
     }
