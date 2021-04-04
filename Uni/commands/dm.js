@@ -16,5 +16,5 @@ exports.run = async (bot,message,args) => {
     fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
 }
 exports.help = {
-    name: 'disabledm'
+    name: 'dm'
 }
