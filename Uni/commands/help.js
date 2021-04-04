@@ -23,7 +23,7 @@ exports.run = async (bot,message,args) => {
                 color: 9699539,
                 title: "Join the Official Uni Community Discord Server!",
                 url: "https://discord.gg/r2RymJrcPw",
-                description: "Having fun playing Uni? Found a bug? Have a cool idea?\n\`If you want to disable Uni's DM's, use the command %dm disable, same for enable %dm enable\`",
+                description: "Having fun playing Uni? Found a bug? Have a cool idea?\n\`If you want to disable Uni's DM's, use the command - %dm disable, same for enable - %dm enable\`",
                 thumbnail: {
                     url: "https://imgur.com/bqiyB2K.png",
                 },
