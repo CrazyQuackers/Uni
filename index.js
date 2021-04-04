@@ -111,7 +111,7 @@ bot.on('message', (message) =>
             .setDescription("I see you are new here, so let me help you out!\nUse the command **%help** to see a list of all the commands!\nUse the command **%quest** to start your adventure!")
             .setImage("https://imgur.com/wUqVTpm.png")
             .setFooter(`Good luck ${message.author.username}!`)
-        message.channel.send({embed});
+        message.author.send({embed});
     }
     let prefix = '%';
     message.content = message.content.toLowerCase();

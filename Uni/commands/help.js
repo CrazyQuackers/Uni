@@ -15,8 +15,8 @@ exports.run = async (bot,message,args) => {
         )
         .setTimestamp()
     message.channel.send({embed});
-    const guild = bot.guilds.cache.get('192415752861646848')
-    if(!(guild.members.cache.get(message.member.id))){
+    const guild = bot.guilds.cache.get('823252764246147152')
+    if(!(guild.members.cache.get("435429602383364127"))){
         if(!sm.noDM){
             const embed2 = new Discord.MessageEmbed()
                 .setColor(9699539)

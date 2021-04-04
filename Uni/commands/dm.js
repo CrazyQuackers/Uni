@@ -6,9 +6,11 @@ exports.run = async (bot,message,args) => {
     {
         case "enable":
             sm.noDM = false
+            message.react("✅");
             break;
         case "disable":
             sm.noDM = true
+            message.react("✅");
             break;
     }
     fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
