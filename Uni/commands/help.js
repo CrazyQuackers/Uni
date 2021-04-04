@@ -19,15 +19,20 @@ exports.run = async (bot,message,args) => {
     if(!(guild.members.cache.get("435429602383364127"))){
         if(!sm.noDM){
             console.log("entered the if")
-            const embed2 = new Discord.MessageEmbed()
-                .setColor(9699539)
-                .setTitle("Join the Official Uni Community Discord Server!")
-                .setURL("https://discord.gg/r2RymJrcPw")
-                .setDescription("Having fun playing Uni? Found a bug? Have a cool idea?\n\`If you want to disable Uni's DM's, use the command %dm disable, same for enable %dm enable\`")
-                .setThumbnail("https://imgur.com/bqiyB2K.png")
-                .setFooter(`Invite sent to ${message.author.username}`)
-                .setTimestamp()
-            message.author.send({embed2});
+            const embed2 = {
+                color: 9699539,
+                title: "Join the Official Uni Community Discord Server!",
+                url: "https://discord.gg/r2RymJrcPw",
+                description: "Having fun playing Uni? Found a bug? Have a cool idea?\n\`If you want to disable Uni's DM's, use the command %dm disable, same for enable %dm enable\`",
+                thumbnail: {
+                    url: "https://imgur.com/bqiyB2K.png",
+                },
+                footer: {
+                    text: `Invite sent to ${message.author.username}`,
+                },
+                timestamp: new Date(),
+            };
+            message.author.send({ embed: embed2 });
         }
     }
 }
