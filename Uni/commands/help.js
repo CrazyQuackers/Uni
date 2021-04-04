@@ -18,7 +18,6 @@ exports.run = async (bot,message,args) => {
     const guild = bot.guilds.cache.get('823252764246147152')
     if(!(guild.members.cache.get("435429602383364127"))){
         if(!sm.noDM){
-            console.log("entered the if")
             const embed2 = {
                 color: 9699539,
                 title: "Join the Official Uni Community Discord Server!",
