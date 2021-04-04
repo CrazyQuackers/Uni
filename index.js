@@ -103,17 +103,18 @@ bot.on('message', (message) =>
             sellWait: 10,
             noDM: false,
             quest: 1,
-            task: 1
+            task: 1,
+            obj1: 0
         }
         fs.writeFile("./data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
         fs.writeFile("./data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
-        const embed = new Discord.MessageEmbed()
-            .setColor(16753920)
-            .setTitle("Hello there Ghost Hunter!")
-            .setDescription("I see you are new here, so let me help you out!\nUse the command **%help** to see a list of all the commands!\nUse the command **%quest** to start your adventure!")
-            .setImage("https://imgur.com/wUqVTpm.png")
-            .setFooter(`Good luck ${message.author.username}!`)
-        message.author.send({embed});
+        // const embed = new Discord.MessageEmbed()
+        //     .setColor(16753920)
+        //     .setTitle("Hello there Ghost Hunter!")
+        //     .setDescription("I see you are new here, so let me help you out!\nUse the command **%help** to see a list of all the commands!\nUse the command **%quest** to start your adventure!")
+        //     .setImage("https://imgur.com/wUqVTpm.png")
+        //     .setFooter(`Good luck ${message.author.username}!`)
+        // message.author.send({embed});
     }
     let prefix = '%';
     message.content = message.content.toLowerCase();

@@ -6,7 +6,7 @@ exports.run = async (bot,message,args) => {
     const fs = require("fs")
     let ez = db[message.guild.id].users[message.member.id]
     let sm = q[message.guild.id].users[message.member.id]
-    if(args[0]){fullCatchFunction(ez,fs,db,sm,message,args)}
+    if(args[0]){fullCatchFunction(ez,fs,db,sm,message,args,q)}
     else{message.channel.send(`<@${message.member.id}>\nUse the command **%catch <biome>** to specify in which 🌐 biome the 👻 ghost you want to catch is.\nFor example, if you use the command **%catch forest** you will catch either a 🧚 Fairy or an 🦉 Owl.\nYou can also speed up the catching process by using the command **%catch <biome> <number of catches>**`)}
 }
 exports.help = {
@@ -32,7 +32,7 @@ function coinToStr(n)
     return newStrC
 }
 
-function fullCatchFunction(ez,fs,db,sm,message,args)
+function fullCatchFunction(ez,fs,db,sm,message,args,q)
 {
     let storage = ez.storage
     let capacity = parseInt(ez.capacity,10)
@@ -83,14 +83,22 @@ function fullCatchFunction(ez,fs,db,sm,message,args)
                         }
                         let b = multipleCatchArr(args[0])
                         message.channel.send(`<@${message.member.id}>\n\nYou caught **${coinToStr(g1)}** ${b[0]}\nYou caught **${coinToStr(g2)}** ${b[1]}\n\n__You also found:__\n\n+ **${coinToStr(i1)}** <:gems:825122942413045791> gems\n+ **${coinToStr(i2)}** 🔩 antenna parts\n+ **${coinToStr(i3)}** ${arr[4]}\n+ **${coinToStr(f)}** <:pack:825122944204013588> pack storage **\`${coinToStr(ez.storage)}/${coinToStr(ez.capacity)}\`**`)
+                        checkQuests(args,num,q,sm)
                     }else{message.channel.send(`<@${message.member.id}> Your <:pack:825122944204013588> pack may not have enough space to catch **${coinToStr(num)}** 👻 ghosts right now.`)}
                 }else{
                     let arr = mainCatch(ez,fs,db,args,storage,capacity)
                     message.channel.send(`<@${message.member.id}> You caught ${arr[0]}\n\n__You also found:__\n\n+ **${coinToStr(arr[1])}** ${arr[2]}\n+ **${coinToStr(arr[3])}** <:pack:825122944204013588> pack storage **\`${coinToStr(ez.storage)}/${coinToStr(ez.capacity)}\`**`)
+                    checkQuests(args,1,q,sm)
                 }
             }
         }
     }else{message.channel.send(`<@${message.member.id}> You cannot catch 👻 ghosts in the ${whichBiome(args[0])} until your 📡 antenna level is **\`${ez.antenna}/${a}\`**`)}
+}
+
+function checkQuests(args,num,q,sm)
+{
+    if((args[0]=="forest")&&(sm.quest==1)&&(sm.task==1)){sm.obj1=sm.obj1+num}
+    fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
 }
 
 function mainCatch(ez,fs,db,args,storage,capacity)
