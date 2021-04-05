@@ -26,23 +26,7 @@ exports.run = async (bot,message,args) => {
                     name: message.author.username,
                     icon_url: message.author.avatarURL(),
                 },
-                fields: [
-                    {
-                        name: "• Play Uni in it's Official Server!",
-                        value: "",
-                        inline: false,
-                    },
-                    {
-                        name: "• Ask any questions about Uni!",
-                        value: "",
-                        inline: false,
-                    },
-                    {
-                        name: "• Chat with other Uni members!",
-                        value: "\`if you want to disable/enable Uni's DM's, use the command - %dm disable/enable\`",
-                        inline: false,
-                    },
-                ],
+                description: "**• Play Uni in it's Official Server!**\n\n**• Ask any questions about Uni!**\n\n**• Chat with other Uni members!**\n\n\`if you want to disable/enable Uni's DM's, use the command - %dm disable/enable\`",
                 thumbnail: {
                     url: "https://imgur.com/bqiyB2K.png",
                 },
