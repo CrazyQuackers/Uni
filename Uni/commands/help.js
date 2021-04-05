@@ -25,15 +25,29 @@ exports.run = async (bot,message,args) => {
                 author: {
                     name: message.author.username,
                     icon_url: message.author.avatarURL(),
-                    url: "https://imgur.com/bqiyB2K.png",
                 },
                 description: "Play Uni in it's Official Server! Ask any questions about Uni! Chat with other Uni members!\n\`If you want to disable Uni's DM's, use the command - %dm disable, same for enable - %dm enable\`",
+                fields: [
+                    {
+                        name: "• Play Uni in it's Official Server!",
+                        inline: false,
+                    },
+                    {
+                        name: "• Ask any questions about Uni!",
+                        inline: false,
+                    },
+                    {
+                        name: "• Chat with other Uni members!",
+                        value: "\`if you want to disable Uni's DM's, use the command - %dm disable\nif you want to enable Uni's DM's, use the command - %dm enable\`",
+                        inline: false,
+                    },
+                ],
                 thumbnail: {
                     url: "https://imgur.com/bqiyB2K.png",
                 },
                 footer: {
                     text: `Invite sent to ${message.author.username}`,
-                    icon_url: message.author.avatarURL(),
+                    icon_url: 'https://imgur.com/ASUc77V.png',
                 },
                 timestamp: new Date(),
             };
