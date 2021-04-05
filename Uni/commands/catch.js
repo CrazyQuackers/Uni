@@ -97,7 +97,7 @@ function fullCatchFunction(ez,fs,db,sm,message,args,q)
 
 function checkQuests(args,num,q,sm)
 {
-    if((args[0]=="forest")&&(sm.quest==1)&&(sm.task==1)){sm.obj1=sm.obj1+num}
+    if((args[0]=="forest")&&(sm.quest==1)&&(sm.task==1)&&(sm.qStarted)){sm.obj1=sm.obj1+num}
     fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
 }
 
