@@ -20,13 +20,13 @@ exports.run = async (bot,message,args) => {
         if(!sm.noDM){
             const embed2 = {
                 color: 9699539,
-                title: "Join the Official Uni Community Discord Server!",
+                title: "Join the Official Uni Community Server!",
                 url: "https://discord.gg/r2RymJrcPw",
                 author: {
                     name: message.author.username,
                     icon_url: message.author.avatarURL(),
                 },
-                description: "**• Play Uni in it's Official Server!**\n\n**• Ask any questions about Uni!**\n\n**• Chat with other Uni members!**\n\n\`if you want to disable/enable Uni's DM's, use the command - %dm disable/enable\`",
+                description: "**• Play Uni in it's Official Community Discord Server!**\n\n**• Ask any questions about Uni!**\n\n**• Chat with other Uni members!**\n\n\`if you want to disable/enable Uni's DM's, use the command - %dm disable/enable\`",
                 thumbnail: {
                     url: "https://imgur.com/bqiyB2K.png",
                 },
