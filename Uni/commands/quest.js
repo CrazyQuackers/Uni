@@ -44,6 +44,10 @@ function createQuestMessage(t,d,u,n,v,message)
     const questEmbed = {
         color: 16776960,
         title: t,
+        author: {
+            name: message.author.username,
+            icon_url: message.author.avatarURL(),
+        },
         description: d,
         thumbnail: {
             url: u,
@@ -63,6 +67,10 @@ function createDoneMessage(d,u,g,fs,db,q,ez,message,sm)
     const doneEmbed = {
         color: 255,
         title: `Quest #${sm.quest} - Task #${sm.task} - Done`,
+        author: {
+            name: message.author.username,
+            icon_url: message.author.avatarURL(),
+        },
         description: d,
         thumbnail: {
             url: u,
