@@ -23,6 +23,12 @@ exports.run = async (bot,message,args) => {
                             createDoneMessage("\`You sold it? Great! ..You want a reward for that? Fiiiine... but only because you're new. You can have some Gems.\`\n+**10** <:gems:825122942413045791>","https://imgur.com/2RJJI3F.png",10,fs,db,q,ez,message,sm)
                         }else{message.react("❌")}
                         break;
+                    case 3:
+                        if(o1>=1){
+                            message.react("✅")
+                            createDoneMessage("\`Oh boy... that's a pretty cool ghost! I guess you want your reward now, right? Here's some more Gems.\`\n+**15** <:gems:825122942413045791>","https://imgur.com/2RJJI3F.png",15,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
                 }
                 break;
         }
@@ -39,6 +45,10 @@ exports.run = async (bot,message,args) => {
                     case 2:
                         if(o1>1){o1=1}
                         createQuestMessage("🗺️ Quest #1 - Ghost Hunter Gabe","📖 **__Task #2/8__** : The Ghost Market\n\n\`Okay, so you may have noticed your Pack will start to get full after you collect ghosts. You can sell the Ghosts you've collected for Ecto-Tokens by using the command %sell. After using the sell command, your pack will be empty and you will be able to catch ghosts again after the sell cooldown time is over. Check your sell cooldown time by using the command %pack. Anyways, go sell your ghosts now and come back to me after you finish.\`\n\nHint: After completing any quest, use the command %quest done to continue to new ones. (Hints will only appear in the first quest)","https://imgur.com/2RJJI3F.png","📜 __Goals:__",`• Sell the 👻 ghosts in your <:pack:825122944204013588> Pack: ${o1}/1`,message,sm,fs,q)
+                        break;
+                    case 3:
+                        if(o1>1){o1=1}
+                        createQuestMessage("🗺️ Quest #1 - Ghost Hunter Gabe","📖 **__Task #3/8__** : Prehistoric Mayhem\n\n\`Next up, special ghosts! Each biome has 2 different types of ghosts. The Forest, for example, has Fairies and Owls! The Fairies are regular ghosts and the Owls are special ghosts! The special ghosts are a bit harder to find but they fill up more space in your Pack so you can sell and get Ecto-Tokens much faster! Start by catching 1 Owl Ghost! Find me when you're done for a reward.\`\n\nHint: Use the command %biomes to learn more about each biome. (Hints will only appear in the first quest)","https://imgur.com/2RJJI3F.png","📜 __Goals:__",`• Vacuum **1** Owl Ghost in the Forest: ${o1}/1`,message,sm,fs,q)
                         break;
                 }
                 break;
