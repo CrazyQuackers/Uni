@@ -28,12 +28,18 @@ exports.run = async (bot,message,args) => {
         for(i2 ; i2>59 ; i2-60){c2++}
         message.channel.send(`<@${message.member.id}> You succesfully sold your 👻 ghosts and recieved **${coinToStr(tokens)} <:ectotoken:825122939812315219> ecto-tokens!**\nYou can start catching more 👻 ghosts once your <:pack:825122944204013588> pack finishes recharging: **\`${c2}h${i2}m\`**`)
         message.react("✅");
+        checkQuests(sm)
         fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
         fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
     }
 }
 exports.help = {
     name: 'sell'
+}
+
+function checkQuests(sm)
+{
+    if((sm.quest==1)&&(sm.task==2)&&(sm.qStarted)){sm.obj1=sm.obj1+1}
 }
 
 function getExchangeRate(arr)

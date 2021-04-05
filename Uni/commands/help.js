@@ -16,7 +16,7 @@ exports.run = async (bot,message,args) => {
         .setTimestamp()
     message.channel.send({embed});
     const guild = bot.guilds.cache.get('823252764246147152')
-    if(!(guild.members.cache.get("435429602383364127"))){
+    if(!(guild.members.cache.get(message.member.id))){
         if(!sm.noDM){
             const embed2 = {
                 color: 9699539,
@@ -26,7 +26,7 @@ exports.run = async (bot,message,args) => {
                     name: message.author.username,
                     icon_url: message.author.avatarURL(),
                 },
-                description: "**• Play Uni in it's Official Community Discord Server!**\n\n**• Ask any questions about Uni!**\n\n**• Chat with other Uni members!**\n\n\`if you want to disable/enable Uni's DM's, use the command - %dm disable/enable\`",
+                description: "**• Chat with other Uni members!**\n\n**• Ask any questions about Uni!**\n\n**• Play Uni in it's Official Community Discord Server!**\n\n\`if you want to disable/enable Uni's DM's, use the command - %dm disable/enable\`",
                 thumbnail: {
                     url: "https://imgur.com/bqiyB2K.png",
                 },
