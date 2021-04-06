@@ -19,7 +19,7 @@ exports.run = async (bot,message,args) => {
     }
     else
     {
-        message.channel.send(`<@${message.member.id}>\n\n❌  Use **%dm disable** to disable Uni's DM's\n✅  Use **%dm enable** to enable Uni's DM's`)
+        message.channel.send(`<@${message.member.id}>\n❌  Use **%dm disable** to disable Uni's DM's\n✅  Use **%dm enable** to enable Uni's DM's`)
     }
 }
 exports.help = {
