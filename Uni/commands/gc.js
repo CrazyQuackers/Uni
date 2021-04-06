@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 
 exports.run = async (bot,message,args) => {
     const fs = require("fs")
-    const db = require('./data/db.json')
+    const db = require('../../data/db.json')
     let ez = db[message.guild.id].users[message.member.id]
     let arr = message.content.split(' ')
     let num = 0

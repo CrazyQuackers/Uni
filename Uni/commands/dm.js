@@ -1,5 +1,5 @@
 exports.run = async (bot,message,args) => {
-    const q = require('./data/q.json')
+    const q = require('../../data/q.json')
     const fs = require("fs")
     let sm = q[message.guild.id].users[message.member.id]
     switch(args[0])

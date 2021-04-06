@@ -1,7 +1,7 @@
 const Discord = require(`discord.js`)
 
 exports.run = async (bot,message,args) => {
-    const q = require('./data/q.json')
+    const q = require('../../data/q.json')
     let sm = q[message.guild.id].users[message.member.id]
     message.react("📬");
     const embed = new Discord.MessageEmbed()
