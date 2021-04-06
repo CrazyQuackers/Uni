@@ -105,6 +105,7 @@ bot.on('message', (message) =>
             quest: 1,
             task: 1,
             obj1: 0,
+            obj2: 0,
             qStarted: false
         }
         fs.writeFile("./data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})

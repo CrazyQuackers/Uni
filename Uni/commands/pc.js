@@ -1,8 +1,10 @@
 const Discord = require(`discord.js`)
 
 exports.run = async (bot,message,args) => {
-    const db = require('../../data/db.json')
+    const db = require('../data/db.json')
     const fs = require("fs")
+    const q = require('../data/q.json')
+    let sm = q[message.guild.id].users[message.member.id]
     let ez = db[message.guild.id].users[message.member.id]
     let arr = message.content.split(' ')
     let num = 0
@@ -10,7 +12,7 @@ exports.run = async (bot,message,args) => {
     if(arr.length>num){
         if(arr[num]=="1"){
             if((arr.length>num+1)&&(arr[num+1]=="buy")){
-                mainPetFunction(message,500,ez,fs,db)
+                mainPetFunction(message,500,ez,fs,db,sm,q)
             }
             else{
                 pcStats(message,1,500,"<:pug:825122919789232169>  Pug","🦊  Fox","🐮  Cow","🐷  Pig","🐭  Mouse","🦌  Deer","🐺  Wolf","<:quackers:825122927547908137>  Duck","<:uni:825122929778884658>  Unicorn","🦇  Bat","🎃  Jack-O-Lantern","<:ghastlytree:825122934221307955>","<:georgethegorilla:825122935081664632>","<:sludge:825122930471075880>","<:subjectone:825122932815691847>","<:kingkrab:825122934183559239>","<:magmoraug:825122942768644136>","<:georgethegorilla:825122935081664632>","<:kingkrab:825122934183559239> , <:sludge:825122930471075880>","<:subjectone:825122932815691847> , <:magmoraug:825122942768644136>","<:magmoraug:825122942768644136> , <:ghastlytree:825122934221307955> ","<:ghastlytree:825122934221307955> , <:georgethegorilla:825122935081664632> , <:sludge:825122930471075880>")
@@ -19,7 +21,7 @@ exports.run = async (bot,message,args) => {
         else{
             if(arr[num]=="2"){
                 if((arr.length>num+1)&&(arr[num+1]=="buy")){
-                    mainPetFunction(message,2000,ez,fs,db)
+                    mainPetFunction(message,2000,ez,fs,db,sm,q)
                 }
                 else{
                     pcStats(message,2,"2,000","🐻  Bear","🐱  Cat","<:cyborg:825122930836111441>  Cyborg","🐴  Horse","🐟  Fish","🐔  Chicken","🦒  Giraffe","<:bob:825122926873411604>  Bob","🦋  Butterfly","🦚  Peacock","🐯  Tiger","<:kingkrab:825122934183559239>","<:magmoraug:825122942768644136>","<:subjectone:825122932815691847>","<:sludge:825122930471075880>","<:subjectone:825122932815691847>","<:ghastlytree:825122934221307955> , <:kingkrab:825122934183559239>","<:sludge:825122930471075880> , <:magmoraug:825122942768644136>","<:ghastlytree:825122934221307955> , <:subjectone:825122932815691847>","<:georgethegorilla:825122935081664632> , <:sludge:825122930471075880>","<:ghastlytree:825122934221307955> , <:georgethegorilla:825122935081664632> ","<:subjectone:825122932815691847> , <:kingkrab:825122934183559239> , <:magmoraug:825122942768644136>")
@@ -28,7 +30,7 @@ exports.run = async (bot,message,args) => {
             else{
                 if(arr[num]=="3"){
                     if((arr.length>num+1)&&(arr[num+1]=="buy")){
-                        mainPetFunction(message,7500,ez,fs,db)
+                        mainPetFunction(message,7500,ez,fs,db,sm,q)
                     }
                     else{
                         pcStats(message,3,"7,500","🦩  Flamingo","🐨  Koala","<:bot:825139488962379787>  Bot","🦕  Dino","<:clownfish:825122930211684402>  Clownfish","🐼  Panda","🐝  Bee","🦈  Shark","<:steve:825122936469192705>  Steve","<:magicrabbit:825122932484341760>  Magic Rabbit","🦖  T-Rex","<:kingkrab:825122934183559239>","<:georgethegorilla:825122935081664632>","<:magmoraug:825122942768644136>","<:ghastlytree:825122934221307955>","<:magmoraug:825122942768644136> , <:georgethegorilla:825122935081664632>","<:kingkrab:825122934183559239> , <:subjectone:825122932815691847>","<:subjectone:825122932815691847> , <:sludge:825122930471075880>","<:sludge:825122930471075880> , <:ghastlytree:825122934221307955>","<:georgethegorilla:825122935081664632> , <:kingkrab:825122934183559239>","<:georgethegorilla:825122935081664632> , <:subjectone:825122932815691847> ,  <:magmoraug:825122942768644136>","<:ghastlytree:825122934221307955> , <:sludge:825122930471075880> , <:kingkrab:825122934183559239>")
@@ -73,7 +75,7 @@ function unboxedPetMessage(message,rarity,pet,attack,effective)
     message.channel.send(`<@${message.member.id}> You've unboxed ${rarity} ${pet}!\nThis pet has **${attack}** ⚔️ Attack and is effective against ${effective}!`)
 }
 
-function mainPetFunction(message,c,ez,fs,db)
+function mainPetFunction(message,c,ez,fs,db,sm,q)
 {
     if(ez.gems>=c){
         ez.gems = ez.gems - c;
@@ -277,11 +279,18 @@ function mainPetFunction(message,c,ez,fs,db)
             }
         }
         fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
+        checkQuests(c,sm,fs,q)
     }
     else{
         let gemStr = coinToStr(c-ez.gems)
         message.channel.send(`<@${message.member.id}> You do not have enough <:gems:825122942413045791> gems to open this pet crate!\nYou need **${gemStr}** more <:gems:825122942413045791> gems!`)
     }
+}
+
+function checkQuests(c,sm,fs,q)
+{
+    if((c==500)&&(sm.quest==1)&&(sm.task==6)&&(sm.qStarted)){sm.obj1=1}
+    fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
 }
 
 function unboxedPetMessageGodly(message,pet,effective)
