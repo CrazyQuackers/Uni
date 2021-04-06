@@ -12,28 +12,28 @@ exports.run = async (bot,message,args) => {
     if(arr.length>num){
         if(arr[num]=="1"){
             if((arr.length>num+1)&&(arr[num+1]=="buy")){
-                mainPetFunction(message,500,ez,fs,db,sm,q)
+                mainPetFunction(message,200,ez,fs,db,sm,q)
             }
             else{
-                pcStats(message,1,500,"<:pug:825122919789232169>  Pug","🦊  Fox","🐮  Cow","🐷  Pig","🐭  Mouse","🦌  Deer","🐺  Wolf","<:quackers:825122927547908137>  Duck","<:uni:825122929778884658>  Unicorn","🦇  Bat","🎃  Jack-O-Lantern","<:ghastlytree:825122934221307955>","<:georgethegorilla:825122935081664632>","<:sludge:825122930471075880>","<:subjectone:825122932815691847>","<:kingkrab:825122934183559239>","<:magmoraug:825122942768644136>","<:georgethegorilla:825122935081664632>","<:kingkrab:825122934183559239> , <:sludge:825122930471075880>","<:subjectone:825122932815691847> , <:magmoraug:825122942768644136>","<:magmoraug:825122942768644136> , <:ghastlytree:825122934221307955> ","<:ghastlytree:825122934221307955> , <:georgethegorilla:825122935081664632> , <:sludge:825122930471075880>")
+                pcStats(message,1,200,"<:pug:825122919789232169>  Pug","🦊  Fox","🐮  Cow","🐷  Pig","🐭  Mouse","🦌  Deer","🐺  Wolf","<:quackers:825122927547908137>  Duck","<:uni:825122929778884658>  Unicorn","🦇  Bat","🎃  Jack-O-Lantern","<:ghastlytree:825122934221307955>","<:georgethegorilla:825122935081664632>","<:sludge:825122930471075880>","<:subjectone:825122932815691847>","<:kingkrab:825122934183559239>","<:magmoraug:825122942768644136>","<:georgethegorilla:825122935081664632>","<:kingkrab:825122934183559239> , <:sludge:825122930471075880>","<:subjectone:825122932815691847> , <:magmoraug:825122942768644136>","<:magmoraug:825122942768644136> , <:ghastlytree:825122934221307955> ","<:ghastlytree:825122934221307955> , <:georgethegorilla:825122935081664632> , <:sludge:825122930471075880>")
             }
         }
         else{
             if(arr[num]=="2"){
                 if((arr.length>num+1)&&(arr[num+1]=="buy")){
-                    mainPetFunction(message,2000,ez,fs,db,sm,q)
+                    mainPetFunction(message,1200,ez,fs,db,sm,q)
                 }
                 else{
-                    pcStats(message,2,"2,000","🐻  Bear","🐱  Cat","<:cyborg:825122930836111441>  Cyborg","🐴  Horse","🐟  Fish","🐔  Chicken","🦒  Giraffe","<:bob:825122926873411604>  Bob","🦋  Butterfly","🦚  Peacock","🐯  Tiger","<:kingkrab:825122934183559239>","<:magmoraug:825122942768644136>","<:subjectone:825122932815691847>","<:sludge:825122930471075880>","<:subjectone:825122932815691847>","<:ghastlytree:825122934221307955> , <:kingkrab:825122934183559239>","<:sludge:825122930471075880> , <:magmoraug:825122942768644136>","<:ghastlytree:825122934221307955> , <:subjectone:825122932815691847>","<:georgethegorilla:825122935081664632> , <:sludge:825122930471075880>","<:ghastlytree:825122934221307955> , <:georgethegorilla:825122935081664632> ","<:subjectone:825122932815691847> , <:kingkrab:825122934183559239> , <:magmoraug:825122942768644136>")
+                    pcStats(message,2,"1,200","🐻  Bear","🐱  Cat","<:cyborg:825122930836111441>  Cyborg","🐴  Horse","🐟  Fish","🐔  Chicken","🦒  Giraffe","<:bob:825122926873411604>  Bob","🦋  Butterfly","🦚  Peacock","🐯  Tiger","<:kingkrab:825122934183559239>","<:magmoraug:825122942768644136>","<:subjectone:825122932815691847>","<:sludge:825122930471075880>","<:subjectone:825122932815691847>","<:ghastlytree:825122934221307955> , <:kingkrab:825122934183559239>","<:sludge:825122930471075880> , <:magmoraug:825122942768644136>","<:ghastlytree:825122934221307955> , <:subjectone:825122932815691847>","<:georgethegorilla:825122935081664632> , <:sludge:825122930471075880>","<:ghastlytree:825122934221307955> , <:georgethegorilla:825122935081664632> ","<:subjectone:825122932815691847> , <:kingkrab:825122934183559239> , <:magmoraug:825122942768644136>")
                 }
             }
             else{
                 if(arr[num]=="3"){
                     if((arr.length>num+1)&&(arr[num+1]=="buy")){
-                        mainPetFunction(message,7500,ez,fs,db,sm,q)
+                        mainPetFunction(message,6000,ez,fs,db,sm,q)
                     }
                     else{
-                        pcStats(message,3,"7,500","🦩  Flamingo","🐨  Koala","<:bot:825139488962379787>  Bot","🦕  Dino","<:clownfish:825122930211684402>  Clownfish","🐼  Panda","🐝  Bee","🦈  Shark","<:steve:825122936469192705>  Steve","<:magicrabbit:825122932484341760>  Magic Rabbit","🦖  T-Rex","<:kingkrab:825122934183559239>","<:georgethegorilla:825122935081664632>","<:magmoraug:825122942768644136>","<:ghastlytree:825122934221307955>","<:magmoraug:825122942768644136> , <:georgethegorilla:825122935081664632>","<:kingkrab:825122934183559239> , <:subjectone:825122932815691847>","<:subjectone:825122932815691847> , <:sludge:825122930471075880>","<:sludge:825122930471075880> , <:ghastlytree:825122934221307955>","<:georgethegorilla:825122935081664632> , <:kingkrab:825122934183559239>","<:georgethegorilla:825122935081664632> , <:subjectone:825122932815691847> ,  <:magmoraug:825122942768644136>","<:ghastlytree:825122934221307955> , <:sludge:825122930471075880> , <:kingkrab:825122934183559239>")
+                        pcStats(message,3,"6,000","🦩  Flamingo","🐨  Koala","<:bot:825139488962379787>  Bot","🦕  Dino","<:clownfish:825122930211684402>  Clownfish","🐼  Panda","🐝  Bee","🦈  Shark","<:steve:825122936469192705>  Steve","<:magicrabbit:825122932484341760>  Magic Rabbit","🦖  T-Rex","<:kingkrab:825122934183559239>","<:georgethegorilla:825122935081664632>","<:magmoraug:825122942768644136>","<:ghastlytree:825122934221307955>","<:magmoraug:825122942768644136> , <:georgethegorilla:825122935081664632>","<:kingkrab:825122934183559239> , <:subjectone:825122932815691847>","<:subjectone:825122932815691847> , <:sludge:825122930471075880>","<:sludge:825122930471075880> , <:ghastlytree:825122934221307955>","<:georgethegorilla:825122935081664632> , <:kingkrab:825122934183559239>","<:georgethegorilla:825122935081664632> , <:subjectone:825122932815691847> ,  <:magmoraug:825122942768644136>","<:ghastlytree:825122934221307955> , <:sludge:825122930471075880> , <:kingkrab:825122934183559239>")
                     }
                 }
                 else{
@@ -86,15 +86,15 @@ function mainPetFunction(message,c,ez,fs,db,sm,q)
             switch(whatPet){
                 case 1:
                     switch(c){
-                        case 500:
+                        case 200:
                             unboxedPetMessage(message,"a common","<:pug:825122919789232169> **Pug**",1,"<:ghastlytree:825122934221307955> Ghastly Tree")
                             ez.pug = true;
                             break;
-                        case 2000:
+                        case 1200:
                             unboxedPetMessage(message,"a common","🐻 **Bear**",1,"<:kingkrab:825122934183559239> King Krab")
                             ez.bear = true;
                             break;
-                        case 7500:
+                        case 6000:
                             unboxedPetMessage(message,"a common","🦩 **Flamingo**",1,"<:kingkrab:825122934183559239> King Krab")
                             ez.flamingo = true;
                             break;
@@ -102,15 +102,15 @@ function mainPetFunction(message,c,ez,fs,db,sm,q)
                     break;
                 case 2:
                     switch(c){
-                        case 500:
+                        case 200:
                             unboxedPetMessage(message,"a common","🦊 **Fox**",1,"<:georgethegorilla:825122935081664632> George the Gorilla")
                             ez.fox = true;
                             break;
-                        case 2000:
+                        case 1200:
                             unboxedPetMessage(message,"a common","🐱 **Cat**",1,"<:magmoraug:825122942768644136> Magmoraug")
                             ez.cat = true;
                             break;
-                        case 7500:
+                        case 6000:
                             unboxedPetMessage(message,"a common","🐨 **Koala**",1,"<:georgethegorilla:825122935081664632> George the Gorilla")
                             ez.koala = true;
                             break;
@@ -118,15 +118,15 @@ function mainPetFunction(message,c,ez,fs,db,sm,q)
                     break;
                 case 3:
                     switch(c){
-                        case 500:
+                        case 200:
                             unboxedPetMessage(message,"a common","🐮 **Cow**",1,"<:sludge:825122930471075880> Sludge")
                             ez.cow = true;
                             break;
-                        case 2000:
+                        case 1200:
                             unboxedPetMessage(message,"a common","<:cyborg:825122930836111441> **Cyborg**",1,"<:subjectone:825122932815691847> Subject One")
                             ez.cyborg = true;
                             break;
-                        case 7500:
+                        case 6000:
                             unboxedPetMessage(message,"a common","<:bot:825139488962379787> **Bot**",1,"<:magmoraug:825122942768644136> Magmoraug")
                             ez.bot = true;
                             break;
@@ -134,15 +134,15 @@ function mainPetFunction(message,c,ez,fs,db,sm,q)
                     break;
                 case 4:
                     switch(c){
-                        case 500:
+                        case 200:
                             unboxedPetMessage(message,"a common","🐷 **Pig**",1,"<:subjectone:825122932815691847> Subject One")
                             ez.pig = true;
                             break;
-                        case 2000:
+                        case 1200:
                             unboxedPetMessage(message,"a common","🐴 **Horse**",1,"<:sludge:825122930471075880> Sludge")
                             ez.horse = true;
                             break;
-                        case 7500:
+                        case 6000:
                             unboxedPetMessage(message,"a common","🦕 **Dino**",1,"<:ghastlytree:825122934221307955> Ghastly Tree")
                             ez.dino = true;
                             break;
@@ -156,15 +156,15 @@ function mainPetFunction(message,c,ez,fs,db,sm,q)
                 switch(whatPet){
                     case 1:
                         switch(c){
-                            case 500:
+                            case 200:
                                 unboxedPetMessage(message,"an uncommon","🐭 **Mouse**",3,"<:kingkrab:825122934183559239> King Krab")
                                 ez.mouse = true;
                                 break;
-                            case 2000:
+                            case 1200:
                                 unboxedPetMessage(message,"an uncommon","🐟 **Fish**",3,"<:subjectone:825122932815691847> Subject One")
                                 ez.fish = true;
                                 break;
-                            case 7500:
+                            case 6000:
                                 unboxedPetMessage(message,"an uncommon","<:clownfish:825122930211684402> **Clownfish**",3,"<:magmoraug:825122942768644136> Magmoraug and <:georgethegorilla:825122935081664632> George the Gorilla")
                                 ez.clownfish = true;
                                 break;
@@ -172,15 +172,15 @@ function mainPetFunction(message,c,ez,fs,db,sm,q)
                         break;
                     case 2:
                         switch(c){
-                            case 500:
+                            case 200:
                                 unboxedPetMessage(message,"an uncommon","🦌 **Deer**",3,"<:magmoraug:825122942768644136> Magmoraug")
                                 ez.deer = true;
                                 break;
-                            case 2000:
+                            case 1200:
                                 unboxedPetMessage(message,"an uncommon","🐔 **Chicken**",3,"<:ghastlytree:825122934221307955> Ghastly Tree and <:kingkrab:825122934183559239> King Krab")
                                 ez.chicken = true;
                                 break;
-                            case 7500:
+                            case 6000:
                                 unboxedPetMessage(message,"an uncommon","🐼 **Panda**",3,"<:kingkrab:825122934183559239> King Krab and <:subjectone:825122932815691847> Subject One")
                                 ez.panda = true;
                                 break;
@@ -188,15 +188,15 @@ function mainPetFunction(message,c,ez,fs,db,sm,q)
                         break;
                     case 3:
                         switch(c){
-                            case 500:
+                            case 200:
                                 unboxedPetMessage(message,"an uncommon","🐺 **Wolf**",3,"<:georgethegorilla:825122935081664632> George the Gorilla")
                                 ez.wolf = true;
                                 break;
-                            case 2000:
+                            case 1200:
                                 unboxedPetMessage(message,"an uncommon","🦒 **Giraffe**",3,"<:subjectone:825122932815691847> Subject One and <:magmoraug:825122942768644136> Magmoraug")
                                 ez.giraffe = true;
                                 break;
-                            case 7500:
+                            case 6000:
                                 unboxedPetMessage(message,"an uncommon","🐝 **Bee**",3,"<:subjectone:825122932815691847> Subject One and <:sludge:825122930471075880> Sludge")
                                 ez.bee = true;
                                 break;
@@ -210,15 +210,15 @@ function mainPetFunction(message,c,ez,fs,db,sm,q)
                     switch(whatPet){
                         case 1:
                             switch(c){
-                                case 500:
+                                case 200:
                                     unboxedPetMessage(message,"a rare","<:quackers:825122927547908137> **Duck**",5,"<:kingkrab:825122934183559239> King Krab and <:sludge:825122930471075880> Sludge")
                                     ez.duck = true;
                                     break;
-                                case 2000:
+                                case 1200:
                                     unboxedPetMessage(message,"a rare","<:bob:825122926873411604> **Bob**",5,"<:ghastlytree:825122934221307955> Ghastly Tree and <:subjectone:825122932815691847> Subject One")
                                     ez.bob = true;
                                     break;
-                                case 7500:
+                                case 6000:
                                     unboxedPetMessage(message,"a rare","🦈 **Shark**",5,"<:sludge:825122930471075880> Sludge and <:ghastlytree:825122934221307955> Ghastly Tree")
                                     ez.shark = true;
                                     break;
@@ -226,15 +226,15 @@ function mainPetFunction(message,c,ez,fs,db,sm,q)
                             break;
                         case 2:
                             switch(c){
-                                case 500:
+                                case 200:
                                     unboxedPetMessage(message,"a rare","<:uni:825122929778884658> **Unicorn**",5,"<:subjectone:825122932815691847> Subject One and <:magmoraug:825122942768644136> Magmoraug")
                                     ez.unicorn = true;
                                     break;
-                                case 2000:
+                                case 1200:
                                     unboxedPetMessage(message,"a rare","🦋 **Butterfly**",5,"<:georgethegorilla:825122935081664632> George the Gorilla and <:sludge:825122930471075880> Sludge")
                                     ez.butterfly = true;
                                     break;
-                                case 7500:
+                                case 6000:
                                     unboxedPetMessage(message,"a rare","<:steve:825122936469192705> **Steve**",5,"<:georgethegorilla:825122935081664632> George the Gorilla and <:kingkrab:825122934183559239> King Krab")
                                     ez.steve = true;
                                     break;
@@ -245,15 +245,15 @@ function mainPetFunction(message,c,ez,fs,db,sm,q)
                 else{
                     if(object<=996){
                         switch(c){
-                            case 500:
+                            case 200:
                                 unboxedPetMessage(message,"a legendary","🦇 **Bat**",7,"<:magmoraug:825122942768644136> Magmoraug and <:ghastlytree:825122934221307955> Ghastly Tree")
                                 ez.bat = true;
                                 break;
-                            case 2000:
+                            case 1200:
                                 unboxedPetMessage(message,"a legendary","🦚 **Peacock**",7,"<:ghastlytree:825122934221307955> Ghastly Tree and <:georgethegorilla:825122935081664632> George the Gorilla")
                                 ez.peacock = true;
                                 break;
-                            case 7500:
+                            case 6000:
                                 unboxedPetMessage(message,"a legendary","<:magicrabbit:825122932484341760> **Magic Rabbit**",7,"<:georgethegorilla:825122935081664632> George the Gorilla, <:subjectone:825122932815691847> Subject One and <:magmoraug:825122942768644136> Magmoraug")
                                 ez.rabbit = true;
                                 break;
@@ -261,15 +261,15 @@ function mainPetFunction(message,c,ez,fs,db,sm,q)
                     }
                     else{
                         switch(c){
-                            case 500:
+                            case 200:
                                 unboxedPetMessageGodly(message,"🎃 **Jack-O-Lantern**","<:ghastlytree:825122934221307955> Ghastly Tree, <:georgethegorilla:825122935081664632> George the Gorilla and <:sludge:825122930471075880> Sludge")
                                 ez.jack = true;
                                 break;
-                            case 2000:
+                            case 1200:
                                 unboxedPetMessageGodly(message,"🐯 **Tiger**","<:subjectone:825122932815691847> Subject One, <:kingkrab:825122934183559239> King Krab and <:magmoraug:825122942768644136> Magmoraug")
                                 ez.tiger = true;
                                 break;
-                            case 7500:
+                            case 6000:
                                 unboxedPetMessageGodly(message,"🦖 **T-Rex**","<:ghastlytree:825122934221307955> Ghastly Tree, <:sludge:825122930471075880> Sludge and <:kingkrab:825122934183559239> King Krab")
                                 ez.rex = true;
                                 break;
@@ -289,7 +289,7 @@ function mainPetFunction(message,c,ez,fs,db,sm,q)
 
 function checkQuests(c,sm,fs,q)
 {
-    if((c==500)&&(sm.quest==1)&&(sm.task==6)&&(sm.qStarted)){sm.obj1=1}
+    if((c==200)&&(sm.quest==1)&&(sm.task==6)&&(sm.qStarted)){sm.obj1=1}
     fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
 }
 

@@ -37,7 +37,7 @@ exports.run = async (bot,message,args) => {
                     case 4:
                         if(ez.ectoTokens>=100){
                             message.react("✅")
-                            createDoneMessage("\`Alright! Now you're rolling in the tokens! ..And, if that wasn't enough, here's some Gems as a reward!\`\n+**20** <:gems:825122942413045791>","https://imgur.com/2RJJI3F.png",20,fs,db,q,ez,message,sm)
+                            createDoneMessage("\`Alright! Now you're rolling in tokens! ..And, if that wasn't enough, here's some Gems as a reward!\`\n+**20** <:gems:825122942413045791>","https://imgur.com/2RJJI3F.png",20,fs,db,q,ez,message,sm)
                         }else{message.react("❌")}
                         break;
                     case 5:

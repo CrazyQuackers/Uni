@@ -17,11 +17,11 @@ exports.run = async (bot,message,args) => {
     }
     else{
         let g = (Math.floor(Math.random()*301))+200;
-        let a = (Math.floor(Math.random()*11))+10;
+        let a = (Math.floor(Math.random()*6))+10;
         ez.gems = ez.gems + g;
         ez.parts = ez.parts + a;
         let s = (Math.floor(Math.random()*13))+1;
-        let i = (Math.floor(Math.random()*6))+5;
+        let i = (Math.floor(Math.random()*10))+1;
         let si = ""
         switch(s)
         {
