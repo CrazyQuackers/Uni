@@ -3,7 +3,6 @@ const Discord = require(`discord.js`)
 exports.run = async (bot,message,args) => {
     const q = require('../../data/q.json')
     let sm = q[message.guild.id].users[message.member.id]
-    if(!sm.noDM){message.react("📬")}
     const embed = new Discord.MessageEmbed()
         .setColor(65280)
         .setTitle("Uni Commands")
@@ -18,6 +17,7 @@ exports.run = async (bot,message,args) => {
     const guild = bot.guilds.cache.get('823252764246147152')
     if(!(guild.members.cache.get(message.member.id))){
         if(!sm.noDM){
+            message.react("📬")
             const embed2 = {
                 color: 9699539,
                 title: "Join the Official Uni Community Server!",
