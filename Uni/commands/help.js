@@ -3,15 +3,15 @@ const Discord = require(`discord.js`)
 exports.run = async (bot,message,args) => {
     const q = require('../../data/q.json')
     let sm = q[message.guild.id].users[message.member.id]
-    message.react("📬");
+    if(!sm.noDM){message.react("📬")}
     const embed = new Discord.MessageEmbed()
         .setColor(65280)
         .setTitle("Uni Commands")
         .setDescription("secondary commands appear in some of these commands")
         .setThumbnail('https://imgur.com/ASUc77V.png')
         .addFields(
-            { name: 'Command', value: "• quest\n• catch\n• biomes\n• antenna\n• sell\n• pack\n• pet crate\n• pet\n• boss\n• inventory\n• gem chest\n• info\n• daily", inline: true},
-            { name: 'Description', value: "Quest progress\nCatch a ghost\nLists all the biomes\nCheck your antenna level\nSell the ghosts you caught\nCheck your pack stats\nShows pet crate info\nShows pet info\nShows boss info\nCheck your currency and items\nShows gem chest info\nShows cooldown for commands\nDaily Reward", inline: true},
+            { name: 'Command', value: "• quest\n• catch\n• biomes\n• antenna\n• sell\n• pack\n• pet crate\n• pet\n• boss\n• inventory\n• gem chest\n• info\n• daily\n• dm", inline: true},
+            { name: 'Description', value: "Quest progress\nCatch a ghost\nLists all the biomes\nCheck your antenna level\nSell the ghosts you caught\nCheck your pack stats\nShows pet crate info\nShows pet info\nShows boss info\nCheck your currency and items\nShows gem chest info\nShows cooldown for commands\nDaily Reward\nDisable or Enable DM's", inline: true},
         )
         .setTimestamp()
     message.channel.send({embed});
