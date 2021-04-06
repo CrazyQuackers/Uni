@@ -1,5 +1,5 @@
 exports.run = async (bot,message,args) => {
-    const db = require('../data/db.json')
+    const db = require('./data/db.json')
     const fs = require("fs")
     let arr = message.content.split(' ');
     if((arr.length>1)&&(arr[1]=="up")){

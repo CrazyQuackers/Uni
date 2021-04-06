@@ -1,5 +1,5 @@
 exports.run = async (bot,message,args) => {
-    const db = require('../data/db.json')
+    const db = require('./data/db.json')
     const fs = require("fs")
     let ez = db[message.guild.id].users[message.member.id]
     if(Math.floor(new Date().getTime() - ez.lastClaim) / (1000 * 60 * 60 * 24) < 1){

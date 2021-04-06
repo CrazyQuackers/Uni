@@ -1,5 +1,5 @@
 exports.run = async (bot,message,args) => {
-    const db = require('../data/db.json')
+    const db = require('./data/db.json')
     let other = message.mentions.members.first();
     let ez = db[message.guild.id].users[message.member.id]
     let tag = message.member.id

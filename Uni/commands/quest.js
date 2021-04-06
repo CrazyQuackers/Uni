@@ -1,7 +1,7 @@
 exports.run = async (bot,message,args) => {
     const fs = require("fs")
-    const db = require('../data/db.json')
-    const q = require('../data/q.json')
+    const db = require('./data/db.json')
+    const q = require('./data/q.json')
     let ez = db[message.guild.id].users[message.member.id]
     let sm = q[message.guild.id].users[message.member.id]
     let o1 = sm.obj1
