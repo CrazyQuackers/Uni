@@ -77,8 +77,11 @@ function createEmbeddedMessage(t,str,topTen,message,guild)
 function topInfo(message)
 {
     const listEmbed = {
-        color: 9127187,
-        title: "<:uni:825122929778884658> Uni Server Commands",
+        color: 32768,
+        author: {
+            icon_url: message.guild.iconURL(),
+        },
+        title: "Uni Server Commands",
         description: "Use these commands to see who are the top members in this server for the following catagories!",
         thumbnail: {
             url: "https://imgur.com/ZJfZBkF.png",
@@ -105,7 +108,6 @@ function topInfo(message)
                 inline: false,
             },
         ],
-        timestamp: new Date(),
     }
     message.channel.send({ embed: listEmbed });
 }
