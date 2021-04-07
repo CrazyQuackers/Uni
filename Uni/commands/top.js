@@ -1,7 +1,7 @@
 exports.run = async (bot,message,args) => {
     const db = require('../../data/db.json')
-    const guild = message.guild.id
-    let ez = db[guild]
+    const guild = message.guild
+    let ez = db[guild.id]
     const membersArray = guild.members.cache.array()
     var notBots = []
     let i = 0
@@ -16,7 +16,7 @@ exports.run = async (bot,message,args) => {
     for(i=0 ; i<topTen.length ; i++){str=str+`${i+1}. **${topTen[i].username}** - ${ez.users[topTen[i].id].antenna} 📡\n`}
     const topEmbed = {
         color: 16777214,
-        title: `🏆 ${message.guild.name}'s Top Antenna Level`,
+        title: `🏆 ${guild.name}'s Top Antenna Level`,
         description: str,
         thumbnail: {
             url: topTen[0].avatarURL(),
