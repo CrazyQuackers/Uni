@@ -77,22 +77,32 @@ function createEmbeddedMessage(t,str,topTen,message,guild)
 function topInfo(message)
 {
     const listEmbed = {
-        color: 65280,
-        title: "Uni Server Commands",
+        color: 9127187,
+        title: "<:uni:825122929778884658> Uni Server Commands",
         description: "Use these commands to see who are the top members in this server for the following catagories!",
         thumbnail: {
             url: "https://imgur.com/ZJfZBkF.png",
         },
         fields: [
             {
-                name: "Command",
-                value: "• top quest\n• top pack\n• top pets\n• top antenna",
-                inline: true,
+                name: "%top antenna",
+                value: "Lists the members with the highest antenna levels",
+                inline: false,
             },
             {
-                name: "Description",
-                value: "• Lists the members with the farthest quests\n• Lists the members with the best packs\n• Lists the members with the most pets\n• Lists the members with the highest antenna levels",
-                inline: true,
+                name: "%top pack",
+                value: "Lists the members with the best packs",
+                inline: false,
+            },
+            {
+                name: "%top pets",
+                value: "Lists the members with the most pets",
+                inline: false,
+            },
+            {
+                name: "%top quest",
+                value: "Lists the members with the farthest quests",
+                inline: false,
             },
         ],
         timestamp: new Date(),
