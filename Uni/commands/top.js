@@ -51,14 +51,14 @@ exports.run = async (bot,message,args) => {
                 t = "Quests"
                 break;
         }
-        createEmbeddedMessage(t,str,topTen,message);
+        createEmbeddedMessage(t,str,topTen,message,guild);
     }
 }
 exports.help = {
     name: 'top'
 }
 
-function createEmbeddedMessage(t,str,topTen,message)
+function createEmbeddedMessage(t,str,topTen,message,guild)
 {
     const topEmbed = {
         color: 16777214,
@@ -77,10 +77,11 @@ function createEmbeddedMessage(t,str,topTen,message)
 function topInfo(message)
 {
     const listEmbed = {
-        color: 0,
-        title: "Top Server Commands",
+        color: 65280,
+        title: "Uni Server Commands",
+        description: "Use these commands to see who are the top members in this server for the following catagories!",
         thumbnail: {
-            url: "https://imgur.com/ZJfZBkF",
+            url: "https://imgur.com/ZJfZBkF.png",
         },
         fields: [
             {
