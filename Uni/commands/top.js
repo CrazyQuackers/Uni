@@ -79,6 +79,7 @@ function topInfo(message)
     const listEmbed = {
         color: 32768,
         author: {
+            name: message.guild.name,
             icon_url: message.guild.iconURL(),
         },
         title: "Uni Server Commands",
