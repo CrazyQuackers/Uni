@@ -28,7 +28,7 @@ exports.run = async (bot,message,args) => {
                 sorted = notBots.sort((a, b) => countPets(b,ez) - countPets(a,ez))
                 break;
             case "quest":
-                sorted = notBots.sort((a , b) => sm.users[b.id].quest*100+sm.users[b.id].task - sm.users[a.id].quest*100+sm.users[a.id].task)
+                sorted = notBots.sort((a , b) => getQuestNumber(b,sm) - getQuestNumber(a,sm))
                 break;
         }
         for(i=0 ; i<sorted.length ; i++){if(i<=9){removeUndefined[i]=sorted[i]}}
@@ -86,12 +86,12 @@ function topInfo(message)
         fields: [
             {
                 name: "Command",
-                value: "• top antenna\n• top pack\n• top pets\n• top quest",
+                value: "• top quest\n• top pack\n• top pets\n• top antenna",
                 inline: true,
             },
             {
                 name: "Description",
-                value: "• Lists the members with the highest antenna levels\n• Lists the members with the best packs\n• Lists the members with the most pets\n• Lists the members with the farthest quests",
+                value: "• Lists the members with the farthest quests\n• Lists the members with the best packs\n• Lists the members with the most pets\n• Lists the members with the highest antenna levels",
                 inline: true,
             },
         ],
@@ -108,4 +108,12 @@ function countPets(mem,ez2)
     let i = 0
     for(i=0 ; i<arr.length ; i++){if(arr[i]){c++}}
     return c;
+}
+
+function getQuestNumber(mem,sm2)
+{
+    const sm = sm2.users[mem.id]
+    let num = ((sm.quest*100) + sm.task)
+    console.log(num)
+    return num
 }
