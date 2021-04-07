@@ -10,7 +10,7 @@ exports.run = async (bot,message,args) => {
         .setThumbnail('https://imgur.com/ASUc77V.png')
         .addFields(
             { name: 'Command', value: "• quest\n• catch\n• biomes\n• antenna\n• sell\n• pack\n• pet crate\n• pet\n• boss\n• inventory\n• gem chest\n• info\n• daily\n• top\n• dm", inline: true},
-            { name: 'Description', value: "Quest progress\nCatch a ghost\nLists all the biomes\nCheck your antenna level\nSell the ghosts you caught\nCheck your pack stats\nShows pet crate info\nShows pet info\nShows boss info\nCheck your currency and items\nShows gem chest info\nShows cooldown for commands\nDaily Reward\nUni Top Server Commands\nDisable or Enable DM's", inline: true},
+            { name: 'Description', value: "Quest progress\nCatch a ghost\nLists all the biomes\nCheck your antenna level\nSell the ghosts you caught\nCheck your pack stats\nShows pet crate info\nShows pet info\nShows boss info\nCheck your currency and items\nShows gem chest info\nShows cooldown for commands\nDaily reward\nUni top server commands\nDisable or enable DM's", inline: true},
         )
         .setTimestamp()
     message.channel.send({embed});

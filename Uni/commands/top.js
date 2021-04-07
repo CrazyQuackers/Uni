@@ -83,7 +83,7 @@ function topInfo(message)
             icon_url: message.guild.iconURL(),
         },
         title: "Uni Top Server Commands",
-        description: "Use these commands to see who are the top members in this server for the following catagories!",
+        description: "use these commands to see who are the top members in this server for the following catagories!",
         thumbnail: {
             url: "https://imgur.com/ZJfZBkF.png",
         },
