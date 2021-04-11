@@ -15,8 +15,8 @@ exports.run = async (bot,message,args) => {
             else{h = 2 - h}
             if(h<10){h = `0${h}`}
             if(m<10){m = `0${m}`}
-            let str = `\`${h}h${m}m\``
-            message.channel.send(`<@${message.member.id}> You have to wait 🕐 ${str} before you can fight another boss!`)
+            let str = `**\`${h}h${m}m\`**`
+            message.channel.send(`<@${message.member.id}> You have to wait 🕐 ${str} before you can fight another 💀 boss!`)
             return;
         }
         ez.lastBoss = new Date().getTime()
