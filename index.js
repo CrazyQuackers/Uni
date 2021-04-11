@@ -5,7 +5,7 @@ bot.commands = new Discord.Collection();
 const db = require('./data/db.json')
 const q = require('./data/q.json')
 const Topgg = require("@top-gg/sdk")
-//const topgg = new Topgg.Api()
+const topgg = new Topgg.Api("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgyMzI1MzA4NjQwNjk2NzM1NiIsImJvdCI6dHJ1ZSwiaWF0IjoxNjE4MTQ2ODI5fQ.QgWEMQx9hltJGdZ49-aYjqND7eJCWYXN3CPj2NhxjDw")
 
 bot.on('ready', () => 
 {

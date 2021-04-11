@@ -13,9 +13,6 @@ exports.run = async (bot,message,args) => {
         var removeUndefined = []
         var sorted = []
         let t = 0
-        // membersArray.forEach(member => {if((!member.user.bot)&&(ez.users[member.user.id])){notBots[i] = member.user}
-        //     i++})
-        // go back to this ^ if the following for loop does not work
         for(i=0 ; i<membersArray.length ; i++){if((!membersArray[i].user.bot)&&(ez.users[membersArray[i].user.id])){notBots[i]=membersArray[i].user}}
         switch(args[0]){
             case "antenna":
