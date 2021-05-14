@@ -96,7 +96,8 @@ bot.on('message', (message) =>
             rabbit: false,
             rex: false,
             lastClaim: 0,
-            lastBoss: 0
+            lastBoss: 0,
+            defeated: 0
         }
         q[message.guild.id].users[message.member.id] = {
             lastSell: 0,
@@ -106,7 +107,16 @@ bot.on('message', (message) =>
             task: 1,
             obj1: 0,
             obj2: 0,
-            qStarted: false
+            obj3: 0,
+            obj4: 0,
+            qStarted: false,
+            hbUnlocked: false,
+            sky: false,
+            feather: false,
+            oblivion: false,
+            varus: false,
+            chroma: false,
+            equipped: ""
         }
         fs.writeFile("./data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
         fs.writeFile("./data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
@@ -127,6 +137,8 @@ bot.on('message', (message) =>
     if(cmd=="inv") {cmd="inventory"}
     if(cmd=="bf"){cmd="boss"}
     if(cmd=="c"){cmd="catch"}
+    if(cmd=="hb"){cmd="hoverboard"}
+    if(cmd=="pr"){cmd="profile"}
     if((cmd=="forest")||(cmd=="city")||(cmd=="junkyard")||(cmd=="sewers")||(cmd=="construction")||(cmd=="wild")||(cmd=="area")||(cmd=="mine")||(cmd=="pyramids")||(cmd=="beach")||(cmd=="underwater")||(cmd=="volcano")||(cmd=="ice")) {cmd="biome"}
     if(MessageArray.length>1){if((cmd=="gem")&&(MessageArray[1]=="chest")){cmd="gc"}if((cmd=="pet")&&(MessageArray[1]=="crate")){cmd="pc"}}
     if((cmd=="catch")&&(((args[0]=="construction")&&(args[1]=="site"))||((args[0]=="wild")&&(args[1]=="west"))||((args[0]=="area")&&(args[1]=="51"))||((args[0]=="ice")&&(args[1]=="cave")))){args[1]=args[2]}

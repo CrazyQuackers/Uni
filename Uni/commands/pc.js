@@ -290,6 +290,7 @@ function mainPetFunction(message,c,ez,fs,db,sm,q)
 function checkQuests(c,sm,fs,q)
 {
     if((c==200)&&(sm.quest==1)&&(sm.task==6)&&(sm.qStarted)){sm.obj1=1}
+    if((c==200)&&(sm.quest==2)&&(sm.task==3)&&(sm.qStarted)){sm.obj1=1}
     fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
 }
 

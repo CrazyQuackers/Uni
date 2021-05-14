@@ -7,7 +7,7 @@ exports.run = async (bot,message,args) => {
             message.channel.send("🏕️  **The Forest Biome**  🏕️\n\n👻  Ghosts in the biome = 🧚 **Fairies & Owls** 🦉\n🪛  Items in the biome = <:acorn:825122942660509707> **Acorns** <:acorn:825122942660509707>\n📡  Antenna level required = **1**");
             break;
         case "%city":
-            message.channel.send("🏙️  **The City Biome**  🏙️\n\n👻  Ghosts in the biome = 🤵‍♂️ **Businessmans & Street Cats** 🐈‍⬛\n🪛  Items in the biome = 📰 **Newspapers** 📰\n📡  Antenna level required = **2**");
+            message.channel.send("🏙️  **The City Biome**  🏙️\n\n👻  Ghosts in the biome = 🤵‍♂️ **Businessmens & Street Cats** 🐈‍⬛\n🪛  Items in the biome = 📰 **Newspapers** 📰\n📡  Antenna level required = **2**");
             break;
         case "%junkyard":
             message.channel.send("💡  **The Junkyard Biome**  💡\n\n👻  Ghosts in the biome = 🧑‍🔧 **Mechanics & Garbage Bins** 🗑️\n🪛  Items in the biome = <:tire:825122944128385054> **Tires** <:tire:825122944128385054>\n📡  Antenna level required = **3**");

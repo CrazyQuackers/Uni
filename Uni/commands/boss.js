@@ -104,6 +104,7 @@ exports.run = async (bot,message,args) => {
                                     {
                                         g = (Math.floor(Math.random()*301))+200;
                                         ez.gems = ez.gems + g
+                                        ez.defeated = ez.defeated + 1
                                         fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
                                         str = str+`\n\n**▬▬▬▬▬▬▬**「RESULT」**▬▬▬▬▬▬▬▬▬▬▬▬▬▬**\n\n👑 Winner : <@${message.member.id}>\n💀 Defeated : ${boss}\n\n**▬▬▬▬▬**「YOUR EARNINGS」**▬▬▬▬▬▬▬▬▬▬▬▬**\n\n+ **${g}** <:gems:825122942413045791> gems!`
                                     }

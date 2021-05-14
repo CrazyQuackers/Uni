@@ -9,8 +9,8 @@ exports.run = async (bot,message,args) => {
         .setDescription("secondary commands appear in some of these commands")
         .setThumbnail('https://imgur.com/ASUc77V.png')
         .addFields(
-            { name: 'Command', value: "• quest\n• catch\n• biomes\n• antenna\n• sell\n• pack\n• pet crate\n• pet\n• boss\n• inventory\n• gem chest\n• info\n• daily\n• top\n• dm\n• vote", inline: true},
-            { name: 'Description', value: "Quest progress\nCatch a ghost\nLists all the biomes\nCheck your antenna level\nSell the ghosts you caught\nCheck your pack stats\nShows pet crate info\nShows pet info\nShows boss info\nCheck your currency and items\nShows gem chest info\nShows cooldown for commands\nDaily reward\nUni top server commands\nDisable or enable DM's\nVote for Uni", inline: true},
+            { name: 'Command', value: "• quest\n• catch\n• biomes\n• antenna\n• sell\n• pack\n• pet crate\n• pet\n• hoverboard\n• boss\n• inventory\n• gem chest\n• info\n• daily\n• top\n• profile\n• dm\n• vote", inline: true},
+            { name: 'Description', value: "Quest progress\nCatch a ghost\nLists all the biomes\nCheck your antenna level\nSell the ghosts you caught\nCheck your pack stats\nShows pet crate info\nShows pet info\nShows hoverboard info\nShows boss info\nCheck your currency and items\nShows gem chest info\nShows cooldown for commands\nDaily reward\nUni top server commands\nShows your Uni profile\nDisable or enable DM's\nVote for Uni", inline: true},
         )
         .setTimestamp()
     message.channel.send({embed});
