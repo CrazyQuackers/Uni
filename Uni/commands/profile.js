@@ -51,7 +51,7 @@ exports.run = async (bot,message,args) => {
         color: 38977,
         author: {
             name: `${tag.username}'s Profile`,
-            icon_url: tag.avatarURL(),
+            icon_url: tag.user.avatarURL(),
         },
         description: `📡 **Antenna Level:** ${ez.antenna}\n\n💀 **Bosses Defeated:** ${ez.defeated}\n\n<:pack:825122944204013588> **Pack Name:** ${ez.pack}\n\n🐶 **Number of Pets:** ${c}\n\n🗺️ **Questline:** Quest #${sm.quest} - Task #${sm.task}\n\n<:hoverboard:842713851585495070> **Equipped Hoverboard:** ${n}`,
         thumbnail: {
