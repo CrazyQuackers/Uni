@@ -1,6 +1,7 @@
 const Discord = require(`discord.js`)
 
 exports.run = async (bot,message,args) => {
+    console.log("hello")
     const q = require('../../data/q.json')
     let sm = q[message.guild.id].users[message.member.id]
     const db = require('../../data/db.json')
