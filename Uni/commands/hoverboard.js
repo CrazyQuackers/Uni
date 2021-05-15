@@ -43,7 +43,6 @@ exports.run = async (bot,message,args) => {
                 message.channel.send(str)
                 break;
             case "buy":
-                console.log("entered buy case")
                 if(sm.hbUnlocked)
                 {
                     if(args.length>1)
@@ -209,12 +208,10 @@ exports.run = async (bot,message,args) => {
                 else
                 {
                     message.react("❌")
-                    console.log("entered -buy- else : hoverboard not unlocked")
                     message.channel.send(`<@${message.member.id}> You have yet to unlock <:hoverboard:842713851585495070> Hoverboards!\nTo do so, complete Ghost Hunter Adam's questline! (**%quest**)`)
                 }
                 break;
             case "equip":
-                console.log("entered equip case")
                 if(sm.hbUnlocked)
                 {
                     if(args.length>1)
@@ -308,7 +305,6 @@ exports.run = async (bot,message,args) => {
                 else
                 {
                     message.react("❌")
-                    console.log("entered -equip- else : hoverboard not unlocked")
                     message.channel.send(`<@${message.member.id}> You have yet to unlock <:hoverboard:842713851585495070> Hoverboards!\nTo do so, complete Ghost Hunter Adam's questline! (**%quest**)`)
                 }
                 break;

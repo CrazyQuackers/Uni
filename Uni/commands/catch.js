@@ -73,6 +73,11 @@ function fullCatchFunction(ez,fs,db,sm,message,args,q)
                 if((args.length>1)&&(isNumeric(args[1]))&&(parseInt(args[1],10)!=1)){
                     let num = parseInt(args[1],10)
                     let ghost2 = secondGhost(args[0])
+                    console.log(num)
+                    console.log(ghost2)
+                    console.log((num-1)*ghost2)
+                    console.log(storage)
+                    console.log(capacity)
                     if(((num-1)*ghost2+storage)<capacity){
                         for(p=0 ; p<num ; p++){
                             storage = ez.storage
