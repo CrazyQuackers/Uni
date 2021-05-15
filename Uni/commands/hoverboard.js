@@ -12,13 +12,13 @@ exports.run = async (bot,message,args) => {
         {
             case "details":
                 const embed = new Discord.MessageEmbed()
-                    .setColor(4980735)
+                    .setColor(15787660)
                     .setTitle(`Hoverboard Details`)
                     .setThumbnail('https://imgur.com/QCLuNbe.png')
                     .addFields(
-                        {name: "Hoverboard", value: `<:skysurfer:842713851522056204>\n<:feathershock:842713851044823071>\n<:oblivion:842713851450753024>\n<:varus:842713851481030666>\n<:chromafloat:842713850897236029>`, inline: true},
+                        {name: "Hoverboard", value: `     <:skysurfer:842713851522056204>\n     <:feathershock:842713851044823071>\n     <:oblivion:842713851450753024>\n     <:varus:842713851481030666>\n     <:chromafloat:842713850897236029>`, inline: true},
                         {name: "Name", value: "Sky Surfer\nFeather Shock\nOblivion\nVARUS\nChroma Float", inline: true},
-                        {name: "Cost", value: `15,000 <:gems:825122942413045791>\n75,000 <:gems:825122942413045791>\n150,000 <:gems:825122942413045791>\n250,000 <:gems:825122942413045791>\n400,000 <:gems:825122942413045791>`, inline: true},
+                        {name: "Cost", value: `<:gems:825122942413045791> 15,000\n<:gems:825122942413045791> 75,000\n<:gems:825122942413045791> 150,000\n<:gems:825122942413045791> 250,000\n<:gems:825122942413045791> 400,000`, inline: true},
                     )
                     .setTimestamp()
                 message.channel.send({embed});
@@ -109,6 +109,7 @@ exports.run = async (bot,message,args) => {
                         message.channel.send(`<@${message.member.id}> You need to specify a <:hoverboard:842713851585495070> Hoverboard's name in order to purchase it.\nHere is the correct syntax for this command: **%hoverboard buy <hoverboard name>**\nIf you forgot the name, use this command: **%hoverboard details**`)}
                 }else{message.react("❌")
                     message.channel.send(`<@${message.member.id}> You have yet to unlock <:hoverboard:842713851585495070> Hoverboards!\nTo do so, complete Ghost Hunter Adam's questline! (**%quest**)`)}
+                break;
             case "equip":
                 if(sm.hbUnlocked){
                     if(args.length>1){

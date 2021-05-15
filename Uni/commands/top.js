@@ -1,5 +1,5 @@
 exports.run = async (bot,message,args) => {
-    if((args[0]!="antenna")&&(args[0]!="pack")&&(args[0]!="pets")&&(args[0]!="quest")){topInfo(message)}else{
+    if((args[0]!="antenna")&&(args[0]!="pack")&&(args[0]!="pets")&&(args[0]!="quest")&&(args[0]!="boss")){topInfo(message)}else{
         const db = require('../../data/db.json')
         const q = require('../../data/q.json')
         const guild = message.guild
@@ -24,6 +24,9 @@ exports.run = async (bot,message,args) => {
             case "pets":
                 sorted = notBots.sort((a, b) => countPets(b,ez) - countPets(a,ez))
                 break;
+            case "boss":
+                sorted = notBots.sort((a, b) => ez.users[b.id].defeated - ez.users[a.id].defeated)
+                break;
             case "quest":
                 sorted = notBots.sort((a , b) => getQuestNumber(b,sm) - getQuestNumber(a,sm))
                 break;
@@ -42,6 +45,10 @@ exports.run = async (bot,message,args) => {
             case "pets":
                 for(i=0 ; i<topTen.length ; i++){str=str+`${i+1}. **${topTen[i].username}** - ${countPets(topTen[i],ez)} 🐶\n`}
                 t = "Pets"
+                break;
+            case "boss":
+                for(i=0 ; i<topTen.length ; i++){str=str+`${i+1}. **${topTen[i].username}** - ${ez.users[topTen[i].id].defeated} 💀\n`}
+                t = "Bosses"
                 break;
             case "quest":
                 for(i=0 ; i<topTen.length ; i++){str=str+`${i+1}. **${topTen[i].username}** - Quest #${sm.users[topTen[i].id].quest}, Task#${sm.users[topTen[i].id].task} 📖\n`}
@@ -98,6 +105,11 @@ function topInfo(message)
             {
                 name: "%top pets",
                 value: "Lists the members with the most pets",
+                inline: false,
+            },
+            {
+                name: "%top boss",
+                value: "Lists the members with the most bosses defeated",
                 inline: false,
             },
             {

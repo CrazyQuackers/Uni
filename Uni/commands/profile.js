@@ -1,7 +1,6 @@
 const Discord = require(`discord.js`)
 
 exports.run = async (bot,message,args) => {
-    console.log("hello")
     const q = require('../../data/q.json')
     let sm = q[message.guild.id].users[message.member.id]
     const db = require('../../data/db.json')
@@ -50,16 +49,16 @@ exports.run = async (bot,message,args) => {
     const embed = {
         color: 38977,
         author: {
-            name: `${tag.username}'s Profile`,
+            name: `${tag.user.username}'s Profile`,
             icon_url: tag.user.avatarURL(),
         },
-        description: `📡 **Antenna Level:** ${ez.antenna}\n\n💀 **Bosses Defeated:** ${ez.defeated}\n\n<:pack:825122944204013588> **Pack Name:** ${ez.pack}\n\n🐶 **Number of Pets:** ${c}\n\n🗺️ **Questline:** Quest #${sm.quest} - Task #${sm.task}\n\n<:hoverboard:842713851585495070> **Equipped Hoverboard:** ${n}`,
+        description: `<:hoverboard:842713851585495070> **Equipped Hoverboard:** ${n}\n\n📡 **Antenna Level:** ${ez.antenna}\n\n<:pack:825122944204013588> **Pack Name:** ${ez.pack}\n\n🗺️ **Questline:** Quest #${sm.quest} - Task #${sm.task}\n\n🐶 **Number of Pets:** ${c}\n\n💀 **Bosses Defeated:** ${ez.defeated}`,
         thumbnail: {
             url: u,
         },
         timestamp: new Date(),
         footer: {
-            text: `${tag.username}'s Uni Profile`,
+            text: `${tag.user.username}'s Uni Profile`,
             icon_url: 'https://imgur.com/ASUc77V.png',
         },
     };
