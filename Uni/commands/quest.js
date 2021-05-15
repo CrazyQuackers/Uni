@@ -284,7 +284,7 @@ exports.run = async (bot,message,args) => {
                         if(o2>10){o2=10}
                         if(o3>10){o3=10}
                         if(o4>15){o4=15}
-                        createQuestMessage("🗺️ Quest #2 - Ghost Hunter Adam","📖 **__Task #12/12__** : Hail the Hoverboard\n\n\`Now I need your help to finish building your Hoverboard... Don't look so surprised. Collect tiems from ghosts in each biome here and the Hoverboard is all yours!\`","https://imgur.com/IGLh00t.png","📜 __Goals:__",`• Obtain **10** 📰 Newspapers from The 🏙️ City: ${o1}/10\n• Obtain **10** <:tire:825122944128385054> Tires from The 💡 Junkyard: ${o2}/10\n• Obtain **10** 🧦 Socks from The <:manhole:825122943133941821> Sewers: ${o3}/10\n• Obtain **10** Hammers from The 🏗️ Construction Site: ${o4}/10`,message,sm,fs,q)
+                        createQuestMessage("🗺️ Quest #2 - Ghost Hunter Adam","📖 **__Task #12/12__** : Hail the Hoverboard\n\n\`Now I need your help to finish building your Hoverboard... Don't look so surprised. Collect items from ghosts in each biome here and the Hoverboard is all yours!\`","https://imgur.com/IGLh00t.png","📜 __Goals:__",`• Obtain **10** 📰 Newspapers from The 🏙️ City: ${o1}/10\n• Obtain **10** <:tire:825122944128385054> Tires from The 💡 Junkyard: ${o2}/10\n• Obtain **10** 🧦 Socks from The <:manhole:825122943133941821> Sewers: ${o3}/10\n• Obtain **10** Hammers from The 🏗️ Construction Site: ${o4}/15`,message,sm,fs,q)
                         break;
                 }
                 break;

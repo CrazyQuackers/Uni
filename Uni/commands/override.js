@@ -7,7 +7,7 @@ exports.run = async (bot,message,args) => {
     if(message.author.id==352558373016698881)
     {
         message.react("✅")
-        ez.gems = 500
+        ez.gems = 15000
         ez.ectoTokens = 500
         ez.antenna = 4
         ez.pack = "Distorted Pack"
@@ -15,9 +15,11 @@ exports.run = async (bot,message,args) => {
         ez.sellTime = 140
         ez.duck = true
         ez.unicorn = true
-        sm.quest = 2
-        sm.task = 10
+        sm.quest = 3
+        sm.task = 1
         ez.constructionOpen = true
+        sm.hbUnlocked = true
+        sm.equipped = "basic"
         fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
         fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
     }
