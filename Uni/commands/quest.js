@@ -114,7 +114,7 @@ exports.run = async (bot,message,args) => {
                         }else{message.react("❌")}
                         break;
                     case 8:
-                        if((o1>=15)&&(o2>=4)&&(sm.socks>=8)){
+                        if((o1>=15)&&(o2>=4)&&(ez.socks>=8)){
                             message.react("✅")
                             createDoneMessage("\`Ewwww, that smell is terrible! Why didn't you take a bath BEFORE you came back to me? ...Fine, fine, here's some Gems! Just get that smell away!\`\n+**120** <:gems:825122942413045791>","https://imgur.com/IGLh00t.png",120,fs,db,q,ez,message,sm)
                         }else{message.react("❌")}
@@ -126,7 +126,7 @@ exports.run = async (bot,message,args) => {
                         }else{message.react("❌")}
                         break;
                     case 10:
-                        if((o1>=20)&&(o2>=5)&&(sm.socks>=15)){
+                        if((o1>=20)&&(o2>=5)&&(ez.socks>=15)){
                             message.react("✅")
                             createDoneMessage("\`Well look at you, completing every task I throw at you! Here's some Gems.\`\n+**200** <:gems:825122942413045791>","https://imgur.com/IGLh00t.png",200,fs,db,q,ez,message,sm)
                         }else{message.react("❌")}
