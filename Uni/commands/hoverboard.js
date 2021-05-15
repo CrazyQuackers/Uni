@@ -43,108 +43,274 @@ exports.run = async (bot,message,args) => {
                 message.channel.send(str)
                 break;
             case "buy":
-                if(sm.hbUnlocked){
-                    if(args.length>1){
-                        switch(args[1]){
+                console.log("entered buy case")
+                if(sm.hbUnlocked)
+                {
+                    if(args.length>1)
+                    {
+                        switch(args[1])
+                        {
                             case "basic":
                                 message.react("❌")
                                 message.channel.send(`<@${message.member.id}> You already own this <:hoverboard:842713851585495070> Hoverboard!`)
                                 break;
                             case "sky":
-                                if((args.length>2)&&(args[2]=="surfer")){if(sm.sky){message.react("❌")
-                                        message.channel.send(`<@${message.member.id}> You already own this <:hoverboard:842713851585495070> Hoverboard!`)}else{if(ez.gems<15000){message.react("❌")
-                                            message.channel.send(`<@${message.member.id}> You don't have enough <:gems:825122942413045791> Gems to purchase this <:hoverboard:842713851585495070> Hoverboard!`)}else{message.react("✅")
+                                if((args.length>2)&&(args[2]=="surfer"))
+                                {
+                                    if(sm.sky)
+                                    {
+                                        message.react("❌")
+                                        message.channel.send(`<@${message.member.id}> You already own this <:hoverboard:842713851585495070> Hoverboard!`)
+                                    }
+                                    else
+                                    {
+                                        if(ez.gems<15000)
+                                        {
+                                            message.react("❌")
+                                            message.channel.send(`<@${message.member.id}> You don't have enough <:gems:825122942413045791> Gems to purchase this <:hoverboard:842713851585495070> Hoverboard!`)
+                                        }
+                                        else
+                                        {
+                                            message.react("✅")
                                             sm.sky = true
                                             ez.gems = ez.gems - 15000
                                             fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
                                             fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
-                                            message.channel.send(`<@${message.member.id}> **Sky Surfer** successfully purchased! <:skysurfer:842713851522056204>`)}}}
-                                else{notAHoverboardName(message)}
+                                            message.channel.send(`<@${message.member.id}> **Sky Surfer** successfully purchased! <:skysurfer:842713851522056204>`)
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    notAHoverboardName(message)
+                                }
                                 break;
                             case "feather":
-                                if((args.length>2)&&(args[2]=="shock")){if(sm.feather){message.react("❌")
-                                        message.channel.send(`<@${message.member.id}> You already own this <:hoverboard:842713851585495070> Hoverboard!`)}else{if(ez.gems<75000){message.react("❌")
-                                            message.channel.send(`<@${message.member.id}> You don't have enough <:gems:825122942413045791> Gems to purchase this <:hoverboard:842713851585495070> Hoverboard!`)}else{message.react("✅")
+                                if((args.length>2)&&(args[2]=="shock"))
+                                {
+                                    if(sm.feather)
+                                    {
+                                        message.react("❌")
+                                        message.channel.send(`<@${message.member.id}> You already own this <:hoverboard:842713851585495070> Hoverboard!`)
+                                    }
+                                    else
+                                    {
+                                        if(ez.gems<75000)
+                                        {
+                                            message.react("❌")
+                                            message.channel.send(`<@${message.member.id}> You don't have enough <:gems:825122942413045791> Gems to purchase this <:hoverboard:842713851585495070> Hoverboard!`)
+                                        }
+                                        else
+                                        {
+                                            message.react("✅")
                                             sm.feather = true
                                             ez.gems = ez.gems - 75000
                                             fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
                                             fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
-                                            message.channel.send(`<@${message.member.id}> **Feather Shock** successfully purchased! <:feathershock:842713851044823071>`)}}}
-                                else{notAHoverboardName(message)}
+                                            message.channel.send(`<@${message.member.id}> **Feather Shock** successfully purchased! <:feathershock:842713851044823071>`)
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    notAHoverboardName(message)
+                                }
                                 break;
                             case "oblivion":
-                                if(sm.oblivion){message.react("❌")
-                                    message.channel.send(`<@${message.member.id}> You already own this <:hoverboard:842713851585495070> Hoverboard!`)}else{if(ez.gems<150000){message.react("❌")
-                                        message.channel.send(`<@${message.member.id}> You don't have enough <:gems:825122942413045791> Gems to purchase this <:hoverboard:842713851585495070> Hoverboard!`)}else{message.react("✅")
+                                if(sm.oblivion)
+                                {
+                                    message.react("❌")
+                                    message.channel.send(`<@${message.member.id}> You already own this <:hoverboard:842713851585495070> Hoverboard!`)
+                                }
+                                else
+                                {
+                                    if(ez.gems<150000)
+                                    {
+                                        message.react("❌")
+                                        message.channel.send(`<@${message.member.id}> You don't have enough <:gems:825122942413045791> Gems to purchase this <:hoverboard:842713851585495070> Hoverboard!`)
+                                    }
+                                    else
+                                    {
+                                        message.react("✅")
                                         sm.oblivion = true
                                         ez.gems = ez.gems - 150000
                                         fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
                                         fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
-                                        message.channel.send(`<@${message.member.id}> **Oblivian** successfully purchased! <:oblivion:842713851450753024>`)}}
+                                        message.channel.send(`<@${message.member.id}> **Oblivian** successfully purchased! <:oblivion:842713851450753024>`)
+                                    }
+                                }
                                 break;
                             case "varus":
-                                if(sm.varus){message.react("❌")
-                                    message.channel.send(`<@${message.member.id}> You already own this <:hoverboard:842713851585495070> Hoverboard!`)}else{if(ez.gems<250000){message.react("❌")
-                                        message.channel.send(`<@${message.member.id}> You don't have enough <:gems:825122942413045791> Gems to purchase this <:hoverboard:842713851585495070> Hoverboard!`)}else{message.react("✅")
+                                if(sm.varus)
+                                {
+                                    message.react("❌")
+                                    message.channel.send(`<@${message.member.id}> You already own this <:hoverboard:842713851585495070> Hoverboard!`)
+                                }
+                                else
+                                {
+                                    if(ez.gems<250000)
+                                    {
+                                        message.react("❌")
+                                        message.channel.send(`<@${message.member.id}> You don't have enough <:gems:825122942413045791> Gems to purchase this <:hoverboard:842713851585495070> Hoverboard!`)
+                                    }
+                                    else
+                                    {
+                                        message.react("✅")
                                         sm.varus = true
                                         ez.gems = ez.gems - 250000
                                         fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
                                         fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
-                                        message.channel.send(`<@${message.member.id}> **VARUS** successfully purchased! <:varus:842713851481030666>`)}}
+                                        message.channel.send(`<@${message.member.id}> **VARUS** successfully purchased! <:varus:842713851481030666>`)
+                                    }
+                                }
                                 break;
                             case "chroma":
-                                if((args.length>2)&&(args[2]=="float")){if(sm.chroma){message.react("❌")
-                                        message.channel.send(`<@${message.member.id}> You already own this <:hoverboard:842713851585495070> Hoverboard!`)}else{if(ez.gems<400000){message.react("❌")
-                                            message.channel.send(`<@${message.member.id}> You don't have enough <:gems:825122942413045791> Gems to purchase this <:hoverboard:842713851585495070> Hoverboard!`)}else{message.react("✅")
+                                if((args.length>2)&&(args[2]=="float"))
+                                {
+                                    if(sm.chroma)
+                                    {
+                                        message.react("❌")
+                                        message.channel.send(`<@${message.member.id}> You already own this <:hoverboard:842713851585495070> Hoverboard!`)
+                                    }
+                                    else
+                                    {
+                                        if(ez.gems<400000)
+                                        {
+                                            message.react("❌")
+                                            message.channel.send(`<@${message.member.id}> You don't have enough <:gems:825122942413045791> Gems to purchase this <:hoverboard:842713851585495070> Hoverboard!`)
+                                        }
+                                        else
+                                        {
+                                            message.react("✅")
                                             sm.chroma = true
                                             ez.gems = ez.gems - 400000
                                             fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
                                             fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
-                                            message.channel.send(`<@${message.member.id}> **Chroma Float** successfully purchased! <:chromafloat:842713850897236029>`)}}}
-                                else{notAHoverboardName(message)}
+                                            message.channel.send(`<@${message.member.id}> **Chroma Float** successfully purchased! <:chromafloat:842713850897236029>`)
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    notAHoverboardName(message)
+                                }
                                 break;
                             default:
-                                notAHoverboardName(message)}
-                    }else{message.react("❌")
-                        message.channel.send(`<@${message.member.id}> You need to specify a <:hoverboard:842713851585495070> Hoverboard's name in order to purchase it.\nHere is the correct syntax for this command: **%hoverboard buy <hoverboard name>**\nIf you forgot the name, use this command: **%hoverboard details**`)}
-                }else{message.react("❌")
-                    message.channel.send(`<@${message.member.id}> You have yet to unlock <:hoverboard:842713851585495070> Hoverboards!\nTo do so, complete Ghost Hunter Adam's questline! (**%quest**)`)}
+                                notAHoverboardName(message)
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        message.react("❌")
+                        message.channel.send(`<@${message.member.id}> You need to specify a <:hoverboard:842713851585495070> Hoverboard's name in order to purchase it.\nHere is the correct syntax for this command: **%hoverboard buy <hoverboard name>**\nIf you forgot the name, use this command: **%hoverboard details**`)
+                    }
+                }
+                else
+                {
+                    message.react("❌")
+                    console.log("entered -buy- else : hoverboard not unlocked")
+                    message.channel.send(`<@${message.member.id}> You have yet to unlock <:hoverboard:842713851585495070> Hoverboards!\nTo do so, complete Ghost Hunter Adam's questline! (**%quest**)`)
+                }
                 break;
             case "equip":
-                if(sm.hbUnlocked){
-                    if(args.length>1){
-                        switch(args[1]){
+                console.log("entered equip case")
+                if(sm.hbUnlocked)
+                {
+                    if(args.length>1)
+                    {
+                        switch(args[1])
+                        {
                             case "basic":
                                 equipHoverboard(message,args[1],fs,q,"Basic","<:hoverboard:842713851585495070>")
                                 break;
                             case "sky":
-                                if((args.length>2)&&(args[2]=="surfer")){
-                                    if(sm.sky){equipHoverboard(message,args[1],fs,q,"Sky Surfer","<:skysurfer:842713851522056204>")}else{dontOwnThisHoverboard(message)}
-                                }else{notAHoverboardName(message)}
+                                if((args.length>2)&&(args[2]=="surfer"))
+                                {
+                                    if(sm.sky)
+                                    {
+                                        equipHoverboard(message,args[1],fs,q,"Sky Surfer","<:skysurfer:842713851522056204>")
+                                    }
+                                    else
+                                    {
+                                        dontOwnThisHoverboard(message)
+                                    }
+                                }
+                                else
+                                {
+                                    notAHoverboardName(message)
+                                }
                                 break;
                             case "feather":
-                                if((args.length>2)&&(args[2]=="shock")){
-                                    if(sm.feather){equipHoverboard(message,args[1],fs,q,"Feather Shock","<:feathershock:842713851044823071>")}else{dontOwnThisHoverboard(message)}
-                                }else{notAHoverboardName(message)}
+                                if((args.length>2)&&(args[2]=="shock"))
+                                {
+                                    if(sm.feather)
+                                    {
+                                        equipHoverboard(message,args[1],fs,q,"Feather Shock","<:feathershock:842713851044823071>")
+                                    }
+                                    else
+                                    {
+                                        dontOwnThisHoverboard(message)
+                                    }
+                                }
+                                else
+                                {
+                                    notAHoverboardName(message)
+                                }
                                 break;
                             case "oblivion":
-                                if(sm.oblivion){equipHoverboard(message,args[1],fs,q,"Oblivion","<:oblivion:842713851450753024>")}else{dontOwnThisHoverboard(message)}
+                                if(sm.oblivion)
+                                {
+                                    equipHoverboard(message,args[1],fs,q,"Oblivion","<:oblivion:842713851450753024>")
+                                }
+                                else
+                                {
+                                    dontOwnThisHoverboard(message)
+                                }
                                 break;
                             case "varus":
-                                if(sm.feather){equipHoverboard(message,args[1],fs,q,"VARUS","<:varus:842713851481030666>")}else{dontOwnThisHoverboard(message)}
+                                if(sm.feather)
+                                {
+                                    equipHoverboard(message,args[1],fs,q,"VARUS","<:varus:842713851481030666>")
+                                }
+                                else
+                                {
+                                    dontOwnThisHoverboard(message)
+                                }
                                 break;
                             case "chroma":
-                                if((args.length>2)&&(args[2]=="float")){
-                                    if(sm.feather){equipHoverboard(message,args[1],fs,q,"Chroma Float","<:chromafloat:842713850897236029>")}else{dontOwnThisHoverboard(message)}
-                                }else{notAHoverboardName(message)}
+                                if((args.length>2)&&(args[2]=="float"))
+                                {
+                                    if(sm.feather)
+                                    {
+                                        equipHoverboard(message,args[1],fs,q,"Chroma Float","<:chromafloat:842713850897236029>")
+                                    }
+                                    else
+                                    {
+                                        dontOwnThisHoverboard(message)
+                                    }
+                                }
+                                else
+                                {
+                                    notAHoverboardName(message)
+                                }
                                 break;
                             default:
                                 notAHoverboardName(message)
                         }
-                    }else{message.react("❌")
-                        message.channel.send(`<@${message.member.id}> You need to specify a <:hoverboard:842713851585495070> Hoverboard's name in order to equip it.\nHere is the correct syntax for this command: **%hoverboard equip <hoverboard name>**\nIf you forgot the name, use this command: **%hoverboard details**`)}
-                }else{message.react("❌")
-                    message.channel.send(`<@${message.member.id}> You have yet to unlock <:hoverboard:842713851585495070> Hoverboards!\nTo do so, complete Ghost Hunter Adam's questline! (**%quest**)`)}
+                    }
+                    else
+                    {
+                        message.react("❌")
+                        message.channel.send(`<@${message.member.id}> You need to specify a <:hoverboard:842713851585495070> Hoverboard's name in order to equip it.\nHere is the correct syntax for this command: **%hoverboard equip <hoverboard name>**\nIf you forgot the name, use this command: **%hoverboard details**`)
+                    }
+                }
+                else
+                {
+                    message.react("❌")
+                    console.log("entered -equip- else : hoverboard not unlocked")
+                    message.channel.send(`<@${message.member.id}> You have yet to unlock <:hoverboard:842713851585495070> Hoverboards!\nTo do so, complete Ghost Hunter Adam's questline! (**%quest**)`)
+                }
                 break;
         }
     }
