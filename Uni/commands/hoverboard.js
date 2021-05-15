@@ -66,7 +66,7 @@ exports.run = async (bot,message,args) => {
                                         if(ez.gems<15000)
                                         {
                                             message.react("❌")
-                                            message.channel.send(`<@${message.member.id}> You don't have enough <:gems:825122942413045791> Gems to purchase this <:hoverboard:842713851585495070> Hoverboard!\nYou need **\`${15000 - ez.gems}\`** more <:gems:825122942413045791> Gems!`)
+                                            message.channel.send(`<@${message.member.id}> You don't have enough <:gems:825122942413045791> Gems to purchase this <:hoverboard:842713851585495070> Hoverboard!\nYou need **\`${coinToStr(15000-ez.gems)}\`** more <:gems:825122942413045791> Gems!`)
                                         }
                                         else
                                         {
@@ -97,7 +97,7 @@ exports.run = async (bot,message,args) => {
                                         if(ez.gems<75000)
                                         {
                                             message.react("❌")
-                                            message.channel.send(`<@${message.member.id}> You don't have enough <:gems:825122942413045791> Gems to purchase this <:hoverboard:842713851585495070> Hoverboard!\nYou need **\`${75000 - ez.gems}\`** more <:gems:825122942413045791> Gems!`)
+                                            message.channel.send(`<@${message.member.id}> You don't have enough <:gems:825122942413045791> Gems to purchase this <:hoverboard:842713851585495070> Hoverboard!\nYou need **\`${coinToStr(75000-ez.gems)}\`** more <:gems:825122942413045791> Gems!`)
                                         }
                                         else
                                         {
@@ -126,7 +126,7 @@ exports.run = async (bot,message,args) => {
                                     if(ez.gems<150000)
                                     {
                                         message.react("❌")
-                                        message.channel.send(`<@${message.member.id}> You don't have enough <:gems:825122942413045791> Gems to purchase this <:hoverboard:842713851585495070> Hoverboard!\nYou need **\`${150000 - ez.gems}\`** more <:gems:825122942413045791> Gems!`)
+                                        message.channel.send(`<@${message.member.id}> You don't have enough <:gems:825122942413045791> Gems to purchase this <:hoverboard:842713851585495070> Hoverboard!\nYou need **\`${coinToStr(150000-ez.gems)}\`** more <:gems:825122942413045791> Gems!`)
                                     }
                                     else
                                     {
@@ -150,7 +150,7 @@ exports.run = async (bot,message,args) => {
                                     if(ez.gems<250000)
                                     {
                                         message.react("❌")
-                                        message.channel.send(`<@${message.member.id}> You don't have enough <:gems:825122942413045791> Gems to purchase this <:hoverboard:842713851585495070> Hoverboard!\nYou need **\`${250000 - ez.gems}\`** more <:gems:825122942413045791> Gems!`)
+                                        message.channel.send(`<@${message.member.id}> You don't have enough <:gems:825122942413045791> Gems to purchase this <:hoverboard:842713851585495070> Hoverboard!\nYou need **\`${coinToStr(250000-ez.gems)}\`** more <:gems:825122942413045791> Gems!`)
                                     }
                                     else
                                     {
@@ -176,7 +176,7 @@ exports.run = async (bot,message,args) => {
                                         if(ez.gems<400000)
                                         {
                                             message.react("❌")
-                                            message.channel.send(`<@${message.member.id}> You don't have enough <:gems:825122942413045791> Gems to purchase this <:hoverboard:842713851585495070> Hoverboard!\nYou need **\`${400000 - ez.gems}\`** more <:gems:825122942413045791> Gems!`)
+                                            message.channel.send(`<@${message.member.id}> You don't have enough <:gems:825122942413045791> Gems to purchase this <:hoverboard:842713851585495070> Hoverboard!\nYou need **\`${coinToStr(400000-ez.gems)}\`** more <:gems:825122942413045791> Gems!`)
                                         }
                                         else
                                         {
@@ -337,4 +337,23 @@ function equipHoverboard(message,str,fs,q,hb,emoji,sm)
     sm.equipped = str
     fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
     message.channel.send(`<@${message.member.id}> **${hb}** successfully equipped! ${emoji} ⭐`)
+}
+
+function coinToStr(n)
+{
+    let strC = n.toString()
+    let digits = strC.length
+    let i = 0;
+    let newStrC = "";
+    let num = 0;
+    for(i ; i<digits ; i++)
+    {
+        newStrC = newStrC + strC[i];
+        num = digits-i-1;
+        if((num!=0)&&(num%3==0))
+        {
+            newStrC = newStrC + ",";
+        }
+    }
+    return newStrC
 }
