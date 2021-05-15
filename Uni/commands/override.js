@@ -16,7 +16,7 @@ exports.run = async (bot,message,args) => {
         ez.duck = true
         ez.unicorn = true
         sm.quest = 2
-        sm.task = 1
+        sm.task = 5
         fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
         fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
     }

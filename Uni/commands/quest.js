@@ -96,7 +96,7 @@ exports.run = async (bot,message,args) => {
                         }else{message.react("❌")}
                         break;
                     case 5:
-                        if((o1>=7)&&(o2>=2)&&(sm.tires>=4)){
+                        if((o1>=7)&&(o2>=2)&&(ez.tires>=4)){
                             message.react("✅")
                             createDoneMessage("\`...Fine, you're cool. But my next tasks aren't as easy. Take these Gems and scram!\`\n+**100** <:gems:825122942413045791>","https://imgur.com/IGLh00t.png",100,fs,db,q,ez,message,sm)
                         }else{message.react("❌")}
@@ -225,7 +225,7 @@ exports.run = async (bot,message,args) => {
                         if(o2>2){o2=2}
                         o3 = ez.tires
                         if(o3>4){o3=4}
-                        createQuestMessage("🗺️ Quest #2 - Ghost Hunter Adam","📖 **__Task #5/12__** : Junkyard Stakeout\n\n\`Have you been to the Junkyard down the road? I love riding arounf with Hoverboards there... If you get some Mechanics, Garbage Bin Ghosts and Tires, I might consider you cool enough to use my technology. If you actually finish, find me for a reward.\`","https://imgur.com/IGLh00t.png","📜 __Goals:__",`• Vacuum **7** 🧑‍🔧 Mechanic Ghosts in The 💡 Junkyard: ${o1}/7\n• Vacuum **2** 🗑️ Garbage Bin Ghosts in The 💡 Junkyard: ${o2}/2\n• Obtain **4** <:tire:825122944128385054> Tires from The 💡 Junkyard: ${o3}/4`,message,sm,fs,q)
+                        createQuestMessage("🗺️ Quest #2 - Ghost Hunter Adam","📖 **__Task #5/12__** : Junkyard Stakeout\n\n\`Have you been to the Junkyard down the road? I love riding around with Hoverboards there... If you get some Mechanics, Garbage Bin Ghosts and Tires, I might consider you cool enough to use my technology. If you actually finish, find me for a reward.\`","https://imgur.com/IGLh00t.png","📜 __Goals:__",`• Vacuum **7** 🧑‍🔧 Mechanic Ghosts in The 💡 Junkyard: ${o1}/7\n• Vacuum **2** 🗑️ Garbage Bin Ghosts in The 💡 Junkyard: ${o2}/2\n• Obtain **4** <:tire:825122944128385054> Tires from The 💡 Junkyard: ${o3}/4`,message,sm,fs,q)
                         break;
                     case 6:
                         createQuestMessage("🗺️ Quest #2 - Ghost Hunter Adam","📖 **__Task #6/12__** : Calling Ghost Hunter Adam\n\n\`I must have dropped my Walkie Talkie while hoverboarding in the Junkyard! ...Why don't I look for it? I'm too busy doing important stuff. If you find it, maybe I'll give you a reward. Try using the command %find <item>\`","https://imgur.com/IGLh00t.png","📜 __Goals:__",`• Find Adam's 📞 Walkie Talkie hidden in The 💡 Junkyard: ${o1}/1`,message,sm,fs,q)
