@@ -31,8 +31,8 @@ exports.run = async (bot,message,args) => {
                 sorted = notBots.sort((a , b) => getQuestNumber(b,sm) - getQuestNumber(a,sm))
                 break;
         }
-        for(i=0 ; i<sorted.length ; i++){if(i<=9){removeUndefined[i]=sorted[i]}}
-        for(i=0 ; i<removeUndefined.length ; i++){if(removeUndefined[i]!=undefined){topTen[i]=removeUndefined[i]}}
+        for(i=0 ; i<sorted.length ; i++){if(sorted[i]!=undefined){removeUndefined[i]=sorted[i]}}
+        for(i=0 ; i<removeUndefined.length ; i++){if(i<=9){topTen[i]=removeUndefined[i]}}
         switch(args[0]){
             case "antenna":
                 for(i=0 ; i<topTen.length ; i++){str=str+`${i+1}. **${topTen[i].username}** - ${ez.users[topTen[i].id].antenna} 📡\n`}
