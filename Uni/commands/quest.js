@@ -90,7 +90,7 @@ exports.run = async (bot,message,args) => {
                         }else{message.react("❌")}
                         break;
                     case 4:
-                        if((ez.parts>=10)&&(ez.newspapers>=5)&&(ez.antenna>=3)){
+                        if(ez.antenna>=3){
                             message.react("✅")
                             createDoneMessage("\`The Junkyard has all kinds of parts I need for my technology. I'll be sending you there soon. You just wanted the rewards anyways... Here's some Gems.\`\n+**75** <:gems:825122942413045791>","https://imgur.com/IGLh00t.png",75,fs,db,q,ez,message,sm)
                         }else{message.react("❌")}
@@ -108,7 +108,7 @@ exports.run = async (bot,message,args) => {
                         }else{message.react("❌")}
                         break;
                     case 7:
-                        if((ez.parts>=35)&&(ez.tires>=10)&&(ez.antenna>=4)){
+                        if(ez.antenna>=4){
                             message.react("✅")
                             createDoneMessage("\`I didn't tell you it was a sewer, did I? Look forward to your time visiting it soon. Take these Gems and be ready. You're not going to have a nose after this.\`\n+**100** <:gems:825122942413045791>","https://imgur.com/IGLh00t.png",100,fs,db,q,ez,message,sm)
                         }else{message.react("❌")}
@@ -215,7 +215,9 @@ exports.run = async (bot,message,args) => {
                         o3 = ez.antenna
                         if(o1>10){o1=10}
                         if(o2>5){o2=5}
-                        if(o3>3){o3=3}
+                        if(o3>=3){o3=3
+                            o1=10
+                            o2=5}
                         createQuestMessage("🗺️ Quest #2 - Ghost Hunter Adam","📖 **__Task #4/12__** : Road to the Junkyard\n\n\`See that Junkyard over there? You're gonna need to upgrade your antenna to level 3 to get there. Once you do, I'll get you some Gems and another task.\`","https://imgur.com/IGLh00t.png","📜 __Goals:__",`• Obtain **10** 🔩 Antenna Parts: ${o1}/10\n• Obtain **5** 📰 Newspapers in The 🏙️ City: ${o2}/5\n• Upgrade your 📡 Antenna to level **3**: ${o3}/3`,message,sm,fs,q)
                         break;
                     case 5:
@@ -234,7 +236,9 @@ exports.run = async (bot,message,args) => {
                         o3 = ez.antenna
                         if(o1>35){o1=35}
                         if(o2>10){o2=10}
-                        if(o3>4){o3=4}
+                        if(o3>=4){o3=4
+                            o1=35
+                            o2=10}
                         createQuestMessage("🗺️ Quest #2 - Ghost Hunter Adam","📖 **__Task #7/12__** : Underground Shortcut\n\n\`You're well on your way to getting my Hoverboard technology. Next, I need you to unlock the next biome. There's an underground shortcut to The Wild West in the Junkyard. To reach it, upgrade your antenna to level 4. You'll need it unlocked to finish my next task. I'll get you some Gems once you're finished.\`","https://imgur.com/IGLh00t.png","📜 __Goals:__",`• Obtain **35** 🔩 Antenna Parts: ${o1}/35\n• Obtain **10** <:tire:825122944128385054> Tires from The 💡 Junkyard: ${o2}/10\n• Upgrade your 📡 Antenna to level **4**: ${o3}/4`,message,sm,fs,q)
                         break;
                     case 8:
@@ -252,9 +256,9 @@ exports.run = async (bot,message,args) => {
                         if(o2>10){o2=10}
                         if(o3>10){o3=10}
                         if(ez.constructionOpen){o4=1
-                        o1=10
-                        o2=10
-                        o3=10}
+                            o1=10
+                            o2=10
+                            o3=10}
                         createQuestMessage("🗺️ Quest #2 - Ghost Hunter Adam","📖 **__Task #9/12__** : Construction Obstruction\n\n\`Do you know what bonus biomes are? They are special biomes that give less Antenna Parts and lots of Gems! I need you to unlock the Construction Site. You're going to need 10 Newspapers, Tires and Socks. Come find me after you unlock it for a reward. To unlock it, use the %unlock command.\`","https://imgur.com/IGLh00t.png","📜 __Goals:__",`• Obtain **10** 📰 Newspapers from The 🏙️ City: ${o1}/10\n• Obtain **10** <:tire:825122944128385054> Tires from The 💡 Junkyard: ${o2}/10\n• Obtain **10** 🧦 Socks from The <:manhole:825122943133941821> Sewers: ${o3}/10\n• Unlock access to The 🏗️ Construction Site: ${o4}/1`,message,sm,fs,q)
                         break;
                     case 10:
