@@ -126,7 +126,7 @@ exports.run = async (bot,message,args) => {
                         }else{message.react("❌")}
                         break;
                     case 10:
-                        if((o1>=20)&&(o2>=5)&&(ez.socks>=15)){
+                        if((o1>=20)&&(o2>=5)&&(ez.hammers>=15)){
                             message.react("✅")
                             createDoneMessage("\`Well look at you, completing every task I throw at you! Here's some Gems.\`\n+**200** <:gems:825122942413045791>","https://imgur.com/IGLh00t.png",200,fs,db,q,ez,message,sm)
                         }else{message.react("❌")}
@@ -264,7 +264,7 @@ exports.run = async (bot,message,args) => {
                     case 10:
                         if(o1>20){o1=20}
                         if(o2>5){o2=5}
-                        o3 = ez.socks
+                        o3 = ez.hammers
                         if(o3>15){o3=15}
                         createQuestMessage("🗺️ Quest #2 - Ghost Hunter Adam","📖 **__Task #10/12__** : Stop Those Pigeons!\n\n\`You're really close to the Hoverboard, and if you can finish these next three tasks, it's yours. Go collect 20 Worker Ghosts, 5 Pigeon Ghosts, and 15 Hammers in The Construction Site. Come back for a reward.\`","https://imgur.com/IGLh00t.png","📜 __Goals:__",`• Vacuum **20** 👷‍♀️ Worker Ghosts in The 🏗️ Construction Site: ${o1}/20\n• Vacuum **5** <:pigeon:825122931721371690> Pigeon Ghosts in The 🏗️ Construction Site: ${o2}/5\n• Obtain **15** 🔨 Hammers from The 🏗️ Construction Site: ${o3}/15`,message,sm,fs,q)
                         break;
