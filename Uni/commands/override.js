@@ -11,7 +11,7 @@ exports.run = async (bot,message,args) => {
         ez.ectoTokens = 500
         ez.antenna = 2
         ez.pack = "Distorted Pack"
-        ez.capacity = "3,500,000"
+        ez.capacity = 3500000
         ez.sellTime = 140
         ez.duck = true
         ez.unicorn = true

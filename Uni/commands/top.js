@@ -19,7 +19,7 @@ exports.run = async (bot,message,args) => {
                 sorted = notBots.sort((a, b) => ez.users[b.id].antenna - ez.users[a.id].antenna)
                 break;
             case "pack":
-                sorted = notBots.sort((a, b) => parseInt(ez.users[b.id].capacity) - parseInt(ez.users[a.id].capacity))
+                sorted = notBots.sort((a, b) => ez.users[b.id].capacity - ez.users[a.id].capacity)
                 break;
             case "pets":
                 sorted = notBots.sort((a, b) => countPets(b,ez) - countPets(a,ez))

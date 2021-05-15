@@ -53,7 +53,7 @@ bot.on('message', (message) =>
             tusks: 0,
             antenna: 1,
             pack: "Starter Pack",
-            capacity: "50",
+            capacity: 50,
             storage: 0,
             sellTime: 10,
             constructionOpen: false,

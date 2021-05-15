@@ -4,7 +4,7 @@ exports.run = async (bot,message,args) => {
     const fs = require("fs")
     let ez = db[message.guild.id].users[message.member.id]
     let sm = q[message.guild.id].users[message.member.id]
-    let cap = parseInt(ez.capacity,10)
+    let cap = ez.capacity
     let storage = ez.storage
     if(cap!=storage){
         message.channel.send(`<@${message.member.id}> You cannot sell your 👻 ghosts until your <:pack:825122944204013588> pack is full! **\`${coinToStr(storage)}/${coinToStr(cap)}\`**`)

@@ -43,7 +43,7 @@ exports.run = async (bot,message,args) => {
                         }else{message.react("❌")}
                         break;
                     case 5:
-                        if((parseInt(ez.capacity))>50){
+                        if(ez.capacity>50){
                             message.react("✅")
                             createDoneMessage("\`Now you got the coolest gear in town! ..Until you buy the next upgrade, then you're even cooler! Here's some Gems as a reward. Don't worry, you're almost done with all of my tasks!\`\n+**25** <:gems:825122942413045791>","https://imgur.com/2RJJI3F.png",25,fs,db,q,ez,message,sm)
                         }else{message.react("❌")}
@@ -172,7 +172,7 @@ exports.run = async (bot,message,args) => {
                         createQuestMessage("🗺️ Quest #1 - Ghost Hunter Gabe","📖 **__Task #4/8__** : Collection Day\n\n\`Your Pack probably fills up pretty fast, right? Time to get some upgrades! First you're going to need something to buy those upgrades with. Go collect 100 Ecto-Tokens and let me know when you're done.\`\n\nHint: Use the command %sell to sell your ghosts and receive Ecto-Tokens. (Hints will only appear in the first quest)","https://imgur.com/2RJJI3F.png","📜 __Goals:__",`• Obtain **100** <:ectotoken:825122939812315219> Ecto-Tokens: ${o1}/100`,message,sm,fs,q)
                         break;
                     case 5:
-                        if((parseInt(ez.capacity))>50){o1=1}
+                        if(ez.capacity>50){o1=1}
                         createQuestMessage("🗺️ Quest #1 - Ghost Hunter Gabe","📖 **__Task #5/8__** : The Coolest Gear In Town\n\n\`Now that you got some Ecto-Tokens, you can buy new Packs! This will help you collect more stuff easier and faster. Go upgrade your Pack once. Report back to me when you're done for a reward!\`\n\nHint: To upgrade your pack, use the command %pack up. (Hints will only appear in the first quest)","https://imgur.com/2RJJI3F.png","📜 __Goals:__",`• Upgrade your <:pack:825122944204013588> pack once: ${o1}/1`,message,sm,fs,q)
                         break;
                     case 6:
