@@ -66,7 +66,7 @@ exports.run = async (bot,message,args) => {
                                         if(ez.gems<15000)
                                         {
                                             message.react("❌")
-                                            message.channel.send(`<@${message.member.id}> You don't have enough <:gems:825122942413045791> Gems to purchase this <:hoverboard:842713851585495070> Hoverboard!\nYou need \`${15000 - ez.gems}\` more <:gems:825122942413045791> Gems!`)
+                                            message.channel.send(`<@${message.member.id}> You don't have enough <:gems:825122942413045791> Gems to purchase this <:hoverboard:842713851585495070> Hoverboard!\nYou need **\`${15000 - ez.gems}\`** more <:gems:825122942413045791> Gems!`)
                                         }
                                         else
                                         {
@@ -97,7 +97,7 @@ exports.run = async (bot,message,args) => {
                                         if(ez.gems<75000)
                                         {
                                             message.react("❌")
-                                            message.channel.send(`<@${message.member.id}> You don't have enough <:gems:825122942413045791> Gems to purchase this <:hoverboard:842713851585495070> Hoverboard!\nYou need \`${75000 - ez.gems}\` more <:gems:825122942413045791> Gems!`)
+                                            message.channel.send(`<@${message.member.id}> You don't have enough <:gems:825122942413045791> Gems to purchase this <:hoverboard:842713851585495070> Hoverboard!\nYou need **\`${75000 - ez.gems}\`** more <:gems:825122942413045791> Gems!`)
                                         }
                                         else
                                         {
@@ -126,7 +126,7 @@ exports.run = async (bot,message,args) => {
                                     if(ez.gems<150000)
                                     {
                                         message.react("❌")
-                                        message.channel.send(`<@${message.member.id}> You don't have enough <:gems:825122942413045791> Gems to purchase this <:hoverboard:842713851585495070> Hoverboard!\nYou need \`${150000 - ez.gems}\` more <:gems:825122942413045791> Gems!`)
+                                        message.channel.send(`<@${message.member.id}> You don't have enough <:gems:825122942413045791> Gems to purchase this <:hoverboard:842713851585495070> Hoverboard!\nYou need **\`${150000 - ez.gems}\`** more <:gems:825122942413045791> Gems!`)
                                     }
                                     else
                                     {
@@ -150,7 +150,7 @@ exports.run = async (bot,message,args) => {
                                     if(ez.gems<250000)
                                     {
                                         message.react("❌")
-                                        message.channel.send(`<@${message.member.id}> You don't have enough <:gems:825122942413045791> Gems to purchase this <:hoverboard:842713851585495070> Hoverboard!\nYou need \`${250000 - ez.gems}\` more <:gems:825122942413045791> Gems!`)
+                                        message.channel.send(`<@${message.member.id}> You don't have enough <:gems:825122942413045791> Gems to purchase this <:hoverboard:842713851585495070> Hoverboard!\nYou need **\`${250000 - ez.gems}\`** more <:gems:825122942413045791> Gems!`)
                                     }
                                     else
                                     {
@@ -176,7 +176,7 @@ exports.run = async (bot,message,args) => {
                                         if(ez.gems<400000)
                                         {
                                             message.react("❌")
-                                            message.channel.send(`<@${message.member.id}> You don't have enough <:gems:825122942413045791> Gems to purchase this <:hoverboard:842713851585495070> Hoverboard!\nYou need \`${400000 - ez.gems}\` more <:gems:825122942413045791> Gems!`)
+                                            message.channel.send(`<@${message.member.id}> You don't have enough <:gems:825122942413045791> Gems to purchase this <:hoverboard:842713851585495070> Hoverboard!\nYou need **\`${400000 - ez.gems}\`** more <:gems:825122942413045791> Gems!`)
                                         }
                                         else
                                         {
@@ -219,14 +219,14 @@ exports.run = async (bot,message,args) => {
                         switch(args[1])
                         {
                             case "basic":
-                                equipHoverboard(message,args[1],fs,q,"Basic","<:hoverboard:842713851585495070>")
+                                equipHoverboard(message,args[1],fs,q,"Basic","<:hoverboard:842713851585495070>",sm)
                                 break;
                             case "sky":
                                 if((args.length>2)&&(args[2]=="surfer"))
                                 {
                                     if(sm.sky)
                                     {
-                                        equipHoverboard(message,args[1],fs,q,"Sky Surfer","<:skysurfer:842713851522056204>")
+                                        equipHoverboard(message,args[1],fs,q,"Sky Surfer","<:skysurfer:842713851522056204>",sm)
                                     }
                                     else
                                     {
@@ -243,7 +243,7 @@ exports.run = async (bot,message,args) => {
                                 {
                                     if(sm.feather)
                                     {
-                                        equipHoverboard(message,args[1],fs,q,"Feather Shock","<:feathershock:842713851044823071>")
+                                        equipHoverboard(message,args[1],fs,q,"Feather Shock","<:feathershock:842713851044823071>",sm)
                                     }
                                     else
                                     {
@@ -258,7 +258,7 @@ exports.run = async (bot,message,args) => {
                             case "oblivion":
                                 if(sm.oblivion)
                                 {
-                                    equipHoverboard(message,args[1],fs,q,"Oblivion","<:oblivion:842713851450753024>")
+                                    equipHoverboard(message,args[1],fs,q,"Oblivion","<:oblivion:842713851450753024>",sm)
                                 }
                                 else
                                 {
@@ -268,7 +268,7 @@ exports.run = async (bot,message,args) => {
                             case "varus":
                                 if(sm.feather)
                                 {
-                                    equipHoverboard(message,args[1],fs,q,"VARUS","<:varus:842713851481030666>")
+                                    equipHoverboard(message,args[1],fs,q,"VARUS","<:varus:842713851481030666>",sm)
                                 }
                                 else
                                 {
@@ -280,7 +280,7 @@ exports.run = async (bot,message,args) => {
                                 {
                                     if(sm.feather)
                                     {
-                                        equipHoverboard(message,args[1],fs,q,"Chroma Float","<:chromafloat:842713850897236029>")
+                                        equipHoverboard(message,args[1],fs,q,"Chroma Float","<:chromafloat:842713850897236029>",sm)
                                     }
                                     else
                                     {
@@ -331,7 +331,7 @@ function dontOwnThisHoverboard(message)
     message.channel.send(`<@${message.member.id}> You can't equip a <:hoverboard:842713851585495070> Hoverboard you don't own!`)
 }
 
-function equipHoverboard(message,str,fs,q,hb,emoji)
+function equipHoverboard(message,str,fs,q,hb,emoji,sm)
 {
     message.react("✅")
     sm.equipped = str
