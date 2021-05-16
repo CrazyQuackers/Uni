@@ -142,7 +142,49 @@ exports.run = async (bot,message,args) => {
                             message.react("✅")
                             sm.hbUnlocked = true
                             sm.equipped = "basic"
-                            createDoneMessage("\`Alright, alright... I'll say it. You're pretty tough. You deserve the Hoverboard... it's yours. You can get a bunch of different Skins for it. Just use the %hoverboard command. That's it for me. You can find Ghost Hunter Liz just around the corner. I believe she has a powerful pet she can give you...\`\n+**500** <:gems:825122942413045791>","https://imgur.com/IGLh00t.png",500,fs,db,q,ez,message,sm)
+                            createDoneMessage("\`Alright, alright... I'll say it. You're pretty tough. You deserve the Hoverboard... it's yours. You can get a bunch of different Skins for it. Just use the %hoverboard command. That's it for me. You can find Ghost Hunter Liz just around the corner. I believe she has a powerful pet she can give you...\`\n+**Hoverboard** <:hoverboard:842713851585495070>\n+**500** <:gems:825122942413045791>","https://imgur.com/IGLh00t.png",500,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                }
+                break;
+            case 3:
+                switch(sm.task)
+                {
+                    case 1:
+                        if((o1>=5)&&(o2>=3)){
+                            message.react("✅")
+                            createDoneMessage("\`Excellent! Only five more tasks and you'll receive the very powerful pet! Here's some gems for your efforts.\`\n+**20** <:gems:825122942413045791>","https://imgur.com/MGYzhWZ.png",20,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 2:
+                        if((o1>=2)&&(ez.newspapers>=3)){
+                            message.react("✅")
+                            createDoneMessage("\`Whoa, thanks! I think the cats will be much happier there. Don't tell anyone... but I actually really love cats! We were just sending them home. Take these gems as a token of thanks.\`\n+**30** <:gems:825122942413045791>","https://imgur.com/MGYzhWZ.png",30,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 3:
+                        if((o1>=5)&&(o2>=5)){
+                            message.react("✅")
+                            createDoneMessage("\`Great job! Now the streets are cleaner and the forest is more peaceful! Here, take these gems as a reward!\`\n+**40** <:gems:825122942413045791>","https://imgur.com/MGYzhWZ.png",40,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 4:
+                        if((o1>=3)&&(ez.tires>=5)){
+                            message.react("✅")
+                            createDoneMessage("\`Niceee... These tires are perfect for my car! Oh.. yeah, also the junkyard is a lot cleaner... I guess that's cool. Take these gems! You've earned them!\`\n+**50** <:gems:825122942413045791>","https://imgur.com/MGYzhWZ.png",50,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 5:
+                        if((o1>=5)&&(o2>=3)){
+                            message.react("✅")
+                            createDoneMessage("\`Thanks so much for doing that! I just really needed these ghosts for my collection... I will bathe them first for sure... Oh right! You're reward, here take these gems.\`\n+**60** <:gems:825122942413045791>","https://imgur.com/MGYzhWZ.png",60,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 6:
+                        if((ez.tires>=7)&&(ez.socks>=7)&&(ez.hammers>=7)){
+                            message.react("✅")
+                            sm.hypno = true
+                            createDoneMessage("\`Congradulations!!! I hope you enjoy your new Super Powerful Pet! It will defenitely help you in the future when you'll start defeating bosses! I think you're next Quest is in The Wild West. You should meet Ghost Hunter Jesse there as soon as possible! I hear he gives ghost hunters a really cool Hoverboard for completing all his tasks...\`\n+**Hypnotize** <:hypnotize:843489441724628992>\n+**70** <:gems:825122942413045791>","https://imgur.com/MGYzhWZ.png",70,fs,db,q,ez,message,sm)
                         }else{message.react("❌")}
                         break;
                 }
@@ -285,6 +327,47 @@ exports.run = async (bot,message,args) => {
                         if(o3>10){o3=10}
                         if(o4>15){o4=15}
                         createQuestMessage("🗺️ Quest #2 - Ghost Hunter Adam","📖 **__Task #12/12__** : Hail the Hoverboard\n\n\`Now I need your help to finish building your Hoverboard... Don't look so surprised. Collect items from ghosts in each biome here and the Hoverboard is all yours!\`","https://imgur.com/IGLh00t.png","📜 __Goals:__",`• Obtain **10** 📰 Newspapers from The 🏙️ City: ${o1}/10\n• Obtain **10** <:tire:825122944128385054> Tires from The 💡 Junkyard: ${o2}/10\n• Obtain **10** 🧦 Socks from The <:manhole:825122943133941821> Sewers: ${o3}/10\n• Obtain **10** Hammers from The 🏗️ Construction Site: ${o4}/15`,message,sm,fs,q)
+                        break;
+                }
+                break;
+            case 3:
+                switch(sm.task)
+                {
+                    case 1:
+                        if(o1>5){o1=5}
+                        if(o2>3){o2=3}
+                        createQuestMessage("🗺️ Quest #3 - Ghost Hunter Liz","📖 **__Task #1/6__** : I'm a Hoot\n\n\`Hey! Hey you... Come here! ....The name is Ghost Hunter Liz. I happen to have a connection with some very important people, and they told me to find you. So, trust me or don't. It's up to you. Either way, I've been entrusted with a very powerful pet, and I like to help new Ghost Hunters. I need you to help me, and in return I'll give you the very powerful pet! So about that pet... First, head back to the Forest and vacuum 3 Owl Ghosts, and 5 Fairy Ghosts. Return to me for a reward!\`","https://imgur.com/MGYzhWZ.png","📜 __Goals:__",`• Vacuum **5** 🧚 Fairy Ghosts from The 🏕️ Forest: ${o1}/5\n• Vacuum **3** 🦉 Owl Ghosts from The 🏕️ Forest: ${o2}/3`,message,sm,fs,q)
+                        break;
+                    case 2:
+                        if(o1>2){o1=2}
+                        o2 = ez.newspapers
+                        if(o2>3){o2=3}
+                        createQuestMessage("🗺️ Quest #3 - Ghost Hunter Liz","📖 **__Task #2/6__** : No Cattin' Around\n\n\`Next we are going to send some of these adorable cats to the Ghost World with your help! I'll also need something to read. I need you to Vacuum 2 Cat Ghosts and collect 3 Newspapers from The City. Come back for a reward.\`","https://imgur.com/MGYzhWZ.png","📜 __Goals:__",`• Vacuum **2** 🐈‍⬛ Street Cat Ghosts from The 🏙️ City: ${o1}/2\n• Obtain **3** 📰 Newspapers from The 🏙️ City: ${o2}/3`,message,sm,fs,q)
+                        break;
+                    case 3:
+                        if(o1>5){o1=5}
+                        if(o2>5){o2=5}
+                        createQuestMessage("🗺️ Quest #3 - Ghost Hunter Liz","📖 **__Task #3/6__** : Serious Business\n\n\`Mission #3! I need you to vacuum some ghosts in the Forest and the City. Once you're done come back to me for a reward.\`","https://imgur.com/MGYzhWZ.png","📜 __Goals:__",`• Vacuum **5** 🧚 Fairy Ghosts from The 🏕️ Forest: ${o1}/5\n• Vacuum **5** 🤵‍♂️ Businessmen Ghosts from The 🏙️ City: ${o2}/5`,message,sm,fs,q)
+                        break;
+                    case 4:
+                        if(o1>3){o1=3}
+                        o2 = ez.tires
+                        if(o2>5){o2=5}
+                        createQuestMessage("🗺️ Quest #3 - Ghost Hunter Liz","📖 **__Task #4/6__** : Overflowing Trash\n\n\`Next up, I need you to head into the junkyard to vacuum some more ghosts there. There's a lot of garbage bins there that are overflowing with trash! Plus, my car could really use some new tires. Vacuum 3 Garbage Bin Ghosts and collect 5 Tires from The Junkyard.\`","https://imgur.com/MGYzhWZ.png","📜 __Goals:__",`• Vacuum **3** 🗑️ Garbage Bin Ghosts from The 💡 Junkyard: ${o1}/3\n• Obtain **5** <:tire:825122944128385054> Tires from The 💡 Junkyard: ${o2}/5`,message,sm,fs,q)
+                        break;
+                    case 5:
+                        if(o1>5){o1=5}
+                        if(o2>3){o2=3}
+                        createQuestMessage("🗺️ Quest #3 - Ghost Hunter Liz","📖 **__Task #5/6__** : Sewer Diving\n\n\`You're so close to the powerful pet! Only two more tasks to go!!! So, I know you're going to hate me, but I need you to go to the sewers... It's for a really short period of time! All I need you to do is vacuum some ghosts there...\`","https://imgur.com/MGYzhWZ.png","📜 __Goals:__",`• Vacuum **5** 🛍️ Paper Bag Ghosts from The <:manhole:825122943133941821> Sewers: ${o1}/5\n• Vacuum **3** 🐀 Rat Ghosts from The <:manhole:825122943133941821> Sewers: ${o2}/3`,message,sm,fs,q)
+                        break;
+                    case 6:
+                        o1 = ez.tires
+                        o2 = ez.socks
+                        o3 = ez.hammers
+                        if(o1>7){o1=7}
+                        if(o2>7){o2=7}
+                        if(o3>7){o3=7}
+                        createQuestMessage("🗺️ Quest #3 - Ghost Hunter Liz","📖 **__Task #6/6__** : Mission for Power\n\n\`Finally, your last mission! I need you to collect some items for me from the junkyard, the sewers, and the construction site. Once you're done with this task, the powerful pet is all yours!!!\`","https://imgur.com/MGYzhWZ.png","📜 __Goals:__",`• Obtain **7** <:tire:825122944128385054> Tires from The 💡 Junkyard: ${o1}/7\n• Obtain **7** 🧦 Socks from The <:manhole:825122943133941821> Sewers: ${o2}/7\n• Obtain **7** 🔨 Hammers from The 🏗️ Construction Site: ${o3}/7`,message,sm,fs,q)
                         break;
                 }
                 break;

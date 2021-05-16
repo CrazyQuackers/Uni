@@ -14,10 +14,12 @@ exports.run = async (bot,message,args) => {
         let petArr1 = [ez.pug,ez.fox,ez.cow,ez.pig,ez.mouse,ez.deer,ez.wolf,ez.duck,ez.unicorn,ez.bat,ez.jack];
         let petArr2 = [ez.bear,ez.cat,ez.cyborg,ez.horse,ez.fish,ez.chicken,ez.giraffe,ez.bob,ez.butterfly,ez.peacock,ez.tiger];
         let petArr3 = [ez.flamingo,ez.koala,ez.bot,ez.dino,ez.clownfish,ez.panda,ez.bee,ez.shark,ez.steve,ez.rabbit,ez.rex];
-        let ex1 = getExchangeRate(petArr1)
-        let ex2 = getExchangeRate(petArr2)
-        let ex3 = getExchangeRate(petArr3)
-        let exchange = ex1 + ex2 + ex3 + 1
+        let petArr4 = [sm.hypno]
+        let ex1 = getExchangeRate(petArr1,true)
+        let ex2 = getExchangeRate(petArr2,true)
+        let ex3 = getExchangeRate(petArr3,true)
+        let ex4 = getExchangeRate(petArr4,false)
+        let exchange = ex1 + ex2 + ex3 + ex4 + 1
         ez.storage = 0
         let tokens = exchange * storage
         ez.ectoTokens = ez.ectoTokens + tokens
@@ -42,16 +44,10 @@ function checkQuests(sm)
     if((sm.quest==1)&&(sm.task==2)&&(sm.qStarted)){sm.obj1=sm.obj1+1}
 }
 
-function getExchangeRate(arr)
+function getExchangeRate(arr,n)
 {
     let c = 0
-    for(let i=0 ; i<arr.length ; i++)
-    {
-        if(arr[i])
-        {
-            if(i<4){c = c + 0.1}else{if(i<7){c = c + 0.2}else{if(i<9){c = c + 0.3}else{if(i<10){c = c + 0.4}else{c = c + 0.5}}}}
-        }
-    }
+    for(let i=0 ; i<arr.length ; i++){if(arr[i]){if(n){if(i<4){c = c + 0.1}else{if(i<7){c = c + 0.2}else{if(i<9){c = c + 0.3}else{if(i<10){c = c + 0.4}else{c = c + 0.5}}}}}else{c = c + 0.3}}}
     return c;
 }
 

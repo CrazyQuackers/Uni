@@ -101,15 +101,22 @@ function checkQuests(args,num,q,sm,g2,fs,g1,f)
     if((args[0]=="forest")&&(sm.quest==1)&&(sm.task==1)&&(sm.qStarted)){sm.obj1=sm.obj1+num}
     if((args[0]=="forest")&&(sm.quest==1)&&(sm.task==3)&&(sm.qStarted)){sm.obj1=sm.obj1+g2}
     if((args[0]=="city")&&(sm.quest==2)&&(sm.task==1)&&(sm.qStarted)){sm.obj1=sm.obj1+g1
-    sm.obj2=sm.obj2+g2}
+        sm.obj2=sm.obj2+g2}
     if((sm.quest==2)&&(sm.task==2)&&(sm.qStarted)){sm.obj1=sm.obj1+f}
     if((args[0]=="junkyard")&&(sm.quest==2)&&(sm.task==5)&&(sm.qStarted)){sm.obj1=sm.obj1+g1
-    sm.obj2=sm.obj2+g2}
+        sm.obj2=sm.obj2+g2}
     if((args[0]=="sewers")&&(sm.quest==2)&&(sm.task==8)&&(sm.qStarted)){sm.obj1=sm.obj1+g1
-    sm.obj2=sm.obj2+g2}
+        sm.obj2=sm.obj2+g2}
     if((args[0]=="construction")&&(sm.quest==2)&&(sm.task==10)&&(sm.qStarted)){sm.obj1=sm.obj1+g1
-    sm.obj2=sm.obj2+g2}
+        sm.obj2=sm.obj2+g2}
     if((sm.quest==2)&&(sm.task==11)&&(sm.qStarted)){if(args[0]=="city"){sm.obj1=sm.obj1+g2}else{if(args[0]=="junkyard"){sm.obj2=sm.obj2+g2}else{if(args[0]=="sewers"){sm.obj3=sm.obj3+g2}else{if(args[0]=="construction"){sm.obj4=sm.obj4+g2}}}}}
+    if((args[0]=="forest")&&(sm.quest==3)&&(sm.task==1)&&(sm.qStarted)){sm.obj1=sm.obj1+g1
+        sm.obj2=sm.obj2+g2}
+    if((args[0]=="city")&&(sm.quest==3)&&(sm.task==2)&&(sm.qStarted)){sm.obj1=sm.obj1+g2}
+    if((sm.quest==3)&&(sm.task==3)&&(sm.qStarted)){if(args[0]=="forest"){sm.obj1=sm.obj1+g1}if(args[0]=="city"){sm.obj2=sm.obj2+g1}}
+    if((args[0]=="junkyard")&&(sm.quest==3)&&(sm.task==4)&&(sm.qStarted)){sm.obj1=sm.obj1+g2}
+    if((args[0]=="sewers")&&(sm.quest==3)&&(sm.task==5)&&(sm.qStarted)){sm.obj1=sm.obj1+g1
+        sm.obj2=sm.obj2+g2}
     fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
 }
 
