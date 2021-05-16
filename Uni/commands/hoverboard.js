@@ -11,10 +11,32 @@ exports.run = async (bot,message,args) => {
         switch(args[0])
         {
             case "details":
+                let u = ""
+                switch(sm.equipped){
+                    case "basic":
+                        u = "https://imgur.com/2uLSAQ4.png"
+                        break;
+                    case "sky":
+                        u = "https://imgur.com/85XE61R.png"
+                        break;
+                    case "feather":
+                        u = "https://imgur.com/kyuzhW6.png"
+                        break;
+                    case "oblivion":
+                        u = "https://imgur.com/Nsp9ixl.png"
+                        break;
+                    case "varus":
+                        u = "https://imgur.com/6Y4PubN.png"
+                        break;
+                    case "chroma":
+                        u = "https://imgur.com/PC3qyZb.png"
+                        break;
+                    default:
+                        u = "https://imgur.com/RV975Lr.png"}
                 const embed = new Discord.MessageEmbed()
                     .setColor(15787660)
                     .setTitle(`Hoverboard Details`)
-                    .setThumbnail('https://imgur.com/QCLuNbe.png')
+                    .setThumbnail(u)
                     .addFields(
                         {name: "Hoverboard", value: `<:skysurfer:842713851522056204> Sky Surfer\n<:feathershock:842713851044823071> Feather Shock\n<:oblivion:842713851450753024> Oblivion\n<:varus:842713851481030666> VARUS\n<:chromafloat:842713850897236029> Chroma Float`, inline: true},
                         {name: "Cost", value: `<:gems:825122942413045791> 15,000\n<:gems:825122942413045791> 75,000\n<:gems:825122942413045791> 150,000\n<:gems:825122942413045791> 250,000\n<:gems:825122942413045791> 400,000`, inline: true},
