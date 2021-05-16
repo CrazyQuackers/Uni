@@ -418,7 +418,7 @@ function createDoneMessage(d,u,g,fs,db,q,ez,message,sm)
         },
     };
     message.channel.send({ embed: doneEmbed });
-    if(((sm.quest==1)&&(sm.task==8))||((sm.quest==2)&&(sm.task==12))){
+    if(((sm.quest==1)&&(sm.task==8))||((sm.quest==2)&&(sm.task==12))||((sm.quest==3)&&(sm.task==6))){
         sm.quest = sm.quest + 1
         sm.task = 1
     }else{sm.task = sm.task + 1}

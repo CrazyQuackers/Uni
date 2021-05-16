@@ -1,7 +1,9 @@
 exports.run = async (bot,message,args) => {
     const db = require('../../data/db.json')
+    const q = require('../../data/q.json')
     const fs = require("fs")
     let ez = db[message.guild.id].users[message.member.id]
+    let sm = q[message.guild.id].users[message.member.id]
     let arr = message.content.split(' ');
     if(((arr.length>1)&&(arr[1]=="fight"))||(arr[0]=="%bf")){
         if(Math.floor(new Date().getTime() - ez.lastBoss) / (1000 * 60 * 60 * 2) < 1)
@@ -54,8 +56,8 @@ exports.run = async (bot,message,args) => {
                 boss = "<:magmoraug:825122942768644136> Magmoraug"
                 break;
         }
-        let petArr = [ez.pug,ez.fox,ez.cow,ez.pig,ez.mouse,ez.deer,ez.wolf,ez.duck,ez.unicorn,ez.bat,ez.jack,ez.bear,ez.cat,ez.cyborg,ez.horse,ez.fish,ez.chicken,ez.giraffe,ez.bob,ez.butterfly,ez.peacock,ez.tiger,ez.flamingo,ez.koala,ez.bot,ez.dino,ez.clownfish,ez.panda,ez.bee,ez.shark,ez.steve,ez.rabbit,ez.rex];
-        let strArr = ["pug","fox","cow","pig","mouse","deer","wolf","duck","unicorn","bat","jack","bear","cat","cyborg","horse","fish","chicken","giraffe","bob","butterfly","peacock","tiger","flamingo","koala","bot","dino","clownfish","panda","bee","shark","steve","rabbit","rex"];
+        let petArr = [ez.pug,ez.fox,ez.cow,ez.pig,ez.mouse,ez.deer,ez.wolf,ez.duck,ez.unicorn,ez.bat,ez.jack,ez.bear,ez.cat,ez.cyborg,ez.horse,ez.fish,ez.chicken,ez.giraffe,ez.bob,ez.butterfly,ez.peacock,ez.tiger,ez.flamingo,ez.koala,ez.bot,ez.dino,ez.clownfish,ez.panda,ez.bee,ez.shark,ez.steve,ez.rabbit,ez.rex,sm.hypno];
+        let strArr = ["pug","fox","cow","pig","mouse","deer","wolf","duck","unicorn","bat","jack","bear","cat","cyborg","horse","fish","chicken","giraffe","bob","butterfly","peacock","tiger","flamingo","koala","bot","dino","clownfish","panda","bee","shark","steve","rabbit","rex","hypno"];
         let i = 0
         let j = 0
         var mainArr = []
@@ -67,7 +69,6 @@ exports.run = async (bot,message,args) => {
             }
         }
         i = 0
-        let y = 0
         let g = 0
         message.channel.send(str).then((msg) => {
             setTimeout(function(){
@@ -81,7 +82,6 @@ exports.run = async (bot,message,args) => {
                                 setTimeout(function(){
                                     str = str+`\n\n👑 Winner : ${boss}\n💀 Defeated : <@${message.member.id}>`
                                     msg.edit(str)
-                                    y = 1
                                 }, 1000)
                             })
                         }
@@ -199,6 +199,8 @@ function fightMessage(str)
             return "\nYour <:magicrabbit:825122932484341760> **magic rabbit** does **7** ⚔️ attack!"
         case "rex":
             return "\nYour 🦖 **t-rex** does **10** ⚔️ attack!"
+        case "hypno":
+            return "\nYour <:hypnotize:843489441724628992> **hypnotize** does **5** ⚔️ attack!"
     }
 }
 
@@ -305,6 +307,9 @@ function isPet(i,type)
             break;
         case 32:
             if((type==0)||(type==2)||(type==4)){check = true}
+            break;
+        case 33:
+            check = true
     }
     return check;
 }
