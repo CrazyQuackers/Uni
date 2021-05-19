@@ -45,7 +45,6 @@ function fullCatchFunction(ez,fs,db,sm,message,args,q)
     let i3 = 0
     let f = 0
     let a = whichAntenna(args[0])
-    console.log(`Before anything - ${ez.storage}`)
     if(ez.antenna>=a){
         if(storage==capacity){message.channel.send(`<@${message.member.id}> Your <:pack:825122944204013588> pack is full!\nUse the **%sell** command to empty your <:pack:825122944204013588> pack before trying to catch another 👻 ghost!`)}else{
             if(Math.floor(new Date().getTime() - sm.lastSell) / (1000 * 60 * sm.sellWait) < 1){
@@ -69,21 +68,17 @@ function fullCatchFunction(ez,fs,db,sm,message,args,q)
                 let str = `\`${h}h${m}m\``
                 message.channel.send(`<@${message.member.id}> Your <:pack:825122944204013588> pack hasn't finished **recharging!**\nTime until you can catch 👻 ghosts: **${str}**`)
             }else{
-                console.log(`Before checking for a number - ${ez.storage}`)
                 if((args.length>1)&&(isNumeric(args[1]))&&(parseInt(args[1],10)!=1)){
                     let num = parseInt(args[1],10)
                     let ghost2 = secondGhost(args[0])
                     if(((num-1)*ghost2+storage)<capacity){
                         for(p=0 ; p<num ; p++){
-                            console.log(`Inside the loop #${p+1} - ${ez.storage}`)
-                            arr = mainCatch(ez,fs,db,args,storage,capacity)
+                            arr = mainCatch(ez,fs,db,args,ez.storage,capacity)
                             if((arr[0]=="a 🧚 **Fairy!**")||(arr[0]=="a 🤵‍♂️ **Businessman!**")||(arr[0]=="a 🧑‍🔧 **Mechanic!**")||(arr[0]=="a 🛍️ **Paper Bag!**")||(arr[0]=="a 👷‍♀️ **Worker!**")||(arr[0]=="a <:bandit:825122917930500147> **Bandit!**")||(arr[0]=="a 👨‍🔬 **Scientist!**")||(arr[0]=="a 🧑‍🏭 **Miner!**")||(arr[0]=="a <:pharaoh:825122944514523226> **Pharaoh!**")||(arr[0]=="a 🏴‍☠️ **Pirate!**Z9,500")||(arr[0]=="a 🤿 **Diver!**Z17,500")||(arr[0]=="an <:islander:825122941963993099> **Islander!**")||(arr[0]=="an <:explorer:825123592290172939> **Explorer!**")){g1++}else{g2++}
                             if(arr[2]=="<:gems:825122942413045791> gems"){i1+=arr[1]}else{if(arr[2]=="🔩 antenna parts"){i2+=arr[1]}else{i3+=arr[1]}}
                             f+=arr[3]
                         }
-                        console.log(`Outside of the loop - ${ez.storage}`)
                         let b = multipleCatchArr(args[0])
-                        console.log(`End - ${ez.storage}`)
                         message.channel.send(`<@${message.member.id}>\n\nYou caught **${coinToStr(g1)}** ${b[0]}\nYou caught **${coinToStr(g2)}** ${b[1]}\n\n__You also found:__\n\n+ **${coinToStr(i1)}** <:gems:825122942413045791> gems\n+ **${coinToStr(i2)}** 🔩 antenna parts\n+ **${coinToStr(i3)}** ${arr[4]}\n+ **${coinToStr(f)}** <:pack:825122944204013588> pack storage **\`${coinToStr(ez.storage)}/${coinToStr(ez.capacity)}\`**`)
                         checkQuests(args,num,q,sm,g2,fs,g1,f,i1)
                     }else{message.channel.send(`<@${message.member.id}> Your <:pack:825122944204013588> pack may not have enough space to catch **${coinToStr(num)}** 👻 ghosts right now.`)}
@@ -144,9 +139,12 @@ function checkQuests(args,num,q,sm,g2,fs,g1,f,gems)
 
 function mainCatch(ez,fs,db,args,storage,capacity)
 {
+    console.log(storage)
     let object = (Math.floor(Math.random()*100))+1;
     let ghost = whichGhost(object,args[0])
+    console.log(ghost)
     let ghostArr = ghost.split('Z');
+    console.log(`${ghostArr[0]} , ${ghostArr[1]} , ${ghostArr[2]}`)
     ghost = ghostArr[0]
     let fill = ghostArr[1]
     fill = parseInt(fill,10)
@@ -165,6 +163,7 @@ function mainCatch(ez,fs,db,args,storage,capacity)
         amount = howMuchItems(args[0],item,ez)
     }}
     storage = storage + fill
+    console.log(storage)
     if(storage>capacity){ez.storage = capacity}else{ez.storage = storage}
     fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
     return [ghost,amount,item,fill,ghostArr[2]]
