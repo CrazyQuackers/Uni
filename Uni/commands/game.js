@@ -17,7 +17,7 @@ exports.run = async (bot,message,args) => {
                 name: "About Uni",
                 icon_url: "https://imgur.com/ASUc77V.png",
             },
-            description: "Uni was created by @Crazy Quackers\n\nUni is heavily built off of the game 'Ghost Simulator' in Roblox created by developers: @goro7, @Coven and @MakkieMon\n\nUni is in no way trying to steal Ghost Simulator's ideas or make it look like Ghost Simulator stole it's ideas\n\nUni is a fan-made bot trying to support and promote GS across Discord\n\nUni only has 1/4 of GS in it in intention to keep the lore of GS hidden\n\nIf you've enjoyed playing Uni in Discord, check out the real game by clicking the text 'Ghost Simulator' at the top of this message",
+            description: "Uni was created by @Crazy Quackers\n\nUni is heavily built off of the game 'Ghost Simulator' in Roblox created by developers: @goro7, @Coven and @MakkieMon\n\nUni is in no way trying to steal Ghost Simulator's ideas or make it look like Ghost Simulator stole it's ideas\n\nUni is a fan-made bot trying to support and promote GS across Discord\n\nUni contains only 1/4 of GS in order to keep the original experience of the game to GS\n\nIf you've enjoyed playing Uni in Discord, check out the real game by clicking the text 'Ghost Simulator' at the top of this message",
             thumbnail: {
                 url: "https://imgur.com/OH4qidw.png",
             },
