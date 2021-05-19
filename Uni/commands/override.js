@@ -9,7 +9,7 @@ exports.run = async (bot,message,args) => {
         message.react("✅")
         ez.gems = 500
         ez.ectoTokens = 500
-        ez.antenna = 4
+        ez.antenna = 6
         ez.pack = "Distorted Pack"
         ez.capacity = 3500000
         ez.storage = 0

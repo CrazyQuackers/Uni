@@ -4,7 +4,7 @@ exports.run = async (bot,message,args) => {
     if(sm.noDM)
     {
         message.react("❌")
-        message.channel.send(`${message.member.id}, Message not send because DM's are turned off.\nTurn them on with the command **%dm enable**`)
+        message.channel.send(`<@${message.member.id}> Message not send because DM's are turned off.\nTurn them on with the command **%dm enable**.`)
     }
     else
     {
@@ -17,16 +17,15 @@ exports.run = async (bot,message,args) => {
                 name: "About Uni",
                 icon_url: "https://imgur.com/ASUc77V.png",
             },
-            description: "Uni was created by bot developer 'Crazy Quackers'\n\nUni is heavily built off of the game 'Ghost Simulator' in Roblox created by developers: goro7, CovenK, MakkieMon, Thexz and Didi1147\n\nUni is in no way trying to steal Ghost Simulator's ideas or make it look like Ghost Simulator stole ideas from Uni\n\nUni is just a fan-made bot trying to support and promote GS across Discord\n\nUni only has 1/4 of GS in intention to keep the lore of GS hidden\n\nIf you've enjoyed playing Uni in Discord, check out the real game by pressing the blue text above 'Ghost Simulator'",
+            description: "Uni was created by Crazy Quackers\n\nUni is heavily built off of the game 'Ghost Simulator' in Roblox created by developers: goro7, CovenK, MakkieMon, Thexz and Didi1147\n\nUni is in no way trying to steal Ghost Simulator's ideas or make it look like Ghost Simulator stole it's ideas\n\nUni is a fan-made bot trying to support and promote GS across Discord\n\nUni only has 1/4 of GS in it in intention to keep the lore of GS hidden\n\nIf you've enjoyed playing Uni in Discord, check out the real game by clicking the text 'Ghost Simulator' at the top of this message",
             thumbnail: {
                 url: "https://imgur.com/OH4qidw.png",
             },
             image: {
                 url: "https://imgur.com/K9yduwb.png",
             },
-            timestamp: new Date(),
             footer: {
-                text: `**${message.author.username}**, play Ghost Simulator today!`,
+                text: "Play Ghost Simulator Today!",
                 icon_url: message.author.avatarURL(),
             },
         };

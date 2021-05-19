@@ -507,7 +507,7 @@ exports.run = async (bot,message,args) => {
                 switch(sm.task)
                 {
                     case 1:
-                        if(ez.antenna<5){message.channel.send(`${message.member.id} Your 📡 antenna needs to be level **5+** in order to start Quest #4!\nUse the command **%antenna** to check your 📡 antenna.`)
+                        if(ez.antenna<5){message.channel.send(`<@${message.member.id}> Your 📡 antenna needs to be level **5+** in order to start Quest #4!\nUse the command **%antenna** to check your 📡 antenna.`)
                             return;}
                         if(o1>15){o1=15}
                         if(o2>4){o2=4}

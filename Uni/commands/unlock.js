@@ -25,7 +25,7 @@ function mainUnlockFunction(str,ez,message,img,fs,db,b1,b2,b3,b4,b5,b6,b7)
         message.react("✅")
         const embed = {
             color: 16737095,
-            title: `You've unlocked ${str}`,
+            description: `You've unlocked **${str}**`,
             author: {
                 name: message.author.username,
                 icon_url: message.author.avatarURL(),
@@ -83,7 +83,7 @@ function mainUnlockFunction(str,ez,message,img,fs,db,b1,b2,b3,b4,b5,b6,b7)
                 u = b7}
         const embed2 = {
             color: 16737095,
-            title: `You don't have enough items to unlock ${str}`,
+            description: `You don't have enough items to unlock **${str}**`,
             author: {
                 name: message.author.username,
                 icon_url: message.author.avatarURL(),
