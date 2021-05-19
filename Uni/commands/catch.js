@@ -1,5 +1,3 @@
-const { parse } = require('path')
-
 exports.run = async (bot,message,args) => {
     const db = require('../../data/db.json')
     const q = require('../../data/q.json')
@@ -83,40 +81,60 @@ function fullCatchFunction(ez,fs,db,sm,message,args,q)
                         }
                         let b = multipleCatchArr(args[0])
                         message.channel.send(`<@${message.member.id}>\n\nYou caught **${coinToStr(g1)}** ${b[0]}\nYou caught **${coinToStr(g2)}** ${b[1]}\n\n__You also found:__\n\n+ **${coinToStr(i1)}** <:gems:825122942413045791> gems\n+ **${coinToStr(i2)}** 🔩 antenna parts\n+ **${coinToStr(i3)}** ${arr[4]}\n+ **${coinToStr(f)}** <:pack:825122944204013588> pack storage **\`${coinToStr(ez.storage)}/${coinToStr(ez.capacity)}\`**`)
-                        checkQuests(args,num,q,sm,g2,fs,g1,f)
+                        checkQuests(args,num,q,sm,g2,fs,g1,f,i1)
                     }else{message.channel.send(`<@${message.member.id}> Your <:pack:825122944204013588> pack may not have enough space to catch **${coinToStr(num)}** 👻 ghosts right now.`)}
                 }else{
                     let arr = mainCatch(ez,fs,db,args,storage,capacity)
                     message.channel.send(`<@${message.member.id}> You caught ${arr[0]}\n\n__You also found:__\n\n+ **${coinToStr(arr[1])}** ${arr[2]}\n+ **${coinToStr(arr[3])}** <:pack:825122944204013588> pack storage **\`${coinToStr(ez.storage)}/${coinToStr(ez.capacity)}\`**`)
                     if((arr[0]=="a 🧚 **Fairy!**")||(arr[0]=="a 🤵‍♂️ **Businessman!**")||(arr[0]=="a 🧑‍🔧 **Mechanic!**")||(arr[0]=="a 🛍️ **Paper Bag!**")||(arr[0]=="a 👷‍♀️ **Worker!**")||(arr[0]=="a <:bandit:825122917930500147> **Bandit!**")||(arr[0]=="a 👨‍🔬 **Scientist!**")||(arr[0]=="a 🧑‍🏭 **Miner!**")||(arr[0]=="a <:pharaoh:825122944514523226> **Pharaoh!**")||(arr[0]=="a 🏴‍☠️ **Pirate!**Z9,500")||(arr[0]=="a 🤿 **Diver!**Z17,500")||(arr[0]=="an <:islander:825122941963993099> **Islander!**")||(arr[0]=="an <:explorer:825123592290172939> **Explorer!**")){g1++}else{g2++}
-                    checkQuests(args,1,q,sm,g2,fs,g1,arr[3])
+                    let g = 0
+                    if(arr[2]=="<:gems:825122942413045791> gems"){g=arr[1]}
+                    checkQuests(args,1,q,sm,g2,fs,g1,arr[3],g)
                 }
             }
         }
     }else{message.channel.send(`<@${message.member.id}> You cannot catch 👻 ghosts in the ${whichBiome(args[0])} until your 📡 antenna level is **\`${ez.antenna}/${a}\`**`)}
 }
 
-function checkQuests(args,num,q,sm,g2,fs,g1,f)
+function checkQuests(args,num,q,sm,g2,fs,g1,f,gems)
 {
-    if((args[0]=="forest")&&(sm.quest==1)&&(sm.task==1)&&(sm.qStarted)){sm.obj1=sm.obj1+num}
-    if((args[0]=="forest")&&(sm.quest==1)&&(sm.task==3)&&(sm.qStarted)){sm.obj1=sm.obj1+g2}
-    if((args[0]=="city")&&(sm.quest==2)&&(sm.task==1)&&(sm.qStarted)){sm.obj1=sm.obj1+g1
-        sm.obj2=sm.obj2+g2}
-    if((sm.quest==2)&&(sm.task==2)&&(sm.qStarted)){sm.obj1=sm.obj1+f}
-    if((args[0]=="junkyard")&&(sm.quest==2)&&(sm.task==5)&&(sm.qStarted)){sm.obj1=sm.obj1+g1
-        sm.obj2=sm.obj2+g2}
-    if((args[0]=="sewers")&&(sm.quest==2)&&(sm.task==8)&&(sm.qStarted)){sm.obj1=sm.obj1+g1
-        sm.obj2=sm.obj2+g2}
-    if((args[0]=="construction")&&(sm.quest==2)&&(sm.task==10)&&(sm.qStarted)){sm.obj1=sm.obj1+g1
-        sm.obj2=sm.obj2+g2}
-    if((sm.quest==2)&&(sm.task==11)&&(sm.qStarted)){if(args[0]=="city"){sm.obj1=sm.obj1+g2}else{if(args[0]=="junkyard"){sm.obj2=sm.obj2+g2}else{if(args[0]=="sewers"){sm.obj3=sm.obj3+g2}else{if(args[0]=="construction"){sm.obj4=sm.obj4+g2}}}}}
-    if((args[0]=="forest")&&(sm.quest==3)&&(sm.task==1)&&(sm.qStarted)){sm.obj1=sm.obj1+g1
-        sm.obj2=sm.obj2+g2}
-    if((args[0]=="city")&&(sm.quest==3)&&(sm.task==2)&&(sm.qStarted)){sm.obj1=sm.obj1+g2}
-    if((sm.quest==3)&&(sm.task==3)&&(sm.qStarted)){if(args[0]=="forest"){sm.obj1=sm.obj1+g1}if(args[0]=="city"){sm.obj2=sm.obj2+g1}}
-    if((args[0]=="junkyard")&&(sm.quest==3)&&(sm.task==4)&&(sm.qStarted)){sm.obj1=sm.obj1+g2}
-    if((args[0]=="sewers")&&(sm.quest==3)&&(sm.task==5)&&(sm.qStarted)){sm.obj1=sm.obj1+g1
-        sm.obj2=sm.obj2+g2}
+    if((args[0]=="forest")&&(sm.quest==1)&&(sm.task==1)&&(sm.qStarted)){sm.obj1+=num}
+    if((args[0]=="forest")&&(sm.quest==1)&&(sm.task==3)&&(sm.qStarted)){sm.obj1+=g2}
+    if((args[0]=="city")&&(sm.quest==2)&&(sm.task==1)&&(sm.qStarted)){sm.obj1+=g1
+        sm.obj2+=g2}
+    if((sm.quest==2)&&(sm.task==2)&&(sm.qStarted)){sm.obj1+=f}
+    if((args[0]=="junkyard")&&(sm.quest==2)&&(sm.task==5)&&(sm.qStarted)){sm.obj1+=g1
+        sm.obj2+=g2}
+    if((args[0]=="sewers")&&(sm.quest==2)&&(sm.task==8)&&(sm.qStarted)){sm.obj1+=g1
+        sm.obj2+=g2}
+    if((args[0]=="construction")&&(sm.quest==2)&&(sm.task==10)&&(sm.qStarted)){sm.obj1+=g1
+        sm.obj2+=g2}
+    if((sm.quest==2)&&(sm.task==11)&&(sm.qStarted)){if(args[0]=="city"){sm.obj1+=g2}else{if(args[0]=="junkyard"){sm.obj2+=g2}else{if(args[0]=="sewers"){sm.obj3+=g2}else{if(args[0]=="construction"){sm.obj4+=g2}}}}}
+    if((args[0]=="forest")&&(sm.quest==3)&&(sm.task==1)&&(sm.qStarted)){sm.obj1+=g1
+        sm.obj2+=g2}
+    if((args[0]=="city")&&(sm.quest==3)&&(sm.task==2)&&(sm.qStarted)){sm.obj1+=g2}
+    if((sm.quest==3)&&(sm.task==3)&&(sm.qStarted)){if(args[0]=="forest"){sm.obj1+=g1}if(args[0]=="city"){sm.obj2+=g1}}
+    if((args[0]=="junkyard")&&(sm.quest==3)&&(sm.task==4)&&(sm.qStarted)){sm.obj1+=g2}
+    if((args[0]=="sewers")&&(sm.quest==3)&&(sm.task==5)&&(sm.qStarted)){sm.obj1+=g1
+        sm.obj2+=g2}
+    if((args[0]=="wild")&&(sm.quest==4)&&(sm.task==1)&&(sm.qStarted)){sm.obj1+=g1
+        sm.obj2+=g2}
+    if((sm.quest==4)&&(sm.task==2)&&(sm.qStarted)){if(args[0]=="forest"){sm.obj1+=g1}else{if(args[0]=="junkyard"){sm.obj2+=g1}else{if(args[0]=="wild"){sm.obj3+=g1
+                    sm.obj4+=g2}}}}
+    if((args[0]=="area")&&(sm.quest==4)&&(sm.task==5)&&(sm.qStarted)){sm.obj1+=g1
+        sm.obj2+=g2}
+    if((sm.quest==4)&&(sm.task==6)&&(sm.qStarted)){if(args[0]=="sewers"){sm.obj1+=g1}else{if(args[0]=="construction"){sm.obj2+=g1}else{if(args[0]=="area"){sm.obj3+=g1
+                    sm.obj4+=g2}}}}
+    if((args[0]=="mine")&&(sm.quest==4)&&(sm.task==9)&&(sm.qStarted)){sm.obj1+=g1
+        sm.obj2+=g2}
+    if((sm.quest==4)&&(sm.task==10)&&(sm.qStarted)){if(args[0]=="city"){sm.obj1+=g1}else{if(args[0]=="sewers"){sm.obj2+=g2}else{if(args[0]=="mine"){sm.obj3+=g1
+                    sm.obj4+=g2}}}}
+    if((sm.quest==4)&&(sm.task==11)&&(sm.qStarted)){sm.obj1+=gems}
+    if((args[0]=="pyramids")&&(sm.quest==4)&&(sm.task==14)&&(sm.qStarted)){sm.obj1+=g1
+        sm.obj2+=g2}
+    if((sm.quest==4)&&(sm.task==15)&&(sm.qStarted)){if(args[0]=="junkyard"){sm.obj1+=g2}else{if(args[0]=="construction"){sm.obj2+=g2}else{if(args[0]=="pyramids"){sm.obj3+=g1
+                    sm.obj4+=g2}}}}
+    if((sm.quest==4)&&(sm.task==17)&&(sm.qStarted)){if(args[0]=="wild"){sm.obj1+=g2}if(args[0]=="area"){sm.obj2+=g2}if(args[0]=="mine"){sm.obj3+=g2}if(args[0]=="pyramids"){sm.obj4+=g2}}
     fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
 }
 

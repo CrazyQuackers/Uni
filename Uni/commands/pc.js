@@ -291,6 +291,8 @@ function checkQuests(c,sm,fs,q)
 {
     if((c==200)&&(sm.quest==1)&&(sm.task==6)&&(sm.qStarted)){sm.obj1=1}
     if((c==200)&&(sm.quest==2)&&(sm.task==3)&&(sm.qStarted)){sm.obj1=1}
+    if((sm.quest==4)&&(sm.task==3)&&(sm.qStarted)){if(c==200){sm.obj1+=1}else{if(c==1200){sm.obj2+=1}else{if(c==6000){sm.obj3+=1}}}}
+    if((c==1200)&&(sm.quest==4)&&(sm.task==12)&&(sm.qStarted)){sm.obj1=1}
     fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
 }
 

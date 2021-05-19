@@ -1,5 +1,3 @@
-const Discord = require(`discord.js`)
-
 exports.run = async (bot,message,args) => {
     const q = require('../../data/q.json')
     let sm = q[message.guild.id].users[message.member.id]
@@ -40,6 +38,10 @@ exports.run = async (bot,message,args) => {
         case "chroma":
             u = "https://imgur.com/PC3qyZb.png"
             n = "Chroma Float"
+            break;
+        case "champion":
+            u = "https://imgur.com/XGyBAAm.png"
+            n = "Champion"
             break;
         default:
             u = "https://imgur.com/RV975Lr.png"

@@ -31,6 +31,9 @@ exports.run = async (bot,message,args) => {
                     case "chroma":
                         u = "https://imgur.com/PC3qyZb.png"
                         break;
+                    case "champion":
+                        u = "https://imgur.com/XGyBAAm.png"
+                        break;
                     default:
                         u = "https://imgur.com/RV975Lr.png"}
                 const embed = new Discord.MessageEmbed()
@@ -50,9 +53,9 @@ exports.run = async (bot,message,args) => {
                 if(other){
                     tag = other.id
                     sm = q[message.guild.id].users[tag]}
-                let hbArr = [sm.hbUnlocked,sm.sky,sm.feather,sm.oblivion,sm.varus,sm.chroma]
-                let nameArr = ["<:hoverboard:842713851585495070>  **Basic**","<:skysurfer:842713851522056204>  **Sky Surfer**","<:feathershock:842713851044823071>  **Feather Shock**","<:oblivion:842713851450753024>  **Oblivion**","<:varus:842713851481030666>  **VARUS**","<:chromafloat:842713850897236029>  **Chroma Float**"]
-                let equipArr = ["basic","sky","feather","oblivion","varus","chroma"]
+                let hbArr = [sm.hbUnlocked,sm.sky,sm.feather,sm.oblivion,sm.varus,sm.chroma,sm.champion]
+                let nameArr = ["<:hoverboard:842713851585495070>  **Basic**","<:skysurfer:842713851522056204>  **Sky Surfer**","<:feathershock:842713851044823071>  **Feather Shock**","<:oblivion:842713851450753024>  **Oblivion**","<:varus:842713851481030666>  **VARUS**","<:chromafloat:842713850897236029>  **Chroma Float**","<:champion:844610527669911602> **Champion**"]
+                let equipArr = ["basic","sky","feather","oblivion","varus","chroma","champion"]
                 let str = `<@${tag}>**'s Hoverboards**\n\n`
                 let i = 0
                 let hb = ""
@@ -215,6 +218,9 @@ exports.run = async (bot,message,args) => {
                                     notAHoverboardName(message)
                                 }
                                 break;
+                            case "champion":
+                                message.channel.send(`<@${message.member.id}> You cannot purchase The <:champion:844610527669911602> Champion Hoverboard.`)
+                                break;
                             default:
                                 notAHoverboardName(message)
                                 break;
@@ -311,6 +317,16 @@ exports.run = async (bot,message,args) => {
                                 else
                                 {
                                     notAHoverboardName(message)
+                                }
+                                break;
+                            case "champion":
+                                if(sm.champion)
+                                {
+                                    equipHoverboard(message,args[1],fs,q,"Champion","<:champion:844610527669911602>",sm)
+                                }
+                                else
+                                {
+                                    dontOwnThisHoverboard(message)
                                 }
                                 break;
                             default:

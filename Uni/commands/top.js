@@ -1,5 +1,6 @@
 exports.run = async (bot,message,args) => {
-    if((args[0]!="antenna")&&(args[0]!="pack")&&(args[0]!="pets")&&(args[0]!="quest")&&(args[0]!="boss")){topInfo(message)}else{
+    if(args[0]=="hb"){args[0]="hoverboard"}
+    if((args[0]!="antenna")&&(args[0]!="pack")&&(args[0]!="pet")&&(args[0]!="quest")&&(args[0]!="boss")&&(args[0]!="hoverboard")){topInfo(message)}else{
         const db = require('../../data/db.json')
         const q = require('../../data/q.json')
         const guild = message.guild
@@ -21,8 +22,11 @@ exports.run = async (bot,message,args) => {
             case "pack":
                 sorted = notBots.sort((a, b) => ez.users[b.id].capacity - ez.users[a.id].capacity)
                 break;
-            case "pets":
+            case "pet":
                 sorted = notBots.sort((a, b) => countPets(b,ez) - countPets(a,ez))
+                break;
+            case "hoverboard":
+                sorted = notBots.sort((a, b) => countHoverboards(b,sm) - countHoverboards(a,sm))
                 break;
             case "boss":
                 sorted = notBots.sort((a, b) => ez.users[b.id].defeated - ez.users[a.id].defeated)
@@ -42,9 +46,13 @@ exports.run = async (bot,message,args) => {
                 for(i=0 ; i<topTen.length ; i++){str=str+`${i+1}. **${topTen[i].username}** - ${ez.users[topTen[i].id].pack} <:pack:825122944204013588>\n`}
                 t = "Packs"
                 break;
-            case "pets":
+            case "pet":
                 for(i=0 ; i<topTen.length ; i++){str=str+`${i+1}. **${topTen[i].username}** - ${countPets(topTen[i],ez)} 🐶\n`}
                 t = "Pets"
+                break;
+            case "hoverboard":
+                for(i=0 ; i<topTen.length ; i++){str=str+`${i+1}. **${topTen[i].username}** - ${countHoverboards(topTen[i],sm)} <:hoverboard:842713851585495070>\n`}
+                t = "Hoverboards"
                 break;
             case "boss":
                 for(i=0 ; i<topTen.length ; i++){str=str+`${i+1}. **${topTen[i].username}** - ${ez.users[topTen[i].id].defeated} 💀\n`}
@@ -103,8 +111,13 @@ function topInfo(message)
                 inline: false,
             },
             {
-                name: "%top pets",
+                name: "%top pet",
                 value: "Lists the members with the most pets",
+                inline: false,
+            },
+            {
+                name: "%top hoverboard",
+                value: "Lists the members with the most hoverboards",
                 inline: false,
             },
             {
@@ -126,6 +139,16 @@ function countPets(mem,ez2)
 {
     const ez = ez2.users[mem.id]
     const arr = [ez.pug,ez.fox,ez.cow,ez.pig,ez.mouse,ez.deer,ez.wolf,ez.duck,ez.unicorn,ez.bat,ez.jack,ez.bear,ez.cat,ez.cyborg,ez.horse,ez.fish,ez.chicken,ez.giraffe,ez.bob,ez.butterfly,ez.peacock,ez.tiger,ez.flamingo,ez.koala,ez.bot,ez.dino,ez.clownfish,ez.panda,ez.bee,ez.shark,ez.steve,ez.rabbit,ez.rex]
+    let c = 0
+    let i = 0
+    for(i=0 ; i<arr.length ; i++){if(arr[i]){c++}}
+    return c;
+}
+
+function countHoverboards(mem,sm2)
+{
+    const sm = sm2.users[mem.id]
+    const arr = [sm.hbUnlocked,sm.sky,sm.feather,sm.oblivion,sm.varus,sm.chroma,sm.champion]
     let c = 0
     let i = 0
     for(i=0 ; i<arr.length ; i++){if(arr[i]){c++}}

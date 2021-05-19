@@ -117,7 +117,8 @@ bot.on('message', (message) =>
             varus: false,
             chroma: false,
             equipped: "",
-            hypno: false
+            hypno: false,
+            champion: false
         }
         fs.writeFile("./data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
         fs.writeFile("./data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})

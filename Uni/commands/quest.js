@@ -74,6 +74,7 @@ exports.run = async (bot,message,args) => {
                     case 1:
                         if((o1>=5)&&(o2>=2)&&(ez.newspapers>=3)){
                             message.react("✅")
+                            ez.newspapers-=3
                             createDoneMessage("\`Achoo! You actually brought the Street Cats here?! ...Fine, you're tough enough! Now take these Gems and take the cats away!\`\n+**30** <:gems:825122942413045791>","https://imgur.com/IGLh00t.png",30,fs,db,q,ez,message,sm)
                         }else{message.react("❌")}
                         break;
@@ -98,6 +99,7 @@ exports.run = async (bot,message,args) => {
                     case 5:
                         if((o1>=7)&&(o2>=2)&&(ez.tires>=4)){
                             message.react("✅")
+                            ez.tires-=4
                             createDoneMessage("\`...Fine, you're cool. But my next tasks aren't as easy. Take these Gems and scram!\`\n+**100** <:gems:825122942413045791>","https://imgur.com/IGLh00t.png",100,fs,db,q,ez,message,sm)
                         }else{message.react("❌")}
                         break;
@@ -116,6 +118,7 @@ exports.run = async (bot,message,args) => {
                     case 8:
                         if((o1>=15)&&(o2>=4)&&(ez.socks>=8)){
                             message.react("✅")
+                            ez.socks-=8
                             createDoneMessage("\`Ewwww, that smell is terrible! Why didn't you take a bath BEFORE you came back to me? ...Fine, fine, here's some Gems! Just get that smell away!\`\n+**120** <:gems:825122942413045791>","https://imgur.com/IGLh00t.png",120,fs,db,q,ez,message,sm)
                         }else{message.react("❌")}
                         break;
@@ -128,6 +131,7 @@ exports.run = async (bot,message,args) => {
                     case 10:
                         if((o1>=20)&&(o2>=5)&&(ez.hammers>=15)){
                             message.react("✅")
+                            ez.hammers-=15
                             createDoneMessage("\`Well look at you, completing every task I throw at you! Here's some Gems.\`\n+**200** <:gems:825122942413045791>","https://imgur.com/IGLh00t.png",200,fs,db,q,ez,message,sm)
                         }else{message.react("❌")}
                         break;
@@ -140,6 +144,10 @@ exports.run = async (bot,message,args) => {
                     case 12:
                         if((ez.newspapers>=10)&&(ez.tires>=10)&&(ez.socks>=10)&&(ez.hammers>=15)){
                             message.react("✅")
+                            ez.newspapers-=10
+                            ez.tires-=10
+                            ez.socks-=10
+                            ez.hammers-=15
                             sm.hbUnlocked = true
                             sm.equipped = "basic"
                             createDoneMessage("\`Alright, alright... I'll say it. You're pretty tough. You deserve the Hoverboard... it's yours. You can get a bunch of different Skins for it. Just use the %hoverboard command. That's it for me. You can find Ghost Hunter Liz just around the corner. I believe she has a powerful pet she can give you...\`\n+**Hoverboard** <:hoverboard:842713851585495070>\n+**500** <:gems:825122942413045791>","https://imgur.com/IGLh00t.png",500,fs,db,q,ez,message,sm)
@@ -159,6 +167,7 @@ exports.run = async (bot,message,args) => {
                     case 2:
                         if((o1>=2)&&(ez.newspapers>=3)){
                             message.react("✅")
+                            ez.newspapers-=3
                             createDoneMessage("\`Whoa, thanks! I think the cats will be much happier there. Don't tell anyone... but I actually really love cats! We were just sending them home. Take these gems as a token of thanks.\`\n+**30** <:gems:825122942413045791>","https://imgur.com/MGYzhWZ.png",30,fs,db,q,ez,message,sm)
                         }else{message.react("❌")}
                         break;
@@ -171,6 +180,7 @@ exports.run = async (bot,message,args) => {
                     case 4:
                         if((o1>=3)&&(ez.tires>=5)){
                             message.react("✅")
+                            ez.tires-=5
                             createDoneMessage("\`Niceee... These tires are perfect for my car! Oh.. yeah, also the junkyard is a lot cleaner... I guess that's cool. Take these gems! You've earned them!\`\n+**50** <:gems:825122942413045791>","https://imgur.com/MGYzhWZ.png",50,fs,db,q,ez,message,sm)
                         }else{message.react("❌")}
                         break;
@@ -183,8 +193,130 @@ exports.run = async (bot,message,args) => {
                     case 6:
                         if((ez.tires>=7)&&(ez.socks>=7)&&(ez.hammers>=7)){
                             message.react("✅")
+                            ez.tires-=7
+                            ez.socks-=7
+                            ez.hammers-=7
                             sm.hypno = true
                             createDoneMessage("\`Congradulations!!! I hope you enjoy your new Super Powerful Pet! It will defenitely help you in the future when you'll start defeating bosses! I think you're next Quest is in The Wild West. You should meet Ghost Hunter Jesse there as soon as possible! I hear he gives ghost hunters a really cool Hoverboard for completing all his tasks...\`\n+**Hypnotize** <:hypnotize:843489441724628992>\n+**70** <:gems:825122942413045791>","https://imgur.com/MGYzhWZ.png",70,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                }
+                break;
+            case 4:
+                switch(sm.task)
+                {
+                    case 1:
+                        if((o1>=15)&&(o2>=4)&&(ez.badges>=15)){
+                            message.react("✅")
+                            ez.badges-=15
+                            createDoneMessage("\`Ya sure are startin' off strong! Yipee! Here's your reward.\`\n+**300** <:gems:825122942413045791>","https://imgur.com/FmGviiR.png",300,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 2:
+                        if((o1>=15)&&(o2>=10)&&(o3>=8)&&(o4>=3)){
+                            message.react("✅")
+                            createDoneMessage("\`Yeeeeehaw! You're about as round 'em up Cowboy as me! That's good work if I've ever seen it. Here's Gems for your hard work! Don't forget to upgrade your pack every once in a while!\`\n+**200** <:gems:825122942413045791>","https://imgur.com/FmGviiR.png",200,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 3:
+                        if((o1>=3)&&(o2>=2)&&(o3>=1)){
+                            message.react("✅")
+                            createDoneMessage("\`Amazing! You've really upgraded your pet inventory! Remember to keep buying pets to prepare for your boss fight... Now take all these gems!\`\n+**2000** <:gems:825122942413045791>","https://imgur.com/FmGviiR.png",2000,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 4:
+                        if(ez.antenna>=6){
+                            message.react("✅")
+                            createDoneMessage("\`I knew there was some fishy business going on down yonder! Thanks for the help! Here's some Gems for your troubles.\`\n+**300** <:gems:825122942413045791>","https://imgur.com/FmGviiR.png",300,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 5:
+                        if((o1>=18)&&(o2>=5)&&(ez.meteorites>=35)){
+                            message.react("✅")
+                            ez.meteorites-=35
+                            createDoneMessage("\`That's what I'm talking about! We own this here town! Have these Gems, partner.\`\n+**340** <:gems:825122942413045791>","https://imgur.com/FmGviiR.png",340,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 6:
+                        if((o1>=25)&&(o2>=18)&&(o3>=12)&&(o4>=4)){
+                            message.react("✅")
+                            createDoneMessage("\`That's what I needed! Well, ain't you just the greatest little partner? Here's Gems for your troubles.\`\n+**420** <:gems:825122942413045791>","https://imgur.com/FmGviiR.png",420,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 7:
+                        if(o1==1){
+                            message.react("✅")
+                            createDoneMessage("\`Oh boy! You actually did it! I've always wanted to do that, but someone has to keep the peace down here! Gonna give you Gems for that achievement! Good ridin'!\`\n+**200** <:gems:825122942413045791>","https://imgur.com/FmGviiR.png",200,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 8:
+                        if(ez.antenna>=7){
+                            message.react("✅")
+                            createDoneMessage("\`See! Some high quality gold! Looks like they've been experimenting on some rocks too... weird stuff. Thank ya kindly for the assistance. Here's Gems for your troubles.\`\n+**350** <:gems:825122942413045791>","https://imgur.com/FmGviiR.png",350,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 9:
+                        if((o1>=20)&&(o2>=5)&&(ez.gold>=45)){
+                            message.react("✅")
+                            ez.gold-=45
+                            createDoneMessage("\`Thank ya kindly! Here's some Gems for all your hard work.\`\n+**400** <:gems:825122942413045791>","https://imgur.com/FmGviiR.png",400,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 10:
+                        if((o1>=20)&&(o2>=5)&&(o3>=20)&&(o4>=5)){
+                            message.react("✅")
+                            createDoneMessage("\`That's what I needed! Well, ain't you just the greatest partner? Here's Gems for your troubles. You're so close to getting the Hoverboard!\`\n+**275** <:gems:825122942413045791>","https://imgur.com/FmGviiR.png",275,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 11:
+                        if(o1>=750){
+                            message.react("✅")
+                            ez.gems-=750
+                            createDoneMessage("\`This oughta sqaure me away with him. The feller's a bit grumpy sometimes, but he's a good bud! Keep half of it, go buy yourself something fancy! Like a pet!\`\n+**325** <:gems:825122942413045791>","https://imgur.com/FmGviiR.png",325,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 12:
+                        if(o1==1){
+                            message.react("✅")
+                            createDoneMessage("\`Thank ya kindly. Here's Gems for all your hard work.\`\n+**380** <:gems:825122942413045791>","https://imgur.com/FmGviiR.png",380,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 13:
+                        if(ez.pyramidsOpen){
+                            message.react("✅")
+                            createDoneMessage("\`Ain't nothing stoppin' you now! Look at that, there's a Bonus Chest at the top too! It'll give you a nice chunk of Gems every so often... but here's a reward from me.\`\n+**440** <:gems:825122942413045791>","https://imgur.com/FmGviiR.png",440,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 14:
+                        if((o1>=30)&&(o2>=7)&&(ez.artifacts>=60)){
+                            message.react("✅")
+                            ez.artifacts-=60
+                            createDoneMessage("\`Now I can get a' concentration'. Here's Gems for your services.\`\n+**1000** <:gems:825122942413045791>","https://imgur.com/FmGviiR.png",1000,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 15:
+                        if((o1>=10)&&(o2>=10)&&(o3>=20)&&(o4>=5)){
+                            message.react("✅")
+                            createDoneMessage("\`Perfect! Well aren't you just a handy dandy friend! Here's Gems for your services.\`\n+**350** <:gems:825122942413045791>","https://imgur.com/FmGviiR.png",350,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 16:
+                        if(o1==1){
+                            message.react("✅")
+                            createDoneMessage("\`Well I'll be darned! You found my lucky boot! Take these Gems as a reward!\`\n+**275** <:gems:825122942413045791>","https://imgur.com/FmGviiR.png",275,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 17:
+                        if((o1>=8)&&(o2>=8)&&(o3>=8)&&(o4>=8)){
+                            message.react("✅")
+                            createDoneMessage("\`Exactly what I needed! Here's the Gems as promised. Use them to buy some more pets!! Remember, you've got that boss fight next...\`\n+**5000** <:gems:825122942413045791>","https://imgur.com/FmGviiR.png",5000,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 18:
+                        if(o1==1){
+                            message.react("✅")
+                            sm.champion = true
+                            createDoneMessage("\`Hot Diggity! You're alive! You're the best Ghost Hunter I know, and I wouldn't give this Hoverboard to you if I didn't think it! Here ya are, the great Hoverboard and some Gems as a bonus. Thank ya kindly for all the help. Well, that's it from me... Your next questline is Ghost Hunter Hans in Area 51. I really don't know what he's up to....\`\n+**Champion** <:champion:844610527669911602>\n+**1250** <:gems:825122942413045791>","https://imgur.com/IGLh00t.png",1250,fs,db,q,ez,message,sm)
                         }else{message.react("❌")}
                         break;
                 }
@@ -371,6 +503,133 @@ exports.run = async (bot,message,args) => {
                         break;
                 }
                 break;
+            case 4:
+                switch(sm.task)
+                {
+                    case 1:
+                        if(ez.antenna<5){message.channel.send(`${message.member.id} Your 📡 antenna needs to be level **5+** in order to start Quest #4!\nUse the command **%antenna** to check your 📡 antenna.`)
+                            return;}
+                        if(o1>15){o1=15}
+                        if(o2>4){o2=4}
+                        o3 = ez.badges
+                        if(o3>15){o3=15}
+                        createQuestMessage("🗺️ Quest #4 - Ghost Hunter Jesse","📖 **__Task #1/18__** : The Hoverboard Effect\n\n\`Yeaaaah, I'm gonna take my horse t- ... oh, Hey! My name is Ghost Hunter Jesse! I could really use some help around these parts. There's been a wagon load of crazy going on here. Aliens, Ghosts... random appearing pyramids... If you can help, I can reward you with a cool new Hoverboard. You in? Great! You can start by helping clean up this here town. It could use a good round-up. Find me after you collect Bandits, Cowboys, and Sherriff Badges and I'll reward ya for the services.\`","https://imgur.com/FmGviiR.png","📜 __Goals:__",`• Vacuum **15** <:bandit:825122917930500147> Bandit Ghosts from The 🏜️ Wild West: ${o1}/15\n• Vacuum **4** 🤠 Cowboy Ghosts from The 🏜️ Wild West: ${o2}/4\n• Obtain **15** <:sherrifbadge:825122941637230613> Sherriff Badges from The 🏜️ Wild West: ${o3}/15`,message,sm,fs,q)
+                        break;
+                    case 2:
+                        if(o1>15){o1=15}
+                        if(o2>10){o2=10}
+                        if(o3>8){o3=8}
+                        if(o4>3){o4=3}
+                        createQuestMessage("🗺️ Quest #4 - Ghost Hunter Jesse","📖 **__Task #2/18__** : Round 'em Up\n\n\`I hope you're not bitin' off more than you can chew here! I wouldn't feel right gettin' you involved in situations you couldn't handle. Show me what you've got by collecting some ectoplasm from different biomes. Find me after you collect Bandits, Cowboys, Fairy and Mechanic Ghosts for a reward.\`","https://imgur.com/FmGviiR.png","📜 __Goals:__",`• Vacuum **15** 🧚 Fairy Ghosts from The 🏕️ Forest: ${o1}/15\n• Vacuum **10** 🧑‍🔧 Mechanic Ghosts from The 💡 Junkyard: ${o2}/10\n• Vacuum **8** <:bandit:825122917930500147> Bandit Badges from The 🏜️ Wild West: ${o3}/8\n• Vacuum **3** 🤠 Cowboy Ghosts from The 🏜️ Wild West: ${o4}/3`,message,sm,fs,q)
+                        break;
+                    case 3:
+                        if(o1>3){o1=3}
+                        if(o2>2){o2=2}
+                        if(o3>1){o3=1}
+                        createQuestMessage("🗺️ Quest #4 - Ghost Hunter Jesse","📖 **__Task #3/18__** : Preparing for Battle\n\n\`You're ways away from the Hoverboard, keep trottin' along. Actually, I'm gonna get you in on a little secret... Your final task from me is a very hard one. You will need to defeat a boss! I know, I know, that's why I'm telling you this. You need to prepare! You need to open more pet crates to get more pets! Afterall, your pets are the ones fighting the boss, not you. Come back to me after you open some pet crates to receive a lot of Gems!\`","https://imgur.com/FmGviiR.png","📜 __Goals:__",`• Open 🐶 Pet Crate #1 **3** times: ${o1}/3\n• Open 🐶 Pet Crate #2 **2** times: ${o2}/2\n• Open 🐶 Pet Crate #3 **1** time: ${o3}/1`,message,sm,fs,q)
+                        break;
+                    case 4:
+                        o1 = ez.parts
+                        o2 = ez.badges
+                        o3 = ez.antenna
+                        if(o1>150){o1=150}
+                        if(o2>30){o2=30}
+                        if(o3>6){o3=6
+                            o1=150
+                            o2=30}
+                        createQuestMessage("🗺️ Quest #4 - Ghost Hunter Jesse","📖 **__Task #4/18__** : Mission Unthinkable\n\n\`You're really takin' to bein' a cowboy... I've got a top secret mission for you... Them fancy scientists moved in here when the aliens came. I need you to upgrade your antenna to level 6 and get into that Area 51 over there. I'll get you some Gems when you're done!\`","https://imgur.com/FmGviiR.png","📜 __Goals:__",`• Obtain **150** 🔩 Antenna Parts: ${o1}/150\n• Obtain **30** <:sherrifbadge:825122941637230613> Sherriff Badges from The 🏜️ Wild West: ${o2}/30\n• Upgrade your 📡 Antenna to level **6**: ${o3}/6`,message,sm,fs,q)
+                        break;
+                    case 5:
+                        if(o1>18){o1=18}
+                        if(o2>5){o2=5}
+                        o3 = ez.meteorites
+                        if(o3>35){o3=35}
+                        createQuestMessage("🗺️ Quest #4 - Ghost Hunter Jesse","📖 **__Task #5/18__** : Agent Ghost Hunter\n\n\`They're doing all kinds of funny things down there! We best put a stop to it! I need you to collect some ghosts and items in that Area 51. Gems are promised when you're done.\`","https://imgur.com/FmGviiR.png","📜 __Goals:__",`• Vacuum **18** 👨‍🔬 Scientist Ghosts in ☄️ Area 51: ${o1}/18\n• Vacuum **5** 👽 Zorg Ghosts in ☄️ Area 51: ${o2}/5\n• Obtain **35** <:meteorite:825122930047320115> Meteorites from ☄️ Area 51: ${o3}/35`,message,sm,fs,q)
+                        break;
+                    case 6:
+                        if(o1>25){o1=25}
+                        if(o2>18){o2=18}
+                        if(o3>12){o3=12}
+                        if(o4>4){o4=4}
+                        createQuestMessage("🗺️ Quest #4 - Ghost Hunter Jesse","📖 **__Task #6/18__** : Power to the Source\n\n\`Yeeee-Haw!! Gettin' closer to that Hoverboard! It'll take a lot of power! I'm gonna need you to collect Workers, Paper Bags, Scientists, and Zorgs to continue powering it. Find me after for some Gems.\`","https://imgur.com/FmGviiR.png","📜 __Goals:__",`• Vacuum **25** 🛍️ Paper Bag Ghosts in The <:manhole:825122943133941821> Sewers: ${o1}/25\n• Vacuum **18** 👷‍♀️ Worker Ghosts at The 🏗️ Construction Site: ${o2}/18\n• Vacuum **12** 👨‍🔬 Scientist Ghosts in ☄️ Area 51: ${o3}/12\n• Vacuum **4** 👽 Zorg Ghosts in ☄️ Area 51: ${o4}/4`,message,sm,fs,q)
+                        break;
+                    case 7:
+                        createQuestMessage("🗺️ Quest #4 - Ghost Hunter Jesse","📖 **__Task #7/18__** : King of the Rings\n\n\`Still some more tasks 'til you get my amazing Hoverboard! You're going to need a Hoverboard of your own for this task. I wanna see if you can find and jump through the green ring here in The Wild West. If you can do it, I'll reward you. HINT 💡 - ||use the %find <item> and then the %jump commands||\`","https://imgur.com/FmGviiR.png","📜 __Goals:__",`• Jump through the 🟢 green ring: ${o1}/1`,message,sm,fs,q)
+                        break;
+                    case 8:
+                        o1 = ez.parts
+                        o2 = ez.meteorites
+                        o3 = ez.antenna
+                        if(o1>200){o1=200}
+                        if(o2>50){o2=50}
+                        if(o3>7){o3=7
+                            o1=200
+                            o2=50}
+                        createQuestMessage("🗺️ Quest #4 - Ghost Hunter Jesse","📖 **__Task #8/18__** : Level Up\n\n\`Did you see that Mineshaft in Area 51? They probably found some top secret stuff in there. You're going to sneak in and check it out! But... First, you need to upgrade your antenna to level 7. I got you some more Gems for when you're done.\`","https://imgur.com/FmGviiR.png","📜 __Goals:__",`• Obtain **200** 🔩 Antenna Parts: ${o1}/200\n• Obtain **50** <:meteorite:825122930047320115> Meteorites from ☄️ Area 51: ${o2}/50\n• Upgrade your 📡 Antenna to level **7**: ${o3}/7`,message,sm,fs,q)
+                        break;
+                    case 9:
+                        if(o1>20){o1=20}
+                        if(o2>5){o2=5}
+                        o3 = ez.gold
+                        if(o3>45){o3=45}
+                        createQuestMessage("🗺️ Quest #4 - Ghost Hunter Jesse","📖 **__Task #9/18__** : Rocky Road Ahead\n\n\`To continue working on that Hoverboard, I'm gonna need a bit more Ectoplasm. I also need a good conductor. I hear gold is the best. Go to the Mines and collect ghosts and the gold I need for the conductor. Once you're done, come find me for a reward.\`","https://imgur.com/FmGviiR.png","📜 __Goals:__",`• Vacuum **20** 🧑‍🏭 Miner Ghosts in The ⛏️ Mine: ${o1}/20\n• Vacuum **5** 🪨 Rock Ghosts in The ⛏️ Mine: ${o2}/5\n• Obtain **45** <:goldbar:825122939006746625> Gold Bars from The ⛏️ Mine: ${o3}/45`,message,sm,fs,q)
+                        break;
+                    case 10:
+                        if(o1>20){o1=20}
+                        if(o2>5){o2=5}
+                        if(o3>20){o3=20}
+                        if(o4>5){o4=5}
+                        createQuestMessage("🗺️ Quest #4 - Ghost Hunter Jesse","📖 **__Task #10/18__** : Super Duper Power Troopers\n\n\`Yeeee-Haw!! Gettin' real close to the Hoverboard! It'll take a lot of power! I'm gonna need you to collect more Ectoplasm and Gems to continue powering it. Collect 20 Businessmen, 5 Rats, 20 Miners, and 5 Rocks. Find me after for some Gems.\`","https://imgur.com/FmGviiR.png","📜 __Goals:__",`• Vacuum **20** 🤵‍♂️ Businessmen Ghosts in The 🏙️ City: ${o1}/20\n• Vacuum **5** 🐀 Rat Ghosts in The <:manhole:825122943133941821> Sewers: ${o2}/5\n• Vacuum **20** 🧑‍🏭 Miner Ghosts in The ⛏️ Mine: ${o3}/20\n• Vacuum **5** 🪨 Rock Ghosts in The ⛏️ Mine: ${o4}/5`,message,sm,fs,q)
+                        break;
+                    case 11:
+                        if(o1>750){o1=750}
+                        createQuestMessage("🗺️ Quest #4 - Ghost Hunter Jesse","📖 **__Task #11/18__** : I Owe You One\n\n\`So... I owe Ghost Hunter Adam a little something for helping me out with my Hoverboard. Could ya help me pay him back by collecting Gems? I'll split it with ya!\`","https://imgur.com/FmGviiR.png","📜 __Goals:__",`• Collect **750** <:gems:825122942413045791> Gems from 👻 ghosts or <:small:825134200482431007> gem chests: ${o1}/750`,message,sm,fs,q)
+                        break;
+                    case 12:
+                        createQuestMessage("🗺️ Quest #4 - Ghost Hunter Jesse","📖 **__Task #12/18__** : Pet Boo-st\n\n\`I hear they have some dandy lookin' pets in Pet Crate #2. Those pets are able to help a lil' more. Open Pet Crate #2 and come find me for a reward when you're done.\`","https://imgur.com/FmGviiR.png","📜 __Goals:__",`• Open 🐶 Pet Crate #2 once: ${o1}/1`,message,sm,fs,q)
+                        break;
+                    case 13:
+                        o1 = ez.badges
+                        o2 = ez.meteorites
+                        o3 = ez.gold
+                        if(o1>25){o1=25}
+                        if(o2>25){o2=25}
+                        if(o3>25){o3=25}
+                        if(ez.pyramidsOpen){o4=1
+                            o1=25
+                            o2=25
+                            o3=25}
+                        createQuestMessage("🗺️ Quest #4 - Ghost Hunter Jesse","📖 **__Task #13/18__** : You Shall Not Pass\n\n\`See them pyramids? They appeared overnight. It's got a big ghost guarding the entrance with a wall. You gotta unlock the Pyramids. You'll need 25 Sherriff's Badges, Meteors, and Gold Ingots. That ghost sure is hungry... Once you feed him, come find me for a reward. HINT 💡 - ||use the %unlock command||\`","https://imgur.com/FmGviiR.png","📜 __Goals:__",`• Obtain **25** <:sherrifbadge:825122941637230613> Sherriff Badges from The 🏜️ Wild West: ${o1}/25\n• Obtain **25** <:meteorite:825122930047320115> Meteorites from ☄️ Area 51: ${o2}/25\n• Obtain **25** <:goldbar:825122939006746625> Gold Bars from The ⛏️ Mine: ${o3}/25\n• Unlock access to The <:pyramid:825122937236357164> Pyramids: ${o4}/1`,message,sm,fs,q)
+                        break;
+                    case 14:
+                        if(o1>30){o1=30}
+                        if(o2>7){o2=7}
+                        o3 = ez.artifacts
+                        if(o3>60){o3=60}
+                        createQuestMessage("🗺️ Quest #4 - Ghost Hunter Jesse","📖 **__Task #14/18__** : Where's My Mummy?\n\n\`Five more tasks until I finish your Hoverboard, but those ghosts have been causing a lot of distractions for me. Some of them hold special artifacts. Think ya could help me by collecting 60 Artifacts, 7 Mummy Ghosts, and 30 Pharaoh Ghosts? I'll give you some Gems for the help. They might be a little sandy though...\`","https://imgur.com/FmGviiR.png","📜 __Goals:__",`• Vacuum **30** <:pharaoh:825122944514523226> Pharaoh Ghosts in The <:pyramid:825122937236357164> Pyramids: ${o1}/30\n• Vacuum **7** <:mummy:825122924318556200> Mummy Ghosts in The <:pyramid:825122937236357164> Pyramids: ${o2}/7\n• Obtain **60** <:artifact:825122914210414592> Artifacts from The <:pyramid:825122937236357164> Pyramids: ${o3}/60`,message,sm,fs,q)
+                        break;
+                    case 15:
+                        if(o1>10){o1=10}
+                        if(o2>10){o2=10}
+                        if(o3>20){o3=20}
+                        if(o4>5){o4=5}
+                        createQuestMessage("🗺️ Quest #4 - Ghost Hunter Jesse","📖 **__Task #15/18__** : True Grit\n\n\`True cowboys aren't afraid of gettin' dity and workin' hard! I need a variety of Ectoplasm for the Hoverboard! Collect 10 Pigeon Ghosts, 10 Garbage Bin Ghosts, 5 Mummy Ghosts, and 20 Pharaoh Ghosts. More Gems coming your way if you finish this here task for me.\`","https://imgur.com/FmGviiR.png","📜 __Goals:__",`• Vacuum **10** 🗑️ Garbage Bin Ghosts in The 💡 Junkyard: ${o1}/10\n• Vacuum **10** <:pigeon:825122931721371690> Pigeon Ghosts in The 🏗️ Construction Site: ${o2}/10\n• Vacuum **20** <:pharaoh:825122944514523226> Pharaoh Ghosts in The <:pyramid:825122937236357164> Pyramids: ${o3}/20\n• Vacuum **5** <:mummy:825122924318556200> Mummy Ghosts in The <:pyramid:825122937236357164> Pyramids: ${o4}/5`,message,sm,fs,q)
+                        break;
+                    case 16:
+                        createQuestMessage("🗺️ Quest #4 - Ghost Hunter Jesse","📖 **__Task #16/18__** : My Lucky Boot\n\n\`Well doggonit! I think one of those Bandits got away with my lucky boot! They may have hidden it away somewhere near. I'm gonna need that if you want me to finish helpin' you get the Hoverboard. Think ya could find it for me? Come back here once you've found it and collect a reward. HINT 💡 - ||use the %find <item> command||\`","https://imgur.com/FmGviiR.png","📜 __Goals:__",`• Find Jesse's 👢 Cowboy Boot hidden in The 🏜️ Wild West: ${o1}/1`,message,sm,fs,q)
+                        break;
+                    case 17:
+                        if(o1>8){o1=8}
+                        if(o2>8){o2=8}
+                        if(o3>8){o3=8}
+                        if(o4>8){o4=8}
+                        createQuestMessage("🗺️ Quest #4 - Ghost Hunter Jesse","📖 **__Task #17/18__** : Specimen Collection\n\n\`Only two more tasks until I can finish building the Hoverboard! Gonna need some more Ectoplasm first! I need you to collect ghosts from several of the biomes in this area. I'm asking for a bunch, but I know you can do it! I'll give ya a handful of shiny Gems in exchange!\`","https://imgur.com/FmGviiR.png","📜 __Goals:__",`• Vacuum **8** 🤠 Cowboy Ghosts in The 🏜️ Wild West: ${o1}/8\n• Vacuum **8** 👽 Zorg Ghosts in ☄️ Area 51: ${o2}/8\n• Vacuum **8** 🪨 Rock Ghosts in The ⛏️ Mine: ${o3}/8\n• Vacuum **8** <:mummy:825122924318556200> Mummy Ghosts in The <:pyramid:825122937236357164> Pyramids: ${o4}/8`,message,sm,fs,q)
+                        break;
+                    case 18:
+                        createQuestMessage("🗺️ Quest #4 - Ghost Hunter Jesse","📖 **__Task #18/18__** : Boss Mode\n\n\`BOSS ATTACK! You're going to fight a Boss. This is the battle you've been preparing for from the beginning of our questline! It might be hard, but bosses give you great rewards when you beat them. Just use the %boss fight command to start the fight, and your pets do the rest! Now... Go fight a Boss. Come find me after for your new Hoverboard!!!\`","https://imgur.com/FmGviiR.png","📜 __Goals:__",`• Defeat any 💀 boss once: ${o1}/1`,message,sm,fs,q)
+                        break;
+                }
+                break;
         }
     }
 }
@@ -418,7 +677,7 @@ function createDoneMessage(d,u,g,fs,db,q,ez,message,sm)
         },
     };
     message.channel.send({ embed: doneEmbed });
-    if(((sm.quest==1)&&(sm.task==8))||((sm.quest==2)&&(sm.task==12))||((sm.quest==3)&&(sm.task==6))){
+    if(((sm.quest==1)&&(sm.task==8))||((sm.quest==2)&&(sm.task==12))||((sm.quest==3)&&(sm.task==6))||((sm.quest==4)&&(sm.task==18))){
         sm.quest = sm.quest + 1
         sm.task = 1
     }else{sm.task = sm.task + 1}

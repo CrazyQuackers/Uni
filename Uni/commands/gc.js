@@ -3,6 +3,8 @@ const Discord = require('discord.js')
 exports.run = async (bot,message,args) => {
     const fs = require("fs")
     const db = require('../../data/db.json')
+    const q = require('../../data/q.json')
+    let sm = q[message.guild.id].users[message.member.id]
     let ez = db[message.guild.id].users[message.member.id]
     let arr = message.content.split(' ')
     let num = 0
@@ -24,6 +26,7 @@ exports.run = async (bot,message,args) => {
                     ez.gems = ez.gems + num;
                     ez.lastConstruction = new Date().getTime();
                     message.channel.send(`<@${message.member.id}>\nYou found **${num} <:gems:825122942413045791> gems** in a <:small:825134200482431007> **small gem chest!**`)
+                    checkQuests(sm,num,fs,q)
                     fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
                 }
             }
@@ -56,6 +59,7 @@ exports.run = async (bot,message,args) => {
                         ez.gems = ez.gems + num;
                         ez.lastPyramids = new Date().getTime();
                         message.channel.send(`<@${message.member.id}>\nYou found **${num} <:gems:825122942413045791> gems** in a <:medium:825134203821228032> **medium gem chest!**`)
+                        checkQuests(sm,num,fs,q)
                         fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
                     }
                 }
@@ -88,6 +92,7 @@ exports.run = async (bot,message,args) => {
                             ez.gems = ez.gems + num;
                             ez.lastIce = new Date().getTime();
                             message.channel.send(`<@${message.member.id}>\nYou found **${num} <:gems:825122942413045791> gems** in a <:large:825134202127253514> **large gem chest!**`)
+                            checkQuests(sm,num,fs,q)
                             fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
                         }
                     }
@@ -130,4 +135,10 @@ function gcDetails(message,ez)
         .setFooter("Open a Gem Chest with %gem chest <size>")
         .setTimestamp()
     message.channel.send({embed});
+}
+
+function checkQuests(sm,num,fs,q)
+{
+    if((sm.quest==4)&&(sm.task==11)&&(sm.qStarted)){sm.obj1+=num}
+    fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
 }
