@@ -16,9 +16,13 @@ exports.run = async (bot,message,args) => {
         ez.sellTime = 140
         ez.duck = true
         ez.unicorn = true
+        ez.cow = true
+        ez.deer = true
+        ez.cyborg = true
+        ez.panda = true
         sm.hypno = true
         sm.quest = 4
-        sm.task = 1
+        sm.task = 5
         ez.constructionOpen = true
         sm.hbUnlocked = true
         sm.equipped = "basic"

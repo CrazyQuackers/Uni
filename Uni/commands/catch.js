@@ -142,12 +142,9 @@ function checkQuests(args,num,q,sm,g2,fs,g1,f,gems)
 
 function mainCatch(ez,fs,db,args,storage,capacity)
 {
-    console.log(storage)
     let object = (Math.floor(Math.random()*100))+1;
     let ghost = whichGhost(object,args[0])
-    console.log(ghost)
     let ghostArr = ghost.split('X');
-    console.log(`${ghostArr[0]} , ${ghostArr[1]} , ${ghostArr[2]}`)
     ghost = ghostArr[0]
     let fill = ghostArr[1]
     fill = parseInt(fill,10)
@@ -166,7 +163,6 @@ function mainCatch(ez,fs,db,args,storage,capacity)
         amount = howMuchItems(args[0],item,ez)
     }}
     storage = storage + fill
-    console.log(storage)
     if(storage>capacity){ez.storage = capacity}else{ez.storage = storage}
     fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
     return [ghost,amount,item,fill,ghostArr[2]]
