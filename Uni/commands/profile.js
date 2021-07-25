@@ -60,7 +60,6 @@ exports.run = async (bot,message,args) => {
         },
         timestamp: new Date(),
         footer: {
-            text: `${tag.user.username}'s Uni Profile`,
             icon_url: 'https://imgur.com/ASUc77V.png',
         },
     };

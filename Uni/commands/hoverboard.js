@@ -349,7 +349,7 @@ exports.run = async (bot,message,args) => {
     }
     else
     {
-        message.channel.send(`<@${message.member.id}>\n\n**Hoverboard Commands** <:hoverboard:842713851585495070>\n\n**•** %hoverboard details - Displays all the Hoverboard 👕 Skins and their <:gems:825122942413045791> Gem cost.\n**•** %hoverboard list - Displays all of your Hoverboards with a ⭐ next to your equipped Hoverboard.\n**•** %hoverboard buy <hoverboard name> - Buy a Hoverboard. (Cannot buy the same Hoverboard twice)\n**•** %hoverboard equip <hoverboard name> - Equip a Hoverboard. (Your equipped Hoverboard appears in your profile)\n\n**Hoverboard Advantages** <:chromafloat:842713850897236029>\n\nHoverboard do **NOTHING**. It is just another item you can buy and show off in your profile.`)
+        message.channel.send(`<@${message.member.id}>\n\n**hoverboard commands** <:hoverboard:842713851585495070>\n\n**•** %hoverboard details - Displays all the <:hoverboard:842713851585495070> hoverboard skins and their <:gems:825122942413045791> Gem cost.\n**•** %hoverboard list - Displays all of your Hoverboards with a ⭐ next to your equipped Hoverboard.\n**•** %hoverboard buy <hoverboard name> - Buy a Hoverboard. (Cannot buy the same hoverboard twice)\n**•** %hoverboard equip <hoverboard name> - Equip a Hoverboard. (Your equipped hoverboard appears in your profile)\n\n**hoverboard advantages** <:chromafloat:842713850897236029>\n\nHoverboards do **NOTHING**. It is just another item you can buy and show off in your profile.`)
     }
 }
 exports.help = {
@@ -359,13 +359,13 @@ exports.help = {
 function notAHoverboardName(message)
 {
     message.react("❌")
-    message.channel.send(`<@${message.member.id}> Hoverboard not found.\nIf you forgot the name, use this command: **%hoverboard details**`)
+    message.channel.send(`<@${message.member.id}> hoverboard not found.\nIf you forgot the name, use this command: **%hoverboard details**`)
 }
 
 function dontOwnThisHoverboard(message)
 {
     message.react("❌")
-    message.channel.send(`<@${message.member.id}> You can't equip a <:hoverboard:842713851585495070> Hoverboard you don't own!`)
+    message.channel.send(`<@${message.member.id}> You can't equip a <:hoverboard:842713851585495070> hoverboard you don't own!`)
 }
 
 function equipHoverboard(message,str,fs,q,hb,emoji,sm)
