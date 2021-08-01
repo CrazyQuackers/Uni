@@ -10,9 +10,9 @@ exports.run = async (bot,message,args) => {
         ez.gems = 50000
         ez.ectoTokens = 50000
         ez.antenna = 5
-        ez.pack = "Hex Pack"
-        ez.capacity = 4000
-        ez.sellTime = 50
+        ez.pack = "Distorted Pack"
+        ez.capacity = 1000000000
+        ez.sellTime = 140
         ez.duck = true
         ez.unicorn = true
         ez.cow = true

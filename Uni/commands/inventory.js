@@ -9,8 +9,8 @@ exports.run = async (bot,message,args) => {
         ez = db[message.guild.id].users[other.id]
         tl = other.user.tag
     }
-    let strCoins = coinToStr(ez.ectoTokens)
-    let strGems = coinToStr(ez.gems)
+    let strCoins = decreaseNumberLength(ez.ectoTokens)
+    let strGems = decreaseNumberLength(ez.gems)
     let tlArray = tl.split('#');
     let tlNew = tlArray[0];
     const embed = new Discord.MessageEmbed()
@@ -45,4 +45,24 @@ function coinToStr(n)
         }
     }
     return newStrC
+}
+
+function decreaseNumberLength(n)
+{
+    if(n>=1000)
+    {
+        if(n>=1000000)
+        {
+            if(n>=1000000000)
+            {
+                n/=1000000000;
+                return(`${coinToStr(n)}B`);
+            }
+            n/=1000000;
+            return(`${coinToStr(n)}M`);
+        }
+        n/=1000;
+        return(`${coinToStr(n)}K`);
+    }
+    return(`${coinToStr(n)}`);
 }
