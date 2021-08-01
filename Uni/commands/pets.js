@@ -11,11 +11,11 @@ exports.run = async (bot,message,args) => {
     let petArr1 = [ez.pug,ez.fox,ez.cow,ez.pig,ez.mouse,ez.deer,ez.wolf,ez.duck,ez.unicorn,ez.bat,ez.jack];
     let petArr2 = [ez.bear,ez.cat,ez.cyborg,ez.horse,ez.fish,ez.chicken,ez.giraffe,ez.bob,ez.butterfly,ez.peacock,ez.tiger];
     let petArr3 = [ez.flamingo,ez.koala,ez.bot,ez.dino,ez.clownfish,ez.panda,ez.bee,ez.shark,ez.steve,ez.rabbit,ez.rex];
-    let petArr4 = [sm.hypno]
+    let petArr4 = [sm.hypno,sm.tree,sm.george,sm.sludge,sm.subject,sm.king,sm.mag];
     let str1 = `<@${tag}>**'s Pets**\n\n__Pet Crate 1__\n`
     let str2 = "\n\n__Pet Crate 2__\n"
     let str3 = "\n\n__Pet Crate 3__\n"
-    let str4 = "\n\n__Questline Pets__\n"
+    let str4 = "\n\n__Questline & Boss Pets__\n"
     str1 = createMessage(petArr1,1,str1)
     str2 = createMessage(petArr2,2,str2)
     str3 = createMessage(petArr3,3,str3)
@@ -43,7 +43,7 @@ function createMessage(arr,n,str)
     {
         str = str+"\n*no pets found*"
     }
-    return str
+    return str;
 }
 
 function findPet(i,n)
@@ -133,6 +133,18 @@ function findPet(i,n)
             {
                 case 0:
                     return "<:hypnotize:843489441724628992> **Hypnotize** ( 5 ⚔️ ➡️ <:ghastlytree:825122934221307955><:georgethegorilla:825122935081664632><:sludge:825122930471075880><:subjectone:825122932815691847><:kingkrab:825122934183559239><:magmoraug:825122942768644136> )"
+                case 1:
+                    return "<:ghastlytree:825122934221307955> **Mini Ghast** ( 2 ⚔️ ➡️ <:ghastlytree:825122934221307955> )"
+                case 2:
+                    return "<:georgethegorilla:825122935081664632> **Mini George** ( 2 ⚔️ ➡️ <:georgethegorilla:825122935081664632> )"
+                case 3:
+                    return "<:sludge:825122930471075880> **Mini Sludge** ( 2 ⚔️ ➡️ <:sludge:825122930471075880> )"
+                case 4:
+                    return "<:subjectone:825122932815691847> **Mini One** ( 2 ⚔️ ➡️ <:subjectone:825122932815691847> )"
+                case 5:
+                    return "<:kingkrab:825122934183559239> **Mini Krab** ( 2 ⚔️ ➡️ <:kingkrab:825122934183559239> )"
+                case 6:
+                    return "<:magmoraug:825122942768644136> **Mini Mag** ( 2 ⚔️ ➡️ <:magmoraug:825122942768644136> )"
             }
     }
 }

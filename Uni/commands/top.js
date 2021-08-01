@@ -1,6 +1,6 @@
 exports.run = async (bot,message,args) => {
     if(args[0]=="hb"){args[0]="hoverboard"}
-    if((args[0]!="antenna")&&(args[0]!="pack")&&(args[0]!="pet")&&(args[0]!="quest")&&(args[0]!="boss")&&(args[0]!="hoverboard")){topInfo(message)}else{
+    if((args[0]!="antenna")&&(args[0]!="pack")&&(args[0]!="pet")&&(args[0]!="quest")&&(args[0]!="boss")&&(args[0]!="hoverboard")&&(args[0]!="ghost")){topInfo(message)}else{
         const db = require('../../data/db.json')
         const q = require('../../data/q.json')
         const guild = message.guild
@@ -23,13 +23,16 @@ exports.run = async (bot,message,args) => {
                 sorted = notBots.sort((a, b) => ez.users[b.id].capacity - ez.users[a.id].capacity)
                 break;
             case "pet":
-                sorted = notBots.sort((a, b) => countPets(b,ez) - countPets(a,ez))
+                sorted = notBots.sort((a, b) => countPets(b,ez,sm) - countPets(a,ez,sm))
                 break;
             case "hoverboard":
                 sorted = notBots.sort((a, b) => countHoverboards(b,sm) - countHoverboards(a,sm))
                 break;
             case "boss":
                 sorted = notBots.sort((a, b) => ez.users[b.id].defeated - ez.users[a.id].defeated)
+                break;
+            case "ghost":
+                sorted = notBots.sort((a, b) => ez.users[b.id].caught - ez.users[a.id].caught)
                 break;
             case "quest":
                 sorted = notBots.sort((a , b) => getQuestNumber(b,sm) - getQuestNumber(a,sm))
@@ -47,7 +50,7 @@ exports.run = async (bot,message,args) => {
                 t = "Packs"
                 break;
             case "pet":
-                for(i=0 ; i<topTen.length ; i++){str=str+`${i+1}. **${topTen[i].username}** - ${countPets(topTen[i],ez)} 🐶\n`}
+                for(i=0 ; i<topTen.length ; i++){str=str+`${i+1}. **${topTen[i].username}** - ${countPets(topTen[i],ez,sm)} 🐶\n`}
                 t = "Pets"
                 break;
             case "hoverboard":
@@ -57,6 +60,10 @@ exports.run = async (bot,message,args) => {
             case "boss":
                 for(i=0 ; i<topTen.length ; i++){str=str+`${i+1}. **${topTen[i].username}** - ${ez.users[topTen[i].id].defeated} 💀\n`}
                 t = "Bosses"
+                break;
+            case "ghost":
+                for(i=0 ; i<topTen.length ; i++){str=str+`${i+1}. **${topTen[i].username}** - ${ez.users[topTen[i].id].caught} 👻\n`}
+                t = "Ghosts"
                 break;
             case "quest":
                 for(i=0 ; i<topTen.length ; i++){str=str+`${i+1}. **${topTen[i].username}** - Quest #${sm.users[topTen[i].id].quest}, Task#${sm.users[topTen[i].id].task} 📖\n`}
@@ -121,6 +128,11 @@ function topInfo(message)
                 inline: false,
             },
             {
+                name: "%top ghost",
+                value: "Lists the members with the most ghosts caught",
+                inline: false,
+            },
+            {
                 name: "%top boss",
                 value: "Lists the members with the most bosses defeated",
                 inline: false,
@@ -135,10 +147,11 @@ function topInfo(message)
     message.channel.send({ embed: listEmbed });
 }
 
-function countPets(mem,ez2)
+function countPets(mem,ez2,sm2)
 {
     const ez = ez2.users[mem.id]
-    const arr = [ez.pug,ez.fox,ez.cow,ez.pig,ez.mouse,ez.deer,ez.wolf,ez.duck,ez.unicorn,ez.bat,ez.jack,ez.bear,ez.cat,ez.cyborg,ez.horse,ez.fish,ez.chicken,ez.giraffe,ez.bob,ez.butterfly,ez.peacock,ez.tiger,ez.flamingo,ez.koala,ez.bot,ez.dino,ez.clownfish,ez.panda,ez.bee,ez.shark,ez.steve,ez.rabbit,ez.rex]
+    const sm = sm2.users[mem.id]
+    const arr = [ez.pug,ez.fox,ez.cow,ez.pig,ez.mouse,ez.deer,ez.wolf,ez.duck,ez.unicorn,ez.bat,ez.jack,ez.bear,ez.cat,ez.cyborg,ez.horse,ez.fish,ez.chicken,ez.giraffe,ez.bob,ez.butterfly,ez.peacock,ez.tiger,ez.flamingo,ez.koala,ez.bot,ez.dino,ez.clownfish,ez.panda,ez.bee,ez.shark,ez.steve,ez.rabbit,ez.rex,sm.hypno,sm.tree,sm.george,sm.sludge,sm.subject,sm.king,sm.mag]
     let c = 0
     let i = 0
     for(i=0 ; i<arr.length ; i++){if(arr[i]){c++}}
@@ -148,7 +161,7 @@ function countPets(mem,ez2)
 function countHoverboards(mem,sm2)
 {
     const sm = sm2.users[mem.id]
-    const arr = [sm.hbUnlocked,sm.sky,sm.feather,sm.oblivion,sm.varus,sm.chroma,sm.champion]
+    const arr = [sm.hbUnlocked,sm.sky,sm.feather,sm.oblivion,sm.varus,sm.chroma,sm.champion,sm.blox]
     let c = 0
     let i = 0
     for(i=0 ; i<arr.length ; i++){if(arr[i]){c++}}

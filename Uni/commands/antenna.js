@@ -19,7 +19,8 @@ exports.run = async (bot,message,args) => {
                     ez2.antenna = ez2.antenna + 1;
                     fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
                 }
-                else{message.channel.send(`<@${tag2}> You do not have enough 🪛 items to upgrade your 📡 antenna level!\nYou need **${p1}** more 🔩 antenna parts and **${p2}** more <:acorn:825122942660509707> acorns!`)}
+                else{message.react("❌")
+                    message.channel.send(`<@${tag2}> You do not have enough 🪛 items to upgrade your 📡 antenna level!\nYou need **${p1}** more 🔩 antenna parts and **${p2}** more <:acorn:825122942660509707> acorns!`)}
                 break;
             case 2:
                 let p3 = 10-ez2.parts
@@ -33,7 +34,8 @@ exports.run = async (bot,message,args) => {
                     ez2.antenna = ez2.antenna + 1;
                     fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
                 }
-                else{message.channel.send(`<@${tag2}> You do not have enough 🪛 items to upgrade your 📡 antenna level!\nYou need **${p3}** more 🔩 antenna parts and **${p4}** more 📰 newspapers!`)}
+                else{message.react("❌")
+                    message.channel.send(`<@${tag2}> You do not have enough 🪛 items to upgrade your 📡 antenna level!\nYou need **${p3}** more 🔩 antenna parts and **${p4}** more 📰 newspapers!`)}
                 break;
             case 3:
                 let p5 = 35-ez2.parts
@@ -47,7 +49,8 @@ exports.run = async (bot,message,args) => {
                     ez2.antenna = ez2.antenna + 1;
                     fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
                 }
-                else{message.channel.send(`<@${tag2}> You do not have enough 🪛 items to upgrade your 📡 antenna level!\nYou need **${p5}** more 🔩 antenna parts and **${p6}** more <:tire:825122944128385054> tires!`)}
+                else{message.react("❌")
+                    message.channel.send(`<@${tag2}> You do not have enough 🪛 items to upgrade your 📡 antenna level!\nYou need **${p5}** more 🔩 antenna parts and **${p6}** more <:tire:825122944128385054> tires!`)}
                 break;
             case 4:
                 let p7 = 75-ez2.parts
@@ -67,7 +70,8 @@ exports.run = async (bot,message,args) => {
                     ez2.antenna = ez2.antenna + 1;
                     fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
                 }
-                else{message.channel.send(`<@${tag2}> You do not have enough 🪛 items to upgrade your 📡 antenna level!\nYou need **${p7}** more 🔩 antenna parts, **${p8}** more 📰 newspapers, **${p9}** more <:tire:825122944128385054> tires and **${p10}** more 🧦 socks!`)}
+                else{message.react("❌")
+                    message.channel.send(`<@${tag2}> You do not have enough 🪛 items to upgrade your 📡 antenna level!\nYou need **${p7}** more 🔩 antenna parts, **${p8}** more 📰 newspapers, **${p9}** more <:tire:825122944128385054> tires and **${p10}** more 🧦 socks!`)}
                 break;
             case 5:
                 let p11 = 150-ez2.parts
@@ -81,7 +85,8 @@ exports.run = async (bot,message,args) => {
                     ez2.antenna = ez2.antenna + 1;
                     fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
                 }
-                else{message.channel.send(`<@${tag2}> You do not have enough 🪛 items to upgrade your 📡 antenna level!\nYou need **${p11}** more 🔩 antenna parts and **${p12}** more <:sherrifbadge:825122941637230613> sherrif badges!`)}
+                else{message.react("❌")
+                    message.channel.send(`<@${tag2}> You do not have enough 🪛 items to upgrade your 📡 antenna level!\nYou need **${p11}** more 🔩 antenna parts and **${p12}** more <:sherrifbadge:825122941637230613> sherrif badges!`)}
                 break;
             case 6:
                 let p13 = 200-ez2.parts
@@ -95,7 +100,8 @@ exports.run = async (bot,message,args) => {
                     ez2.antenna = ez2.antenna + 1;
                     fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
                 }
-                else{message.channel.send(`<@${tag2}> You do not have enough 🪛 items to upgrade your 📡 antenna level!\nYou need **${p13}** more 🔩 antenna parts and **${p14}** more <:meteorite:825122930047320115> meteorites!`)}
+                else{message.react("❌")
+                    message.channel.send(`<@${tag2}> You do not have enough 🪛 items to upgrade your 📡 antenna level!\nYou need **${p13}** more 🔩 antenna parts and **${p14}** more <:meteorite:825122930047320115> meteorites!`)}
                 break;
             case 7:
                 let p15 = 400-ez2.parts
@@ -115,7 +121,8 @@ exports.run = async (bot,message,args) => {
                     ez2.antenna = ez2.antenna + 1;
                     fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
                 }
-                else{message.channel.send(`<@${tag2}> You do not have enough 🪛 items to upgrade your 📡 antenna level!\nYou need **${p15}** more 🔩 antenna parts, **${p16}** more <:sherrifbadge:825122941637230613> sherrif badges, **${p17}** more <:meteorite:825122930047320115> meteorites and **${p18}** more <:goldbar:825122939006746625> gold bars!`)}
+                else{message.react("❌")
+                    message.channel.send(`<@${tag2}> You do not have enough 🪛 items to upgrade your 📡 antenna level!\nYou need **${p15}** more 🔩 antenna parts, **${p16}** more <:sherrifbadge:825122941637230613> sherrif badges, **${p17}** more <:meteorite:825122930047320115> meteorites and **${p18}** more <:goldbar:825122939006746625> gold bars!`)}
                 break;
             case 8:
                 let p19 = 1100-ez2.parts
@@ -129,7 +136,8 @@ exports.run = async (bot,message,args) => {
                     ez2.antenna = ez2.antenna + 1;
                     fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
                 }
-                else{message.channel.send(`<@${tag2}> You do not have enough 🪛 items to upgrade your 📡 antenna level!\nYou need **${p19}** more 🔩 antenna parts and **${p20}** more <:doubloon:825122941746151434> doubloons!`)}
+                else{message.react("❌")
+                    message.channel.send(`<@${tag2}> You do not have enough 🪛 items to upgrade your 📡 antenna level!\nYou need **${p19}** more 🔩 antenna parts and **${p20}** more <:doubloon:825122941746151434> doubloons!`)}
                 break;
             case 9:
                 let p21 = 1500-ez2.parts
@@ -143,7 +151,8 @@ exports.run = async (bot,message,args) => {
                     ez2.antenna = ez2.antenna + 1;
                     fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
                 }
-                else{message.channel.send(`<@${tag2}> You do not have enough 🪛 items to upgrade your 📡 antenna level!\nYou need **${p21}** more 🔩 antenna parts and **${p22}** more <:pearl:825122938457686057> pearls!`)}
+                else{message.react("❌")
+                    message.channel.send(`<@${tag2}> You do not have enough 🪛 items to upgrade your 📡 antenna level!\nYou need **${p21}** more 🔩 antenna parts and **${p22}** more <:pearl:825122938457686057> pearls!`)}
                 break;
             case 10:
                 message.channel.send(`<@${tag2}> **You have reached max 📡 antenna level!**`)

@@ -269,7 +269,7 @@ exports.run = async (bot,message,args) => {
                         }else{message.react("❌")}
                         break;
                     case 11:
-                        if(o1>=750){
+                        if((ez.gems-o1)>=750){
                             message.react("✅")
                             ez.gems-=750
                             createDoneMessage("\`This oughta sqaure me away with him. The feller's a bit grumpy sometimes, but he's a good bud! Keep half of it, go buy yourself something fancy! Like a pet!\`\n+**325** <:gems:825122942413045791>","https://imgur.com/FmGviiR.png",325,fs,db,q,ez,message,sm)
@@ -317,6 +317,64 @@ exports.run = async (bot,message,args) => {
                             message.react("✅")
                             sm.champion = true
                             createDoneMessage("\`Hot Diggity! You're alive! You're the best Ghost Hunter I know, and I wouldn't give this Hoverboard to you if I didn't think it! Here ya are, the great Hoverboard and some Gems as a bonus. Thank ya kindly for all the help. Well, that's it from me... Your next questline is Ghost Hunter Hans in Area 51. I really don't know what he's up to....\`\n+**Champion** <:champion:844610527669911602>\n+**1250** <:gems:825122942413045791>","https://imgur.com/IGLh00t.png",1250,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                }
+                break;
+            case 5:
+                switch(sm.task)
+                {
+                    case 1:
+                        if((ez.newspapers>=10)&&(ez.tires>=10)&&(ez.socks>=20)){
+                            message.react("✅")
+                            ez.newspapers-=10
+                            ez.tires-=10
+                            ez.socks-=10
+                            createDoneMessage("\`Sweet! Now where did I put that reward? Here it is! There's a lot more where that came from... That is, if you keep helping me.\`\n+**150** <:gems:825122942413045791>","https://imgur.com/F8TZFYj.png",150,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 2:
+                        if(o1==1){
+                            message.react("✅")
+                            createDoneMessage("\`You're back! And you've got gems! Excellent, it worked. I guess you're looking for your reward now. Here, just take even more gems (:\`\n+**200** <:gems:825122942413045791>","https://imgur.com/F8TZFYj.png",200,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 3:
+                        if((o1>=20)&&(o2>=20)&&(o3>=20)){
+                            message.react("✅")
+                            sm.converter=2
+                            createDoneMessage("\`Thanks for all these ingredients, Ghost Hunter! Nice, these are really good quality! What? Oh! Yeah, here's your reward. Upgraded converter machine! Now every 5 Million Ecto-Tokens convert to 1 Gem!\`\n+**Converter Upgrade** <:ectotoken:825122939812315219> <:gems:825122942413045791>","https://imgur.com/F8TZFYj.png",0,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 4:
+                        if((o1==1)&&(o2==1)){
+                            message.react("✅")
+                            createDoneMessage("\`Thank you so much! I'm so scatterbrained! I thought it was gone-gone, Ghost Hunter. There were quite a few of us at the Area 51 lab, and I keep in contact with everyone... Everyone except for Ghost Hunter Riley. No one has seen her in a long time... Anyway, thanks for finding this! Here's your reward!\`\n+**250** <:gems:825122942413045791>","https://imgur.com/F8TZFYj.png",250,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 5:
+                        if(ez.sellTime>=70){
+                            message.react("✅")
+                            createDoneMessage("\`Welcome back! How's your new pack? Feels like it's stuffed with blueberries and salmon? I don't remember it feeling like that at all! Anyhoo, here, take your reward.\`\n+**300** <:gems:825122942413045791>","https://imgur.com/F8TZFYj.png",300,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 6:
+                        if(o1==1){
+                            message.react("✅")
+                            createDoneMessage("\`Hello again! I've got your reward right here. Ta-da! And thanks!\`\n+**350** <:gems:825122942413045791>","https://imgur.com/F8TZFYj.png",350,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 7:
+                        if(o1==1){
+                            message.react("✅")
+                            createDoneMessage("\`Excellent! We had some fun AND your pet team grew in size! Thanks for that, here's your reward.\`\n+**400** <:gems:825122942413045791>","https://imgur.com/F8TZFYj.png",400,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 8:
+                        if(ez.antenna>=8){
+                            message.react("✅")
+                            sm.converter=3
+                            createDoneMessage("\`You did it! I knew you could! And just in time for the converter machine to be upgraded! Now, every 1 Million Ecto-Tokens convert to 1 Gem! It's amazing! Also, you can now use the command %convert all, to convert all of your Ecto-Tokens to Gems! Very good upgrade indeed! It seems like this is the end of our partnership... But it is the start of our friendship! Looks like your next Questline is with Ghost Hunter Captain Finsley. Great man. I wonder what his prize will be...\`\n+**Converter Upgrade** <:ectotoken:825122939812315219> <:gems:825122942413045791>","https://imgur.com/F8TZFYj.png",0,fs,db,q,ez,message,sm)
                         }else{message.react("❌")}
                         break;
                 }
@@ -458,7 +516,7 @@ exports.run = async (bot,message,args) => {
                         if(o2>10){o2=10}
                         if(o3>10){o3=10}
                         if(o4>15){o4=15}
-                        createQuestMessage("🗺️ Quest #2 - Ghost Hunter Adam","📖 **__Task #12/12__** : Hail the Hoverboard\n\n\`Now I need your help to finish building your Hoverboard... Don't look so surprised. Collect items from ghosts in each biome here and the Hoverboard is all yours!\`","https://imgur.com/IGLh00t.png","📜 __Goals:__",`• Obtain **10** 📰 Newspapers from The 🏙️ City: ${o1}/10\n• Obtain **10** <:tire:825122944128385054> Tires from The 💡 Junkyard: ${o2}/10\n• Obtain **10** 🧦 Socks from The <:manhole:825122943133941821> Sewers: ${o3}/10\n• Obtain **10** Hammers from The 🏗️ Construction Site: ${o4}/15`,message,sm,fs,q)
+                        createQuestMessage("🗺️ Quest #2 - Ghost Hunter Adam","📖 **__Task #12/12__** : Hail the Hoverboard\n\n\`Now I need your help to finish building your Hoverboard... Don't look so surprised. Collect items from ghosts in each biome here and the Hoverboard is all yours!\`","https://imgur.com/IGLh00t.png","📜 __Goals:__",`• Obtain **10** 📰 Newspapers from The 🏙️ City: ${o1}/10\n• Obtain **10** <:tire:825122944128385054> Tires from The 💡 Junkyard: ${o2}/10\n• Obtain **10** 🧦 Socks from The <:manhole:825122943133941821> Sewers: ${o3}/10\n• Obtain **10** 🔨 Hammers from The 🏗️ Construction Site: ${o4}/15`,message,sm,fs,q)
                         break;
                 }
                 break;
@@ -554,7 +612,7 @@ exports.run = async (bot,message,args) => {
                         createQuestMessage("🗺️ Quest #4 - Ghost Hunter Jesse","📖 **__Task #6/18__** : Power to the Source\n\n\`Yeeee-Haw!! Gettin' closer to that Hoverboard! It'll take a lot of power! I'm gonna need you to collect Workers, Paper Bags, Scientists, and Zorgs to continue powering it. Find me after for some Gems.\`","https://imgur.com/FmGviiR.png","📜 __Goals:__",`• Vacuum **25** 🛍️ Paper Bag Ghosts in The <:manhole:825122943133941821> Sewers: ${o1}/25\n• Vacuum **18** 👷‍♀️ Worker Ghosts at The 🏗️ Construction Site: ${o2}/18\n• Vacuum **12** 👨‍🔬 Scientist Ghosts in ☄️ Area 51: ${o3}/12\n• Vacuum **4** 👽 Zorg Ghosts in ☄️ Area 51: ${o4}/4`,message,sm,fs,q)
                         break;
                     case 7:
-                        createQuestMessage("🗺️ Quest #4 - Ghost Hunter Jesse","📖 **__Task #7/18__** : King of the Rings\n\n\`Still some more tasks 'til you get my amazing Hoverboard! You're going to need a Hoverboard of your own for this task. I wanna see if you can find and jump through the green ring here in The Wild West. If you can do it, I'll reward you. HINT 💡 - ||use the %find <item> and then the %jump commands||\`","https://imgur.com/FmGviiR.png","📜 __Goals:__",`• Jump through the 🟢 green ring: ${o1}/1`,message,sm,fs,q)
+                        createQuestMessage("🗺️ Quest #4 - Ghost Hunter Jesse","📖 **__Task #7/18__** : King of the Rings\n\n\`Still some more tasks 'til you get my amazing Hoverboard! You're going to need a Hoverboard of your own for this task. I wanna see if you can find and jump through the green ring here in The Wild West. If you can do it, I'll reward you. HINT 💡 - ||use the %find <item> and then the %jump commands||\`","https://imgur.com/FmGviiR.png","📜 __Goals:__",`• Jump through The 🟢 Green Ring: ${o1}/1`,message,sm,fs,q)
                         break;
                     case 8:
                         o1 = ez.parts
@@ -582,8 +640,11 @@ exports.run = async (bot,message,args) => {
                         createQuestMessage("🗺️ Quest #4 - Ghost Hunter Jesse","📖 **__Task #10/18__** : Super Duper Power Troopers\n\n\`Yeeee-Haw!! Gettin' real close to the Hoverboard! It'll take a lot of power! I'm gonna need you to collect more Ectoplasm and Gems to continue powering it. Collect 20 Businessmen, 5 Rats, 20 Miners, and 5 Rocks. Find me after for some Gems.\`","https://imgur.com/FmGviiR.png","📜 __Goals:__",`• Vacuum **20** 🤵‍♂️ Businessmen Ghosts in The 🏙️ City: ${o1}/20\n• Vacuum **5** 🐀 Rat Ghosts in The <:manhole:825122943133941821> Sewers: ${o2}/5\n• Vacuum **20** 🧑‍🏭 Miner Ghosts in The ⛏️ Mine: ${o3}/20\n• Vacuum **5** 🪨 Rock Ghosts in The ⛏️ Mine: ${o4}/5`,message,sm,fs,q)
                         break;
                     case 11:
-                        if(o1>750){o1=750}
-                        createQuestMessage("🗺️ Quest #4 - Ghost Hunter Jesse","📖 **__Task #11/18__** : I Owe You One\n\n\`So... I owe Ghost Hunter Adam a little something for helping me out with my Hoverboard. Could ya help me pay him back by collecting Gems? I'll split it with ya!\`","https://imgur.com/FmGviiR.png","📜 __Goals:__",`• Collect **750** <:gems:825122942413045791> Gems from 👻 ghosts or <:small:825134200482431007> gem chests: ${o1}/750`,message,sm,fs,q)
+                        if(sm.obj4==0){sm.obj1 = ez.gems
+                            o2=0}else{o2 = ez.gems - o1}
+                        sm.obj4++;
+                        if(o2>750){o2=750}
+                        createQuestMessage("🗺️ Quest #4 - Ghost Hunter Jesse","📖 **__Task #11/18__** : I Owe You One\n\n\`So... I owe Ghost Hunter Adam a little something for helping me out with my Hoverboard. Could ya help me pay him back by collecting Gems? I'll split it with ya!\`","https://imgur.com/FmGviiR.png","📜 __Goals:__",`• Collect **750** <:gems:825122942413045791> Gems from anywhere: ${o2}/750`,message,sm,fs,q)
                         break;
                     case 12:
                         createQuestMessage("🗺️ Quest #4 - Ghost Hunter Jesse","📖 **__Task #12/18__** : Pet Boo-st\n\n\`I hear they have some dandy lookin' pets in Pet Crate #2. Those pets are able to help a lil' more. Open Pet Crate #2 and come find me for a reward when you're done.\`","https://imgur.com/FmGviiR.png","📜 __Goals:__",`• Open 🐶 Pet Crate #2 once: ${o1}/1`,message,sm,fs,q)
@@ -627,6 +688,48 @@ exports.run = async (bot,message,args) => {
                         break;
                     case 18:
                         createQuestMessage("🗺️ Quest #4 - Ghost Hunter Jesse","📖 **__Task #18/18__** : Boss Mode\n\n\`BOSS ATTACK! You're going to fight a Boss. This is the battle you've been preparing for from the beginning of our questline! It might be hard, but bosses give you great rewards when you beat them. Just use the %boss fight command to start the fight, and your pets do the rest! Now... Go fight a Boss. Come find me after for your new Hoverboard!!!\`","https://imgur.com/FmGviiR.png","📜 __Goals:__",`• Defeat any 💀 boss once: ${o1}/1`,message,sm,fs,q)
+                        break;
+                }
+                break;
+            case 5:
+                switch(sm.task)
+                {
+                    case 1:
+                        o1 = ez.newspapers
+                        o2 = ez.tires
+                        o3 = ez.socks
+                        if(o1>10){o1=10}
+                        if(o2>10){o2=10}
+                        if(o3>20){o3=20}
+                        createQuestMessage("🗺️ Quest #5 - Ghost Hunter Hans","📖 **__Task #1/8__** : Converter Machine 3000\n\n\`Hello there, Ghost Hunter! You're here just in time. The name is Hans, Wizard Hans. Okay, well it's actually Ghost Hunter Hans, but I am a qizard at science! Why am I here? To do a favor for my good friends, Ghost Hunter Gabe and Ghost Hunter Riley. Do you see the converter machine over there? Gabe, Riley and I made it together. We used to all work together in the lab, you know, before it was overrun by ghosts. After the ghosts showed up, I decided to change careers. Science and wizardry are pretty much the same thing anyway. But yeah, the three of us invented this thing. It's pretty cool. If you run some errands for me, Ghost Hunter, I'll tell you more about it. I may even let you try it out! I'll also give you a lot of gems if you help me with all of my tasks. You're on board? Awesome! First, I need you to collect some items for me. I've got a reward ready for you once you're back.\`","https://imgur.com/F8TZFYj.png","📜 __Goals:__",`• Collect **10** 📰 Newspapers from The 🏙️ City: ${o1}/10\n• Collect **10** <:tire:825122944128385054> Tires from The 💡 Junkyard: ${o2}/10\n• Collect **20** 🧦 Old Socks from The <:manhole:825122943133941821> Sewers: ${o3}/20`,message,sm,fs,q)
+                        break;
+                    case 2:
+                        sm.converter=1
+                        createQuestMessage("🗺️ Quest #5 - Ghost Hunter Hans","📖 **__Task #2/8__** : Gib me da Gems!\n\n\`You seem pretty excited to try the converter machine. Understandable! You need to use the command %convert. It will convert some of your Ecto-Tokens into Gems! Currently every 10 Million Ecto-Tokens convert to 1 Gem but we can upgrade it later.\`","https://imgur.com/F8TZFYj.png","📜 __Goals:__",`• Use the converter machine once: ${o1}/1`,message,sm,fs,q)
+                        break;
+                    case 3:
+                        if(o1>20){o1=20}
+                        if(o2>20){o2=20}
+                        if(o3>20){o3=20}
+                        createQuestMessage("🗺️ Quest #5 - Ghost Hunter Hans","📖 **__Task #3/8__** : Needs Upgrading\n\n\`Gabe asked me to upgrade the converter machine for you... He must really like you. Anyway, to do that, I'll need you to catch some ghosts. The faster you catch them, the sooner that machine gets upgraded! You know how to catch ghosts, come back for your reward.\`","https://imgur.com/F8TZFYj.png","📜 __Goals:__",`• Vacuum **20** 👻 ghosts in The 🏜️ Wild West: ${o1}/20\n• Vacuum **20** 👻 ghosts in ☄️ Area 51: ${o2}/20\n• Vacuum **20** 👻 ghosts in The ⛏️ Mine: ${o3}/20`,message,sm,fs,q)
+                        break;
+                    case 4:
+                        createQuestMessage("🗺️ Quest #5 - Ghost Hunter Hans","📖 **__Task #4/8__** : Riley's Ring\n\n\`Oh, Ghost Hunter! I can't find my ring! I don't know where it is! I can't believe I lost it. Riley gave me that ring before she left the lab! What? It's not a small ring. That's crazy talk! I meant a red ring! Please find the red ring and jump through it, Ghost Hunter. I'll give you a reward if you can find it.\`","https://imgur.com/F8TZFYj.png","📜 __Goals:__",`• Find The 🔴 Red Ring: ${o1}/1\n• Jump through The 🔴 Red Ring: ${o2}/1`,message,sm,fs,q)
+                        break;
+                    case 5:
+                        if(ez.sellTime>=70){o1=1}
+                        createQuestMessage("🗺️ Quest #5 - Ghost Hunter Hans","📖 **__Task #5/8__** : Charged Charge Pack\n\n\`Just a few more tasks until you get the final converter machine upgrade! Now... how is your pack doing? Have you upgraded it recently? Come back to me after you've upgraded your pack to a 'Charged Pack' to get a sweet reward!\`","https://imgur.com/F8TZFYj.png","📜 __Goals:__",`• Upgrade your <:pack:825122944204013588> pack to a 'Charged Pack': ${o1}/1`,message,sm,fs,q)
+                        break;
+                    case 6:
+                        createQuestMessage("🗺️ Quest #5 - Ghost Hunter Hans","📖 **__Task #6/8__** : Boss Parts: The Gathering\n\n\`I'm making more modifications to the converter machine. Someone's got to keep the machine up to date! I sent out a message to my old co-workers. We've decided to continue our old research. Because of that, maybe you'll meet some of my old friends. Hey, maybe you'll run into Ghost Hunter Riley. Anyway, I'm trying to add a new feature to the machine, but I'm out of boss parts. Go defeat a boss for me. Don't worry, you'll get a reward when you'll come back.\`","https://imgur.com/F8TZFYj.png","📜 __Goals:__",`• Defeat a 💀 boss once: ${o1}/1`,message,sm,fs,q)
+                        break;
+                    case 7:
+                        createQuestMessage("🗺️ Quest #5 - Ghost Hunter Hans","📖 **__Task #7/8__** : Some Free Time Fun\n\n\`Hey, I haven't had free time in a long time. I feel like all I do is work... Let's go do something fun! Let's go open a pet crate! Pet Crate #3 to be exact!\`","https://imgur.com/F8TZFYj.png","📜 __Goals:__",`• Unbox a 🐶 pet from Pet Crate #3 once: ${o1}/1`,message,sm,fs,q)
+                        break;
+                    case 8:
+                        o1 = ez.antenna
+                        if(o1>8){o1=8}
+                        createQuestMessage("🗺️ Quest #5 - Ghost Hunter Hans","📖 **__Task #8/8__** : Ultimatum Convertum\n\n\`I've only got one more task for you, Ghost Hunter. The ultimate converter task! Are you ready for it? Your task is... Drumroll please. Upgrade your antenna to level 8! After you do so, you'll be able to access the converter's max upgrade! It's pretty awesome, so hurry back!\`","https://imgur.com/F8TZFYj.png","📜 __Goals:__",`• Upgrade your 📡 Antenna to Level **8**: ${o1}/8`,message,sm,fs,q)
                         break;
                 }
                 break;
@@ -677,7 +780,7 @@ function createDoneMessage(d,u,g,fs,db,q,ez,message,sm)
         },
     };
     message.channel.send({ embed: doneEmbed });
-    if(((sm.quest==1)&&(sm.task==8))||((sm.quest==2)&&(sm.task==12))||((sm.quest==3)&&(sm.task==6))||((sm.quest==4)&&(sm.task==18))){
+    if(((sm.quest==1)&&(sm.task==8))||((sm.quest==2)&&(sm.task==12))||((sm.quest==3)&&(sm.task==6))||((sm.quest==4)&&(sm.task==18))||((sm.quest==5)&&(sm.task==8))){
         sm.quest = sm.quest + 1
         sm.task = 1
     }else{sm.task = sm.task + 1}

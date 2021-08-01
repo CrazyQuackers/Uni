@@ -6,21 +6,10 @@ exports.run = async (bot,message,args) => {
     let sm = q[message.guild.id].users[message.member.id]
     let arr = message.content.split(' ');
     if(((arr.length>1)&&(arr[1]=="fight"))||(arr[0]=="%bf")){
-        if(Math.floor(new Date().getTime() - ez.lastBoss) / (1000 * 60 * 60 * 2) < 1)
-        {
-            let h = (Math.floor((Math.abs(new Date().getTime() - ez.lastBoss))/(1000 * 60 * 60)))
-            let m = ((Math.floor((Math.abs(new Date().getTime() - ez.lastBoss))/(1000 * 60)))%60)
-            if(m!=0){
-                h = 1 - h
-                m = 60 - m
-            }
-            else{h = 2 - h}
-            if(h<10){h = `0${h}`}
-            if(m<10){m = `0${m}`}
-            let str = `**\`${h}h${m}m\`**`
-            message.channel.send(`<@${message.member.id}> You have to wait 🕐 ${str} before you can fight another 💀 boss!`)
-            return;
-        }
+        if(Math.floor(new Date().getTime() - ez.lastBoss) / (1000 * 60 * 10) < 1){
+            let m = (Math.round((new Date().getTime() - ez.lastBoss)/(1000 * 60)))
+            message.channel.send(`<@${message.member.id}> You have to wait another 🕐 **${m} minutes** before you can fight another 💀 boss!`)
+            return;}
         ez.lastBoss = new Date().getTime()
         fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
         let type = (Math.floor(Math.random()*7));
@@ -56,8 +45,8 @@ exports.run = async (bot,message,args) => {
                 boss = "<:magmoraug:825122942768644136> Magmoraug"
                 break;
         }
-        let petArr = [ez.pug,ez.fox,ez.cow,ez.pig,ez.mouse,ez.deer,ez.wolf,ez.duck,ez.unicorn,ez.bat,ez.jack,ez.bear,ez.cat,ez.cyborg,ez.horse,ez.fish,ez.chicken,ez.giraffe,ez.bob,ez.butterfly,ez.peacock,ez.tiger,ez.flamingo,ez.koala,ez.bot,ez.dino,ez.clownfish,ez.panda,ez.bee,ez.shark,ez.steve,ez.rabbit,ez.rex,sm.hypno];
-        let strArr = ["pug","fox","cow","pig","mouse","deer","wolf","duck","unicorn","bat","jack","bear","cat","cyborg","horse","fish","chicken","giraffe","bob","butterfly","peacock","tiger","flamingo","koala","bot","dino","clownfish","panda","bee","shark","steve","rabbit","rex","hypno"];
+        let petArr = [ez.pug,ez.fox,ez.cow,ez.pig,ez.mouse,ez.deer,ez.wolf,ez.duck,ez.unicorn,ez.bat,ez.jack,ez.bear,ez.cat,ez.cyborg,ez.horse,ez.fish,ez.chicken,ez.giraffe,ez.bob,ez.butterfly,ez.peacock,ez.tiger,ez.flamingo,ez.koala,ez.bot,ez.dino,ez.clownfish,ez.panda,ez.bee,ez.shark,ez.steve,ez.rabbit,ez.rex,sm.hypno,sm.tree,sm.george,sm.sludge,sm.subject,sm.king,sm.mag];
+        let strArr = ["pug","fox","cow","pig","mouse","deer","wolf","duck","unicorn","bat","jack","bear","cat","cyborg","horse","fish","chicken","giraffe","bob","butterfly","peacock","tiger","flamingo","koala","bot","dino","clownfish","panda","bee","shark","steve","rabbit","rex","hypno","tree","george","sludge","subject","king","mag"];
         let i = 0
         let j = 0
         var mainArr = []
@@ -102,13 +91,15 @@ exports.run = async (bot,message,args) => {
                                 setTimeout(() =>{
                                     if(hpLeft==0)
                                     {
+                                        let bossPetStr = ""
                                         g = (Math.floor(Math.random()*301))+200;
                                         ez.gems = ez.gems + g
                                         ez.defeated = ez.defeated + 1
+                                        bossPet = (Math.floor(Math.random()*100));
+                                        if(((sm.quest>=9)&&(bossPet<5))||((sm.quest<9)&&(bossPet==0))){bossPetStr = whichBossPet(type,q,sm,fs)}
                                         checkQuests(sm,fs,q)
-                                        if((sm.quest==4)&&(sm.task==18)&&(sm.qStarted)){sm.obj1=1}
                                         fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
-                                        str = str+`\n\n**▬▬▬▬▬▬▬**「RESULT」**▬▬▬▬▬▬▬▬▬▬▬▬▬▬**\n\n👑 Winner : <@${message.member.id}>\n💀 Defeated : ${boss}\n\n**▬▬▬▬▬**「YOUR EARNINGS」**▬▬▬▬▬▬▬▬▬▬▬▬**\n\n+ **${g}** <:gems:825122942413045791> gems!`
+                                        str = str+`\n\n**▬▬▬▬▬▬▬**「RESULT」**▬▬▬▬▬▬▬▬▬▬▬▬▬▬**\n\n👑 Winner : <@${message.member.id}>\n💀 Defeated : ${boss}\n\n**▬▬▬▬▬**「YOUR EARNINGS」**▬▬▬▬▬▬▬▬▬▬▬▬**\n\n+ **${g}** <:gems:825122942413045791> gems!\n\n${bossPetStr}`
                                     }
                                     else
                                     {
@@ -123,12 +114,47 @@ exports.run = async (bot,message,args) => {
             }, 1000)
         })
     }
-    else{
-        message.channel.send(`<@${message.member.id}>\n\n**Bosses Info** 💀\n\n__Types of bosses__ 📊\n\n<:ghastlytree:825122934221307955>  Ghastly Tree\n<:georgethegorilla:825122935081664632>  George the Gorilla\n<:sludge:825122930471075880>  Sludge\n<:subjectone:825122932815691847>  Subject One\n<:kingkrab:825122934183559239>  King Krab\n<:magmoraug:825122942768644136>  Magmoraug\n\nBosses spawn with **10-20** ♥️ health.\nFight a random boss with the command **%boss fight**.`)
-    }
+    else{let dropRate = 1
+        if(sm.quest>=9){dropRate = 5}
+        message.channel.send(`<@${message.member.id}>\n\n💀**Bosses Info** 💀\n\nBosses spawn with **10-20** ♥️ health.\nFight a random 💀 boss with the command **%boss fight**.\nAfter defeating a 💀 boss, you will recieve some <:gems:825122942413045791> Gems, and if you are lucky, a 🐶 boss pet! (${dropRate}%)\n\n📊 __Types of bosses__ 📊\n\n<:ghastlytree:825122934221307955>  Ghastly Tree\n<:georgethegorilla:825122935081664632>  George the Gorilla\n<:sludge:825122930471075880>  Sludge\n<:subjectone:825122932815691847>  Subject One\n<:kingkrab:825122934183559239>  King Krab\n<:magmoraug:825122942768644136>  Magmoraug`)}
 }
 exports.help = {
     name: 'boss'
+}
+
+function whichBossPet(type,q,sm,fs)
+{
+    let str = ""
+    switch(type)
+    {
+        case 0:
+            str = "+ <:ghastlytree:825122934221307955> Mini Ghast!"
+            sm.tree = true
+            break;
+        case 1:
+            str = "+ <:georgethegorilla:825122935081664632> Mini George!"
+            sm.george = true
+            break;
+        case 2:
+            str = "+ <:sludge:825122930471075880> Mini Sludge!"
+            sm.sludge = true
+            break;
+        case 3:
+            str = "+ <:subjectone:825122932815691847> Mini One!"
+            sm.subject = true
+            break;
+        case 4:
+            str = "+ <:kingkrab:825122934183559239> Mini Krab!"
+            sm.king = true
+            break;
+        case 5:
+            str = "+ <:magmoraug:825122942768644136> Mini Mag!"
+            sm.mag = true
+            break;
+    }
+    fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
+    str = str + "\n**YOU GOT A BOSS PET! CONGRATULATIONS! THOSE ARE EXTREMELY RARE!**"
+    return str;
 }
 
 function fightMessage(str)
@@ -203,6 +229,18 @@ function fightMessage(str)
             return "\nYour 🦖 **t-rex** does **10** ⚔️ attack!"
         case "hypno":
             return "\nYour <:hypnotize:843489441724628992> **hypnotize** does **5** ⚔️ attack!"
+        case "tree":
+            return "\nYour <:ghastlytree:825122934221307955> **mini ghast** does **2** ⚔️ attack!"
+        case "george":
+            return "\nYour <:georgethegorilla:825122935081664632> **mini george** does **2** ⚔️ attack!"
+        case "sludge":
+            return "\nYour <:sludge:825122930471075880> **mini sludge** does **2** ⚔️ attack!"
+        case "subject":
+            return "\nYour <:subjectone:825122932815691847> **mini one** does **2** ⚔️ attack!"
+        case "king":
+            return "\nYour <:kingkrab:825122934183559239> **mini krab** does **2** ⚔️ attack!"
+        case "mag":
+            return "\nYour <:magmoraug:825122942768644136> **mini mag** does **2** ⚔️ attack!"
     }
 }
 
@@ -312,6 +350,25 @@ function isPet(i,type)
             break;
         case 33:
             check = true
+            break;
+        case 34:
+            if(type==0){check = true}
+            break;
+        case 35:
+            if(type==1){check = true}
+            break;
+        case 36:
+            if(type==2){check = true}
+            break;
+        case 37:
+            if(type==3){check = true}
+            break;
+        case 38:
+            if(type==4){check = true}
+            break;
+        case 39:
+            if(type==5){check = true}
+            break;
     }
     return check;
 }
@@ -319,5 +376,8 @@ function isPet(i,type)
 function checkQuests(sm,fs,q)
 {
     if((sm.quest==4)&&(sm.task==18)&&(sm.qStarted)){sm.obj1=1}
+    if((sm.quest==5)&&(sm.task==6)&&(sm.qStarted)){sm.obj1=1}
+    if((sm.quest==6)&&(sm.task==3)&&(sm.qStarted)){sm.obj1++}
+    if((sm.quest==7)&&(sm.task==13)&&(sm.qStarted)){sm.obj1++}
     fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
 }

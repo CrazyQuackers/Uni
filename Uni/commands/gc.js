@@ -26,8 +26,8 @@ exports.run = async (bot,message,args) => {
                     ez.gems = ez.gems + num;
                     ez.lastConstruction = new Date().getTime();
                     message.channel.send(`<@${message.member.id}>\nYou found **${num} <:gems:825122942413045791> gems** in a <:small:825134200482431007> **small gem chest!**`)
-                    checkQuests(sm,num,fs,q)
                     fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
+                    checkQuests(sm,fs,q,1)
                 }
             }
             else
@@ -59,8 +59,8 @@ exports.run = async (bot,message,args) => {
                         ez.gems = ez.gems + num;
                         ez.lastPyramids = new Date().getTime();
                         message.channel.send(`<@${message.member.id}>\nYou found **${num} <:gems:825122942413045791> gems** in a <:medium:825134203821228032> **medium gem chest!**`)
-                        checkQuests(sm,num,fs,q)
                         fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
+                        checkQuests(sm,fs,q,2)
                     }
                 }
                 else
@@ -92,8 +92,8 @@ exports.run = async (bot,message,args) => {
                             ez.gems = ez.gems + num;
                             ez.lastIce = new Date().getTime();
                             message.channel.send(`<@${message.member.id}>\nYou found **${num} <:gems:825122942413045791> gems** in a <:large:825134202127253514> **large gem chest!**`)
-                            checkQuests(sm,num,fs,q)
                             fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
+                            checkQuests(sm,fs,q,3)
                         }
                     }
                     else{
@@ -137,8 +137,8 @@ function gcDetails(message,ez)
     message.channel.send({embed});
 }
 
-function checkQuests(sm,num,fs,q)
+function checkQuests(sm,fs,q,num)
 {
-    if((sm.quest==4)&&(sm.task==11)&&(sm.qStarted)){sm.obj1+=num}
+    if((sm.quest==7)&&(sm.task==9)&&(sm.qStarted)){if(num==1){sm.obj1++}if(num==2){sm.obj2++}if(num==3){sm.obj3++}}
     fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
 }

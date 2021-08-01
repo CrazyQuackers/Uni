@@ -25,14 +25,16 @@ exports.run = async (bot,message,args) => {
     let gcSmall = "<:small:825134200482431007> Your **\`gem chest small\`** is locked! 🔒"
     let gcMedium = "<:medium:825134203821228032> Your **\`gem chest medium\`** is locked! 🔒"
     let gcLarge = "<:large:825134202127253514> Your **\`gem chest large\`** is locked! 🔒"
-    if(voted){vote = "⬆️ Your **\`vote\`** is not ready ❌"}
+    if(voted){
+        time = calcTime(ez.lastVote,12)
+        vote = `⬆️ Your next **\`vote\`** is available in ${time} ❌`}
     if(Math.floor(new Date().getTime() - ez.lastClaim) / (1000 * 60 * 60 * 24) < 1){
         time = calcTime(ez.lastClaim,24)
         daily = `🕐 Your next **\`daily\`** is available in ${time} ❌`
     }
-    if(Math.floor(new Date().getTime() - ez.lastBoss) / (1000 * 60 * 60 * 2) < 1){
-        time = calcTime(ez.lastBoss,2)
-        boss = `💀 Your next **\`boss fight\`** is available in ${time} ❌`
+    if(Math.floor(new Date().getTime() - ez.lastBoss) / (1000 * 60 * 10) < 1){
+        let m = (Math.round((new Date().getTime() - ez.lastBoss)/(1000 * 60)))
+        boss = `💀 Your next **\`boss fight\`** is available in **0h ${m}m.** ❌`
     }
     if(Math.floor(new Date().getTime() - sm.lastSell) / (1000 * 60 * sm.sellWait) < 1){
         time = calcCtchTime(sm)

@@ -5,7 +5,7 @@ exports.run = async (bot,message,args) => {
     let ez = db[message.guild.id].users[message.member.id]
     let sm = q[message.guild.id].users[message.member.id]
     if(args[0]){fullCatchFunction(ez,fs,db,sm,message,args,q)}
-    else{message.channel.send(`<@${message.member.id}>\nUse the command **%catch <biome>** to specify in which 🌐 biome the 👻 ghost you want to catch is.\nFor example, if you use the command **%catch forest** you will catch either a 🧚 Fairy or an 🦉 Owl.\nYou can also speed up the catching process by using the command **%catch <biome> <number of catches>**`)}
+    else{message.channel.send(`<@${message.member.id}> Use the command **%catch <biome>** to specify in which 🌐 biome the 👻 ghost you want to catch is.\nFor example, if you use the command **%catch forest** you will catch either a 🧚 Fairy or an 🦉 Owl.\nYou can also speed up the catching process by using the command **%catch <biome> <number of catches>**\nUsing the command **%catch <biome> all** will continue catching 👻 ghosts until you run out of space in your <:pack:825122944204013588> pack!`)}
 }
 exports.help = {
     name: 'catch'
@@ -32,7 +32,7 @@ function coinToStr(n)
 
 function fullCatchFunction(ez,fs,db,sm,message,args,q)
 {
-    if(realAreaTest(args[0])){message.channel.send(`<@${message.member.id}> The 🌐 biome you written doesn't exist!\nUse the command **%biomes** to see all the 🌐 biomes!`)
+    if(realAreaTest(args[0])){message.channel.send(`<@${message.member.id}> The 🌐 biome you've written doesn't exist!\nUse the command **%biomes** to see all the possible 🌐 biomes!`)
         message.react("❌")
         return;}
     let storage = ez.storage
@@ -71,6 +71,18 @@ function fullCatchFunction(ez,fs,db,sm,message,args,q)
                 let str = `\`${h}h${m}m\``
                 message.channel.send(`<@${message.member.id}> Your <:pack:825122944204013588> pack hasn't finished **recharging!**\nTime until you can catch 👻 ghosts: **${str}**`)
             }else{
+                if((args.length>1)&&(args[1]=="all")){
+                    let z = 0
+                    while(ez.storage<capacity){
+                        arr = mainCatch(ez,fs,db,args,ez.storage,capacity)
+                        if((arr[0]=="a 🧚 **Fairy!**")||(arr[0]=="a 🤵‍♂️ **Businessman!**")||(arr[0]=="a 🧑‍🔧 **Mechanic!**")||(arr[0]=="a 🛍️ **Paper Bag!**")||(arr[0]=="a 👷‍♀️ **Worker!**")||(arr[0]=="a <:bandit:825122917930500147> **Bandit!**")||(arr[0]=="a 👨‍🔬 **Scientist!**")||(arr[0]=="a 🧑‍🏭 **Miner!**")||(arr[0]=="a <:pharaoh:825122944514523226> **Pharaoh!**")||(arr[0]=="a 🏴‍☠️ **Pirate!**Z9,500")||(arr[0]=="a 🤿 **Diver!**Z17,500")||(arr[0]=="an <:islander:825122941963993099> **Islander!**")||(arr[0]=="an <:explorer:825123592290172939> **Explorer!**")){g1++}else{g2++}
+                        if(arr[2]=="<:gems:825122942413045791> gems"){i1+=arr[1]}else{if(arr[2]=="🔩 antenna parts"){i2+=arr[1]}else{i3+=arr[1]}}
+                        f+=arr[3]
+                        z++
+                    }let b = multipleCatchArr(args[0])
+                    message.channel.send(`<@${message.member.id}>\n\nYou caught **${coinToStr(z)}** 👻 ghosts in total!\nYou caught **${coinToStr(g1)}** ${b[0]}\nYou caught **${coinToStr(g2)}** ${b[1]}\n\n__You also found:__\n\n+ **${coinToStr(i1)}** <:gems:825122942413045791> gems\n+ **${coinToStr(i2)}** 🔩 antenna parts\n+ **${coinToStr(i3)}** ${arr[4]}\n+ **${coinToStr(f)}** <:pack:825122944204013588> pack storage **\`${coinToStr(ez.storage)}/${coinToStr(ez.capacity)}\`**`)
+                    checkQuests(args,z,q,sm,g2,fs,g1,f)
+                    return;}
                 if((args.length>1)&&(isNumeric(args[1]))&&(parseInt(args[1],10)!=1)){
                     let num = parseInt(args[1],10)
                     let ghost2 = secondGhost(args[0])
@@ -80,25 +92,22 @@ function fullCatchFunction(ez,fs,db,sm,message,args,q)
                             if((arr[0]=="a 🧚 **Fairy!**")||(arr[0]=="a 🤵‍♂️ **Businessman!**")||(arr[0]=="a 🧑‍🔧 **Mechanic!**")||(arr[0]=="a 🛍️ **Paper Bag!**")||(arr[0]=="a 👷‍♀️ **Worker!**")||(arr[0]=="a <:bandit:825122917930500147> **Bandit!**")||(arr[0]=="a 👨‍🔬 **Scientist!**")||(arr[0]=="a 🧑‍🏭 **Miner!**")||(arr[0]=="a <:pharaoh:825122944514523226> **Pharaoh!**")||(arr[0]=="a 🏴‍☠️ **Pirate!**Z9,500")||(arr[0]=="a 🤿 **Diver!**Z17,500")||(arr[0]=="an <:islander:825122941963993099> **Islander!**")||(arr[0]=="an <:explorer:825123592290172939> **Explorer!**")){g1++}else{g2++}
                             if(arr[2]=="<:gems:825122942413045791> gems"){i1+=arr[1]}else{if(arr[2]=="🔩 antenna parts"){i2+=arr[1]}else{i3+=arr[1]}}
                             f+=arr[3]
-                        }
-                        let b = multipleCatchArr(args[0])
+                        }let b = multipleCatchArr(args[0])
                         message.channel.send(`<@${message.member.id}>\n\nYou caught **${coinToStr(g1)}** ${b[0]}\nYou caught **${coinToStr(g2)}** ${b[1]}\n\n__You also found:__\n\n+ **${coinToStr(i1)}** <:gems:825122942413045791> gems\n+ **${coinToStr(i2)}** 🔩 antenna parts\n+ **${coinToStr(i3)}** ${arr[4]}\n+ **${coinToStr(f)}** <:pack:825122944204013588> pack storage **\`${coinToStr(ez.storage)}/${coinToStr(ez.capacity)}\`**`)
-                        checkQuests(args,num,q,sm,g2,fs,g1,f,i1)
+                        checkQuests(args,num,q,sm,g2,fs,g1,f)
                     }else{message.channel.send(`<@${message.member.id}> Your <:pack:825122944204013588> pack may not have enough space to catch **${coinToStr(num)}** 👻 ghosts right now.`)}
                 }else{
                     let arr = mainCatch(ez,fs,db,args,storage,capacity)
                     message.channel.send(`<@${message.member.id}> You caught ${arr[0]}\n\n__You also found:__\n\n+ **${coinToStr(arr[1])}** ${arr[2]}\n+ **${coinToStr(arr[3])}** <:pack:825122944204013588> pack storage **\`${coinToStr(ez.storage)}/${coinToStr(ez.capacity)}\`**`)
                     if((arr[0]=="a 🧚 **Fairy!**")||(arr[0]=="a 🤵‍♂️ **Businessman!**")||(arr[0]=="a 🧑‍🔧 **Mechanic!**")||(arr[0]=="a 🛍️ **Paper Bag!**")||(arr[0]=="a 👷‍♀️ **Worker!**")||(arr[0]=="a <:bandit:825122917930500147> **Bandit!**")||(arr[0]=="a 👨‍🔬 **Scientist!**")||(arr[0]=="a 🧑‍🏭 **Miner!**")||(arr[0]=="a <:pharaoh:825122944514523226> **Pharaoh!**")||(arr[0]=="a 🏴‍☠️ **Pirate!**Z9,500")||(arr[0]=="a 🤿 **Diver!**Z17,500")||(arr[0]=="an <:islander:825122941963993099> **Islander!**")||(arr[0]=="an <:explorer:825123592290172939> **Explorer!**")){g1++}else{g2++}
-                    let g = 0
-                    if(arr[2]=="<:gems:825122942413045791> gems"){g=arr[1]}
-                    checkQuests(args,1,q,sm,g2,fs,g1,arr[3],g)
+                    checkQuests(args,1,q,sm,g2,fs,g1,arr[3])
                 }
             }
         }
     }else{message.channel.send(`<@${message.member.id}> You cannot catch 👻 ghosts in the ${whichBiome(args[0])} until your 📡 antenna level is **\`${ez.antenna}/${a}\`**`)}
 }
 
-function checkQuests(args,num,q,sm,g2,fs,g1,f,gems)
+function checkQuests(args,num,q,sm,g2,fs,g1,f)
 {
     if((args[0]=="forest")&&(sm.quest==1)&&(sm.task==1)&&(sm.qStarted)){sm.obj1+=num}
     if((args[0]=="forest")&&(sm.quest==1)&&(sm.task==3)&&(sm.qStarted)){sm.obj1+=g2}
@@ -131,12 +140,31 @@ function checkQuests(args,num,q,sm,g2,fs,g1,f,gems)
         sm.obj2+=g2}
     if((sm.quest==4)&&(sm.task==10)&&(sm.qStarted)){if(args[0]=="city"){sm.obj1+=g1}else{if(args[0]=="sewers"){sm.obj2+=g2}else{if(args[0]=="mine"){sm.obj3+=g1
                     sm.obj4+=g2}}}}
-    if((sm.quest==4)&&(sm.task==11)&&(sm.qStarted)){sm.obj1+=gems}
     if((args[0]=="pyramids")&&(sm.quest==4)&&(sm.task==14)&&(sm.qStarted)){sm.obj1+=g1
         sm.obj2+=g2}
     if((sm.quest==4)&&(sm.task==15)&&(sm.qStarted)){if(args[0]=="junkyard"){sm.obj1+=g2}else{if(args[0]=="construction"){sm.obj2+=g2}else{if(args[0]=="pyramids"){sm.obj3+=g1
                     sm.obj4+=g2}}}}
     if((sm.quest==4)&&(sm.task==17)&&(sm.qStarted)){if(args[0]=="wild"){sm.obj1+=g2}if(args[0]=="area"){sm.obj2+=g2}if(args[0]=="mine"){sm.obj3+=g2}if(args[0]=="pyramids"){sm.obj4+=g2}}
+    if((sm.quest==5)&&(sm.task==3)&&(sm.qStarted)){if(args[0]=="wild"){sm.obj1+=num}if(args[0]=="area"){sm.obj2+=num}if(args[0]=="mine"){sm.obj3+=num}}
+    if((args[0]=="beach")&&(sm.quest==6)&&(sm.task==1)&&(sm.qStarted)){sm.obj1+=g1
+        sm.obj2+=g2}
+    if((sm.quest==6)&&(sm.task==2)&&(sm.qStarted)){if(args[0]=="city"){sm.obj1+=g1}if(args[0]=="construction"){sm.obj2+=g1}if(args[0]=="beach"){sm.obj3+=g1
+            sm.obj4+=g2}}
+    if((args[0]=="underwater")&&(sm.quest==6)&&(sm.task==6)&&(sm.qStarted)){sm.obj1+=g1
+        sm.obj2+=g2}
+    if((sm.quest==6)&&(sm.task==7)&&(sm.qStarted)){if(args[0]=="sewers"){sm.obj1+=g1}if(args[0]=="area"){sm.obj2+=g1}if(args[0]=="underwater"){sm.obj3+=g1
+            sm.obj4+=g2}}
+    if((args[0]=="volcano")&&(sm.quest==6)&&(sm.task==10)&&(sm.qStarted)){sm.obj1+=g1
+        sm.obj2+=g2}
+    if((sm.quest==6)&&(sm.task==11)&&(sm.qStarted)){if(args[0]=="wild"){sm.obj1+=g1}if(args[0]=="pyramids"){sm.obj2+=g1}if(args[0]=="volcano"){sm.obj3+=g1}}
+    if((args[0]=="ice")&&(sm.quest==6)&&(sm.task==15)&&(sm.qStarted)){sm.obj1+=g1
+        sm.obj2+=g2}
+    if((sm.quest==6)&&(sm.task==16)&&(sm.qStarted)){if(args[0]=="construction"){sm.obj1+=g1}if(args[0]=="mine"){sm.obj2+=g1}if(args[0]=="ice"){sm.obj3+=g1}}
+    if((sm.quest==6)&&(sm.task==18)&&(sm.qStarted)){if(args[0]=="beach"){sm.obj1+=g2}if(args[0]=="underwater"){sm.obj2+=g2}if(args[0]=="volcano"){sm.obj3+=g2}if(args[0]=="ice"){sm.obj4+=g2}}
+    if((sm.quest==7)&&(sm.task==1)&&(sm.qStarted)&&(args[0]=="forest")){sm.obj1+=g2}
+    if((sm.quest==7)&&(sm.task==3)&&(sm.qStarted)){if(args[0]=="city"){sm.obj1+=g2}if(args[0]=="junkyard"){sm.obj2+=g2}}
+    if((sm.quest==7)&&(sm.task==5)&&(sm.qStarted)){if(args[0]=="wild"){sm.obj1+=g2}if(args[0]=="area"){sm.obj2+=g2}}
+    if((sm.quest==7)&&(sm.task==7)&&(sm.qStarted)){if(args[0]=="beach"){sm.obj1+=g2}if(args[0]=="underwater"){sm.obj2+=g2}}
     fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
 }
 
@@ -164,6 +192,7 @@ function mainCatch(ez,fs,db,args,storage,capacity)
     }}
     storage = storage + fill
     if(storage>capacity){ez.storage = capacity}else{ez.storage = storage}
+    ez.caught++;
     fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
     return [ghost,amount,item,fill,ghostArr[2]]
 }

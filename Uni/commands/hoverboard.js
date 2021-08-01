@@ -34,6 +34,9 @@ exports.run = async (bot,message,args) => {
                     case "champion":
                         u = "https://imgur.com/XGyBAAm.png"
                         break;
+                    case "b-l-o-x":
+                        u = "https://imgur.com/SsqzGw1.png"
+                        break;
                     default:
                         u = "https://imgur.com/RV975Lr.png"}
                 const embed = new Discord.MessageEmbed()
@@ -53,9 +56,9 @@ exports.run = async (bot,message,args) => {
                 if(other){
                     tag = other.id
                     sm = q[message.guild.id].users[tag]}
-                let hbArr = [sm.hbUnlocked,sm.sky,sm.feather,sm.oblivion,sm.varus,sm.chroma,sm.champion]
-                let nameArr = ["<:hoverboard:842713851585495070>  **Basic**","<:skysurfer:842713851522056204>  **Sky Surfer**","<:feathershock:842713851044823071>  **Feather Shock**","<:oblivion:842713851450753024>  **Oblivion**","<:varus:842713851481030666>  **VARUS**","<:chromafloat:842713850897236029>  **Chroma Float**","<:champion:844610527669911602> **Champion**"]
-                let equipArr = ["basic","sky","feather","oblivion","varus","chroma","champion"]
+                let hbArr = [sm.hbUnlocked,sm.sky,sm.feather,sm.oblivion,sm.varus,sm.chroma,sm.champion,sm.blox]
+                let nameArr = ["<:hoverboard:842713851585495070>  **Basic**","<:skysurfer:842713851522056204>  **Sky Surfer**","<:feathershock:842713851044823071>  **Feather Shock**","<:oblivion:842713851450753024>  **Oblivion**","<:varus:842713851481030666>  **VARUS**","<:chromafloat:842713850897236029>  **Chroma Float**","<:champion:844610527669911602> **Champion**","<:BLOX:871140025016930324> **B-L-O-X**"]
+                let equipArr = ["basic","sky","feather","oblivion","varus","chroma","champion","b-l-o-x"]
                 let str = `<@${tag}>**'s Hoverboards**\n\n`
                 let i = 0
                 let hb = ""
@@ -221,6 +224,9 @@ exports.run = async (bot,message,args) => {
                             case "champion":
                                 message.channel.send(`<@${message.member.id}> You cannot purchase The <:champion:844610527669911602> Champion Hoverboard.`)
                                 break;
+                            case "b-l-o-x":
+                                message.channel.send(`<@${message.member.id}> You cannot purchase The <:BLOX:871140025016930324> B-L-O-X Hoverboard.`)
+                                break;
                             default:
                                 notAHoverboardName(message)
                                 break;
@@ -329,6 +335,16 @@ exports.run = async (bot,message,args) => {
                                     dontOwnThisHoverboard(message)
                                 }
                                 break;
+                            case "b-l-o-x":
+                                if(sm.blox)
+                                {
+                                    equipHoverboard(message,args[1],fs,q,"B-L-O-X","<:BLOX:871140025016930324>",sm)
+                                }
+                                else
+                                {
+                                    dontOwnThisHoverboard(message)
+                                }
+                                break;
                             default:
                                 notAHoverboardName(message)
                         }
@@ -349,7 +365,7 @@ exports.run = async (bot,message,args) => {
     }
     else
     {
-        message.channel.send(`<@${message.member.id}>\n\n**hoverboard commands** <:hoverboard:842713851585495070>\n\n**•** %hoverboard details - Displays all the <:hoverboard:842713851585495070> hoverboard skins and their <:gems:825122942413045791> Gem cost.\n**•** %hoverboard list - Displays all of your Hoverboards with a ⭐ next to your equipped Hoverboard.\n**•** %hoverboard buy <hoverboard name> - Buy a Hoverboard. (Cannot buy the same hoverboard twice)\n**•** %hoverboard equip <hoverboard name> - Equip a Hoverboard. (Your equipped hoverboard appears in your profile)\n\n**hoverboard advantages** <:chromafloat:842713850897236029>\n\nHoverboards do **NOTHING**. It is just another item you can buy and show off in your profile.`)
+        message.channel.send(`<@${message.member.id}>\n\n<:hoverboard:842713851585495070> **hoverboard commands** <:hoverboard:842713851585495070>\n\n**•** %hoverboard details - Displays all the <:hoverboard:842713851585495070> hoverboards and their <:gems:825122942413045791> cost.\n**•** %hoverboard list - Displays all of your Hoverboards with a ⭐ next to your equipped Hoverboard.\n**•** %hoverboard buy <hoverboard name> - Buy a Hoverboard. (Cannot buy the same hoverboard twice)\n**•** %hoverboard equip <hoverboard name> - Equip a Hoverboard. (Your equipped hoverboard appears in your profile)\n\n<:chromafloat:842713850897236029> **hoverboard advantages** <:chromafloat:842713850897236029>\n\nHoverboards do **NOTHING**. It is just another item you can buy and show off in your profile.`)
     }
 }
 exports.help = {

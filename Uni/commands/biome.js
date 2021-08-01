@@ -19,7 +19,7 @@ exports.run = async (bot,message,args) => {
             message.channel.send("🏗️  **The Construction Site Biome**  🏗️\n\n👻  Ghosts in the biome = 👷‍♀️ **Workers & Pigeons** <:pigeon:825122931721371690>\n🪛  Items in the biome = 🔨 **Hammers** 🔨\n📡  Antenna level required = **Bonus Biome**");
             break;
         case "%wild":
-            message.channel.send("🏜️  **The Wild West Biome**  🏜️\n\n👻  Ghosts in the biome = <:bandit:825122917930500147> **Bandits & Cowboys** 🤠\n🪛  Items in the biome = <:sherrifbadge:825122941637230613> **Sherrif Badges** <:sherrifbadge:825122941637230613>\n📡  Antenna level required = **5**");
+            message.channel.send("🏜️  **The Wild West Biome**  🏜️\n\n👻  Ghosts in the biome = <:bandit:825122917930500147> **Bandits & Cowboys** 🤠\n🪛  Items in the biome = <:sherrifbadge:825122941637230613> **Sherriff Badges** <:sherrifbadge:825122941637230613>\n📡  Antenna level required = **5**");
             break;
         case "%area":
             message.channel.send("☄️  **The Area 51 Biome**  ☄️\n\n👻  Ghosts in the biome = 👨‍🔬 **Scientists & Zorgs** 👽\n🪛  Items in the biome = <:meteorite:825122930047320115> **Meteorites** <:meteorite:825122930047320115>\n📡  Antenna level required = **6**");

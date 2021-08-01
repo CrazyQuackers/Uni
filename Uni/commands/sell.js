@@ -14,7 +14,7 @@ exports.run = async (bot,message,args) => {
         let petArr1 = [ez.pug,ez.fox,ez.cow,ez.pig,ez.mouse,ez.deer,ez.wolf,ez.duck,ez.unicorn,ez.bat,ez.jack];
         let petArr2 = [ez.bear,ez.cat,ez.cyborg,ez.horse,ez.fish,ez.chicken,ez.giraffe,ez.bob,ez.butterfly,ez.peacock,ez.tiger];
         let petArr3 = [ez.flamingo,ez.koala,ez.bot,ez.dino,ez.clownfish,ez.panda,ez.bee,ez.shark,ez.steve,ez.rabbit,ez.rex];
-        let petArr4 = [sm.hypno]
+        let petArr4 = [sm.hypno,sm.tree,sm.george,sm.sludge,sm.subject,sm.king,sm.mag]
         let ex1 = getExchangeRate(petArr1,true)
         let ex2 = getExchangeRate(petArr2,true)
         let ex3 = getExchangeRate(petArr3,true)
@@ -28,7 +28,7 @@ exports.run = async (bot,message,args) => {
         let c2 = 0;
         let i2 = ez.sellTime;
         for(i2 ; i2>59 ; i2-60){c2++}
-        message.channel.send(`<@${message.member.id}> You succesfully sold your 👻 ghosts and recieved **${coinToStr(tokens)} <:ectotoken:825122939812315219> ecto-tokens!**\nYou can start catching more 👻 ghosts once your <:pack:825122944204013588> pack finishes recharging: **\`${c2}h${i2}m\`**`)
+        message.channel.send(`<@${message.member.id}> You succesfully sold your 👻 ghosts and recieved **${coinToStr(tokens)} <:ectotoken:825122939812315219> Ecto-Tokens!**\nYou can start catching more 👻 ghosts once your <:pack:825122944204013588> pack finishes recharging: **\`${c2}h${i2}m\`**`)
         message.react("✅");
         checkQuests(sm)
         fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})

@@ -81,7 +81,7 @@ function mainPetFunction(message,c,ez,fs,db,sm,q)
         ez.gems = ez.gems - c;
         let object = (Math.round(Math.random()*1000))+1;
         let whatPet = 0
-        if(object<=600){
+        if(((sm.quest<7)&&(object<=600))||((sm.quest>=7)&&(object<=500))){
             whatPet = (Math.round(Math.random()*4))+1;
             switch(whatPet){
                 case 1:
@@ -151,7 +151,7 @@ function mainPetFunction(message,c,ez,fs,db,sm,q)
             }
         }
         else{
-            if(object<=870){
+            if(((sm.quest<7)&&(object<=870))||((sm.quest>=7)&&(object<=700))){
                 whatPet = (Math.round(Math.random()*3))+1;
                 switch(whatPet){
                     case 1:
@@ -205,7 +205,7 @@ function mainPetFunction(message,c,ez,fs,db,sm,q)
                 }
             }
             else{
-                if(object<=970){
+                if(((sm.quest<7)&&(object<=970))||((sm.quest>=7)&&(object<=850))){
                     whatPet = (Math.round(Math.random()*2))+1;
                     switch(whatPet){
                         case 1:
@@ -243,7 +243,7 @@ function mainPetFunction(message,c,ez,fs,db,sm,q)
                     }
                 }
                 else{
-                    if(object<=996){
+                    if(((sm.quest<7)&&(object<=996))||((sm.quest>=7)&&(object<=950))){
                         switch(c){
                             case 200:
                                 unboxedPetMessage(message,"a legendary","🦇 **Bat**",7,"<:magmoraug:825122942768644136> Magmoraug and <:ghastlytree:825122934221307955> Ghastly Tree")
@@ -281,18 +281,18 @@ function mainPetFunction(message,c,ez,fs,db,sm,q)
         fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
         checkQuests(c,sm,fs,q)
     }
-    else{
-        let gemStr = coinToStr(c-ez.gems)
-        message.channel.send(`<@${message.member.id}> You do not have enough <:gems:825122942413045791> gems to open this pet crate!\nYou need **${gemStr}** more <:gems:825122942413045791> gems!`)
-    }
+    else{message.channel.send(`<@${message.member.id}> You do not have enough <:gems:825122942413045791> gems to open this pet crate!\nYou need **${coinToStr(c-ez.gems)}** more <:gems:825122942413045791> gems!`)}
 }
 
 function checkQuests(c,sm,fs,q)
 {
     if((c==200)&&(sm.quest==1)&&(sm.task==6)&&(sm.qStarted)){sm.obj1=1}
     if((c==200)&&(sm.quest==2)&&(sm.task==3)&&(sm.qStarted)){sm.obj1=1}
-    if((sm.quest==4)&&(sm.task==3)&&(sm.qStarted)){if(c==200){sm.obj1+=1}else{if(c==1200){sm.obj2+=1}else{if(c==6000){sm.obj3+=1}}}}
+    if((sm.quest==4)&&(sm.task==3)&&(sm.qStarted)){if(c==200){sm.obj1++}if(c==1200){sm.obj2++}if(c==6000){sm.obj3++}}
     if((c==1200)&&(sm.quest==4)&&(sm.task==12)&&(sm.qStarted)){sm.obj1=1}
+    if((c==6000)&&(sm.quest==5)&&(sm.task==7)&&(sm.qStarted)){sm.obj1=1}
+    if((c==6000)&&(sm.quest==6)&&(sm.task==13)&&(sm.qStarted)){sm.obj1=1}
+    if((sm.quest==7)&&(sm.task==6)&&(sm.qStarted)){if(c==200){sm.obj1++}if(c==1200){sm.obj2++}if(c==6000){sm.obj3++}}
     fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
 }
 
