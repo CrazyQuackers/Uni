@@ -34,6 +34,7 @@ exports.run = async (bot,message,args) => {
     }
     if(Math.floor(new Date().getTime() - ez.lastBoss) / (1000 * 60 * 10) < 1){
         let m = (Math.round((new Date().getTime() - ez.lastBoss)/(1000 * 60)))
+        m = 10 - m
         boss = `💀 Your next **\`boss fight\`** is available in **0h ${m}m.** ❌`
     }
     if(Math.floor(new Date().getTime() - sm.lastSell) / (1000 * 60 * sm.sellWait) < 1){

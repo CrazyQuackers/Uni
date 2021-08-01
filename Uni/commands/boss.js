@@ -8,6 +8,7 @@ exports.run = async (bot,message,args) => {
     if(((arr.length>1)&&(arr[1]=="fight"))||(arr[0]=="%bf")){
         if(Math.floor(new Date().getTime() - ez.lastBoss) / (1000 * 60 * 10) < 1){
             let m = (Math.round((new Date().getTime() - ez.lastBoss)/(1000 * 60)))
+            m = 10 - m
             message.channel.send(`<@${message.member.id}> You have to wait another 🕐 **${m} minutes** before you can fight another 💀 boss!`)
             return;}
         ez.lastBoss = new Date().getTime()

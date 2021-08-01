@@ -9,7 +9,7 @@ exports.run = async (bot,message,args) => {
     if(sm.converter==0)
     {
         message.react("❌")
-        message.channel.send(`<@${message.member.id}> You haven't unlocked this feature yet! Reach Quest #5, Task #2! **\`${sm.quest}.${sm.task}/5.2\`**`)
+        message.channel.send(`<@${message.member.id}> You haven't unlocked this feature yet! Reach 📖 Quest #5, Task #2! **\`Q${sm.quest}.T${sm.task}/Q5.T2\`**`)
     }
     if(sm.converter==1)
     {
