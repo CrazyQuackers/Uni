@@ -12,11 +12,13 @@ exports.run = async (bot,message,args) => {
         message.react("✅")
         ez.gems = 50000
         ez.ectoTokens = 50000
-        ez.antenna = 5
+        ez.antenna = 7
         ez.pack = "Distorted Pack"
         ez.capacity = 1000000000
         ez.sellTime = 140
         ez.duck = true
+        ez.cat = true
+        ez.dino = true
         ez.unicorn = true
         ez.cow = true
         ez.deer = true
@@ -27,8 +29,9 @@ exports.run = async (bot,message,args) => {
         ez.shark = true
         ez.jack = true
         sm.quest = 4
-        sm.task = 1
+        sm.task = 18
         ez.constructionOpen = true
+        ez.pyramidsOpen = true
         sm.hbUnlocked = true
         sm.equipped = "basic"
         fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
