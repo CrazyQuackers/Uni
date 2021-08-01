@@ -29,9 +29,9 @@ bot.on('message', (message) =>
     if(!message.channel) return;
     if(!db[message.guild.id]) {
         db[message.guild.id] = {users: {}}
-        fs.writeFile("./data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
+        fs.writeFile("./data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
         q[message.guild.id] = {users: {}}
-        fs.writeFile("./data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
+        fs.writeFile("./data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log()}})
     }
     if(!db[message.guild.id].users[message.member.id]) {
         db[message.guild.id].users[message.member.id] = {
@@ -130,8 +130,8 @@ bot.on('message', (message) =>
             mag: false,
             blox: false
         }
-        fs.writeFile("./data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
-        fs.writeFile("./data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
+        fs.writeFile("./data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+        fs.writeFile("./data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log()}})
         // const embed = new Discord.MessageEmbed()
         //     .setColor(16753920)
         //     .setTitle("Hello there Ghost Hunter!")

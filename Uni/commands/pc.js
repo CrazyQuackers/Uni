@@ -278,7 +278,7 @@ function mainPetFunction(message,c,ez,fs,db,sm,q)
                 }
             }
         }
-        fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
+        fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
         checkQuests(c,sm,fs,q)
     }
     else{message.channel.send(`<@${message.member.id}> You do not have enough <:gems:825122942413045791> gems to open this pet crate!\nYou need **${coinToStr(c-ez.gems)}** more <:gems:825122942413045791> gems!`)}
@@ -293,7 +293,7 @@ function checkQuests(c,sm,fs,q)
     if((c==6000)&&(sm.quest==5)&&(sm.task==7)&&(sm.qStarted)){sm.obj1=1}
     if((c==6000)&&(sm.quest==6)&&(sm.task==13)&&(sm.qStarted)){sm.obj1=1}
     if((sm.quest==7)&&(sm.task==6)&&(sm.qStarted)){if(c==200){sm.obj1++}if(c==1200){sm.obj2++}if(c==6000){sm.obj3++}}
-    fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
+    fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log()}})
 }
 
 function unboxedPetMessageGodly(message,pet,effective)

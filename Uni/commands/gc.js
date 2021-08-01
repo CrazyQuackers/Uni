@@ -26,7 +26,7 @@ exports.run = async (bot,message,args) => {
                     ez.gems = ez.gems + num;
                     ez.lastConstruction = new Date().getTime();
                     message.channel.send(`<@${message.member.id}>\nYou found **${num} <:gems:825122942413045791> gems** in a <:small:825134200482431007> **small gem chest!**`)
-                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
+                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
                     checkQuests(sm,fs,q,1)
                 }
             }
@@ -59,7 +59,7 @@ exports.run = async (bot,message,args) => {
                         ez.gems = ez.gems + num;
                         ez.lastPyramids = new Date().getTime();
                         message.channel.send(`<@${message.member.id}>\nYou found **${num} <:gems:825122942413045791> gems** in a <:medium:825134203821228032> **medium gem chest!**`)
-                        fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
+                        fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
                         checkQuests(sm,fs,q,2)
                     }
                 }
@@ -92,7 +92,7 @@ exports.run = async (bot,message,args) => {
                             ez.gems = ez.gems + num;
                             ez.lastIce = new Date().getTime();
                             message.channel.send(`<@${message.member.id}>\nYou found **${num} <:gems:825122942413045791> gems** in a <:large:825134202127253514> **large gem chest!**`)
-                            fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
+                            fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
                             checkQuests(sm,fs,q,3)
                         }
                     }
@@ -140,5 +140,5 @@ function gcDetails(message,ez)
 function checkQuests(sm,fs,q,num)
 {
     if((sm.quest==7)&&(sm.task==9)&&(sm.qStarted)){if(num==1){sm.obj1++}if(num==2){sm.obj2++}if(num==3){sm.obj3++}}
-    fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
+    fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log()}})
 }

@@ -8,7 +8,7 @@ exports.run = async (bot,message,args) => {
     let voted = await topgg.hasVoted(message.author.id)
     if(voted){sendMessage(message,`**${message.author.username},** you can't vote at the moment.`)}else{sendMessage(message,`**${message.author.username},** you can vote now!`)
         ez.lastVote = new Date().getTime()
-        fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})}
+        fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})}
 }
 exports.help = {
     name: 'vote'

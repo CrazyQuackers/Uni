@@ -10,9 +10,9 @@ exports.run = async (bot,message,args) => {
         ez.gems = 50000
         ez.ectoTokens = 50000
         ez.antenna = 5
-        ez.pack = "Energized Pack"
-        ez.capacity = 8500
-        ez.sellTime = 60
+        ez.pack = "Distorted Pack"
+        ez.capacity = 1000000000000
+        ez.sellTime = 140
         ez.duck = true
         ez.unicorn = true
         ez.cow = true
@@ -28,8 +28,8 @@ exports.run = async (bot,message,args) => {
         ez.constructionOpen = true
         sm.hbUnlocked = true
         sm.equipped = "basic"
-        fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
-        fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
+        fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+        fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log()}})
     }
 }
 exports.help = {

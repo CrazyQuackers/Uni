@@ -488,7 +488,7 @@ function createQuestMessage(t,d,u,n,v,message,sm,fs,q)
     };
     message.channel.send({ embed: questEmbed });
     sm.qStarted = true
-    fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
+    fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log()}})
 }
 
 function createDoneMessage(d,u,g,fs,db,q,ez,message,sm)
@@ -516,8 +516,8 @@ function createDoneMessage(d,u,g,fs,db,q,ez,message,sm)
     sm.obj4 = 0
     sm.qStarted = false
     ez.gems = ez.gems + g
-    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
-    fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
+    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+    fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log()}})
 }
 
 function coinToStr(n)

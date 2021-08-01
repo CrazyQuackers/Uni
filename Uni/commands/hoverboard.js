@@ -100,8 +100,8 @@ exports.run = async (bot,message,args) => {
                                             message.react("✅")
                                             sm.sky = true
                                             ez.gems = ez.gems - 15000
-                                            fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
-                                            fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
+                                            fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+                                            fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log()}})
                                             message.channel.send(`<@${message.member.id}> **Sky Surfer** successfully purchased! <:skysurfer:842713851522056204>`)
                                         }
                                     }
@@ -131,8 +131,8 @@ exports.run = async (bot,message,args) => {
                                             message.react("✅")
                                             sm.feather = true
                                             ez.gems = ez.gems - 75000
-                                            fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
-                                            fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
+                                            fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+                                            fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log()}})
                                             message.channel.send(`<@${message.member.id}> **Feather Shock** successfully purchased! <:feathershock:842713851044823071>`)
                                         }
                                     }
@@ -160,8 +160,8 @@ exports.run = async (bot,message,args) => {
                                         message.react("✅")
                                         sm.oblivion = true
                                         ez.gems = ez.gems - 150000
-                                        fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
-                                        fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
+                                        fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+                                        fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log()}})
                                         message.channel.send(`<@${message.member.id}> **Oblivian** successfully purchased! <:oblivion:842713851450753024>`)
                                     }
                                 }
@@ -184,8 +184,8 @@ exports.run = async (bot,message,args) => {
                                         message.react("✅")
                                         sm.varus = true
                                         ez.gems = ez.gems - 250000
-                                        fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
-                                        fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
+                                        fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+                                        fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log()}})
                                         message.channel.send(`<@${message.member.id}> **VARUS** successfully purchased! <:varus:842713851481030666>`)
                                     }
                                 }
@@ -210,8 +210,8 @@ exports.run = async (bot,message,args) => {
                                             message.react("✅")
                                             sm.chroma = true
                                             ez.gems = ez.gems - 400000
-                                            fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log(error)}})
-                                            fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
+                                            fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+                                            fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log()}})
                                             message.channel.send(`<@${message.member.id}> **Chroma Float** successfully purchased! <:chromafloat:842713850897236029>`)
                                         }
                                     }
@@ -388,7 +388,7 @@ function equipHoverboard(message,str,fs,q,hb,emoji,sm)
 {
     message.react("✅")
     sm.equipped = str
-    fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log(error)}})
+    fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log()}})
     message.channel.send(`<@${message.member.id}> **${hb}** successfully equipped! ${emoji} ⭐`)
 }
 
