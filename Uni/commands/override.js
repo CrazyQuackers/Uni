@@ -7,13 +7,12 @@ exports.run = async (bot,message,args) => {
     if(message.author.id==352558373016698881)
     {
         message.react("✅")
-        ez.gems = 500
-        ez.ectoTokens = 500
-        ez.antenna = 6
-        ez.pack = "Distorted Pack"
-        ez.capacity = 3500000
-        ez.storage = 0
-        ez.sellTime = 140
+        ez.gems = 50000
+        ez.ectoTokens = 50000
+        ez.antenna = 5
+        ez.pack = "Energized Pack"
+        ez.capacity = 8500
+        ez.sellTime = 60
         ez.duck = true
         ez.unicorn = true
         ez.cow = true
@@ -21,8 +20,11 @@ exports.run = async (bot,message,args) => {
         ez.cyborg = true
         ez.panda = true
         sm.hypno = true
+        ez.rex = true
+        ez.shark = true
+        ez.jack = true
         sm.quest = 4
-        sm.task = 5
+        sm.task = 1
         ez.constructionOpen = true
         sm.hbUnlocked = true
         sm.equipped = "basic"
