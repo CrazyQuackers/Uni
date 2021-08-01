@@ -6,6 +6,9 @@ exports.run = async (bot,message,args) => {
     let ez = db[message.guild.id].users[message.member.id]
     if(message.author.id==352558373016698881)
     {
+        if(args.length > 0){sm.task++;
+            fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log()}})
+            return;}
         message.react("✅")
         ez.gems = 50000
         ez.ectoTokens = 50000
