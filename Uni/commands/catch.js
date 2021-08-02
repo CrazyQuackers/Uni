@@ -50,6 +50,7 @@ function fullCatchFunction(ez,fs,db,sm,message,args,q)
     let a = whichAntenna(args[0])
     if((a=="🏗️ Construction Site")||(a=="<:pyramid:825122937236357164> Pyramids")||(a=="🧊 Ice Cave")){if(((a=="🏗️ Construction Site")&&(ez.constructionOpen))||((a=="<:pyramid:825122937236357164> Pyramids")&&(ez.pyramidsOpen))||((a=="🧊 Ice Cave")&&(ez.iceOpen))){a=0}else{didntUnlock(a,message)}
             return;}
+    console.log(a)
     if(ez.antenna>=a){
         if(storage==capacity){message.channel.send(`<@${message.member.id}> Your <:pack:825122944204013588> pack is full!\nUse the **%sell** command to empty your <:pack:825122944204013588> pack before trying to catch another 👻 ghost!`)}else{
             if(Math.floor(new Date().getTime() - sm.lastSell) / (1000 * 60 * sm.sellWait) < 1){

@@ -73,7 +73,7 @@ function pcStats(message,w,c,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,b1,b2,b3,b4,b5,b
 function unboxedPetMessage(message,rarity,pet,attack,effective,duplicate)
 {
     if(duplicate){pet = pet + "!  \`duplicate\`"}else{pet = pet + "!"}
-    message.channel.send(`<@${message.member.id}> You've unboxed ${rarity} ${pet}\nThis pet has **${attack}** ⚔️ Attack and is effective against ${effective}!`)
+    message.channel.send(`<@${message.member.id}> You've unboxed **${rarity}** ${pet}\nThis pet has **${attack}** ⚔️ Attack and is effective against ${effective}!`)
 }
 
 function mainPetFunction(message,c,ez,fs,db,sm,q)
@@ -300,7 +300,7 @@ function checkQuests(c,sm,fs,q)
 function unboxedPetMessageGodly(message,pet,effective,duplicate)
 {
     if(duplicate){pet = pet + "!  \`duplicate\`"}else{pet = pet + "!"}
-    message.channel.send(`<@${message.member.id}> YOU'VE UNBOXED AN AMAZING GODLY ${pet}\nThis pet has **10** ⚔️ Attack and is effective against ${effective}!`)
+    message.channel.send(`<@${message.member.id}> **YOU'VE UNBOXED AN AMAZING GODLY** ${pet}\nThis pet has **10** ⚔️ Attack and is effective against ${effective}!`)
 }
 
 function coinToStr(n)

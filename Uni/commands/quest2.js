@@ -156,7 +156,7 @@ exports.run = async (bot,message,args) => {
                         if((ez.gems-o1)>=5000){
                             message.react("✅")
                             ez.gems-=5000
-                            createDoneMessage("\`Jackpot! Gem pot! Pit lid! Here's your second piece, and some of the gems you've just collected for me!\`\n+**Blox Piece** 🧩\n+**1300** <:gems:825122942413045791>","https://imgur.com/xAhzj6u.png",1300,fs,db,q,ez,message,sm)
+                            createDoneMessage("\`Jackpot! Gem pot! Pot lid! Here's your second piece, and some of the gems you've just collected for me!\`\n+**Blox Piece** 🧩\n+**1300** <:gems:825122942413045791>","https://imgur.com/xAhzj6u.png",1300,fs,db,q,ez,message,sm)
                         }else{message.react("❌")}
                         break;
                     case 3:
@@ -433,7 +433,7 @@ exports.run = async (bot,message,args) => {
                         if(o1>6){o1=6}
                         if(o2>2){o2=2}
                         if(o3>1){o3=1}
-                        createQuestMessage("🗺️ Quest #7 - Ghost Hunter Shelly","📖 **__Task #9/15__** : Dead Ghost's Chest\n\n\`Now that you've unlocked all the bonus biome, you can open the bonus chests that each one of 'em stores every now and then. Here's a fun little task! Open Gem Chests!\`","https://imgur.com/xAhzj6u.png","📜 __Goals:__",`• Open the <:small:825134200482431007> Small Gem Chest **6** times: **${o1}/6**\n• Open the <:medium:825134203821228032> Medium Gem Chest **2** times: **${o2}/2**\n• Open the <:large:825134202127253514> Large Gem Chest **1** time: **${o3}/1**`,message,sm,fs,q)
+                        createQuestMessage("🗺️ Quest #7 - Ghost Hunter Shelly","📖 **__Task #9/15__** : Dead Ghost's Chest\n\n\`Now that you've unlocked all the bonus biomes, you can open the bonus chests that each one of 'em stores every now and then. Here's a fun little task! Open Gem Chests!\`","https://imgur.com/xAhzj6u.png","📜 __Goals:__",`• Open the <:small:825134200482431007> Small Gem Chest **6** times: **${o1}/6**\n• Open the <:medium:825134203821228032> Medium Gem Chest **2** times: **${o2}/2**\n• Open the <:large:825134202127253514> Large Gem Chest **1** time: **${o3}/1**`,message,sm,fs,q)
                         break;
                     case 10:
                         if(o1>50000000){o1=50000000}
