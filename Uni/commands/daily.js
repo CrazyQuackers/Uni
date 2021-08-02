@@ -16,12 +16,12 @@ exports.run = async (bot,message,args) => {
         message.channel.send(`<@${message.member.id}> You have already claimed today's daily reward.\nIt will be available to you again in 🕐 ${str}`)
     }
     else{
-        let g = (Math.floor(Math.random()*301))+200;
-        let a = (Math.floor(Math.random()*6))+10;
+        let g = (Math.floor(Math.random()*1001))+1000;
+        let a = (Math.floor(Math.random()*11))+20;
         ez.gems = ez.gems + g;
         ez.parts = ez.parts + a;
         let s = (Math.floor(Math.random()*13))+1;
-        let i = (Math.floor(Math.random()*10))+1;
+        let i = (Math.floor(Math.random()*11))+10;
         let si = ""
         switch(s)
         {
