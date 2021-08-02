@@ -17,7 +17,7 @@ exports.help = {
 
 function sendMessage(message,change)
 {
-    message.channel.send(`🎩 **Top.gg isn't related to Uni and there are no options for the bot owner to disable the ads.**\n⬆️ Voting this bot will help Uni grow in population!\n🙌 Thanks for voting!\n\n${change}\nhttps://top.gg/bot/823253086406967356/vote`)
+    message.channel.send(`🎩 **Top.gg isn't related to Uni and there are no options for the bot owner to disable the ads.**\n⬆️ Voting this bot will help Uni grow in population!\n<:gems:825122942413045791> You will also recieve a bunch of Gems for voting!\n🙌 Thanks for voting!\n\n${change}\nhttps://top.gg/bot/823253086406967356/vote`)
 }
 
 function calcTime(last,n)

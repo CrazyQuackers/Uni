@@ -24,6 +24,18 @@ bot.on('ready', () =>
 
 bot.on('message', (message) =>
 {
+    if(message.channel.id==871795551354617867){
+        let voteUser = message.mentions.members.first()
+        const uniServer = bot.guilds.cache.get('823252764246147152')
+        if(uniServer.members.cache.get(voteUser)){
+            let gemAmmount = (Math.floor(Math.random()*2001))+3000;
+            let shortCut = db[message.guild.id].users[voteUser]
+            shortCut.gems += gemAmmount
+            shortCut.lastVote = new Date().getTime()
+            fs.writeFile("./data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
+            message.voteUser.send(`You recieved **${gemAmmount}** <:gems:825122942413045791> Gems for voting!\nCome back in 🕛 **12 hours** to vote again!`)
+        }else{message.voteUser.send(`**Thanks for the upvote!**  🙌\nTo recieve <:gems:825122942413045791> Gems after voting, join the <:uni:825122929778884658> Official Uni Discord Server!\nhttps://discord.gg/r2RymJrcPw`)}
+    }
     if(message.author.bot) return;
     if(message.channel.type !== 'text') return;
     if(!message.channel) return;
@@ -140,7 +152,6 @@ bot.on('message', (message) =>
         //     .setFooter(`Good luck ${message.author.username}!`)
         // message.author.send({embed});
     }
-    let ez = db[message.guild.id].users[message.member.id]
     let sm = q[message.guild.id].users[message.member.id]
     let prefix = '%';
     message.content = message.content.toLowerCase();
