@@ -183,7 +183,7 @@ function voteMessage1(voteUser,gems)
         title: "🙌 Thanks for Voting! 🙌",
         author: {
             name: voteUser.username,
-            icon_url: voteUser.avatarURL(),
+            icon_url: voteUser.user.avatarURL(),
         },
         description: `You recieved **${gems}** <:gems:825122942413045791> Gems for voting!\n\nCome back in 🕛 **12 hours** to vote again!`,
         thumbnail: {
@@ -202,7 +202,7 @@ function voteMessage2(voteUser)
         url: "https://discord.gg/r2RymJrcPw",
         author: {
             name: voteUser.username,
-            icon_url: voteUser.avatarURL(),
+            icon_url: voteUser.user.avatarURL(),
         },
         description: `To recieve <:gems:825122942413045791> Gems after voting, join the <:uni:825122929778884658> Official Uni Discord Server!`,
         thumbnail: {
