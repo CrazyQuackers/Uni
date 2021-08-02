@@ -12,10 +12,9 @@ exports.run = async (bot,message,args) => {
         message.react("✅")
         ez.gems = 50000
         ez.ectoTokens = 1000000000
-        ez.antenna = 7
-        ez.parts = 500
+        ez.antenna = 8
         ez.pack = "Distorted Pack"
-        ez.capacity = 1000000000
+        ez.capacity = 3500000
         ez.sellTime = 140
         ez.duck = true
         ez.cat = true
@@ -29,8 +28,9 @@ exports.run = async (bot,message,args) => {
         ez.rex = true
         ez.shark = true
         ez.jack = true
-        sm.quest = 5
+        sm.quest = 6
         sm.task = 1
+        sm.converter = 3
         ez.constructionOpen = true
         ez.pyramidsOpen = true
         sm.hbUnlocked = true

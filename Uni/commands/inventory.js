@@ -55,6 +55,16 @@ function decreaseNumberLength(n)
         {
             if(n>=1000000000)
             {
+                if(n>=1000000000000)
+                {
+                    if(n>=1000000000000000)
+                    {
+                        n/=1000000000000000;
+                        return(`${accountForDecimal(n)}Q`);
+                    }
+                    n/=1000000000000;
+                    return(`${accountForDecimal(n)}T`);
+                }
                 n/=1000000000;
                 return(`${accountForDecimal(n)}B`);
             }

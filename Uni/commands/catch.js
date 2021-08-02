@@ -80,7 +80,7 @@ function fullCatchFunction(ez,fs,db,sm,message,args,q)
                         f+=arr[3]
                         z++
                     }let b = multipleCatchArr(args[0])
-                    message.channel.send(`<@${message.member.id}>\n\nYou caught **${coinToStr(z)}** 👻 ghosts in total!\nYou caught **${coinToStr(g1)}** ${b[0]}\nYou caught **${coinToStr(g2)}** ${b[1]}\n\n__You also found:__\n\n+ **${coinToStr(i1)}** <:gems:825122942413045791> gems\n+ **${coinToStr(i2)}** 🔩 antenna parts\n+ **${coinToStr(i3)}** ${arr[4]}\n+ **${coinToStr(f)}** <:pack:825122944204013588> pack storage **\`${coinToStr(ez.storage)}/${coinToStr(ez.capacity)}\`**`)
+                    message.channel.send(`<@${message.member.id}>You caught **${coinToStr(z)} 👻 ghosts** in total!\n\nYou caught **${coinToStr(g1)}** ${b[0]}\nYou caught **${coinToStr(g2)}** ${b[1]}\n\n__You also found:__\n\n+ **${coinToStr(i1)}** <:gems:825122942413045791> gems\n+ **${coinToStr(i2)}** 🔩 antenna parts\n+ **${coinToStr(i3)}** ${arr[4]}\n+ **${coinToStr(f)}** <:pack:825122944204013588> pack storage **\`${coinToStr(ez.storage)}/${coinToStr(ez.capacity)}\`**`)
                     checkQuests(args,z,q,sm,g2,fs,g1,f)
                     return;}
                 if((args.length>1)&&(isNumeric(args[1]))&&(parseInt(args[1],10)!=1)){
