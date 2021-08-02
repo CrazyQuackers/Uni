@@ -17,16 +17,19 @@ exports.run = async (bot,message,args) => {
         let petArr2 = [ez.bear,ez.cat,ez.cyborg,ez.horse,ez.fish,ez.chicken,ez.giraffe,ez.bob,ez.butterfly,ez.peacock,ez.tiger];
         let petArr3 = [ez.flamingo,ez.koala,ez.bot,ez.dino,ez.clownfish,ez.panda,ez.bee,ez.shark,ez.steve,ez.rabbit,ez.rex];
         let petArr4 = [sm.hypno,sm.tree,sm.george,sm.sludge,sm.subject,sm.king,sm.mag]
+        console.log("made the arrays")
         let ex1 = getExchangeRate(petArr1,true)
         let ex2 = getExchangeRate(petArr2,true)
         let ex3 = getExchangeRate(petArr3,true)
         let ex4 = getExchangeRate(petArr4,false)
         let exchange = ex1 + ex2 + ex3 + ex4 + 1
+        console.log(`exchange rate - ${exchange}`)
         ez.storage = 0
         let tokens = exchange * storage
         ez.ectoTokens = ez.ectoTokens + tokens
         sm.sellWait = ez.sellTime
         sm.lastSell = new Date().getTime()
+        console.log("calculated and added tokens and started sell time wait")
         let c2 = 0;
         let i2 = ez.sellTime;
         for(i2 ; i2>59 ; i2-60){c2++}
