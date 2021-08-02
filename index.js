@@ -28,7 +28,8 @@ bot.on('message', (message) =>
         let voteUser = message.mentions.members.first()
         voteUser = voteUser.id
         console.log("Got the user")
-        if(!db[message.guild.id].users[voteUser]){return;}
+        if(!db[message.guild.id].users[voteUser]){message.voteUser.send(`**Thanks for the upvote!**  🙌\nTo recieve <:gems:825122942413045791> Gems after voting, join the <:uni:825122929778884658> Official Uni Discord Server!\nhttps://discord.gg/r2RymJrcPw`)
+            return;}
         console.log("User is in the Server")
         let gemAmmount = (Math.floor(Math.random()*2001))+3000;
         console.log(`Gem ammount - ${gemAmmount}`)
