@@ -28,13 +28,17 @@ bot.on('message', (message) =>
         let voteUser = message.mentions.members.first()
         const uniServer = bot.guilds.cache.get('823252764246147152')
         if(uniServer.members.cache.get(voteUser)){
+            console.log("I am in the Server")
             let gemAmmount = (Math.floor(Math.random()*2001))+3000;
+            console.log(`Gem ammount - ${gemAmmount}`)
             let shortCut = db[message.guild.id].users[voteUser]
             shortCut.gems += gemAmmount
             shortCut.lastVote = new Date().getTime()
             fs.writeFile("./data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
+            console.log("Right before send")
             message.voteUser.send(`You recieved **${gemAmmount}** <:gems:825122942413045791> Gems for voting!\nCome back in 🕛 **12 hours** to vote again!`)
-        }else{message.voteUser.send(`**Thanks for the upvote!**  🙌\nTo recieve <:gems:825122942413045791> Gems after voting, join the <:uni:825122929778884658> Official Uni Discord Server!\nhttps://discord.gg/r2RymJrcPw`)}
+        }else{console.log("Not in server, right before send")
+            message.voteUser.send(`**Thanks for the upvote!**  🙌\nTo recieve <:gems:825122942413045791> Gems after voting, join the <:uni:825122929778884658> Official Uni Discord Server!\nhttps://discord.gg/r2RymJrcPw`)}
     }
     if(message.author.bot) return;
     if(message.channel.type !== 'text') return;

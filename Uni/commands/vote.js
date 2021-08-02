@@ -7,7 +7,7 @@ exports.run = async (bot,message,args) => {
     let ez = db[message.guild.id].users[message.member.id]
     let voted = await topgg.hasVoted(message.author.id)
     if(voted){let time = calcTime(ez.lastVote,12)
-        sendMessage(message,`**${message.author.username},** you can't vote at the moment. You can vote again in \`${time}\``)}else{sendMessage(message,`**${message.author.username},** you can vote now!`)
+        sendMessage(message,`**${message.author.username},** you can't vote at the moment. You can vote again in **\`${time}\`**`)}else{sendMessage(message,`**${message.author.username},** you can vote now!\nhttps://top.gg/bot/823253086406967356/vote`)
         ez.lastVote = new Date().getTime()
         fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})}
 }
@@ -17,7 +17,7 @@ exports.help = {
 
 function sendMessage(message,change)
 {
-    message.channel.send(`🎩 **Top.gg isn't related to Uni and there are no options for the bot owner to disable the ads.**\n⬆️ Voting this bot will help Uni grow in population!\n<:gems:825122942413045791> You will also recieve a bunch of Gems for voting!\n🙌 Thanks for voting!\n\n${change}\nhttps://top.gg/bot/823253086406967356/vote`)
+    message.channel.send(`🎩 **Top.gg isn't related to Uni and there are no options for the bot owner to disable the ads.**\n⬆️ Voting this bot will help Uni grow in population!\n<:gems:825122942413045791> You will also recieve a bunch of Gems for voting!\n🙌 Thanks for voting!\n\n${change}`)
 }
 
 function calcTime(last,n)
@@ -29,5 +29,5 @@ function calcTime(last,n)
         m = 60 - m
     }
     else{h = n - h}
-    return `**${h}h ${m}m.**`
+    return `${h}h ${m}m.`
 }
