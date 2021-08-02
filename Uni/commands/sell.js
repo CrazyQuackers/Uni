@@ -6,7 +6,6 @@ exports.run = async (bot,message,args) => {
     let sm = q[message.guild.id].users[message.member.id]
     let cap = ez.capacity
     let storage = ez.storage
-    console.log("in sell")
     if(cap!=storage){
         message.channel.send(`<@${message.member.id}> You cannot sell your 👻 ghosts until your <:pack:825122944204013588> pack is full! **\`${coinToStr(storage)}/${coinToStr(cap)}\`**`)
         message.react("❌");
@@ -21,7 +20,6 @@ exports.run = async (bot,message,args) => {
         let ex3 = getExchangeRate(petArr3,true)
         let ex4 = getExchangeRate(petArr4,false)
         let exchange = ex1 + ex2 + ex3 + ex4 + 1
-        console.log(`exchange rate - ${exchange}`)
         ez.storage = 0
         let tokens = exchange * storage
         ez.ectoTokens = ez.ectoTokens + tokens
