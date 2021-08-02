@@ -34,8 +34,8 @@ bot.on('message', (message) =>
             shortCut.gems += gemAmmount
             shortCut.lastVote = new Date().getTime()
             fs.writeFile("./data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
-            voteUser.send(`<@${voteUserId}> You recieved **${gemAmmount}** <:gems:825122942413045791> Gems for voting!\nCome back in 🕛 **12 hours** to vote again!`)
-        }else{voteUser.send(`<@${voteUserId}>  **Thanks for the upvote!**  🙌\nTo recieve <:gems:825122942413045791> Gems after voting, join the <:uni:825122929778884658> Official Uni Discord Server!\nhttps://discord.gg/r2RymJrcPw`)
+            voteMessage1(voteUser,gemAmmount)
+        }else{voteMessage2(voteUser)
             return;}
     }
     if(message.author.bot) return;
@@ -175,5 +175,42 @@ bot.on('message', (message) =>
     let commandfile = bot.commands.get(cmd);
     if(commandfile) {commandfile.run(bot,message,args)}
 })
+
+function voteMessage1(voteUser,gems)
+{
+    const embed = {
+        color: 6607550,
+        title: "🙌 Thanks for Voting! 🙌",
+        author: {
+            name: message.author.username,
+            icon_url: message.author.avatarURL(),
+        },
+        description: `You recieved **${gems}** <:gems:825122942413045791> Gems for voting!\n\nCome back in 🕛 **12 hours** to vote again!`,
+        thumbnail: {
+            url: "https://imgur.com/wwL2qOS.png",
+        },
+        timestamp: new Date(),
+    };
+    voteUser.send({embed});
+}
+
+function voteMessage2(voteUser)
+{
+    const embed = {
+        color: 6607550,
+        title: "🙌 Thanks for Voting! 🙌",
+        url: "https://discord.gg/r2RymJrcPw",
+        author: {
+            name: message.author.username,
+            icon_url: message.author.avatarURL(),
+        },
+        description: `To recieve <:gems:825122942413045791> Gems after voting, join the <:uni:825122929778884658> Official Uni Discord Server!`,
+        thumbnail: {
+            url: "https://imgur.com/YcWMQLD.png",
+        },
+        timestamp: new Date(),
+    };
+    voteUser.send({embed});
+}
 
 bot.login(process.env.token)

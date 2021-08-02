@@ -48,6 +48,8 @@ function fullCatchFunction(ez,fs,db,sm,message,args,q)
     let i3 = 0
     let f = 0
     let a = whichAntenna(args[0])
+    if(((a=="🏗️ Construction Site")&&(ez.constructionOpen))||((a=="<:pyramid:825122937236357164> Pyramids")&&(ez.pyramidsOpen))||((a=="🧊 Ice Cave")&&(ez.iceOpen))){a=0}else{didntUnlock(a)
+        return;}
     if(ez.antenna>=a){
         if(storage==capacity){message.channel.send(`<@${message.member.id}> Your <:pack:825122944204013588> pack is full!\nUse the **%sell** command to empty your <:pack:825122944204013588> pack before trying to catch another 👻 ghost!`)}else{
             if(Math.floor(new Date().getTime() - sm.lastSell) / (1000 * 60 * sm.sellWait) < 1){
@@ -104,7 +106,7 @@ function fullCatchFunction(ez,fs,db,sm,message,args,q)
                 }
             }
         }
-    }else{message.channel.send(`<@${message.member.id}> You cannot catch 👻 ghosts in the ${whichBiome(args[0])} until your 📡 antenna level is **\`${ez.antenna}/${a}\`**`)}
+    }else{message.channel.send(`<@${message.member.id}> You cannot catch 👻 ghosts in The ${whichBiome(args[0])} until your 📡 Antenna Level is **\`${ez.antenna}/${a}\`**`)}
 }
 
 function checkQuests(args,num,q,sm,g2,fs,g1,f)
@@ -475,7 +477,7 @@ function whichAntenna(str)
         case "sewers":
             return 4
         case "construction":
-            return 4
+            return "🏗️ Construction Site"
         case "wild":
             return 5
         case "area":
@@ -483,7 +485,7 @@ function whichAntenna(str)
         case "mine":
             return 7
         case "pyramids":
-            return 7
+            return "<:pyramid:825122937236357164> Pyramids"
         case "beach":
             return 8
         case "underwater":
@@ -491,11 +493,16 @@ function whichAntenna(str)
         case "volcano":
             return 10
         case "ice":
-            return 10
+            return "🧊 Ice Cave"
     }
 }
 
 function realAreaTest(str)
 {
     return ((str!="forest")&&(str!="city")&&(str!="junkyard")&&(str!="sewers")&&(str!="construction")&&(str!="wild")&&(str!="area")&&(str!="mine")&&(str!="pyramids")&&(str!="beach")&&(str!="underwater")&&(str!="volcano")&&(str!="ice"))
+}
+
+function didntUnlock(bonus)
+{
+    message.channel.send(`<@${message.member.id}> You cannot catch 👻 ghosts in The ${bonus} because you haven't unlocked it yet. **\`%unlock\`**`)
 }

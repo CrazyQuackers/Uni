@@ -22,7 +22,7 @@ exports.run = async (bot,message,args) => {
                 }
                 else
                 {
-                    let num = (Math.floor(Math.random()*101))+100;
+                    let num = (Math.floor(Math.random()*501))+500;
                     ez.gems = ez.gems + num;
                     ez.lastConstruction = new Date().getTime();
                     message.channel.send(`<@${message.member.id}>\nYou found **${num} <:gems:825122942413045791> gems** in a <:small:825134200482431007> **small gem chest!**`)
@@ -55,7 +55,7 @@ exports.run = async (bot,message,args) => {
                     }
                     else
                     {
-                        let num = (Math.floor(Math.random()*201))+400;
+                        let num = (Math.floor(Math.random()*2001))+1000;
                         ez.gems = ez.gems + num;
                         ez.lastPyramids = new Date().getTime();
                         message.channel.send(`<@${message.member.id}>\nYou found **${num} <:gems:825122942413045791> gems** in a <:medium:825134203821228032> **medium gem chest!**`)
@@ -88,7 +88,7 @@ exports.run = async (bot,message,args) => {
                         }
                         else
                         {
-                            let num = (Math.floor(Math.random()*1001))+1000;
+                            let num = (Math.floor(Math.random()*5001))+5000;
                             ez.gems = ez.gems + num;
                             ez.lastIce = new Date().getTime();
                             message.channel.send(`<@${message.member.id}>\nYou found **${num} <:gems:825122942413045791> gems** in a <:large:825134202127253514> **large gem chest!**`)
@@ -130,7 +130,7 @@ function gcDetails(message,ez)
         .addFields(
             {name: "Requirement", value: `${str1} Construction Site\n${str2} Pyramids\n${str3} Ice Cave`, inline: true},
             {name: "Cooldown", value: "⏲️ 1 hour\n⏲️ 6 hours\n⏲️ 12 hours", inline: true},
-            {name: "Amount", value: "<:gems:825122942413045791> 100-200\n<:gems:825122942413045791> 400-600\n<:gems:825122942413045791> 1,000-2,000", inline: true},
+            {name: "Amount", value: "<:gems:825122942413045791> 500-1,000\n<:gems:825122942413045791> 1,000-3,000\n<:gems:825122942413045791> 5,000-10,000", inline: true},
         )
         .setFooter("Open a Gem Chest with %gem chest <size>")
         .setTimestamp()
