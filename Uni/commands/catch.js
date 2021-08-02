@@ -81,9 +81,8 @@ function fullCatchFunction(ez,fs,db,sm,message,args,q)
                         z++
                     }let b = multipleCatchArr(args[0])
                     message.channel.send(`<@${message.member.id}>You caught **${coinToStr(z)} 👻 ghosts** in total!\n\nYou caught **${coinToStr(g1)}** ${b[0]}\nYou caught **${coinToStr(g2)}** ${b[1]}\n\n__You also found:__\n\n+ **${coinToStr(i1)}** <:gems:825122942413045791> gems\n+ **${coinToStr(i2)}** 🔩 antenna parts\n+ **${coinToStr(i3)}** ${arr[4]}\n+ **${coinToStr(f)}** <:pack:825122944204013588> pack storage **\`${coinToStr(ez.storage)}/${coinToStr(ez.capacity)}\`**`)
-                    checkQuests(args,z,q,sm,g2,fs,g1,f)
-                    return;}
-                if((args.length>1)&&(isNumeric(args[1]))&&(parseInt(args[1],10)!=1)){
+                    checkQuests(args,z,q,sm,g2,fs,g1,f)}
+                else{if((args.length>1)&&(isNumeric(args[1]))&&(parseInt(args[1],10)!=1)){
                     let num = parseInt(args[1],10)
                     let ghost2 = secondGhost(args[0])
                     if(((num-1)*ghost2+storage)<capacity){
@@ -101,7 +100,7 @@ function fullCatchFunction(ez,fs,db,sm,message,args,q)
                     message.channel.send(`<@${message.member.id}> You caught ${arr[0]}\n\n__You also found:__\n\n+ **${coinToStr(arr[1])}** ${arr[2]}\n+ **${coinToStr(arr[3])}** <:pack:825122944204013588> pack storage **\`${coinToStr(ez.storage)}/${coinToStr(ez.capacity)}\`**`)
                     if((arr[0]=="a 🧚 **Fairy!**")||(arr[0]=="a 🤵‍♂️ **Businessman!**")||(arr[0]=="a 🧑‍🔧 **Mechanic!**")||(arr[0]=="a 🛍️ **Paper Bag!**")||(arr[0]=="a 👷‍♀️ **Worker!**")||(arr[0]=="a <:bandit:825122917930500147> **Bandit!**")||(arr[0]=="a 👨‍🔬 **Scientist!**")||(arr[0]=="a 🧑‍🏭 **Miner!**")||(arr[0]=="a <:pharaoh:825122944514523226> **Pharaoh!**")||(arr[0]=="a 🏴‍☠️ **Pirate!**")||(arr[0]=="a 🤿 **Diver!**")||(arr[0]=="an <:islander:825122941963993099> **Islander!**")||(arr[0]=="an <:explorer:825123592290172939> **Explorer!**")){g1++}else{g2++}
                     checkQuests(args,1,q,sm,g2,fs,g1,arr[3])
-                }
+                }}
             }
         }
     }else{message.channel.send(`<@${message.member.id}> You cannot catch 👻 ghosts in the ${whichBiome(args[0])} until your 📡 antenna level is **\`${ez.antenna}/${a}\`**`)}
