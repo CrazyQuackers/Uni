@@ -27,6 +27,8 @@ bot.on('message', (message) =>
     if(message.channel.id==871795551354617867){
         let voteUser = message.mentions.members.first()
         voteUser = voteUser.id
+        //ez.users[membersArray[i].user.id]
+        if(!db[message.guild.id].users[voteUser]){return;}
         const uniServer = bot.guilds.cache.get('823252764246147152')
         if(uniServer.members.cache.get(voteUser)){
             console.log("I am in the Server")
