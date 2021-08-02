@@ -80,7 +80,7 @@ exports.run = async (bot,message,args) => {
         ez.lastClaim = new Date().getTime()
         fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
         let str1 = `<@${message.member.id}>\n**▬▬▬** 🥳 DAILY REWARD 🥳 **▬▬▬**`
-        let str2 = str1+`\n+ **${g}** <:gems:825122942413045791> gems.`
+        let str2 = str1+`\n+ **${coinToStr(g)}** <:gems:825122942413045791> gems.`
         let str3 = str2+`\n+ **${a}** 🔩 antenna parts.`
         let str4 = str3+`\n+ **${i}** ${si}`
         let str5 = str4+`\n**▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬**`

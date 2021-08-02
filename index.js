@@ -185,7 +185,7 @@ function voteMessage1(voteUser,gems)
             name: voteUser.username,
             icon_url: voteUser.user.avatarURL(),
         },
-        description: `You recieved **${gems}** <:gems:825122942413045791> Gems for voting!\n\nCome back in 🕛 **12 hours** to vote again!`,
+        description: `You recieved **${coinToStr(gems)}** <:gems:825122942413045791> Gems for voting!\nCome back in 🕛 **12 hours** to vote again!`,
         thumbnail: {
             url: "https://imgur.com/wwL2qOS.png",
         },
@@ -211,6 +211,25 @@ function voteMessage2(voteUser)
         timestamp: new Date(),
     };
     voteUser.send({embed});
+}
+
+function coinToStr(n)
+{
+    let strC = n.toString()
+    let digits = strC.length
+    let i = 0;
+    let newStrC = "";
+    let num = 0;
+    for(i ; i<digits ; i++)
+    {
+        newStrC = newStrC + strC[i];
+        num = digits-i-1;
+        if((num!=0)&&(num%3==0))
+        {
+            newStrC = newStrC + ",";
+        }
+    }
+    return newStrC
 }
 
 bot.login(process.env.token)
