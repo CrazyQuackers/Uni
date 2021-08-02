@@ -12,12 +12,10 @@ exports.run = async (bot,message,args) => {
         message.react("❌");
     }
     else{
-        console.log("capacity = storage")
         let petArr1 = [ez.pug,ez.fox,ez.cow,ez.pig,ez.mouse,ez.deer,ez.wolf,ez.duck,ez.unicorn,ez.bat,ez.jack];
         let petArr2 = [ez.bear,ez.cat,ez.cyborg,ez.horse,ez.fish,ez.chicken,ez.giraffe,ez.bob,ez.butterfly,ez.peacock,ez.tiger];
         let petArr3 = [ez.flamingo,ez.koala,ez.bot,ez.dino,ez.clownfish,ez.panda,ez.bee,ez.shark,ez.steve,ez.rabbit,ez.rex];
         let petArr4 = [sm.hypno,sm.tree,sm.george,sm.sludge,sm.subject,sm.king,sm.mag]
-        console.log("made the arrays")
         let ex1 = getExchangeRate(petArr1,true)
         let ex2 = getExchangeRate(petArr2,true)
         let ex3 = getExchangeRate(petArr3,true)
@@ -29,10 +27,16 @@ exports.run = async (bot,message,args) => {
         ez.ectoTokens = ez.ectoTokens + tokens
         sm.sellWait = ez.sellTime
         sm.lastSell = new Date().getTime()
-        console.log("calculated and added tokens and started sell time wait")
         let c2 = 0;
         let i2 = ez.sellTime;
-        for(i2 ; i2>59 ; i2-60){c2++}
+        for(i2 ; i2>59 ; i2-60)
+        {
+            console.log(`i2 = ${i2}`)
+            c2++
+            console.log(`c2 = ${c2}`)
+        }
+        console.log(`i2 finale = ${i2}. should be 20`)
+        console.log(`c2 finale = ${c2}. should be 2`)
         console.log("right before message send")
         message.channel.send(`<@${message.member.id}> You succesfully sold your 👻 ghosts and recieved **${coinToStr(tokens)} <:ectotoken:825122939812315219> Ecto-Tokens!**\nYou can start catching more 👻 ghosts once your <:pack:825122944204013588> pack finishes recharging: **\`${c2}h${i2}m\`**`)
         message.react("✅");
