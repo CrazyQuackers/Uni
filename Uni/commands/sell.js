@@ -29,15 +29,7 @@ exports.run = async (bot,message,args) => {
         sm.lastSell = new Date().getTime()
         let c2 = 0;
         let i2 = ez.sellTime;
-        for(i2 ; i2>59 ; i2-60)
-        {
-            console.log(`i2 = ${i2}`)
-            c2++
-            console.log(`c2 = ${c2}`)
-        }
-        console.log(`i2 finale = ${i2}. should be 20`)
-        console.log(`c2 finale = ${c2}. should be 2`)
-        console.log("right before message send")
+        for(i2 ; i2>59 ; i2-=60){c2++}
         message.channel.send(`<@${message.member.id}> You succesfully sold your 👻 ghosts and recieved **${coinToStr(tokens)} <:ectotoken:825122939812315219> Ecto-Tokens!**\nYou can start catching more 👻 ghosts once your <:pack:825122944204013588> pack finishes recharging: **\`${c2}h${i2}m\`**`)
         message.react("✅");
         checkQuests(sm)
