@@ -32,14 +32,15 @@ exports.run = async (bot,message,args) => {
         ez.pearls = 200
         ez.diamonds = 200
         ez.tusks = 200
-        sm.quest = 6
-        sm.task = 19
+        sm.quest = 8
+        sm.task = 1
         sm.converter = 3
         ez.constructionOpen = true
         ez.pyramidsOpen = true
         ez.iceOpen = true
         sm.hbUnlocked = true
         sm.champion = true
+        sm.blox = true
         sm.equipped = "basic"
         fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
         fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})

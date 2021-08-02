@@ -15,7 +15,7 @@ exports.run = async (bot,message,args) => {
         )
         .setTimestamp()
     message.channel.send({embed});
-    const guild = bot.guilds.cache.get('823252764246147152')
+    const guild = bot.guilds.cache.get('862782069879603212')
     if(!(guild.members.cache.get(message.member.id))){
         if(sm.lastDM%3==0){
             message.react("📬")
@@ -46,3 +46,5 @@ exports.run = async (bot,message,args) => {
 exports.help = {
     name: 'help'
 }
+
+//823252764246147152
