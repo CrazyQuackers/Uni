@@ -38,8 +38,8 @@ bot.on('message', (message) =>
             shortCut.lastVote = new Date().getTime()
             fs.writeFile("./data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
             console.log("Right before send")
-            message.voteUser.send(`You recieved **${gemAmmount}** <:gems:825122942413045791> Gems for voting!\nCome back in 🕛 **12 hours** to vote again!`)
-        }else{message.voteUser.send(`**Thanks for the upvote!**  🙌\nTo recieve <:gems:825122942413045791> Gems after voting, join the <:uni:825122929778884658> Official Uni Discord Server!\nhttps://discord.gg/r2RymJrcPw`)
+            voteUser.send(`You recieved **${gemAmmount}** <:gems:825122942413045791> Gems for voting!\nCome back in 🕛 **12 hours** to vote again!`)
+        }else{voteUser.send(`**Thanks for the upvote!**  🙌\nTo recieve <:gems:825122942413045791> Gems after voting, join the <:uni:825122929778884658> Official Uni Discord Server!\nhttps://discord.gg/r2RymJrcPw`)
             return;}
     }
     if(message.author.bot) return;
