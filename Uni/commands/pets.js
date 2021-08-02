@@ -19,7 +19,7 @@ exports.run = async (bot,message,args) => {
     let str1 = `<@${tag}>**'s Pets**  \`${(c1+c2+c3+c4)}/40\`\n\n__Pet Crate 1__  \`${c1}/11\`\n`
     let str2 = `\n\n__Pet Crate 2__  \`${c2}/11\`\n`
     let str3 = `\n\n__Pet Crate 3__  \`${c3}/11\`\n`
-    let str4 = `\n\n__Questline & Boss Pets__\n  \`${c4}/7\``
+    let str4 = `\n\n__Questline & Boss Pets__  \`${c4}/7\`\n`
     str1 = createMessage(petArr1,1,str1)
     str2 = createMessage(petArr2,2,str2)
     str3 = createMessage(petArr3,3,str3)

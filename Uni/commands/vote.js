@@ -6,11 +6,9 @@ exports.run = async (bot,message,args) => {
     const fs = require("fs")
     let ez = db[message.guild.id].users[message.member.id]
     let voted = await topgg.hasVoted(message.author.id)
-    if(voted){sendMessage(message,`**${message.author.username},** you can't vote at the moment.`)}else{sendMessage(message,`**${message.author.username},** you can vote now!`)
+    if(voted){let time = calcTime(ez.lastVote,12)
+        sendMessage(message,`**${message.author.username},** you can't vote at the moment. You can vote again in \`${time}\``)}else{sendMessage(message,`**${message.author.username},** you can vote now!`)
         ez.lastVote = new Date().getTime()
-        let g = (Math.floor(Math.random()*601))+400;
-        ez.gems+=g
-        message.author.send(`${message.member.id} You recieved **${g}** <:gems:825122942413045791> Gems for voting!\nCome back in 🕛 **12 hours** to vote again!`)
         fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})}
 }
 exports.help = {
@@ -19,5 +17,17 @@ exports.help = {
 
 function sendMessage(message,change)
 {
-    message.channel.send(`🎩 **Top.gg isn't related to Uni and there are no options for the bot owner to disable the ads.**\n⬆️ Voting this bot will help Uni grow in population!\n<:gems:825122942413045791> You will also recieve some Gems for voting!\n🙌 Thanks for helping!\n\n${change}\nhttps://top.gg/bot/823253086406967356/vote`)
+    message.channel.send(`🎩 **Top.gg isn't related to Uni and there are no options for the bot owner to disable the ads.**\n⬆️ Voting this bot will help Uni grow in population!\n🙌 Thanks for voting!\n\n${change}\nhttps://top.gg/bot/823253086406967356/vote`)
+}
+
+function calcTime(last,n)
+{
+    let h = (Math.floor((Math.abs(new Date().getTime() - last))/(1000 * 60 * 60)))
+    let m = ((Math.floor((Math.abs(new Date().getTime() - last))/(1000 * 60)))%60)
+    if(m!=0){
+        h = n-1 - h
+        m = 60 - m
+    }
+    else{h = n - h}
+    return `**${h}h ${m}m.**`
 }
