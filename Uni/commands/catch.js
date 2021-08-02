@@ -165,7 +165,7 @@ function checkQuests(args,num,q,sm,g2,fs,g1,f)
     if((sm.quest==7)&&(sm.task==3)&&(sm.qStarted)){if(args[0]=="city"){sm.obj1+=g2}if(args[0]=="junkyard"){sm.obj2+=g2}}
     if((sm.quest==7)&&(sm.task==5)&&(sm.qStarted)){if(args[0]=="wild"){sm.obj1+=g2}if(args[0]=="area"){sm.obj2+=g2}}
     if((sm.quest==7)&&(sm.task==7)&&(sm.qStarted)){if(args[0]=="beach"){sm.obj1+=g2}if(args[0]=="underwater"){sm.obj2+=g2}}
-    fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log()}})
+    fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})
 }
 
 function mainCatch(ez,fs,db,args,storage,capacity)
@@ -193,7 +193,7 @@ function mainCatch(ez,fs,db,args,storage,capacity)
     storage = storage + fill
     if(storage>capacity){ez.storage = capacity}else{ez.storage = storage}
     ez.caught++;
-    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
     return [ghost,amount,item,fill,ghostArr[2]]
 }
 

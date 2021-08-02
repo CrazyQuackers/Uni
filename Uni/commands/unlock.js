@@ -57,7 +57,7 @@ function mainUnlockFunction(str,ez,message,img,fs,db,b1,b2,b3,b4,b5,b6,b7)
                 ez.doubloons = ez.doubloons - 50
                 ez.pearls = ez.pearls - 50
                 ez.diamonds = ez.diamonds - 50}
-        fs.writeFile("./data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})}
+        fs.writeFile("./data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})}
     else{
         message.react("❌")
         switch(num){

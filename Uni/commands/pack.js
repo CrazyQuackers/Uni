@@ -14,7 +14,7 @@ exports.run = async (bot,message,args) => {
                     ez2.pack = "Sub Pack";
                     ez2.capacity = 150;
                     ez2.sellTime = 20;
-                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
                     message.channel.send(`<@${tag2}> Check your new pack with **%pack**!`)
                 }
                 else{str = coinToStr(50-ez2.ectoTokens)
@@ -27,7 +27,7 @@ exports.run = async (bot,message,args) => {
                     ez2.pack = "R.I.P Pack";
                     ez2.capacity = 500;
                     ez2.sellTime = 30;
-                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
                     message.channel.send(`<@${tag2}> Check your new pack with **%pack**!`)
                 }
                 else{str = coinToStr(200-ez2.ectoTokens)
@@ -40,7 +40,7 @@ exports.run = async (bot,message,args) => {
                     ez2.pack = "8-Bit Pack";
                     ez2.capacity = 1500;
                     ez2.sellTime = 40;
-                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
                     message.channel.send(`<@${tag2}> Check your new pack with **%pack**!`)
                 }
                 else{str = coinToStr(1250-ez2.ectoTokens)
@@ -53,7 +53,7 @@ exports.run = async (bot,message,args) => {
                     ez2.pack = "Hex Pack";
                     ez2.capacity = 4000;
                     ez2.sellTime = 50;
-                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
                     message.channel.send(`<@${tag2}> Check your new pack with **%pack**!`)
                 }
                 else{str = coinToStr(7750-ez2.ectoTokens)
@@ -66,7 +66,7 @@ exports.run = async (bot,message,args) => {
                     ez2.pack = "Energized Pack";
                     ez2.capacity = 8500;
                     ez2.sellTime = 60;
-                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
                     message.channel.send(`<@${tag2}> Check your new pack with **%pack**!`)
                 }
                 else{str = coinToStr(47500-ez2.ectoTokens)
@@ -79,7 +79,7 @@ exports.run = async (bot,message,args) => {
                     ez2.pack = "Charged Pack";
                     ez2.capacity = 19000;
                     ez2.sellTime = 70;
-                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
                     message.channel.send(`<@${tag2}> Check your new pack with **%pack**!`)
                 }
                 else{str = coinToStr(170000-ez2.ectoTokens)
@@ -92,7 +92,7 @@ exports.run = async (bot,message,args) => {
                     ez2.pack = "Pack V.2.0";
                     ez2.capacity = 35000;
                     ez2.sellTime = 80;
-                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
                     message.channel.send(`<@${tag2}> Check your new pack with **%pack**!`)
                 }
                 else{str = coinToStr(475000-ez2.ectoTokens)
@@ -105,7 +105,7 @@ exports.run = async (bot,message,args) => {
                     ez2.pack = "Turbine Pack";
                     ez2.capacity = 90000;
                     ez2.sellTime = 90;
-                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
                     message.channel.send(`<@${tag2}> Check your new pack with **%pack**!`)
                 }
                 else{str = coinToStr(1400000-ez2.ectoTokens)
@@ -118,7 +118,7 @@ exports.run = async (bot,message,args) => {
                     ez2.pack = "JETPAC";
                     ez2.capacity = 200000;
                     ez2.sellTime = 100;
-                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
                     message.channel.send(`<@${tag2}> Check your new pack with **%pack**!`)
                 }
                 else{str = coinToStr(4500000-ez2.ectoTokens)
@@ -131,7 +131,7 @@ exports.run = async (bot,message,args) => {
                     ez2.pack = "Scuba Pack";
                     ez2.capacity = 400000;
                     ez2.sellTime = 110;
-                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
                     message.channel.send(`<@${tag2}> Check your new pack with **%pack**!`)
                 }
                 else{str = coinToStr(15000000-ez2.ectoTokens)
@@ -144,7 +144,7 @@ exports.run = async (bot,message,args) => {
                     ez2.pack = "Void Pack";
                     ez2.capacity = 1000000;
                     ez2.sellTime = 120;
-                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
                     message.channel.send(`<@${tag2}> Check your new pack with **%pack**!`)
                 }
                 else{str = coinToStr(42500000-ez2.ectoTokens)
@@ -157,7 +157,7 @@ exports.run = async (bot,message,args) => {
                     ez2.pack = "Chroma Pack";
                     ez2.capacity = 2500000;
                     ez2.sellTime = 130;
-                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
                     message.channel.send(`<@${tag2}> Check your new pack with **%pack**!`)
                 }
                 else{str = coinToStr(190000000-ez2.ectoTokens)
@@ -170,7 +170,7 @@ exports.run = async (bot,message,args) => {
                     ez2.pack = "Distorted Pack";
                     ez2.capacity = 3500000;
                     ez2.sellTime = 140;
-                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
                     message.channel.send(`<@${tag2}> Check your new pack with **%pack**!`)
                 }
                 else{str = coinToStr(750000000-ez2.ectoTokens)

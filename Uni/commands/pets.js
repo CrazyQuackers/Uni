@@ -12,10 +12,14 @@ exports.run = async (bot,message,args) => {
     let petArr2 = [ez.bear,ez.cat,ez.cyborg,ez.horse,ez.fish,ez.chicken,ez.giraffe,ez.bob,ez.butterfly,ez.peacock,ez.tiger];
     let petArr3 = [ez.flamingo,ez.koala,ez.bot,ez.dino,ez.clownfish,ez.panda,ez.bee,ez.shark,ez.steve,ez.rabbit,ez.rex];
     let petArr4 = [sm.hypno,sm.tree,sm.george,sm.sludge,sm.subject,sm.king,sm.mag];
-    let str1 = `<@${tag}>**'s Pets**\n\n__Pet Crate 1__\n`
-    let str2 = "\n\n__Pet Crate 2__\n"
-    let str3 = "\n\n__Pet Crate 3__\n"
-    let str4 = "\n\n__Questline & Boss Pets__\n"
+    let c1 = countPets(petArr1)
+    let c2 = countPets(petArr2)
+    let c3 = countPets(petArr3)
+    let c4 = countPets(petArr4)
+    let str1 = `<@${tag}>**'s Pets**  \`${(c1+c2+c3+c4)}/40\`\n\n__Pet Crate 1__  \`${c1}/11\`\n`
+    let str2 = `\n\n__Pet Crate 2__  \`${c2}/11\`\n`
+    let str3 = `\n\n__Pet Crate 3__  \`${c3}/11\`\n`
+    let str4 = `\n\n__Questline & Boss Pets__\n  \`${c4}/7\``
     str1 = createMessage(petArr1,1,str1)
     str2 = createMessage(petArr2,2,str2)
     str3 = createMessage(petArr3,3,str3)
@@ -24,6 +28,13 @@ exports.run = async (bot,message,args) => {
 }
 exports.help = {
     name: 'pets'
+}
+
+function countPets(arr)
+{
+    let c = 0
+    for(let i=0 ; i<arr.length ; i++){if(arr[i]){c++}}
+    return c;
 }
 
 function createMessage(arr,n,str)

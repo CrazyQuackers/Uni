@@ -17,7 +17,7 @@ exports.run = async (bot,message,args) => {
                     ez2.parts = ez2.parts-3;
                     ez2.acorns = ez2.acorns-3;
                     ez2.antenna = ez2.antenna + 1;
-                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
                 }
                 else{message.react("❌")
                     message.channel.send(`<@${tag2}> You do not have enough 🪛 items to upgrade your 📡 antenna level!\nYou need **${p1}** more 🔩 antenna parts and **${p2}** more <:acorn:825122942660509707> acorns!`)}
@@ -32,7 +32,7 @@ exports.run = async (bot,message,args) => {
                     ez2.parts = ez2.parts-10;
                     ez2.newspapers = ez2.newspapers-5;
                     ez2.antenna = ez2.antenna + 1;
-                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
                 }
                 else{message.react("❌")
                     message.channel.send(`<@${tag2}> You do not have enough 🪛 items to upgrade your 📡 antenna level!\nYou need **${p3}** more 🔩 antenna parts and **${p4}** more 📰 newspapers!`)}
@@ -47,7 +47,7 @@ exports.run = async (bot,message,args) => {
                     ez2.parts = ez2.parts-35;
                     ez2.tires = ez2.tires-10;
                     ez2.antenna = ez2.antenna + 1;
-                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
                 }
                 else{message.react("❌")
                     message.channel.send(`<@${tag2}> You do not have enough 🪛 items to upgrade your 📡 antenna level!\nYou need **${p5}** more 🔩 antenna parts and **${p6}** more <:tire:825122944128385054> tires!`)}
@@ -68,7 +68,7 @@ exports.run = async (bot,message,args) => {
                     ez2.tires = ez2.tires-10;
                     ez2.socks = ez2.socks-25;
                     ez2.antenna = ez2.antenna + 1;
-                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
                 }
                 else{message.react("❌")
                     message.channel.send(`<@${tag2}> You do not have enough 🪛 items to upgrade your 📡 antenna level!\nYou need **${p7}** more 🔩 antenna parts, **${p8}** more 📰 newspapers, **${p9}** more <:tire:825122944128385054> tires and **${p10}** more 🧦 socks!`)}
@@ -83,7 +83,7 @@ exports.run = async (bot,message,args) => {
                     ez2.parts = ez2.parts-150;
                     ez2.badges = ez2.badges-30;
                     ez2.antenna = ez2.antenna + 1;
-                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
                 }
                 else{message.react("❌")
                     message.channel.send(`<@${tag2}> You do not have enough 🪛 items to upgrade your 📡 antenna level!\nYou need **${p11}** more 🔩 antenna parts and **${p12}** more <:sherrifbadge:825122941637230613> sherrif badges!`)}
@@ -98,7 +98,7 @@ exports.run = async (bot,message,args) => {
                     ez2.parts = ez2.parts-200;
                     ez2.meteorites = ez2.meteorites-50;
                     ez2.antenna = ez2.antenna + 1;
-                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
                 }
                 else{message.react("❌")
                     message.channel.send(`<@${tag2}> You do not have enough 🪛 items to upgrade your 📡 antenna level!\nYou need **${p13}** more 🔩 antenna parts and **${p14}** more <:meteorite:825122930047320115> meteorites!`)}
@@ -119,7 +119,7 @@ exports.run = async (bot,message,args) => {
                     ez2.meteorites = ez2.meteorites-40;
                     ez2.gold = ez2.gold-100;
                     ez2.antenna = ez2.antenna + 1;
-                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
                 }
                 else{message.react("❌")
                     message.channel.send(`<@${tag2}> You do not have enough 🪛 items to upgrade your 📡 antenna level!\nYou need **${p15}** more 🔩 antenna parts, **${p16}** more <:sherrifbadge:825122941637230613> sherrif badges, **${p17}** more <:meteorite:825122930047320115> meteorites and **${p18}** more <:goldbar:825122939006746625> gold bars!`)}
@@ -134,7 +134,7 @@ exports.run = async (bot,message,args) => {
                     ez2.parts = ez2.parts-1100;
                     ez2.doubloons = ez2.doubloons-250;
                     ez2.antenna = ez2.antenna + 1;
-                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
                 }
                 else{message.react("❌")
                     message.channel.send(`<@${tag2}> You do not have enough 🪛 items to upgrade your 📡 antenna level!\nYou need **${p19}** more 🔩 antenna parts and **${p20}** more <:doubloon:825122941746151434> doubloons!`)}
@@ -149,7 +149,7 @@ exports.run = async (bot,message,args) => {
                     ez2.parts = ez2.parts-1500;
                     ez2.pearls = ez2.pearls-300;
                     ez2.antenna = ez2.antenna + 1;
-                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+                    fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
                 }
                 else{message.react("❌")
                     message.channel.send(`<@${tag2}> You do not have enough 🪛 items to upgrade your 📡 antenna level!\nYou need **${p21}** more 🔩 antenna parts and **${p22}** more <:pearl:825122938457686057> pearls!`)}
@@ -180,25 +180,57 @@ exports.help = {
 
 function whatYouNeed(ez)
 {
+    let parts = ez.parts
+    let acorns = ez.acorns
+    let newspapers = ez.newspapers
+    let tires = ez.tires
+    let socks = ez.socks
+    let badges = ez.badges
+    let meteorites = ez.meteorites
+    let gold = ez.gold
+    let doubloons = ez.doubloons
+    let pearls = ez.pearls
     switch(ez.antenna)
     {
         case 1:
-            return `\`${ez.parts}/3\`🔩\`${ez.acorns}/3\`<:acorn:825122942660509707>`
+            if(parts>3){parts=3}
+            if(acorns>3){acorns=3}
+            return `\`${parts}/3\`🔩\`${acorns}/3\`<:acorn:825122942660509707>`
         case 2:
-            return `\`${ez.parts}/10\`🔩\`${ez.newspapers}/5\`📰`
+            if(parts>10){parts=10}
+            if(newspapers>5){newspapers=5}
+            return `\`${parts}/10\`🔩\`${newspapers}/5\`📰`
         case 3:
-            return `\`${ez.parts}/35\`🔩\`${ez.tires}/10\`<:tire:825122944128385054>`
+            if(parts>35){parts=35}
+            if(tires>10){tires=10}
+            return `\`${parts}/35\`🔩\`${tires}/10\`<:tire:825122944128385054>`
         case 4:
-            return `\`${ez.parts}/75\`🔩\`${ez.newspapers}/10\`📰\`${ez.tires}/10\`<:tire:825122944128385054>\`${ez.socks}/25\`🧦`
+            if(parts>75){parts=75}
+            if(newspapers>10){newspapers=10}
+            if(tires>10){tires=10}
+            if(socks>25){socks=25}
+            return `\`${parts}/75\`🔩\`${newspapers}/10\`📰\`${tires}/10\`<:tire:825122944128385054>\`${socks}/25\`🧦`
         case 5:
-            return `\`${ez.parts}/150\`🔩\`${ez.badges}/30\`<:sherrifbadge:825122941637230613>`
+            if(parts>150){parts=150}
+            if(badges>30){badges=30}
+            return `\`${parts}/150\`🔩\`${badges}/30\`<:sherrifbadge:825122941637230613>`
         case 6:
-            return `\`${ez.parts}/200\`🔩\`${ez.meteorites}/50\`<:meteorite:825122930047320115>`
+            if(parts>200){parts=200}
+            if(meteorites>50){meteorites=50}
+            return `\`${parts}/200\`🔩\`${meteorites}/50\`<:meteorite:825122930047320115>`
         case 7:
-            return `\`${ez.parts}/400\`🔩\`${ez.badges}/40\`<:sherrifbadge:825122941637230613>\`${ez.meteorites}/40\`<:meteorite:825122930047320115>\`${ez.gold}/100\`<:goldbar:825122939006746625>`
+            if(parts>400){parts=400}
+            if(badges>40){badges=40}
+            if(meteorites>40){meteorites=40}
+            if(gold>100){gold=100}
+            return `\`${parts}/400\`🔩\`${badges}/40\`<:sherrifbadge:825122941637230613>\`${meteorites}/40\`<:meteorite:825122930047320115>\`${gold}/100\`<:goldbar:825122939006746625>`
         case 8:
-            return `\`${ez.parts}/1100\`🔩\`${ez.doubloons}/250\`<:doubloon:825122941746151434>`
+            if(parts>1100){parts=1100}
+            if(doubloons>250){doubloons=250}
+            return `\`${parts}/1100\`🔩\`${doubloons}/250\`<:doubloon:825122941746151434>`
         case 9:
-            return `\`${ez.parts}/1500\`🔩\`${ez.pearls}/300\`<:pearl:825122938457686057>`
+            if(parts>1500){parts=1500}
+            if(pearls>300){pearls=300}
+            return `\`${parts}/1500\`🔩\`${pearls}/300\`<:pearl:825122938457686057>`
     }
 }

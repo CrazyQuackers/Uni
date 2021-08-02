@@ -12,7 +12,7 @@ exports.run = async (bot,message,args) => {
             message.channel.send(`<@${message.member.id}> You have to wait another 🕐 **${m} minutes** before you can fight another 💀 boss!`)
             return;}
         ez.lastBoss = new Date().getTime()
-        fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+        fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
         let type = (Math.floor(Math.random()*7));
         let hp = (Math.round(Math.random()*11))+10;
         let hpLeft = hp;
@@ -99,7 +99,7 @@ exports.run = async (bot,message,args) => {
                                         bossPet = (Math.floor(Math.random()*100));
                                         if(((sm.quest>=9)&&(bossPet<5))||((sm.quest<9)&&(bossPet==0))){bossPetStr = whichBossPet(type,q,sm,fs)}
                                         checkQuests(sm,fs,q)
-                                        fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
+                                        fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
                                         str = str+`\n\n**▬▬▬▬▬▬▬**「RESULT」**▬▬▬▬▬▬▬▬▬▬▬▬▬▬**\n\n👑 Winner : <@${message.member.id}>\n💀 Defeated : ${boss}\n\n**▬▬▬▬▬**「YOUR EARNINGS」**▬▬▬▬▬▬▬▬▬▬▬▬**\n\n+ **${g}** <:gems:825122942413045791> gems!\n\n${bossPetStr}`
                                     }
                                     else
@@ -153,7 +153,7 @@ function whichBossPet(type,q,sm,fs)
             sm.mag = true
             break;
     }
-    fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log()}})
+    fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})
     str = str + "\n**YOU GOT A BOSS PET! CONGRATULATIONS! THOSE ARE EXTREMELY RARE!**"
     return str;
 }
@@ -380,5 +380,5 @@ function checkQuests(sm,fs,q)
     if((sm.quest==5)&&(sm.task==6)&&(sm.qStarted)){sm.obj1=1}
     if((sm.quest==6)&&(sm.task==3)&&(sm.qStarted)){sm.obj1++}
     if((sm.quest==7)&&(sm.task==13)&&(sm.qStarted)){sm.obj1++}
-    fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log()}})
+    fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})
 }

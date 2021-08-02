@@ -56,13 +56,28 @@ function decreaseNumberLength(n)
             if(n>=1000000000)
             {
                 n/=1000000000;
-                return(`${coinToStr(n)}B`);
+                return(`${accountForDecimal(n)}B`);
             }
             n/=1000000;
-            return(`${coinToStr(n)}M`);
+            return(`${accountForDecimal(n)}M`);
         }
         n/=1000;
-        return(`${coinToStr(n)}K`);
+        return(`${accountForDecimal(n)}K`);
     }
-    return(`${coinToStr(n)}`);
+    return(`${n}`);
+}
+
+function accountForDecimal(n)
+{
+    let str = n.toString()
+    let arr = str.split('.')
+    arr[0] = coinToStr(arr[0])
+    if(arr.length>1){arr[1] = removeAfter2(arr[1])
+        return(`${arr[0]}.${arr[1]}`)}
+    return arr[0];
+}
+
+function removeAfter2(str)
+{
+    if(str[1]){return(`${str[0]}${str[1]}`)}return(`${str[0]}`)
 }

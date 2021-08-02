@@ -7,7 +7,7 @@ exports.run = async (bot,message,args) => {
     if(message.author.id==352558373016698881)
     {
         if(args.length > 0){sm.task++;
-            fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log()}})
+            fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})
             return;}
         message.react("✅")
         ez.gems = 50000
@@ -28,14 +28,15 @@ exports.run = async (bot,message,args) => {
         ez.rex = true
         ez.shark = true
         ez.jack = true
-        sm.quest = 4
-        sm.task = 18
+        sm.quest = 5
+        sm.task = 1
         ez.constructionOpen = true
         ez.pyramidsOpen = true
         sm.hbUnlocked = true
+        sm.champion = true
         sm.equipped = "basic"
-        fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){console.log()}})
-        fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log()}})
+        fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
+        fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})
     }
 }
 exports.help = {

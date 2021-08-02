@@ -40,7 +40,7 @@ exports.run = async (bot,message,args) => {
             message.author.send({ embed: embed2 });
         }
         sm.lastDM++;
-        fs.writeFile("./data/q.json", JSON.stringify(q,null,4), function(error){if(error){console.log()}})
+        fs.writeFile("./data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})
     }
 }
 exports.help = {
