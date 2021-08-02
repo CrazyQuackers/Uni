@@ -26,14 +26,14 @@ bot.on('message', (message) =>
 {
     if(message.channel.id==871795551354617867){
         let voteUser = message.mentions.members.first()
-        voteUser = voteUser.id
+        let voteUserId = voteUser.id
         const guilder = message.guild
         console.log("Got the user")
-        if((db[guilder.id])&&(db[guilder.id].users[voteUser])){
+        if((db[guilder.id])&&(db[guilder.id].users[voteUserId])){
             console.log("User is in the Server")
             let gemAmmount = (Math.floor(Math.random()*2001))+3000;
             console.log(`Gem ammount - ${gemAmmount}`)
-            let shortCut = db[guilder.id].users[voteUser]
+            let shortCut = db[guilder.id].users[voteUserId]
             shortCut.gems += gemAmmount
             shortCut.lastVote = new Date().getTime()
             fs.writeFile("./data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
