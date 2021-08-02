@@ -48,7 +48,7 @@ function fullCatchFunction(ez,fs,db,sm,message,args,q)
     let i3 = 0
     let f = 0
     let a = whichAntenna(args[0])
-    if(((a=="🏗️ Construction Site")&&(ez.constructionOpen))||((a=="<:pyramid:825122937236357164> Pyramids")&&(ez.pyramidsOpen))||((a=="🧊 Ice Cave")&&(ez.iceOpen))){a=0}else{didntUnlock(a)
+    if(((a=="🏗️ Construction Site")&&(ez.constructionOpen))||((a=="<:pyramid:825122937236357164> Pyramids")&&(ez.pyramidsOpen))||((a=="🧊 Ice Cave")&&(ez.iceOpen))){a=0}else{didntUnlock(a,message)
         return;}
     if(ez.antenna>=a){
         if(storage==capacity){message.channel.send(`<@${message.member.id}> Your <:pack:825122944204013588> pack is full!\nUse the **%sell** command to empty your <:pack:825122944204013588> pack before trying to catch another 👻 ghost!`)}else{
@@ -502,7 +502,7 @@ function realAreaTest(str)
     return ((str!="forest")&&(str!="city")&&(str!="junkyard")&&(str!="sewers")&&(str!="construction")&&(str!="wild")&&(str!="area")&&(str!="mine")&&(str!="pyramids")&&(str!="beach")&&(str!="underwater")&&(str!="volcano")&&(str!="ice"))
 }
 
-function didntUnlock(bonus)
+function didntUnlock(bonus,message)
 {
     message.channel.send(`<@${message.member.id}> You cannot catch 👻 ghosts in The ${bonus} because you haven't unlocked it yet. **\`%unlock\`**`)
 }
