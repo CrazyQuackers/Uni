@@ -27,8 +27,9 @@ bot.on('message', (message) =>
     if(message.channel.id==871795551354617867){
         let voteUser = message.mentions.members.first()
         voteUser = voteUser.id
+        const guilder = message.guild
         console.log("Got the user")
-        if(!db[message.guild.id].users[voteUser]){message.voteUser.send(`**Thanks for the upvote!**  🙌\nTo recieve <:gems:825122942413045791> Gems after voting, join the <:uni:825122929778884658> Official Uni Discord Server!\nhttps://discord.gg/r2RymJrcPw`)
+        if(!db[guilder.id].users[voteUser]){message.voteUser.send(`**Thanks for the upvote!**  🙌\nTo recieve <:gems:825122942413045791> Gems after voting, join the <:uni:825122929778884658> Official Uni Discord Server!\nhttps://discord.gg/r2RymJrcPw`)
             return;}
         console.log("User is in the Server")
         let gemAmmount = (Math.floor(Math.random()*2001))+3000;
