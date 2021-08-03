@@ -44,7 +44,7 @@ exports.run = async (bot,message,args) => {
             n = "Champion"
             break;
         case "b-l-o-x":
-            u = "https://imgur.com/SsqzGw1"
+            u = "www.imgur.com/SsqzGw1.png"
             n = "B-L-O-X"
             break;
         default:
