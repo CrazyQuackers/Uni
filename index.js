@@ -196,21 +196,15 @@ function voteMessage1(voteUser,gems)
 
 function voteMessage2(voteUser)
 {
-    const embed = {
-        color: 6607550,
-        title: "🙌 Thanks for Voting! 🙌",
-        url: "https://discord.gg/r2RymJrcPw",
-        author: {
-            name: voteUser.username,
-            icon_url: voteUser.user.avatarURL(),
-        },
-        description: `To recieve <:gems:825122942413045791> Gems after voting, join the <:uni:825122929778884658> Official Uni Discord Server!`,
-        thumbnail: {
-            url: "https://static.wikia.nocookie.net/ghost-simulator-roblox/images/c/c9/George_The_Gorilla.png/revision/latest/scale-to-width-down/185?cb=20190508182224",
-        },
-        timestamp: new Date(),
-    };
-    voteUser.send({embed});
+    const embed = new Discord.MessageEmbed()
+    .setColor(6607550)
+    .setTitle("🙌 Thanks for Voting! 🙌")
+    .setURL("https://discord.gg/r2RymJrcPw")
+    .setAuthor(voteUser.username,voteUser.user.avatarURL())
+    .setDescription(`To recieve <:gems:825122942413045791> Gems after voting, join the <:uni:825122929778884658> Official Uni Discord Server!`)
+    .setThumbnail("https://static.wikia.nocookie.net/ghost-simulator-roblox/images/c/c9/George_The_Gorilla.png/revision/latest/scale-to-width-down/185?cb=20190508182224")
+    .setTimestamp()
+    voteUser.send({embed})
 }
 
 function coinToStr(n)
