@@ -33,6 +33,7 @@ exports.run = async (bot,message,args) => {
         sm.converter = 3
         ez.constructionOpen = true
         ez.pyramidsOpen = true
+        ez.iceOpen = true
         sm.hbUnlocked = true
         sm.champion = true
         sm.blox = true
