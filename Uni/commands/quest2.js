@@ -471,7 +471,6 @@ exports.help = {
 function createQuestMessage(t,d,u,n,v,message,sm,fs,q)
 {
     if(u=="https://imgur.com/xAhzj6u.png"){u="https://static.wikia.nocookie.net/ghost-simulator-roblox/images/7/72/Screen_Shot_2020-02-12_at_4.47.13_PM.png/revision/latest/scale-to-width-down/350?cb=20200503093253"}
-    console.log(u)
     const questEmbed = new Discord.MessageEmbed()
     .setColor(16776960)
     .setTitle(t)
@@ -487,7 +486,6 @@ function createQuestMessage(t,d,u,n,v,message,sm,fs,q)
 function createDoneMessage(d,u,g,fs,db,q,ez,message,sm)
 {
     if(u=="https://imgur.com/xAhzj6u.png"){u="https://static.wikia.nocookie.net/ghost-simulator-roblox/images/7/72/Screen_Shot_2020-02-12_at_4.47.13_PM.png/revision/latest/scale-to-width-down/350?cb=20200503093253"}
-    console.log(u)
     const doneEmbed = new Discord.MessageEmbed()
     .setColor(255)
     .setTitle(`Quest #${sm.quest} - Task #${sm.task} - Done`)
