@@ -187,7 +187,7 @@ function voteMessage1(voteUser,gems)
         },
         description: `You recieved **${coinToStr(gems)}** <:gems:825122942413045791> Gems for voting!\nCome back in 🕛 **12 hours** to vote again!`,
         thumbnail: {
-            url: "https://imgur.com/wwL2qOS.png",
+            url: "https://imgur.com/wwL2qOS",
         },
         timestamp: new Date(),
     };
@@ -206,7 +206,7 @@ function voteMessage2(voteUser)
         },
         description: `To recieve <:gems:825122942413045791> Gems after voting, join the <:uni:825122929778884658> Official Uni Discord Server!`,
         thumbnail: {
-            url: "https://imgur.com/YcWMQLD.png",
+            url: "https://imgur.com/YcWMQLD",
         },
         timestamp: new Date(),
     };
