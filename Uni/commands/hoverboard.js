@@ -35,7 +35,7 @@ exports.run = async (bot,message,args) => {
                         u = "https://imgur.com/XGyBAAm.png"
                         break;
                     case "b-l-o-x":
-                        u = "https://imgur.com/SsqzGw1.png"
+                        u = "https://static.wikia.nocookie.net/ghost-simulator-roblox/images/4/40/B-L-O-X.png/revision/latest/scale-to-width-down/300?cb=20200318225349"
                         break;
                     default:
                         u = "https://imgur.com/RV975Lr.png"}

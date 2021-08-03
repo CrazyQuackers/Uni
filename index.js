@@ -178,20 +178,14 @@ bot.on('message', (message) =>
 
 function voteMessage1(voteUser,gems)
 {
-    const embed = {
-        color: 6607550,
-        title: "🙌 Thanks for Voting! 🙌",
-        author: {
-            name: voteUser.username,
-            icon_url: voteUser.user.avatarURL(),
-        },
-        description: `You recieved **${coinToStr(gems)}** <:gems:825122942413045791> Gems for voting!\nCome back in 🕛 **12 hours** to vote again!`,
-        thumbnail: {
-            url: "https://imgur.com/wwL2qOS.png",
-        },
-        timestamp: new Date(),
-    };
-    voteUser.send({embed});
+    const embed = new Discord.MessageEmbed()
+    .setColor(6607550)
+    .setTitle("🙌 Thanks for Voting! 🙌")
+    .setAuthor(voteUser.user.username,voteUser.user.avatarURL())
+    .setDescription(`You recieved **${coinToStr(gems)}** <:gems:825122942413045791> Gems for voting!\nCome back in 🕛 **12 hours** to vote again!`)
+    .setThumbnail("https://static.wikia.nocookie.net/ghost-simulator-roblox/images/4/4b/Mini_Sludge.png/revision/latest/scale-to-width-down/185?cb=20200318225742")
+    .setTimestamp()
+    voteUser.send({embed})
 }
 
 function voteMessage2(voteUser)
@@ -200,7 +194,7 @@ function voteMessage2(voteUser)
     .setColor(6607550)
     .setTitle("🙌 Thanks for Voting! 🙌")
     .setURL("https://discord.gg/r2RymJrcPw")
-    .setAuthor(voteUser.username,voteUser.user.avatarURL())
+    .setAuthor(voteUser.user.username,voteUser.user.avatarURL())
     .setDescription(`To recieve <:gems:825122942413045791> Gems after voting, join the <:uni:825122929778884658> Official Uni Discord Server!`)
     .setThumbnail("https://static.wikia.nocookie.net/ghost-simulator-roblox/images/c/c9/George_The_Gorilla.png/revision/latest/scale-to-width-down/185?cb=20190508182224")
     .setTimestamp()
