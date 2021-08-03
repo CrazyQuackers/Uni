@@ -206,7 +206,7 @@ function voteMessage2(voteUser)
         },
         description: `To recieve <:gems:825122942413045791> Gems after voting, join the <:uni:825122929778884658> Official Uni Discord Server!`,
         thumbnail: {
-            url: "https://imgur.com/YcWMQLD.png",
+            url: "https://static.wikia.nocookie.net/ghost-simulator-roblox/images/c/c9/George_The_Gorilla.png/revision/latest/scale-to-width-down/185?cb=20190508182224",
         },
         timestamp: new Date(),
     };
