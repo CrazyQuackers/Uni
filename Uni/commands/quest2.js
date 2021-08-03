@@ -1,3 +1,5 @@
+const Discord = require('discord.js')
+
 exports.run = async (bot,message,args) => {
     const fs = require("fs")
     const db = require('../../data/db.json')
@@ -469,24 +471,14 @@ exports.help = {
 function createQuestMessage(t,d,u,n,v,message,sm,fs,q)
 {
     if(u=="https://imgur.com/xAhzj6u.png"){u="https://static.wikia.nocookie.net/ghost-simulator-roblox/images/7/72/Screen_Shot_2020-02-12_at_4.47.13_PM.png/revision/latest/scale-to-width-down/350?cb=20200503093253"}
-    const questEmbed = {
-        color: 16776960,
-        title: t,
-        author: {
-            name: `${message.author.username}'s Questline`,
-            icon_url: message.author.avatarURL(),
-        },
-        description: d,
-        thumbnail: {
-            url: u,
-        },
-        fields: [
-            {
-                name: n,
-                value: v,
-            },
-        ],
-    };
+    console.log(u)
+    const questEmbed = new Discord.MessageEmbed()
+    .setColor(16776960)
+    .setTitle(t)
+    .setAuthor(`${message.author.username}'s Questline`,message.author.avatarURL())
+    .setDescription(d)
+    .setThumbnail(u)
+    .addField(n,v)
     message.channel.send({ embed: questEmbed });
     sm.qStarted = true
     fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})
@@ -495,18 +487,13 @@ function createQuestMessage(t,d,u,n,v,message,sm,fs,q)
 function createDoneMessage(d,u,g,fs,db,q,ez,message,sm)
 {
     if(u=="https://imgur.com/xAhzj6u.png"){u="https://static.wikia.nocookie.net/ghost-simulator-roblox/images/7/72/Screen_Shot_2020-02-12_at_4.47.13_PM.png/revision/latest/scale-to-width-down/350?cb=20200503093253"}
-    const doneEmbed = {
-        color: 255,
-        title: `Quest #${sm.quest} - Task #${sm.task} - Done`,
-        author: {
-            name: `${message.author.username}'s Questline`,
-            icon_url: message.author.avatarURL(),
-        },
-        description: d,
-        thumbnail: {
-            url: u,
-        },
-    };
+    console.log(u)
+    const doneEmbed = new Discord.MessageEmbed()
+    .setColor(255)
+    .setTitle(`Quest #${sm.quest} - Task #${sm.task} - Done`)
+    .setAuthor(`${message.author.username}'s Questline`,message.author.avatarURL())
+    .setDescription(d)
+    .setThumbnail(u)
     message.channel.send({ embed: doneEmbed });
     if(((sm.quest==6)&&(sm.task==19))||((sm.quest==7)&&(sm.task==15))||((sm.quest==8)&&(sm.task==19))||((sm.quest==9)&&(sm.task==19))||((sm.quest==10)&&(sm.task==19))){
         sm.quest = sm.quest + 1
