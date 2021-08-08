@@ -224,9 +224,7 @@ function getDescription(name,sm)
 
 function checkQuests(sm,fs,q,name)
 {
-    console.log("in check quests")
-    if((sm.quest==8)&&(sm.task==7)&&(sm.qStarted)&&(sm.obj1==0)&&(name=="Hans")){console.log("in check quests of hans")
-        sm.obj1==1}
-    if((sm.quest==8)&&(sm.task==7)&&(sm.qStarted)&&(sm.obj2==0)&&(name=="Gabe")){sm.obj2==1}
+    if((sm.quest==8)&&(sm.task==7)&&(sm.qStarted)&&(sm.obj1==0)&&(name=="Hans")){sm.obj1=1}
+    if((sm.quest==8)&&(sm.task==7)&&(sm.qStarted)&&(sm.obj2==0)&&(name=="Gabe")){sm.obj2=1}
     fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})
 }
