@@ -90,20 +90,30 @@ function PuzzleFind(message,sm,fs,q)
             .then(() => msg.react("🏜️"))
             .then(() => msg.react("⛏️"))
             .then(() => msg.react("🏖️"))
-        msg.awaitReactions({ filter, max: 1, time: 10000, errors: ['time'] })
+        msg.awaitReactions(filter, {max: 1, time: 10000, errors: ['time']})
             .then(collected => {
                 const chosen = collected.first()
-                if(chosen.emoji.name == "🏙️"){
-                    //city
-                }else{if(chosen.emoji.name == "💡"){
-                    //junkyard
-                }else{if(chosen.emoji.name == "🏜️"){
-                    //wild west
-                }else{if(chosen.emoji.name == "⛏️"){
-                    if(sm.task==1){SuccessfulFind(message,sm,fs,q,"⛏️ Mine")}else{message.channel.send(`<@${message.member.id}> You did not find a 🎯 puzzle in The ⛏️ Mine biome.`)}
-                }else{if(chosen.emoji.name == "🏖️"){
-                    //beach
-                }else{message.channel.send(`<@${message.member.id}> You did not react on time.`)}}}}}
+                switch(chosen.emoji.name)
+                {
+                    case "🏙️":
+                        message.channel.send("City")
+                        break;
+                    case "💡":
+                        message.channel.send("Junkyard")
+                        break;
+                    case "🏜️":
+                        message.channel.send("Wild West")
+                        break;
+                    case "⛏️":
+                        if(sm.task==1){SuccessfulFind(message,sm,fs,q,"⛏️ Mine")}else{message.channel.send(`<@${message.member.id}> You did not find a 🎯 puzzle in The ⛏️ Mine biome.`)}
+                        break;
+                    case "🏖️":
+                        message.channel.send("Beach")
+                        break;
+                }
+            })
+            .catch(collected => {
+                message.channel.send(`<@${message.member.id}> You did not react on time.`)
             })
     })
 
