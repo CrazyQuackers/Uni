@@ -76,12 +76,21 @@ function PuzzleRead(message,sm)
     }
 }
 
+const places = ["🏙️","💡","🏜️","⛏️","🏖️"]
+
+const filter = (reaction, user) => {
+    return places.includes(reaction.emoji.name) && user.id == message.author.id
+}
+
 function PuzzleFind(message,sm,fs,q)
 {
     message.channel.send(`<@${message.member.id}>\n\nWhere do you want to search for **a 🎯 puzzle?**`).then(msg => {
-        let reactions = ["🏙️","💡","🏜️","⛏️","🏖️"]
-        addReactions(msg,reactions)
-        msg.awaitReactions(reaction => {return (reactions.includes(reaction.emoji.name) && reaction.users.cache.has(message.member.id))}, {max: 1}, {time: 10000})
+        msg.react("🏙️")
+            .then(() => msg.react("💡"))
+            .then(() => msg.react("🏜️"))
+            .then(() => msg.react("⛏️"))
+            .then(() => msg.react("🏖️"))
+        msg.awaitReactions({ filter, max: 1, time: 10000, errors: ['time'] })
             .then(collected => {
                 const chosen = collected.first()
                 if(chosen.emoji.name == "🏙️"){
@@ -105,12 +114,4 @@ function SuccessfulFind(message,sm,fs,q,biome)
     message.channel.send(`<@${message.member.id}> You found **a 🎯 puzzle** in The ${biome} biome!`)
     sm.obj1=1
     fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})
-}
-
-const addReactions = (message, reactions) => {
-    message.react(reactions[0])
-    reactions.shift()
-    if(reactions.length > 0) {
-        setTimeout(() => addReactions(message, reactions), 750)
-    }
 }
