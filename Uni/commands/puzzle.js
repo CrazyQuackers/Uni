@@ -78,7 +78,7 @@ function PuzzleRead(message,sm)
 
 const places = ["🏙️","💡","🏜️","⛏️","🏖️"]
 
-const filter = (reaction, user) => {
+const filter = (reaction, user, message) => {
     return places.includes(reaction.emoji.name) && user.id == message.author.id
 }
 
@@ -105,7 +105,8 @@ function PuzzleFind(message,sm,fs,q)
                         message.channel.send("Wild West")
                         break;
                     case "⛏️":
-                        if(sm.task==1){SuccessfulFind(message,sm,fs,q,"⛏️ Mine")}else{message.channel.send(`<@${message.member.id}> You did not find a 🎯 puzzle in The ⛏️ Mine biome.`)}
+                        message.channel.send("Mine")
+                        //if(sm.task==1){SuccessfulFind(message,sm,fs,q,"⛏️ Mine")}else{message.channel.send(`<@${message.member.id}> You did not find a 🎯 puzzle in The ⛏️ Mine biome.`)}
                         break;
                     case "🏖️":
                         message.channel.send("Beach")
