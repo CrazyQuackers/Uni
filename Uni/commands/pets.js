@@ -143,19 +143,19 @@ function findPet(i,n)
             switch(i)
             {
                 case 0:
-                    return "<:hypnotize:843489441724628992> **Hypnotize** ( 5 ⚔️ <:ghastlytree:825122934221307955><:georgethegorilla:825122935081664632><:sludge:825122930471075880><:subjectone:825122932815691847><:kingkrab:825122934183559239><:magmoraug:825122942768644136> )  💠  _Godly_"
+                    return "<:hypnotize:843489441724628992> **Hypnotize** ( 1 ⚔️ <:ghastlytree:825122934221307955><:georgethegorilla:825122935081664632><:sludge:825122930471075880><:subjectone:825122932815691847><:kingkrab:825122934183559239><:magmoraug:825122942768644136> )  💠  _Godly_"
                 case 1:
-                    return "<:ghastlytree:825122934221307955> **Mini Ghast** ( 2 ⚔️ <:ghastlytree:825122934221307955> )  💠  _Mythical_"
+                    return "<:ghastlytree:825122934221307955> **Mini Ghast** ( 5 ⚔️ <:ghastlytree:825122934221307955> )  💠  _Mythical_"
                 case 2:
-                    return "<:georgethegorilla:825122935081664632> **Mini George** ( 2 ⚔️ <:georgethegorilla:825122935081664632> )  💠  _Mythical_"
+                    return "<:georgethegorilla:825122935081664632> **Mini George** ( 5 ⚔️ <:georgethegorilla:825122935081664632> )  💠  _Mythical_"
                 case 3:
-                    return "<:sludge:825122930471075880> **Mini Sludge** ( 2 ⚔️ <:sludge:825122930471075880> )  💠  _Mythical_"
+                    return "<:sludge:825122930471075880> **Mini Sludge** ( 5 ⚔️ <:sludge:825122930471075880> )  💠  _Mythical_"
                 case 4:
-                    return "<:subjectone:825122932815691847> **Mini One** ( 2 ⚔️ <:subjectone:825122932815691847> )  💠  _Mythical_"
+                    return "<:subjectone:825122932815691847> **Mini One** ( 5 ⚔️ <:subjectone:825122932815691847> )  💠  _Mythical_"
                 case 5:
-                    return "<:kingkrab:825122934183559239> **Mini Krab** ( 2 ⚔️ <:kingkrab:825122934183559239> )  💠  _Mythical_"
+                    return "<:kingkrab:825122934183559239> **Mini Krab** ( 5 ⚔️ <:kingkrab:825122934183559239> )  💠  _Mythical_"
                 case 6:
-                    return "<:magmoraug:825122942768644136> **Mini Mag** ( 2 ⚔️ <:magmoraug:825122942768644136> )  💠  _Mythical_"
+                    return "<:magmoraug:825122942768644136> **Mini Mag** ( 5 ⚔️ <:magmoraug:825122942768644136> )  💠  _Mythical_"
             }
     }
 }

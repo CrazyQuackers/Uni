@@ -98,7 +98,7 @@ exports.run = async (bot,message,args) => {
                                         ez.defeated = ez.defeated + 1
                                         bossPet = (Math.floor(Math.random()*100));
                                         if(((sm.quest>=9)&&(bossPet<5))||((sm.quest<9)&&(bossPet==0))){bossPetStr = whichBossPet(type,q,sm,fs)}
-                                        checkQuests(sm,fs,q)
+                                        checkQuests(sm,fs,q,type)
                                         fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
                                         str = str+`\n\n**▬▬▬▬▬▬▬**「RESULT」**▬▬▬▬▬▬▬▬▬▬▬▬▬▬**\n\n👑 Winner : <@${message.member.id}>\n💀 Defeated : ${boss}\n\n**▬▬▬▬▬**「YOUR EARNINGS」**▬▬▬▬▬▬▬▬▬▬▬▬**\n\n+ **${g}** <:gems:825122942413045791> gems!\n\n${bossPetStr}`
                                     }
@@ -229,19 +229,19 @@ function fightMessage(str)
         case "rex":
             return "\nYour 🦖 **t-rex** does **10** ⚔️ attack!"
         case "hypno":
-            return "\nYour <:hypnotize:843489441724628992> **hypnotize** does **5** ⚔️ attack!"
+            return "\nYour <:hypnotize:843489441724628992> **hypnotize** does **1** ⚔️ attack!"
         case "tree":
-            return "\nYour <:ghastlytree:825122934221307955> **mini ghast** does **2** ⚔️ attack!"
+            return "\nYour <:ghastlytree:825122934221307955> **mini ghast** does **5** ⚔️ attack!"
         case "george":
-            return "\nYour <:georgethegorilla:825122935081664632> **mini george** does **2** ⚔️ attack!"
+            return "\nYour <:georgethegorilla:825122935081664632> **mini george** does **5** ⚔️ attack!"
         case "sludge":
-            return "\nYour <:sludge:825122930471075880> **mini sludge** does **2** ⚔️ attack!"
+            return "\nYour <:sludge:825122930471075880> **mini sludge** does **5** ⚔️ attack!"
         case "subject":
-            return "\nYour <:subjectone:825122932815691847> **mini one** does **2** ⚔️ attack!"
+            return "\nYour <:subjectone:825122932815691847> **mini one** does **5** ⚔️ attack!"
         case "king":
-            return "\nYour <:kingkrab:825122934183559239> **mini krab** does **2** ⚔️ attack!"
+            return "\nYour <:kingkrab:825122934183559239> **mini krab** does **5** ⚔️ attack!"
         case "mag":
-            return "\nYour <:magmoraug:825122942768644136> **mini mag** does **2** ⚔️ attack!"
+            return "\nYour <:magmoraug:825122942768644136> **mini mag** does **5** ⚔️ attack!"
     }
 }
 
@@ -374,11 +374,29 @@ function isPet(i,type)
     return check;
 }
 
-function checkQuests(sm,fs,q)
+function checkQuests(sm,fs,q,type)
 {
     if((sm.quest==4)&&(sm.task==18)&&(sm.qStarted)){sm.obj1=1}
     if((sm.quest==5)&&(sm.task==6)&&(sm.qStarted)){sm.obj1=1}
     if((sm.quest==6)&&(sm.task==3)&&(sm.qStarted)){sm.obj1++}
     if((sm.quest==7)&&(sm.task==13)&&(sm.qStarted)){sm.obj1++}
+    if((sm.quest==8)&&(sm.task==8)&&(sm.qStarted)){switch(type){
+            case 0:
+                sm.obj1=1
+                break;
+            case 1:
+                sm.obj2=1
+                break;
+            case 2:
+                sm.obj3=1
+                break;
+            case 3:
+                sm.obj4=1
+                break;
+            case 4:
+                sm.obj5=1
+                break;
+            case 5:
+                sm.obj6=1}}
     fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})
 }

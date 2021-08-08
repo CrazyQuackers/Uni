@@ -38,6 +38,14 @@ exports.run = async (bot,message,args) => {
         message.channel.send(`<@${message.member.id}> You've found a 🧩 **Blox Piece**!`)
         sm.obj1=1
         fs.writeFile("./data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})}else{message.react("❌")}}
+    if((sm.quest==8)&&(sm.task==1)&&(sm.qStarted)&&(sm.obj1==0)){if((args.length==2)&&(args[0]=="purple")&&(args[1]=="ring")){message.react("✅")
+        message.channel.send(`<@${message.member.id}> You've found The 🟣 **Purple Ring**!`)
+        sm.obj1=1
+        fs.writeFile("./data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})}else{message.react("❌")}}
+    if((sm.quest==8)&&(sm.task==5)&&(sm.qStarted)&&(sm.obj1==0)){if((args.length==2)&&(args[0]=="boss")&&(args[1]=="book")){message.react("✅")
+        message.channel.send(`<@${message.member.id}> You've found 📕 **Riley's Boss Book**!`)
+        sm.obj1=1
+        fs.writeFile("./data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})}else{message.react("❌")}}
 }
 exports.help = {
     name: 'find'

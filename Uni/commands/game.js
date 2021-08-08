@@ -3,7 +3,7 @@ exports.run = async (bot,message,args) => {
     const embed = {
         color: 13800957,
         title: "Ghost Simulator",
-        url: "https://www.roblox.com/games/2685347741/SPRING-EVENT-Ghost-Simulator",
+        url: "https://www.roblox.com/games/2685347741",
         author: {
             name: "About Uni",
             icon_url: "https://imgur.com/ASUc77V.png",

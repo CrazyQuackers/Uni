@@ -167,6 +167,9 @@ function checkQuests(args,num,q,sm,g2,fs,g1,f)
     if((sm.quest==7)&&(sm.task==3)&&(sm.qStarted)){if(args[0]=="city"){sm.obj1+=g2}if(args[0]=="junkyard"){sm.obj2+=g2}}
     if((sm.quest==7)&&(sm.task==5)&&(sm.qStarted)){if(args[0]=="wild"){sm.obj1+=g2}if(args[0]=="area"){sm.obj2+=g2}}
     if((sm.quest==7)&&(sm.task==7)&&(sm.qStarted)){if(args[0]=="beach"){sm.obj1+=g2}if(args[0]=="underwater"){sm.obj2+=g2}}
+    if((sm.quest==8)&&(sm.task==2)&&(sm.qStarted)){if(args[0]=="city"){sm.obj1+=g1
+            sm.obj2+=g2}if(args[0]=="beach"){sm.obj3+=g1
+            sm.obj4+=g2}}
     fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})
 }
 

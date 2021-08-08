@@ -142,7 +142,9 @@ bot.on('message', (message) =>
             subject: false,
             king: false,
             mag: false,
-            blox: false
+            blox: false,
+            obj5: 0,
+            obj6: 0
         }
         fs.writeFile("./data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
         fs.writeFile("./data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})
@@ -167,6 +169,7 @@ bot.on('message', (message) =>
     if(cmd=="hb"){cmd="hoverboard"}
     if(cmd=="pr"){cmd="profile"}
     if(cmd=="q"){cmd="quest"}
+    if(cmd=="p"){cmd="puzzle"}
     if(cmd=="quest2"){cmd="null"}
     if((cmd=="quest")&&(sm.quest>=6)){cmd="quest2"}
     if((cmd=="forest")||(cmd=="city")||(cmd=="junkyard")||(cmd=="sewers")||(cmd=="construction")||(cmd=="wild")||(cmd=="area")||(cmd=="mine")||(cmd=="pyramids")||(cmd=="beach")||(cmd=="underwater")||(cmd=="volcano")||(cmd=="ice")) {cmd="biome"}

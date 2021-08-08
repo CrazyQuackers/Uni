@@ -14,11 +14,11 @@ exports.run = async (bot,message,args) => {
             { name: 'Description', value: "Quest progress\nCatch a ghost\nLists all the biomes\nUnlocks bonus biomes\nSell the ghosts you caught\nCheck your antenna level\nCheck your pack stats\nCheck your currency and items\nConvert your ecto-tokens to gems\nShows pet crate info\nShows pet info\nShows hoverboard info\nShows boss info\nShows gem chest info\nAbout Uni\nDaily reward\nUni top server commands\nShows cooldown for commands\nShows your Uni profile\nVote for Uni", inline: true},
         )
         .setTimestamp()
-    message.channel.send({embed});
+    message.author.send({embed});
+    message.react("📬")
     const guild = bot.guilds.cache.get('823252764246147152')
     if(!(guild.members.cache.get(message.member.id))){
         if(sm.lastDM%3==0){
-            message.react("📬")
             const embed2 = {
                 color: 9699539,
                 title: "Join the Official Uni Community Server!",

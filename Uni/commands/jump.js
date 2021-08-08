@@ -22,6 +22,11 @@ exports.run = async (bot,message,args) => {
         sm.obj2=1
         fs.writeFile("./data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})}else{message.react("❌")
         message.channel.send(`<@${message.member.id}> You have to **%find** the 🟡 yellow ring before you can **%jump** through it!`)}}
+    if((sm.quest==8)&&(sm.task==1)&&(sm.qStarted)&&(sm.obj2==0)){if(sm.obj1==1){message.react("✅")
+        message.channel.send(`<@${message.member.id}> You've jumped through The 🟣 **Purple Ring**!`)
+        sm.obj2=1
+        fs.writeFile("./data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})}else{message.react("❌")
+        message.channel.send(`<@${message.member.id}> You have to **%find** the 🟣 purple ring before you can **%jump** through it!`)}}
 }
 exports.help = {
     name: 'jump'

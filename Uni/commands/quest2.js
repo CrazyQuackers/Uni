@@ -10,6 +10,8 @@ exports.run = async (bot,message,args) => {
     let o2 = sm.obj2
     let o3 = sm.obj3
     let o4 = sm.obj4
+    let o5 = sm.obj5
+    let o6 = sm.obj6
     if(args[0]=="done"){if(!sm.qStarted){message.react("❌")
             return;}
         switch(sm.quest)
@@ -248,6 +250,97 @@ exports.run = async (bot,message,args) => {
                         }else{message.react("❌")}
                         break;
                 }
+                break;
+            case 8:
+                switch(sm.task)
+                {
+                    case 1:
+                        if(o2==1){
+                            message.react("✅")
+                            createDoneMessage("\`Good job, Ghost Hunter! It's actually a good thing you found me, with all this work I have to do in here, I have got no time to collect data from the outside! You're gonna be sticking around for a while!\`\n+**2000** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/5/58/Riley.png/revision/latest?cb=20200508190227",2000,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 2:
+                        if((o1>=50)&&(o2>=20)&&(o3>=50)&&(o4>=20)){
+                            message.react("✅")
+                            createDoneMessage("\`Yes! This is exactly what I needed. Here, have some Gems.\`\n+**2500** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/5/58/Riley.png/revision/latest?cb=20200508190227",2500,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 3:
+                        if(ez.newspapers>=300){
+                            message.react("✅")
+                            ez.newspapers-=300
+                            createDoneMessage("\`Great! Some of theses are so old, they're from last year! Good job, Ghost Hunter!\`\n+**3000** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/5/58/Riley.png/revision/latest?cb=20200508190227",3000,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 4:
+                        if(o1==1){
+                            message.react("✅")
+                            createDoneMessage("\`1 down, 1 more to go! Thanks for your help, Ghost Hunter!\`\n+**3500** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/5/58/Riley.png/revision/latest?cb=20200508190227",3500,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 5:
+                        if(o1==1){
+                            message.react("✅")
+                            createDoneMessage("\`Thank you so much, Ghost Hunter! You're a life saver! Can I have your phone number? For research purposes... of course...\`\n+**4000** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/5/58/Riley.png/revision/latest?cb=20200508190227",4000,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 6:
+                        if(o1>=12000000){
+                            message.react("✅")
+                            ez.ectoTokens-=12000000
+                            createDoneMessage("\`Yes! These Ecto-Tokens will help a lot! Now I can buy the remaining items I need from the local shop! Nice going, Ghost Hunter!\`\n+**4500** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/5/58/Riley.png/revision/latest?cb=20200508190227",4500,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 7:
+                        if((o1==1)&&(o2==1)){
+                            message.react("✅")
+                            createDoneMessage("\`I miss them so much! They're like family to me... And NOTHING is more important than family! Dom taught me that...\`\n+**5000** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/5/58/Riley.png/revision/latest?cb=20200508190227",5000,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 8:
+                        if((o1==1)&&(o2==1)&&(o3==1)&&(o4==1)&&(o5==1)&&(o6==1)){
+                            message.react("✅")
+                            createDoneMessage("\`We did it! I can't believe it! I can come out of hiding and reunite with my friends again! Thank you so much Ghost Hunter, I couldn't have done it without you! And as an added bonus, the chances of boss pets dropping after defeating bosses are increased for you now! Congrats! You're very close to finishing all the Questlines in Uni... only 2 to go! Good luck!\`\n+**Boss Pet Luck** 💀🍀\n+**6000** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/5/58/Riley.png/revision/latest?cb=20200508190227",6000,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                }
+                break;
+            case 9:
+                switch(sm.task)
+                {
+                    case 1:
+                        if(o2==1){
+                            message.react("✅")
+                            createDoneMessage("\`That's it! You solved the first puzzle! My agency left 5 puzzles in different biomes, and I need your help to find them all. With all of them, it will show us how to stop Ghost Hunter Blaze. He's the one that started all of this. But it seeme you're more interested in your reward right now, here it is.\`\n+**1500** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/3/32/Ghost_Hunter_Luna.png/revision/latest?cb=20210727014952",1500,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        break;
+                    case 6:
+                        break;
+                    case 7:
+                        break;
+                    case 8:
+                        break;
+                    case 9:
+                        break;
+                    case 10:
+                        break;
+                    case 11:
+                        break;
+                    case 12:
+                        break;
+                }
+                break;
+            case 10:
+                break;
         }
     }else{
         switch(sm.quest)
@@ -461,6 +554,76 @@ exports.run = async (bot,message,args) => {
                         break;
                 }
                 break;
+            case 8:
+                switch(sm.task)
+                {
+                    case 1:
+                        createQuestMessage("🗺️ Quest #8 - Ghost Hunter Riley","📖 **__Task #1/8__** : Found in the Dark\n\n\`What... are... you... doing... here? What...? How did you find me? You weren't supposed to find me! I designed this place so no Ghost Hunter will be able to find it... Oh of course! You've got a B-L-O-X Hoverboard! How did I not think of that?! Augh, Ghost Hunter Shelly ruining everything once again! Listen, I can explain what happened to me, why I disappeared and what I'm doing but there's no time right now! Just trust me, Ghost Hunter! You need to go jump through the purple ring!\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/5/58/Riley.png/revision/latest?cb=20200508190227","📜 __Goals:__",`• Jump through The 🟣 Purple Ring: **${o2}/1**`,message,sm,fs,q)
+                        break;
+                    case 2:
+                        if(o1>50){o1=50}
+                        if(o2>20){o2=20}
+                        if(o3>50){o3=50}
+                        if(o4>20){o4=20}
+                        createQuestMessage("🗺️ Quest #8 - Ghost Hunter Riley","📖 **__Task #2/8__** : Explanation Time\n\n\`So you probably know that I left the lab in Area 51 after the ghosts started to appear. I knew there was some way of making all the ghosts go away so I could work in peace! So I ran away, far away, so no ghost would find me... I just didn't realize at the time that it would mean that also no Ghost Hunter would find me. Anyways, I figured out that ghosts are actually friendly creatures and mean no harm, but are influenced by the Boss Ghosts! I'll explain what happened next if you go out and catch some ghosts for my research!\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/5/58/Riley.png/revision/latest?cb=20200508190227","📜 __Goals:__",`• Vacuum **50** 🤵‍♂️ Businessmen Ghosts in The 🏙️ City: **${o1}/50**\n• Vacuum **20** 🐈‍⬛ Street Cat Ghosts from The 🏙️ City: **${o2}/20**\n• Vacuum **50** 🏴‍☠️ Pirate Ghosts on The 🏖️ Beach: **${o3}/50**\n• Vacuum **20** 🦜 Parrot Ghosts from The 🏖️ Beach: **${o4}/20**`,message,sm,fs,q)
+                        break;
+                    case 3:
+                        o1 = ez.newspapers
+                        if(o1>300){o1=300}
+                        createQuestMessage("🗺️ Quest #8 - Ghost Hunter Riley","📖 **__Task #3/8__** : New News Newspaper\n\n\`Back to the story. It took a lot of time but recently I came to the conclusion that if we are able to defeat all the boss ghosts, Uni will be free of ghosts again! How great does that sound? What I'm working on will increase our chances of getting boss pets after defeating a boss! These boss pets are really powerful and can defenitely help us defeat bosses much faster! Alright, what I need next is a lot of newspapers! You can get them from catching ghosts in the City.\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/5/58/Riley.png/revision/latest?cb=20200508190227","📜 __Goals:__",`• Obtain **300** 📰 Newspapers from The 🏙️ City: **${o1}/300**`,message,sm,fs,q)
+                        break;
+                    case 4:
+                        createQuestMessage("🗺️ Quest #8 - Ghost Hunter Riley","📖 **__Task #4/8__** : 3 Papers & 1 Leather\n\n\`Alright, Ghost Hunter! There are 2 books that specialize in boss pets, and I need to read them both in order to understand what I'm missing in my formula. The newspapers you've collected from the previous task can help us craft the first book! Go ahead, do it!\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/5/58/Riley.png/revision/latest?cb=20200508190227","📜 __Goals:__",`• Craft the 📔 Boss Pet Book: **${o1}/1**`,message,sm,fs,q)
+                        break;
+                    case 5:
+                        createQuestMessage("🗺️ Quest #8 - Ghost Hunter Riley","📖 **__Task #5/8__** : Need a Hand?\n\n\`Alright, the other book is somewhere here. I am too busy working and I want to read the book you've just crafted. Could you find it for me?\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/5/58/Riley.png/revision/latest?cb=20200508190227","📜 __Goals:__",`• Find 📕 Ghost Hunter Riley's Boss Book: **${o1}/1**`,message,sm,fs,q)
+                        break;
+                    case 6:
+                        if(o1>12000000){o1=12000000}
+                        createQuestMessage("🗺️ Quest #8 - Ghost Hunter Riley","📖 **__Task #6/8__** : Confusing Currencies\n\n\`These 2 books change everything I thought I knew about boss pets! I think we have to take a different approach. Could you please give me Ecto-Tokens? It looks like we need a lot of 'em, and they need to be fresh! So only new ones you get from selling ghosts.\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/5/58/Riley.png/revision/latest?cb=20200508190227","📜 __Goals:__",`• Collect **12 Million** <:ectotoken:825122939812315219> Ecto-Tokens from selling 👻 Ghosts: **${coinToStr(o1)}/12,000,000**`,message,sm,fs,q)
+                        break;
+                    case 7:
+                        createQuestMessage("🗺️ Quest #8 - Ghost Hunter Riley","📖 **__Task #7/8__** : Catching Up\n\n\`Hey, how's Ghost Hunter Hans and Gabe doing? I was working with them on a converter machine in the lab before I left. The converter machine has been upgraded? Huh, I wouldn't have thought Hans would have continued working on it after I left... I think he had a crush on me. Anyways, I would like you to go tell them that I'm safe and will be returning soon. I can't come with you, too much work to do. HINT 💡 - ||use the command %talk||\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/5/58/Riley.png/revision/latest?cb=20200508190227","📜 __Goals:__",`• Talk to ☄️ Ghost Hunter Hans: **${o1}/1**\n• Talk to 🏕️ Ghost Hunter Gabe: **${o2}/1**`,message,sm,fs,q)
+                        break;
+                    case 8:
+                        createQuestMessage("🗺️ Quest #8 - Ghost Hunter Riley","📖 **__Task #8/8__** : Global Domination\n\n\`Ghost Hunter... I think we are ready! Let's go out there, and fight the boss ghosts! If we manage to do this dangerous task, my formula will be complete and our chances of receiving boss pets will be increased!\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/5/58/Riley.png/revision/latest?cb=20200508190227","📜 __Goals:__",`• Defeat <:ghastlytree:825122934221307955> Ghastly Tree: **${o1}/1**\n• Defeat <:georgethegorilla:825122935081664632> George the Gorilla: **${o2}/1**\n• Defeat <:sludge:825122930471075880> Sludge: **${o3}/1**\n• Defeat <:subjectone:825122932815691847> Subject One: **${o4}/1**\n• Defeat <:kingkrab:825122934183559239> King Krab: **${o5}/1**\n• Defeat <:magmoraug:825122942768644136> Magmoraug: **${o6}/1**`,message,sm,fs,q)
+                        break;
+                }
+                break;
+            case 9:
+                switch(sm.task)
+                {
+                    case 1:
+                        createQuestMessage("🗺️ Quest #9 - Ghost Hunter Luna","📖 **__Task #1/12__** : Do You Like Puzzles?\n\n\`Hey there... the name is Ghost Hunter Luna, and I've been sent here to keep an eye on things... My agency has been working to put a stop to this Ghost Invasion... It's gotten way out of hand. I was actually caught in crossfire of this project. Luckily, the volcano rift finally set me free. The rift opened just enough for me to get out, but... if it continues growing, this world might be doomed... I know Ghost Hunter Blaze is trying to stabilize it and use it for something, but I don't know what... You're going to help me, and I'll be sure to reward you. I have an Atom Pet for you. If you aren't an accomplice to all of this madness you could help me investigate... Prove that I can trust you by solving the Mine Puzzle. Use the command %puzzle to learn more. Got it? Return to me for a reward. Hurry now!\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/3/32/Ghost_Hunter_Luna.png/revision/latest?cb=20210727014952","📜 __Goals:__",`• Solve the 🎯 Mine Puzzle: **${o2}/1**`,message,sm,fs,q)
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        break;
+                    case 6:
+                        break;
+                    case 7:
+                        break;
+                    case 8:
+                        break;
+                    case 9:
+                        break;
+                    case 10:
+                        break;
+                    case 11:
+                        break;
+                    case 12:
+                        break;
+                }
+                break;
+            case 10:
+                break;
+            case 11:
+                break;
         }
     }
 }
@@ -493,7 +656,7 @@ function createDoneMessage(d,u,g,fs,db,q,ez,message,sm)
     .setDescription(d)
     .setThumbnail(u)
     message.channel.send({ embed: doneEmbed });
-    if(((sm.quest==6)&&(sm.task==19))||((sm.quest==7)&&(sm.task==15))||((sm.quest==8)&&(sm.task==19))||((sm.quest==9)&&(sm.task==19))||((sm.quest==10)&&(sm.task==19))){
+    if(((sm.quest==6)&&(sm.task==19))||((sm.quest==7)&&(sm.task==15))||((sm.quest==8)&&(sm.task==8))||((sm.quest==9)&&(sm.task==12))||((sm.quest==10)&&(sm.task==13))){
         sm.quest = sm.quest + 1
         sm.task = 1
     }else{sm.task = sm.task + 1}
@@ -501,6 +664,8 @@ function createDoneMessage(d,u,g,fs,db,q,ez,message,sm)
     sm.obj2 = 0
     sm.obj3 = 0
     sm.obj4 = 0
+    sm.obj5 = 0
+    sm.obj6 = 0
     sm.qStarted = false
     ez.gems = ez.gems + g
     fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})

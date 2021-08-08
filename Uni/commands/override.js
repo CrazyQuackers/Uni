@@ -28,7 +28,7 @@ exports.run = async (bot,message,args) => {
         ez.rex = true
         ez.shark = true
         ez.jack = true
-        sm.quest = 8
+        sm.quest = 9
         sm.task = 1
         sm.converter = 3
         ez.constructionOpen = true
