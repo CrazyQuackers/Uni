@@ -6,9 +6,12 @@ exports.run = async (bot,message,args) => {
     let ez = db[message.guild.id].users[message.member.id]
     if(message.author.id==352558373016698881)
     {
-        if(args.length > 0){sm.task++;
+        if(args.length > 0){
+            if(args[0]=="t"){sm.task++;}else{sm.quest++
+                sm.task=1}
             fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})
-            return;}
+            return;
+        }
         message.react("✅")
         ez.gems = 50000
         ez.ectoTokens = 1000000000
@@ -29,7 +32,7 @@ exports.run = async (bot,message,args) => {
         ez.shark = true
         ez.jack = true
         sm.quest = 8
-        sm.task = 1
+        sm.task = 7
         sm.converter = 3
         ez.constructionOpen = true
         ez.pyramidsOpen = true

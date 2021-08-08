@@ -162,7 +162,7 @@ function characterNotInUni(message,name,link)
     message.author.send({embed})
 }
 
-function talkToCharacter(message,sm,quest,gender,name,link)
+function talkToCharacter(message,sm,fs,q,quest,gender,name,link)
 {
     if(sm.quest<quest){badTalk(message,name,link,`You can't talk to Ghost Hunter ${name} right now, because you haven't met with ${gender} yet!`)}else{if(sm.quest==quest){badTalk(message,name,link,`You can't talk to Ghost Hunter ${name} right now, because you are currently in a quest with ${gender}!`)}else{goodTalk(message,name,link,sm,fs,q)}}
 }
