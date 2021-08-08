@@ -312,10 +312,14 @@ exports.run = async (bot,message,args) => {
                     case 1:
                         if(o2==1){
                             message.react("✅")
-                            createDoneMessage("\`That's it! You solved the first puzzle! My agency left 5 puzzles in different biomes, and I need your help to find them all. With all of them, it will show us how to stop Ghost Hunter Blaze. He's the one that started all of this. But it seeme you're more interested in your reward right now, here it is.\`\n+**1500** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/3/32/Ghost_Hunter_Luna.png/revision/latest?cb=20210727014952",1500,fs,db,q,ez,message,sm)
+                            createDoneMessage("\`That's it! You solved the first puzzle! My agency left 5 puzzles in different biomes, and I need your help to find them all. With all of them, it will show us how to stop Ghost Hunter Blaze. He's the one that started all of this. But it seems you're more interested in your reward right now, here it is.\`\n+**1500** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/3/32/Ghost_Hunter_Luna.png/revision/latest?cb=20210727014952",1500,fs,db,q,ez,message,sm)
                         }else{message.react("❌")}
                         break;
                     case 2:
+                        if(o1==1){
+                            message.react("✅")
+                            createDoneMessage("\`Looks like the rift is getting bigger... We don't have much more time... maybe a few weeks at most? I was in there for so long... It feels like ages, but I can finally breathe fresh air again. Nevermind though... that's one thing off my To-Do list. Here's your reward.\`\n+**1700** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/3/32/Ghost_Hunter_Luna.png/revision/latest?cb=20210727014952",1700,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
                         break;
                     case 3:
                         break;
@@ -597,6 +601,7 @@ exports.run = async (bot,message,args) => {
                         createQuestMessage("🗺️ Quest #9 - Ghost Hunter Luna","📖 **__Task #1/12__** : Do You Like Puzzles?\n\n\`Hey there... the name is Ghost Hunter Luna, and I've been sent here to keep an eye on things... My agency has been working to put a stop to this Ghost Invasion... It's gotten way out of hand. I was actually caught in crossfire of this project. Luckily, the volcano rift finally set me free. The rift opened just enough for me to get out, but... if it continues growing, this world might be doomed... I know Ghost Hunter Blaze is trying to stabilize it and use it for something, but I don't know what... You're going to help me, and I'll be sure to reward you. I have an Atom Pet for you. If you aren't an accomplice to all of this madness you could help me investigate... Prove that I can trust you by solving the Mine Puzzle. Use the command %puzzle to learn more. Got it? Return to me for a reward. Hurry now!\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/3/32/Ghost_Hunter_Luna.png/revision/latest?cb=20210727014952","📜 __Goals:__",`• Solve the 🎯 Mine Puzzle: **${o2}/1**`,message,sm,fs,q)
                         break;
                     case 2:
+                        createQuestMessage("🗺️ Quest #9 - Ghost Hunter Luna","📖 **__Task #2/12__** : Stop, Boss Time\n\n\`I'm trying to sneak into the Volcano to investigate Ghost Hunter Blaze, but there's a problem. This dragon Boss ghost keeps getting in my way. I think it's called Magmoraug... Weird name. Anyways, go fight the dragon boss once, and I will give you some Gems for it.\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/3/32/Ghost_Hunter_Luna.png/revision/latest?cb=20210727014952","📜 __Goals:__",`• Defeat <:magmoraug:825122942768644136> Magmoraug once: **${o1}/1**`,message,sm,fs,q)
                         break;
                     case 3:
                         break;

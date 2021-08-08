@@ -398,5 +398,6 @@ function checkQuests(sm,fs,q,type)
                 break;
             case 5:
                 sm.obj6=1}}
+    if((sm.quest==9)&&(sm.task==2)&&(sm.qStarted)&&(type==5)){sm.obj1=1}
     fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})
 }
