@@ -1,4 +1,3 @@
-const { time } = require('console')
 const Discord = require('discord.js')
 
 exports.run = async (bot,message,args) => {
@@ -20,10 +19,10 @@ exports.run = async (bot,message,args) => {
                 if((sm.obj1==1)&&(sm.obj2==0)){if((sm.task==1)||(sm.task==4)||(sm.task==6)||(sm.task==9)||(sm.task==12)){PuzzleSolve(message,sm,fs,q)}else{message.channel.send(`<@${message.member.id}> You can not solve a 🎯 puzzle at the moment.`)}}else{message.channel.send(`<@${message.member.id}> You can not solve a 🎯 puzzle at the moment.`)}
                 break;
             default:
-                message.channel.send(`<@${message.member.id}>\n\n🎯 __**Puzzles**__ 🎯\n\n• \`%puzzle find\` - *Find a puzzle*\n• \`%puzzle read\` - *Read a puzzle*\n• \`%puzzle solve <answer>\` - *Solve a puzzle*`)
+                message.channel.send(`<@${message.member.id}>\n\n🎯 __**Puzzles**__ 🎯\n\n• \`%puzzle find <biome>\` - *Find a puzzle*\n• \`%puzzle read\` - *Read a puzzle*\n• \`%puzzle solve <answer>\` - *Solve a puzzle*`)
                 break;
         }
-    }else{message.channel.send(`<@${message.member.id}>\n\n🎯 __**Puzzles**__ 🎯\n\n• \`%puzzle find\` - *Find a puzzle*\n• \`%puzzle read\` - *Read a puzzle*\n• \`%puzzle solve <answer>\` - *Solve a puzzle*`)}
+    }else{message.channel.send(`<@${message.member.id}>\n\n🎯 __**Puzzles**__ 🎯\n\n• \`%puzzle find <biome>\` - *Find a puzzle*\n• \`%puzzle read\` - *Read a puzzle*\n• \`%puzzle solve <answer>\` - *Solve a puzzle*`)}
 }
 exports.help = {
     name: 'puzzle'
@@ -76,48 +75,24 @@ function PuzzleRead(message,sm)
     }
 }
 
-const places = ["🏙️","💡","🏜️","⛏️","🏖️"]
-
-const filter = (reaction, user, message) => {
-    return places.includes(reaction.emoji.name) && user.id == message.author.id
-}
-
 function PuzzleFind(message,sm,fs,q)
 {
-    message.channel.send(`<@${message.member.id}>\n\nWhere do you want to search for **a 🎯 puzzle?**`).then(msg => {
-        msg.react("🏙️")
-            .then(() => msg.react("💡"))
-            .then(() => msg.react("🏜️"))
-            .then(() => msg.react("⛏️"))
-            .then(() => msg.react("🏖️"))
-        msg.awaitReactions(filter, {max: 1, time: 10000, errors: ['time']})
-            .then(collected => {
-                const chosen = collected.first()
-                switch(chosen.emoji.name)
-                {
-                    case "🏙️":
-                        message.channel.send("City")
-                        break;
-                    case "💡":
-                        message.channel.send("Junkyard")
-                        break;
-                    case "🏜️":
-                        message.channel.send("Wild West")
-                        break;
-                    case "⛏️":
-                        message.channel.send("Mine")
-                        //if(sm.task==1){SuccessfulFind(message,sm,fs,q,"⛏️ Mine")}else{message.channel.send(`<@${message.member.id}> You did not find a 🎯 puzzle in The ⛏️ Mine biome.`)}
-                        break;
-                    case "🏖️":
-                        message.channel.send("Beach")
-                        break;
-                }
-            })
-            .catch(collected => {
-                message.channel.send(`<@${message.member.id}> You did not react on time.`)
-            })
-    })
-
+    if(args.length<2){message.channel.send(`<@${message.member.id}> The correct sytax for this command is \`%puzzle find <biome>\`.`)}else{
+        switch(sm.task)
+        {
+            case 1:
+                if(args[1]=="mine"){SuccessfulFind(message,sm,fs,q,"⛏️ Mine")}else{message.channel.send(`<@${message.member.id}> You did not find a 🎯 puzzle in The ⛏️ Mine.`)}
+                break;
+            case 4:
+                break;
+            case 6:
+                break;
+            case 9:
+                break;
+            case 12:
+                break;
+        }
+    }
 }
 
 function SuccessfulFind(message,sm,fs,q,biome)
