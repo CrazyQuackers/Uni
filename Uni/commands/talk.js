@@ -192,7 +192,7 @@ function goodTalk(message,name,link,sm,fs,q)
     .setDescription(description)
     .setTimestamp()
     message.author.send({embed})
-    checkQuests(sm,fs,q)
+    checkQuests(sm,fs,q,name)
 }
 
 function getDescription(name,sm)
