@@ -10,13 +10,13 @@ exports.run = async (bot,message,args) => {
         switch(args[0])
         {
             case "find":
-                if((sm.qStarted)&&(sm.obj1==0)){if((sm.task==1)||(sm.task==4)||(sm.task==6)||(sm.task==9)||(sm.task==12)){PuzzleFind(message,sm,fs,q)}else{message.channel.send(`<@${message.member.id}> You can not look for a 🎯 puzzle right now.`)}}else{message.channel.send(`<@${message.member.id}> You can not look for a 🎯 puzzle right now.`)}
+                if((sm.qStarted)&&(sm.obj1==0)){if((sm.task==1)||(sm.task==4)||(sm.task==6)||(sm.task==9)||(sm.task==12)){PuzzleFind(message,sm,fs,q,args)}else{message.channel.send(`<@${message.member.id}> You can not look for a 🎯 puzzle right now.`)}}else{message.channel.send(`<@${message.member.id}> You can not look for a 🎯 puzzle right now.`)}
                 break;
             case "read":
                 if(sm.obj1==1){if((sm.task==1)||(sm.task==4)||(sm.task==6)||(sm.task==9)||(sm.task==12)){PuzzleRead(message,sm)}else{message.channel.send(`<@${message.member.id}> You can't read a 🎯 puzzle before finding one!`)}}else{message.channel.send(`<@${message.member.id}> You can't read a 🎯 puzzle before finding one!`)}
                 break;
             case "solve":
-                if((sm.obj1==1)&&(sm.obj2==0)){if((sm.task==1)||(sm.task==4)||(sm.task==6)||(sm.task==9)||(sm.task==12)){PuzzleSolve(message,sm,fs,q)}else{message.channel.send(`<@${message.member.id}> You can not solve a 🎯 puzzle at the moment.`)}}else{message.channel.send(`<@${message.member.id}> You can not solve a 🎯 puzzle at the moment.`)}
+                if((sm.obj1==1)&&(sm.obj2==0)){if((sm.task==1)||(sm.task==4)||(sm.task==6)||(sm.task==9)||(sm.task==12)){PuzzleSolve(message,sm,fs,q,args)}else{message.channel.send(`<@${message.member.id}> You can not solve a 🎯 puzzle at the moment.`)}}else{message.channel.send(`<@${message.member.id}> You can not solve a 🎯 puzzle at the moment.`)}
                 break;
             default:
                 message.channel.send(`<@${message.member.id}>\n\n🎯 __**Puzzles**__ 🎯\n\n• \`%puzzle find <biome>\` - *Find a puzzle*\n• \`%puzzle read\` - *Read a puzzle*\n• \`%puzzle solve <answer>\` - *Solve a puzzle*`)
@@ -28,7 +28,7 @@ exports.help = {
     name: 'puzzle'
 }
 
-function PuzzleSolve(message,sm,fs,q)
+function PuzzleSolve(message,sm,fs,q,args)
 {
     if(args.length<2){message.channel.send(`<@${message.member.id}> The correct sytax for this command is \`%puzzle solve <answer>\`.`)}else{
         switch(sm.task)
@@ -75,7 +75,7 @@ function PuzzleRead(message,sm)
     }
 }
 
-function PuzzleFind(message,sm,fs,q)
+function PuzzleFind(message,sm,fs,q,args)
 {
     if(args.length<2){message.channel.send(`<@${message.member.id}> The correct sytax for this command is \`%puzzle find <biome>\`.`)}else{
         switch(sm.task)
