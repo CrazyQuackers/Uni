@@ -37,12 +37,16 @@ function PuzzleSolve(message,sm,fs,q,args)
                 if(args[1]=="23"){SuccessfulSolve(message,sm,fs,q,"⛏️ Mine")}else{message.channel.send(`<@${message.member.id}> You did not solve the 🎯 puzzle correctly.`)}
                 break;
             case 4:
+                if(args[1]=="green"){SuccessfulSolve(message,sm,fs,q,"💡 Junkyard")}else{message.channel.send(`<@${message.member.id}> You did not solve the 🎯 puzzle correctly.`)}
                 break;
             case 6:
+                if((args[1]=="vatican")&&(args[2])&&(args[2]=="city")){SuccessfulSolve(message,sm,fs,q,"🏙️ City")}else{message.channel.send(`<@${message.member.id}> You did not solve the 🎯 puzzle correctly.`)}
                 break;
             case 9:
+                if(args[1]=="swum"){SuccessfulSolve(message,sm,fs,q,"🏜️ Wild West")}else{message.channel.send(`<@${message.member.id}> You did not solve the 🎯 puzzle correctly.`)}
                 break;
             case 12:
+                if((args[1]=="blue")&&(args[2])&&(args[2]=="whale")){SuccessfulSolve(message,sm,fs,q,"🏖️ Beach")}else{message.channel.send(`<@${message.member.id}> You did not solve the 🎯 puzzle correctly.`)}
                 break;
         }
     }
@@ -65,12 +69,16 @@ function PuzzleRead(message,sm)
             message.author.send(`<@${message.member.id}>\n\n🎯 **The Mine Puzzle!** 🎯\n\n**\`What is 5 + 2 * 9 ?\`**`)
             break;
         case 4:
+            message.author.send(`<@${message.member.id}>\n\n🎯 **The Junkyard Puzzle!** 🎯\n\n**\`What color do you get from mixing blue and yellow?\`**`)
             break;
         case 6:
+            message.author.send(`<@${message.member.id}>\n\n🎯 **The City Puzzle!** 🎯\n\n**\`What is the smallest country in the world?\`**`)
             break;
         case 9:
+            message.author.send(`<@${message.member.id}>\n\n🎯 **The Wild West Puzzle!** 🎯\n\n**\`What is the past participle of the word 'Swim'?\`**`)
             break;
         case 12:
+            message.author.send(`<@${message.member.id}>\n\n🎯 **The Beach Puzzle!** 🎯\n\n**\`What is the largest mammal in the world?\`**`)
             break;
     }
 }
@@ -84,12 +92,16 @@ function PuzzleFind(message,sm,fs,q,args)
                 if(args[1]=="mine"){SuccessfulFind(message,sm,fs,q,"⛏️ Mine")}else{message.channel.send(`<@${message.member.id}> You did not find a 🎯 puzzle in The ⛏️ Mine.`)}
                 break;
             case 4:
+                if(args[1]=="junkyard"){SuccessfulFind(message,sm,fs,q,"💡 Junkyard")}else{message.channel.send(`<@${message.member.id}> You did not find a 🎯 puzzle in The 💡 Junkyard.`)}
                 break;
             case 6:
+                if(args[1]=="city"){SuccessfulFind(message,sm,fs,q,"🏙️ City")}else{message.channel.send(`<@${message.member.id}> You did not find a 🎯 puzzle in The 🏙️ City.`)}
                 break;
             case 9:
+                if((args[1]=="wild")&&(args[2])&&(args[2]=="west")){SuccessfulFind(message,sm,fs,q,"🏜️ Wild West")}else{message.channel.send(`<@${message.member.id}> You did not find a 🎯 puzzle in The 🏜️ Wild West.`)}
                 break;
             case 12:
+                if(args[1]=="beach"){SuccessfulFind(message,sm,fs,q,"🏖️ Beach")}else{message.channel.send(`<@${message.member.id}> You did not find a 🎯 puzzle in The 🏖️ Beach.`)}
                 break;
         }
     }

@@ -322,24 +322,78 @@ exports.run = async (bot,message,args) => {
                         }else{message.react("❌")}
                         break;
                     case 3:
+                        if((ez.acorns>=30)&&(ez.hammers>=30)&&(ez.badges>=30)&&(ez.doubloons>=30)){
+                            message.react("✅")
+                            ez.acorns-=30
+                            ez.hammers-=30
+                            ez.badges-=30
+                            ez.doubloons-=30
+                            createDoneMessage("\`Ew... these items are dripping with ectoplasm... You wouldn't happen to have a napkin, would you? No napkin? Oi... Okay, I'll wipe them off later. You want that reward now, right? Take it.\`\n+**2250** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/3/32/Ghost_Hunter_Luna.png/revision/latest?cb=20210727014952",2250,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
                         break;
                     case 4:
+                        if(o2==1){
+                            message.react("✅")
+                            createDoneMessage("\`That's it, another puzzle solved. I need all five of them to decode this message though. I'll send you after the other puzzles soon, but first... Your reward. Take it!\`\n+**1500** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/3/32/Ghost_Hunter_Luna.png/revision/latest?cb=20210727014952",1500,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
                         break;
                     case 5:
+                        if((ez.tires>=50)&&(ez.meteorites>=50)&&(ez.artifacts>=50)&&(ez.pearls>=50)){
+                            message.react("✅")
+                            ez.tires-=50
+                            ez.meteorites-=50
+                            ez.artifacts-=50
+                            ez.pearls-=50
+                            createDoneMessage("\`These will work. I almost have enough items to build the decoder. I just can't believe he did all this... We were friends once, you know? But nevermind that... You want that reward now right?\`\n+**2750** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/3/32/Ghost_Hunter_Luna.png/revision/latest?cb=20210727014952",2750,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
                         break;
                     case 6:
+                        if(o2==1){
+                            message.react("✅")
+                            sm.atom = true
+                            createDoneMessage("\`Yep, this is one of the puzzles, only 2 more to go. Then, I can finally figure out how to stop this madness. But, I'm worried. More things are coming out of that rift. The dragon boss, me... who knows what else... Anyway... You've been helping me this long. I think it's time I show some good faith in you. Here's that Atom Pet you've been waiting for!\`\n+**Atom** <:atomPet:874094373938286652>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/3/32/Ghost_Hunter_Luna.png/revision/latest?cb=20210727014952",0,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
                         break;
                     case 7:
+                        if(ez.sellTime==140){
+                            message.react("✅")
+                            createDoneMessage("\`I wish I had this gear when I was stuck in that rift... What was it like in there? It's... really strange. Things don't make sense there. Up is down and down is up. There's way too many ghosts. Anyways... I'm getting carried away. Here's that reward I promised you.\`\n+**1500** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/3/32/Ghost_Hunter_Luna.png/revision/latest?cb=20210727014952",1500,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
                         break;
                     case 8:
+                        if((ez.socks>=70)&&(ez.gold>=70)&&(ez.diamonds>=70)&&(ez.tusks>=70)){
+                            message.react("✅")
+                            ez.socks-=70
+                            ez.gold-=70
+                            ez.diamonds-=70
+                            ez.tusks-=70
+                            createDoneMessage("\`This is exactly what I needed. Only a few more things before I can translate these clues. Of course, I haven't forgotten about your reward. Cheeky, aren't you?\`\n+**3250** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/3/32/Ghost_Hunter_Luna.png/revision/latest?cb=20210727014952",3250,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
                         break;
                     case 9:
+                        if(o2==1){
+                            message.react("✅")
+                            createDoneMessage("\`That's almost all of the puzzles solved! We only need one more now. I can't thank you enough for all of your help. While you were out, I took some time to spy on Ghost Hunter Blaze... I learned something new. I think there's someone else on the other side of the rift... Something strange is going on here... You've listened to me pout enough. Take your reward... Only three more tasks to go.\`\n+**1750** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/3/32/Ghost_Hunter_Luna.png/revision/latest?cb=20210727014952",1750,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
                         break;
                     case 10:
+                        if(o6==1){
+                            message.react("✅")
+                            createDoneMessage("\`That's everything I need to finish the decoder now! Soon, I'll be able to read the instructions... And, I'll finally be able to put a stop to his madness... He was my friend, but it's too late now. Anyway, Here's that reward. We're so close to figuring this out.\`\n+**1000** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/3/32/Ghost_Hunter_Luna.png/revision/latest?cb=20210727014952",1000,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
                         break;
                     case 11:
+                        if(o1>=30){
+                            message.react("✅")
+                            createDoneMessage("\`Got any luck? You got a lot of research so this will work. I'll pass this onto my agency. Got a nice chunk of Gems for you as a reward.\`\n+**6000** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/3/32/Ghost_Hunter_Luna.png/revision/latest?cb=20210727014952",6000,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
                         break;
                     case 12:
+                        if(o2==1){
+                            message.react("✅")
+                            sm.badge = true
+                            createDoneMessage("\`This is it! That's the last piece of this puzzle. I can't believe you did it! Now to read... Wait... this can't be right. That doesn't make any sense... why would they-? It says here that... Ghost Hunter Blaze is with the Agency! He's working with them to help close the rift!? This is actually great news! Well, Ghost Hunter... You've earned The Ghost Hunter Badge, thank you for all of your help! Wait, now that I'm thinking about it... You should defenitely head to the Volcano and help Blaze! You've finished your training, there's no reason not too.. and I'm sure Blaze could really use a good hand like yours! Good luck Ghost Hunter, with your final Quest!\`\n+**Ghost Hunter Badge** <:ghosthunterbadge:874405583959228477>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/3/32/Ghost_Hunter_Luna.png/revision/latest?cb=20210727014952",0,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
                         break;
                 }
                 break;
@@ -604,24 +658,60 @@ exports.run = async (bot,message,args) => {
                         createQuestMessage("🗺️ Quest #9 - Ghost Hunter Luna","📖 **__Task #2/12__** : Stop, Boss Time\n\n\`I'm trying to sneak into the Volcano to investigate Ghost Hunter Blaze, but there's a problem. This dragon Boss ghost keeps getting in my way. I think it's called Magmoraug... Weird name. Anyways, go fight the dragon boss once, and I will give you some Gems for it.\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/3/32/Ghost_Hunter_Luna.png/revision/latest?cb=20210727014952","📜 __Goals:__",`• Defeat <:magmoraug:825122942768644136> Magmoraug once: **${o1}/1**`,message,sm,fs,q)
                         break;
                     case 3:
+                        o1 = ez.acorns
+                        o2 = ez.hammers
+                        o3 = ez.badges
+                        o4 = ez.doubloons
+                        if(o1>30){o1=30}
+                        if(o2>30){o2=30}
+                        if(o3>30){o3=30}
+                        if(o4>30){o4=30}
+                        createQuestMessage("🗺️ Quest #9 - Ghost Hunter Luna","📖 **__Task #3/12__** : The Collection\n\n\`You're well on your way to getting the Atom Pet... I'll give him to you when we are half-way done with our journeys. At the end of them, I'll give you a special reward for completing all of your Ghost Hunter Trainings! I've noticed you're a great hufflepu- I mean you're great at finding things. I need you to collect 30 items from several biomes. These items are important... Why do I need them? That's for me to know, and for you to find out later. If you get them, I'll give you a reward.\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/3/32/Ghost_Hunter_Luna.png/revision/latest?cb=20210727014952","📜 __Goals:__",`• Obtain **30** <:acorn:825122942660509707> Acorns from The 🏕️ Forest: **${o1}/30**\n• Obtain **30** 🔨 Hammers from The 🏗️ Construction Site: **${o2}/30**\n• Obtain **30** <:sherrifbadge:825122941637230613> Sherriff Badges from The 🏜️ Wild West: **${o3}/30**\n• Obtain **30** <:doubloon:825122941746151434> Doubloons from The 🏖️ Beach: **${o4}/30**`,message,sm,fs,q)
                         break;
                     case 4:
+                        createQuestMessage("🗺️ Quest #9 - Ghost Hunter Luna","📖 **__Task #4/12__** : Trash Jump\n\n\`Three more tasks until the Atom Pet. Then, I got a few more tasks for the special badge! Time to hone your skills. You're going to solve the puzzle found at the Junkyard. With all five puzzles solved, I'll finally know how to stop Ghost Hunter Blaze... but you just want a reward, right?\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/3/32/Ghost_Hunter_Luna.png/revision/latest?cb=20210727014952","📜 __Goals:__",`• Solve the 🎯 Junkyard Puzzle: **${o2}/1**`,message,sm,fs,q)
                         break;
                     case 5:
+                        o1 = ez.tires
+                        o2 = ez.meteorites
+                        o3 = ez.artifacts
+                        o4 = ez.pearls
+                        if(o1>50){o1=50}
+                        if(o2>50){o2=50}
+                        if(o3>50){o3=50}
+                        if(o4>50){o4=50}
+                        createQuestMessage("🗺️ Quest #9 - Ghost Hunter Luna","📖 **__Task #5/12__** : Item Mayhem\n\n\`So, I'm gonna need a lot more items if you expect me to figure out what's really going on here. Ghost Hunter Blaze might be on to us, so we need to act fast. Collect 50 items from several biomes. Got it? Good! Return to me for a reward. Make sure he doesn't send people to follow you.\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/3/32/Ghost_Hunter_Luna.png/revision/latest?cb=20210727014952","📜 __Goals:__",`• Obtain **50** <:tire:825122944128385054> Tires from The 💡 Junkyard: **${o1}/50**\n• Obtain **50** <:meteorite:825122930047320115> Meteorites from ☄️ Area 51: **${o2}/50**\n• Obtain **50** <:artifact:825122914210414592> Artifacts from The <:pyramid:825122937236357164> Pyramids: **${o3}/50**\n• Obtain **50** <:pearl:825122938457686057> Pearls from 💦 Underwater: **${o4}/50**`,message,sm,fs,q)
                         break;
                     case 6:
+                        createQuestMessage("🗺️ Quest #9 - Ghost Hunter Luna","📖 **__Task #6/12__** : Cityscape Parkour\n\n\`We need to solve another puzzle. I got word this one is in the City. You need to find the clue located there and solve it. Think you can do it? Perfect. Better hurry, we don't want anyone else finding these clues. Top secret stuff, you know? After you solve it, I'll reward you with the Atom Pet I've been talking so much about.\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/3/32/Ghost_Hunter_Luna.png/revision/latest?cb=20210727014952","📜 __Goals:__",`• Solve the 🎯 City Puzzle: **${o2}/1**`,message,sm,fs,q)
                         break;
                     case 7:
+                        if(ez.sellTime==140){o1=1}
+                        createQuestMessage("🗺️ Quest #9 - Ghost Hunter Luna","📖 **__Task #7/12__** : The Coolest Gear In Town\n\n\`My tasks aren't done yet. I still have a special badge for you to earn, so stick around. For the upcoming tasks, it'll be much easier if you get better equipment. Go to the shop and upgrade your pack to the max! The Distorted Pack! Finish this task, and come back to me for a reward.\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/3/32/Ghost_Hunter_Luna.png/revision/latest?cb=20210727014952","📜 __Goals:__",`• Upgrade your <:pack:825122944204013588> pack to a 'Distorted Pack': **${o1}/1**`,message,sm,fs,q)
                         break;
                     case 8:
+                        o1 = ez.socks
+                        o2 = ez.gold
+                        o3 = ez.diamonds
+                        o4 = ez.tusks
+                        if(o1>70){o1=70}
+                        if(o2>70){o2=70}
+                        if(o3>70){o3=70}
+                        if(o4>70){o4=70}
+                        createQuestMessage("🗺️ Quest #9 - Ghost Hunter Luna","📖 **__Task #8/12__** : From Socks to Riches\n\n\`Now that you've upgraded your equipment, go try it out! You need to collect 70 items from several biomes. Once you're done, I got a few fun tasks for you... and a reward.\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/3/32/Ghost_Hunter_Luna.png/revision/latest?cb=20210727014952","📜 __Goals:__",`• Obtain **70** 🧦 Socks from The <:manhole:825122943133941821> Sewers: **${o1}/70**\n• Obtain **70** <:goldbar:825122939006746625> Gold Bars from The ⛏️ Mine: **${o2}/70**\n• Obtain **70** 💎 Diamonds from The 🌋 Volcano: **${o3}/70**\n• Obtain **70** <:tusk:825122936927027289> Ancient Tusks from The 🧊 Ice Cave: **${o4}/70**`,message,sm,fs,q)
                         break;
                     case 9:
+                        createQuestMessage("🗺️ Quest #9 - Ghost Hunter Luna","📖 **__Task #9/12__** : Desert Dash\n\n\`Ghost Hunter Blaze and I used to be co-workers in Area 51... It was fun to work together... But... he started working on a top-secret project about Ghosts. He's what caused this mess. That's why I need to stop him, but enough about that. You're taking on another puzzle now. Your task is to find the clue in the Wild West and solve it. Return to me for a reward.\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/3/32/Ghost_Hunter_Luna.png/revision/latest?cb=20210727014952","📜 __Goals:__",`• Solve the 🎯 Wild West Puzzle: **${o2}/1**`,message,sm,fs,q)
                         break;
                     case 10:
+                        createQuestMessage("🗺️ Quest #9 - Ghost Hunter Luna","📖 **__Task #10/12__** : Gadget Scavenge\n\n\`Just a few more tasks until you get the special badge and I can finally figure out how to stop Ghost Hunter Blaze. This time I'm sending you on a different task. I need the decoder gadget in order to fully translate the clues. Unfortunately, my agency hid it around Uni in pieces. It's up to you now. Find all five gadget fragments and then craft them together and return to me for a reward.\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/3/32/Ghost_Hunter_Luna.png/revision/latest?cb=20210727014952","📜 __Goals:__",`• Find a 🏹 Gadget Fragment: **${o1}/1**\n• Find a 🏹 Gadget Piece: **${o2}/1**\n• Find a 🏹 Gadget Particle: **${o3}/1**\n• Find a 🏹 Gadget Shard: **${o4}/1**\n• Find a 🏹 Gadget Scrap: **${o5}/1**\n• Craft a 🏹 Gadget Fragment: **${o1}/1**\n• Craft the 📟 Decoder Gadget: **${o6}/1**`,message,sm,fs,q)
                         break;
                     case 11:
+                        if(o1>30){o1=30}
+                        createQuestMessage("🗺️ Quest #9 - Ghost Hunter Luna","📖 **__Task #11/12__** : Classified Research\n\n\`So, I heard a tip that Blaze actually created a new pet class called Classified... There's only one pet in this class and it hides in Pet Crate #1, but it's really good at hiding. I don't expect you to get it... But, maybe you could at least try to get some info on it? Go unbox a lot of pets... maybe you'll find it. Come back when you're done for a reward. This is really important research.\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/3/32/Ghost_Hunter_Luna.png/revision/latest?cb=20210727014952","📜 __Goals:__",`• Unbox **30** 🐶 Pets from Pet Crate #1: **${o1}/30**`,message,sm,fs,q)
                         break;
                     case 12:
+                        createQuestMessage("🗺️ Quest #9 - Ghost Hunter Luna","📖 **__Task #12/12__** : The Ghost Hunter Badge\n\n\`This is it, my friend. We've come a long way. Finish this task, and I'll provide you with the pristine Ghost Hunter Badge! It represents perseverance, dedication, and most importantly, Completed Ghost Hunter Training! For your final task, you are gonna solve the final puzzle. You can find it at the Beach. Once you've finished, I will finally have all the clues and the decoder. We can find out how to stop him! Return with the puzzle solved and I'll give you the final reward, The Ghost Hunter Badge!\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/3/32/Ghost_Hunter_Luna.png/revision/latest?cb=20210727014952","📜 __Goals:__",`• Solve the 🎯 Beach Puzzle: **${o2}/1**`,message,sm,fs,q)
                         break;
                 }
                 break;

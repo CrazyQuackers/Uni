@@ -46,6 +46,26 @@ exports.run = async (bot,message,args) => {
         message.channel.send(`<@${message.member.id}> You've found 📕 **Riley's Boss Book**!`)
         sm.obj1=1
         fs.writeFile("./data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})}else{message.react("❌")}}
+    if((sm.quest==9)&&(sm.task==10)&&(sm.qStarted)&&(sm.obj1==0)){if((args.length==2)&&(args[0]=="gadget")&&(args[1]=="fragment")){message.react("✅")
+        message.channel.send(`<@${message.member.id}> You've found a 🏹 **Gadget Fragment**!`)
+        sm.obj1=1
+        fs.writeFile("./data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})}else{message.react("❌")}}
+    if((sm.quest==9)&&(sm.task==10)&&(sm.qStarted)&&(sm.obj2==0)){if((args.length==2)&&(args[0]=="gadget")&&(args[1]=="piece")){message.react("✅")
+        message.channel.send(`<@${message.member.id}> You've found a 🏹 **Gadget Piece**!`)
+        sm.obj2=1
+        fs.writeFile("./data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})}else{message.react("❌")}}
+    if((sm.quest==9)&&(sm.task==10)&&(sm.qStarted)&&(sm.obj3==0)){if((args.length==2)&&(args[0]=="gadget")&&(args[1]=="particle")){message.react("✅")
+        message.channel.send(`<@${message.member.id}> You've found a 🏹 **Gadget Particle**!`)
+        sm.obj3=1
+        fs.writeFile("./data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})}else{message.react("❌")}}
+    if((sm.quest==9)&&(sm.task==10)&&(sm.qStarted)&&(sm.obj4==0)){if((args.length==2)&&(args[0]=="gadget")&&(args[1]=="shard")){message.react("✅")
+        message.channel.send(`<@${message.member.id}> You've found a 🏹 **Gadget Shard**!`)
+        sm.obj4=1
+        fs.writeFile("./data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})}else{message.react("❌")}}
+    if((sm.quest==9)&&(sm.task==10)&&(sm.qStarted)&&(sm.obj5==0)){if((args.length==2)&&(args[0]=="gadget")&&(args[1]=="scrap")){message.react("✅")
+        message.channel.send(`<@${message.member.id}> You've found a 🏹 **Gadget Scrap**!`)
+        sm.obj5=1
+        fs.writeFile("./data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})}else{message.react("❌")}}
 }
 exports.help = {
     name: 'find'

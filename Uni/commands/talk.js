@@ -216,7 +216,7 @@ function getDescription(name,sm)
         case "Riley":
             return "Thank you again, Ghost Hunter, for helping me complete my research and proving my theory! Remember! If we continue defeating bosses... we might clear Uni from all ghosts!"
         case "Luna":
-            return ""
+            return "Hey there Ghost Hunter! What are you doing here? You miss my puzzle tasks? Hehehehe, you're cute... If there's anything you need help with, you or Blaze, you can always come to me!"
         case "Blaze":
             return ""
     }

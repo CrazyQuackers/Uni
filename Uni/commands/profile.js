@@ -8,7 +8,7 @@ exports.run = async (bot,message,args) => {
     if(other){tag = other
         sm = q[message.guild.id].users[tag.id]
         ez = db[message.guild.id].users[tag.id]}
-    const arr = [ez.pug,ez.fox,ez.cow,ez.pig,ez.mouse,ez.deer,ez.wolf,ez.duck,ez.unicorn,ez.bat,ez.jack,ez.bear,ez.cat,ez.cyborg,ez.horse,ez.fish,ez.chicken,ez.giraffe,ez.bob,ez.butterfly,ez.peacock,ez.tiger,ez.flamingo,ez.koala,ez.bot,ez.dino,ez.clownfish,ez.panda,ez.bee,ez.shark,ez.steve,ez.rabbit,ez.rex,sm.hypno,sm.tree,sm.george,sm.sludge,sm.subject,sm.king,sm.mag]
+    const arr = [ez.pug,ez.fox,ez.cow,ez.pig,ez.mouse,ez.deer,ez.wolf,ez.duck,ez.unicorn,ez.bat,ez.jack,ez.bear,ez.cat,ez.cyborg,ez.horse,ez.fish,ez.chicken,ez.giraffe,ez.bob,ez.butterfly,ez.peacock,ez.tiger,ez.flamingo,ez.koala,ez.bot,ez.dino,ez.clownfish,ez.panda,ez.bee,ez.shark,ez.steve,ez.rabbit,ez.rex,sm.hypno,sm.atom,sm.tree,sm.george,sm.sludge,sm.subject,sm.king,sm.mag,sm.rainwave]
     let c = 0
     let i = 0
     for(i=0 ; i<arr.length ; i++){if(arr[i]){c++}}
@@ -52,10 +52,12 @@ exports.run = async (bot,message,args) => {
             n = "None"
 
     }
+    let authorName = `${tag.user.username}'s Profile`
+    if(sm.badge){authorName = authorName + " <:ghosthunterbadge:874405583959228477>"}
     const embed = {
         color: 38977,
         author: {
-            name: `${tag.user.username}'s Profile`,
+            name: authorName,
             icon_url: tag.user.avatarURL(),
         },
         description: `<:hoverboard:842713851585495070> **Equipped Hoverboard:** ${n}\n\n📡 **Antenna Level:** ${ez.antenna}\n\n<:pack:825122944204013588> **Pack Name:** ${ez.pack}\n\n🗺️ **Questline:** Quest #${sm.quest} - Task #${sm.task}\n\n🐶 **Number of Pets:** ${c}\n\n💀 **Bosses Defeated:** ${ez.defeated}`,

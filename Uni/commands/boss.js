@@ -46,8 +46,8 @@ exports.run = async (bot,message,args) => {
                 boss = "<:magmoraug:825122942768644136> Magmoraug"
                 break;
         }
-        let petArr = [ez.pug,ez.fox,ez.cow,ez.pig,ez.mouse,ez.deer,ez.wolf,ez.duck,ez.unicorn,ez.bat,ez.jack,ez.bear,ez.cat,ez.cyborg,ez.horse,ez.fish,ez.chicken,ez.giraffe,ez.bob,ez.butterfly,ez.peacock,ez.tiger,ez.flamingo,ez.koala,ez.bot,ez.dino,ez.clownfish,ez.panda,ez.bee,ez.shark,ez.steve,ez.rabbit,ez.rex,sm.hypno,sm.tree,sm.george,sm.sludge,sm.subject,sm.king,sm.mag];
-        let strArr = ["pug","fox","cow","pig","mouse","deer","wolf","duck","unicorn","bat","jack","bear","cat","cyborg","horse","fish","chicken","giraffe","bob","butterfly","peacock","tiger","flamingo","koala","bot","dino","clownfish","panda","bee","shark","steve","rabbit","rex","hypno","tree","george","sludge","subject","king","mag"];
+        let petArr = [ez.pug,ez.fox,ez.cow,ez.pig,ez.mouse,ez.deer,ez.wolf,ez.duck,ez.unicorn,ez.bat,ez.jack,ez.bear,ez.cat,ez.cyborg,ez.horse,ez.fish,ez.chicken,ez.giraffe,ez.bob,ez.butterfly,ez.peacock,ez.tiger,ez.flamingo,ez.koala,ez.bot,ez.dino,ez.clownfish,ez.panda,ez.bee,ez.shark,ez.steve,ez.rabbit,ez.rex,sm.hypno,sm.atom,sm.tree,sm.george,sm.sludge,sm.subject,sm.king,sm.mag,sm.rainwave];
+        let strArr = ["pug","fox","cow","pig","mouse","deer","wolf","duck","unicorn","bat","jack","bear","cat","cyborg","horse","fish","chicken","giraffe","bob","butterfly","peacock","tiger","flamingo","koala","bot","dino","clownfish","panda","bee","shark","steve","rabbit","rex","hypno","atom","tree","george","sludge","subject","king","mag","rainwave"];
         let i = 0
         let j = 0
         var mainArr = []
@@ -230,6 +230,8 @@ function fightMessage(str)
             return "\nYour 🦖 **t-rex** does **10** ⚔️ attack!"
         case "hypno":
             return "\nYour <:hypnotize:843489441724628992> **hypnotize** does **1** ⚔️ attack!"
+        case "atom":
+            return "\nYour <:atomPet:874094373938286652> **atom** does **2** ⚔️ attack!"
         case "tree":
             return "\nYour <:ghastlytree:825122934221307955> **mini ghast** does **5** ⚔️ attack!"
         case "george":
@@ -242,6 +244,8 @@ function fightMessage(str)
             return "\nYour <:kingkrab:825122934183559239> **mini krab** does **5** ⚔️ attack!"
         case "mag":
             return "\nYour <:magmoraug:825122942768644136> **mini mag** does **5** ⚔️ attack!"
+        case "rainwave":
+            return "\nYour <:rainwave:874390657991598091> **rainwave** does **3** ⚔️ attack!"
     }
 }
 
@@ -353,22 +357,28 @@ function isPet(i,type)
             check = true
             break;
         case 34:
-            if(type==0){check = true}
+            check = true
             break;
         case 35:
-            if(type==1){check = true}
+            if(type==0){check = true}
             break;
         case 36:
-            if(type==2){check = true}
+            if(type==1){check = true}
             break;
         case 37:
-            if(type==3){check = true}
+            if(type==2){check = true}
             break;
         case 38:
-            if(type==4){check = true}
+            if(type==3){check = true}
             break;
         case 39:
+            if(type==4){check = true}
+            break;
+        case 40:
             if(type==5){check = true}
+            break;
+        case 41:
+            check = true
             break;
     }
     return check;

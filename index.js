@@ -144,7 +144,10 @@ bot.on('message', (message) =>
             mag: false,
             blox: false,
             obj5: 0,
-            obj6: 0
+            obj6: 0,
+            atom: false,
+            rainwave: false,
+            badge: false
         }
         fs.writeFile("./data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
         fs.writeFile("./data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})

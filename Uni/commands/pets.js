@@ -8,18 +8,18 @@ exports.run = async (bot,message,args) => {
     if(other){tag = other.id
         ez = db[message.guild.id].users[tag]
         sm = q[message.guild.id].users[tag]}
-    let petArr1 = [ez.pug,ez.fox,ez.cow,ez.pig,ez.mouse,ez.deer,ez.wolf,ez.duck,ez.unicorn,ez.bat,ez.jack];
+    let petArr1 = [ez.pug,ez.fox,ez.cow,ez.pig,ez.mouse,ez.deer,ez.wolf,ez.duck,ez.unicorn,ez.bat,ez.jack,sm.rainwave];
     let petArr2 = [ez.bear,ez.cat,ez.cyborg,ez.horse,ez.fish,ez.chicken,ez.giraffe,ez.bob,ez.butterfly,ez.peacock,ez.tiger];
     let petArr3 = [ez.flamingo,ez.koala,ez.bot,ez.dino,ez.clownfish,ez.panda,ez.bee,ez.shark,ez.steve,ez.rabbit,ez.rex];
-    let petArr4 = [sm.hypno,sm.tree,sm.george,sm.sludge,sm.subject,sm.king,sm.mag];
+    let petArr4 = [sm.hypno,sm.atom,sm.tree,sm.george,sm.sludge,sm.subject,sm.king,sm.mag];
     let c1 = countPets(petArr1)
     let c2 = countPets(petArr2)
     let c3 = countPets(petArr3)
     let c4 = countPets(petArr4)
-    let str1 = `<@${tag}>**'s Pets**  \`${(c1+c2+c3+c4)}/40\`\n\n__Pet Crate 1__  \`${c1}/11\`\n`
+    let str1 = `<@${tag}>**'s Pets**  \`${(c1+c2+c3+c4)}/42\`\n\n__Pet Crate 1__  \`${c1}/12\`\n`
     let str2 = `\n\n__Pet Crate 2__  \`${c2}/11\`\n`
     let str3 = `\n\n__Pet Crate 3__  \`${c3}/11\`\n`
-    let str4 = `\n\n__Questline & Boss Pets__  \`${c4}/7\`\n`
+    let str4 = `\n\n__Questline & Boss Pets__  \`${c4}/8\`\n`
     str1 = createMessage(petArr1,1,str1)
     str2 = createMessage(petArr2,2,str2)
     str3 = createMessage(petArr3,3,str3)
@@ -86,6 +86,8 @@ function findPet(i,n)
                     return "🦇 **Bat** ( 7 ⚔️ <:magmoraug:825122942768644136><:ghastlytree:825122934221307955> )  💠  _Legendary_"
                 case 10:
                     return "🎃 **Jack-O-Lantern** ( 10 ⚔️ <:ghastlytree:825122934221307955><:georgethegorilla:825122935081664632><:sludge:825122930471075880> )  💠  _Godly_"
+                case 11:
+                    return "<:rainwave:874390657991598091> **Rainwave** ( 3 ⚔️ <:ghastlytree:825122934221307955><:georgethegorilla:825122935081664632><:sludge:825122930471075880><:subjectone:825122932815691847><:kingkrab:825122934183559239><:magmoraug:825122942768644136> )  💠  _Classified_"
             }
         case 2:
             switch(i)
@@ -145,16 +147,18 @@ function findPet(i,n)
                 case 0:
                     return "<:hypnotize:843489441724628992> **Hypnotize** ( 1 ⚔️ <:ghastlytree:825122934221307955><:georgethegorilla:825122935081664632><:sludge:825122930471075880><:subjectone:825122932815691847><:kingkrab:825122934183559239><:magmoraug:825122942768644136> )  💠  _Godly_"
                 case 1:
-                    return "<:ghastlytree:825122934221307955> **Mini Ghast** ( 5 ⚔️ <:ghastlytree:825122934221307955> )  💠  _Mythical_"
+                    return "<:atomPet:874094373938286652> **Atom** ( 2 ⚔️ <:ghastlytree:825122934221307955><:georgethegorilla:825122935081664632><:sludge:825122930471075880><:subjectone:825122932815691847><:kingkrab:825122934183559239><:magmoraug:825122942768644136> )  💠  _Godly_"
                 case 2:
-                    return "<:georgethegorilla:825122935081664632> **Mini George** ( 5 ⚔️ <:georgethegorilla:825122935081664632> )  💠  _Mythical_"
+                    return "<:ghastlytree:825122934221307955> **Mini Ghast** ( 5 ⚔️ <:ghastlytree:825122934221307955> )  💠  _Mythical_"
                 case 3:
-                    return "<:sludge:825122930471075880> **Mini Sludge** ( 5 ⚔️ <:sludge:825122930471075880> )  💠  _Mythical_"
+                    return "<:georgethegorilla:825122935081664632> **Mini George** ( 5 ⚔️ <:georgethegorilla:825122935081664632> )  💠  _Mythical_"
                 case 4:
-                    return "<:subjectone:825122932815691847> **Mini One** ( 5 ⚔️ <:subjectone:825122932815691847> )  💠  _Mythical_"
+                    return "<:sludge:825122930471075880> **Mini Sludge** ( 5 ⚔️ <:sludge:825122930471075880> )  💠  _Mythical_"
                 case 5:
-                    return "<:kingkrab:825122934183559239> **Mini Krab** ( 5 ⚔️ <:kingkrab:825122934183559239> )  💠  _Mythical_"
+                    return "<:subjectone:825122932815691847> **Mini One** ( 5 ⚔️ <:subjectone:825122932815691847> )  💠  _Mythical_"
                 case 6:
+                    return "<:kingkrab:825122934183559239> **Mini Krab** ( 5 ⚔️ <:kingkrab:825122934183559239> )  💠  _Mythical_"
+                case 7:
                     return "<:magmoraug:825122942768644136> **Mini Mag** ( 5 ⚔️ <:magmoraug:825122942768644136> )  💠  _Mythical_"
             }
     }
