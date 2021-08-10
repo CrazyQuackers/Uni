@@ -2,20 +2,25 @@ const Discord = require(`discord.js`)
 
 exports.run = async (bot,message,args) => {
     const db = require('../../data/db.json')
+    const q = require('../../data/q.json')
     let other = message.mentions.members.first();
     let ez = db[message.guild.id].users[message.member.id]
+    let sm = q[message.guild.id].users[message.member.id]
     let tl = message.member.user.tag
     if(other) {
         ez = db[message.guild.id].users[other.id]
+        sm = q[message.guild.id].users[other.id]
         tl = other.user.tag
     }
     let strCoins = decreaseNumberLength(ez.ectoTokens)
     let strGems = decreaseNumberLength(ez.gems)
     let tlArray = tl.split('#');
     let tlNew = tlArray[0];
+    let titleName = `${tlNew}'s Inventory`
+    if(sm.badge){titleName = titleName + " <:ghosthunterbadge:874405583959228477>"}
     const embed = new Discord.MessageEmbed()
         .setColor(65535)
-        .setTitle(`${tlNew}'s Inventory`)
+        .setTitle(titleName)
         .setThumbnail("https://imgur.com/8ECyipu.png")
         .addFields(
             {name: "Item", value: "<:ectotoken:825122939812315219>  Ecto-Tokens\n<:gems:825122942413045791>  Gems\n🔩  Antenna Parts\n<:acorn:825122942660509707>  Acorns\n📰  Newspapers\n<:tire:825122944128385054>  Tires\n🧦  Socks\n🔨  Hammers\n<:sherrifbadge:825122941637230613>  Sherrif Badges\n<:meteorite:825122930047320115>  Meteorites\n<:goldbar:825122939006746625>  Gold Bars\n<:artifact:825122914210414592>  Artifacts\n<:doubloon:825122941746151434>  Doubloons\n<:pearl:825122938457686057>  Pearls\n💎  Diamonds\n<:tusk:825122936927027289>  Ancient Tusks", inline: true},

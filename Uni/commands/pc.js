@@ -82,7 +82,7 @@ function mainPetFunction(message,c,ez,fs,db,sm,q)
         ez.gems = ez.gems - c;
         let object = (Math.round(Math.random()*1000))+1;
         let whatPet = 0
-        if((object==1)&&(c==200))
+        if((object>0)&&(c==200))
         {
             if(sm.rainwave){message.channel.send(`<@${message.member.id}> **HOW DID YOU DO THAT!?!?!?! YOU'VE JUST UNBOXED THE MOST RAREST PET IN UNI!!!!**\n**A Classified <:rainwave:874390657991598091> Rainwave!**  \`duplicate\`\nThis pet has **3** ⚔️ Attack and is effective against <:ghastlytree:825122934221307955><:georgethegorilla:825122935081664632><:sludge:825122930471075880><:subjectone:825122932815691847><:kingkrab:825122934183559239><:magmoraug:825122942768644136> **all bosses!**`)}else{message.channel.send(`<@${message.member.id}> **HOW DID YOU DO THAT!?!?!?! YOU'VE JUST UNBOXED THE MOST RAREST PET IN UNI!!!!**\n**A Classified <:rainwave:874390657991598091> Rainwave!**\nThis pet has **3** ⚔️ Attack and is effective against <:ghastlytree:825122934221307955><:georgethegorilla:825122935081664632><:sludge:825122930471075880><:subjectone:825122932815691847><:kingkrab:825122934183559239><:magmoraug:825122942768644136> **all bosses!**`)}
             sm.rainwave = true;
