@@ -82,13 +82,13 @@ function mainPetFunction(message,c,ez,fs,db,sm,q)
         ez.gems = ez.gems - c;
         let object = (Math.round(Math.random()*1000))+1;
         let whatPet = 0
-        if((object>0)&&(c==200))
+        if((object==1)&&(c==200))
         {
             if(sm.rainwave){message.channel.send(`<@${message.member.id}> **HOW DID YOU DO THAT!?!?!?! YOU'VE JUST UNBOXED THE MOST RAREST PET IN UNI!!!!**\n**A Classified <:rainwave:874390657991598091> Rainwave!**  \`duplicate\`\nThis pet has **3** ⚔️ Attack and is effective against <:ghastlytree:825122934221307955><:georgethegorilla:825122935081664632><:sludge:825122930471075880><:subjectone:825122932815691847><:kingkrab:825122934183559239><:magmoraug:825122942768644136> **all bosses!**`)}else{message.channel.send(`<@${message.member.id}> **HOW DID YOU DO THAT!?!?!?! YOU'VE JUST UNBOXED THE MOST RAREST PET IN UNI!!!!**\n**A Classified <:rainwave:874390657991598091> Rainwave!**\nThis pet has **3** ⚔️ Attack and is effective against <:ghastlytree:825122934221307955><:georgethegorilla:825122935081664632><:sludge:825122930471075880><:subjectone:825122932815691847><:kingkrab:825122934183559239><:magmoraug:825122942768644136> **all bosses!**`)}
             sm.rainwave = true;
             return;
         }
-        if(((sm.quest<7)&&(object<=600))||((sm.quest>=7)&&(object<=500))){
+        if(((!sm.petLuck)&&(object<=600))||((sm.petLuck)&&(object<=500))){
             whatPet = (Math.round(Math.random()*4))+1;
             switch(whatPet){
                 case 1:
@@ -158,7 +158,7 @@ function mainPetFunction(message,c,ez,fs,db,sm,q)
             }
         }
         else{
-            if(((sm.quest<7)&&(object<=870))||((sm.quest>=7)&&(object<=700))){
+            if(((!sm.petLuck)&&(object<=870))||((sm.petLuck)&&(object<=700))){
                 whatPet = (Math.round(Math.random()*3))+1;
                 switch(whatPet){
                     case 1:
@@ -212,7 +212,7 @@ function mainPetFunction(message,c,ez,fs,db,sm,q)
                 }
             }
             else{
-                if(((sm.quest<7)&&(object<=970))||((sm.quest>=7)&&(object<=850))){
+                if(((!sm.petLuck)&&(object<=970))||((sm.petLuck)&&(object<=850))){
                     whatPet = (Math.round(Math.random()*2))+1;
                     switch(whatPet){
                         case 1:
@@ -250,7 +250,7 @@ function mainPetFunction(message,c,ez,fs,db,sm,q)
                     }
                 }
                 else{
-                    if(((sm.quest<7)&&(object<=996))||((sm.quest>=7)&&(object<=950))){
+                    if(((!sm.petLuck)&&(object<=996))||((sm.petLuck)&&(object<=950))){
                         switch(c){
                             case 200:
                                 unboxedPetMessage(message,"a legendary","🦇 **Bat**",7,"<:magmoraug:825122942768644136> Magmoraug and <:ghastlytree:825122934221307955> Ghastly Tree",ez.bat)

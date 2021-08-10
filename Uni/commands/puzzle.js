@@ -55,7 +55,7 @@ function PuzzleSolve(message,sm,fs,q,args)
 function SuccessfulSolve(message,sm,fs,q,biome)
 {
     message.delete()
-    message.channel.send(`<@${message.member.id}> You solved **The 🎯 Puzzle** in The ${biome} biome!`)
+    message.channel.send(`<@${message.member.id}> You solved **The 🎯 Puzzle** in **The ${biome} biome!**`)
     sm.obj2=1
     fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})
 }
@@ -89,19 +89,19 @@ function PuzzleFind(message,sm,fs,q,args)
         switch(sm.task)
         {
             case 1:
-                if(args[1]=="mine"){SuccessfulFind(message,sm,fs,q,"⛏️ Mine")}else{message.channel.send(`<@${message.member.id}> You did not find a 🎯 puzzle in The ⛏️ Mine.`)}
+                if(args[1]=="mine"){SuccessfulFind(message,sm,fs,q,"⛏️ Mine")}else{message.channel.send(`<@${message.member.id}> You did not find a 🎯 puzzle.`)}
                 break;
             case 4:
-                if(args[1]=="junkyard"){SuccessfulFind(message,sm,fs,q,"💡 Junkyard")}else{message.channel.send(`<@${message.member.id}> You did not find a 🎯 puzzle in The 💡 Junkyard.`)}
+                if(args[1]=="junkyard"){SuccessfulFind(message,sm,fs,q,"💡 Junkyard")}else{message.channel.send(`<@${message.member.id}> You did not find a 🎯 puzzle.`)}
                 break;
             case 6:
-                if(args[1]=="city"){SuccessfulFind(message,sm,fs,q,"🏙️ City")}else{message.channel.send(`<@${message.member.id}> You did not find a 🎯 puzzle in The 🏙️ City.`)}
+                if(args[1]=="city"){SuccessfulFind(message,sm,fs,q,"🏙️ City")}else{message.channel.send(`<@${message.member.id}> You did not find a 🎯 puzzle.`)}
                 break;
             case 9:
-                if((args[1]=="wild")&&(args[2])&&(args[2]=="west")){SuccessfulFind(message,sm,fs,q,"🏜️ Wild West")}else{message.channel.send(`<@${message.member.id}> You did not find a 🎯 puzzle in The 🏜️ Wild West.`)}
+                if((args[1]=="wild")&&(args[2])&&(args[2]=="west")){SuccessfulFind(message,sm,fs,q,"🏜️ Wild West")}else{message.channel.send(`<@${message.member.id}> You did not find a 🎯 puzzle.`)}
                 break;
             case 12:
-                if(args[1]=="beach"){SuccessfulFind(message,sm,fs,q,"🏖️ Beach")}else{message.channel.send(`<@${message.member.id}> You did not find a 🎯 puzzle in The 🏖️ Beach.`)}
+                if(args[1]=="beach"){SuccessfulFind(message,sm,fs,q,"🏖️ Beach")}else{message.channel.send(`<@${message.member.id}> You did not find a 🎯 puzzle.`)}
                 break;
         }
     }
@@ -109,7 +109,7 @@ function PuzzleFind(message,sm,fs,q,args)
 
 function SuccessfulFind(message,sm,fs,q,biome)
 {
-    message.channel.send(`<@${message.member.id}> You found **a 🎯 puzzle** in The ${biome} biome!`)
+    message.channel.send(`<@${message.member.id}> You found **a 🎯 puzzle** in **The ${biome} biome!**`)
     sm.obj1=1
     fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})
 }

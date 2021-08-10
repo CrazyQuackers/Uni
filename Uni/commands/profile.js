@@ -52,14 +52,15 @@ exports.run = async (bot,message,args) => {
             n = "None"
 
     }
-    let authorName = `${tag.user.username}'s Profile`
-    if(sm.badge){authorName = authorName + " <:ghosthunterbadge:874405583959228477>"}
+    let titleText = ""
+    if(sm.badge){titleText = "<:ghosthunterbadge:874405583959228477>"}
     const embed = {
         color: 38977,
         author: {
-            name: authorName,
+            name: `${tag.user.username}'s Profile`,
             icon_url: tag.user.avatarURL(),
         },
+        title: titleText,
         description: `<:hoverboard:842713851585495070> **Equipped Hoverboard:** ${n}\n\n📡 **Antenna Level:** ${ez.antenna}\n\n<:pack:825122944204013588> **Pack Name:** ${ez.pack}\n\n🗺️ **Questline:** Quest #${sm.quest} - Task #${sm.task}\n\n🐶 **Number of Pets:** ${c}\n\n💀 **Bosses Defeated:** ${ez.defeated}`,
         thumbnail: {
             url: u,

@@ -141,6 +141,7 @@ exports.run = async (bot,message,args) => {
                             ez.pearls-=200
                             ez.diamonds-=200
                             ez.tusks-=200
+                            sm.petLuck = true
                             createDoneMessage("\`The bravest Ghost Hunter around, me first mate! I give you this Lucky Charm Technology and Gems! Your chances of unboxing rare, legendary, and goldy pets, have increased drastically! You can see their exact drop rates by using the command %pet. That's all the tasks, matey. It's time you visit Ghost Hunter Shelly... She sits on the reefs Underwater.\`\n+**Lucky Charm Technology** 🍀\n+**4500** <:gems:825122942413045791>","https://imgur.com/wxt9Iew.png",4500,fs,db,q,ez,message,sm)
                         }else{message.react("❌")}
                         break;
@@ -301,6 +302,7 @@ exports.run = async (bot,message,args) => {
                     case 8:
                         if((o1==1)&&(o2==1)&&(o3==1)&&(o4==1)&&(o5==1)&&(o6==1)){
                             message.react("✅")
+                            sm.bossLuck = true
                             createDoneMessage("\`We did it! I can't believe it! I can come out of hiding and reunite with my friends again! Thank you so much Ghost Hunter, I couldn't have done it without you! And as an added bonus, the chances of boss pets dropping after defeating bosses are increased for you now! Congrats! You're very close to finishing all the Questlines in Uni... only 2 to go! Good luck!\`\n+**Boss Pet Luck** 💀🍀\n+**6000** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/5/58/Riley.png/revision/latest?cb=20200508190227",6000,fs,db,q,ez,message,sm)
                         }else{message.react("❌")}
                         break;
@@ -704,7 +706,7 @@ exports.run = async (bot,message,args) => {
                         createQuestMessage("🗺️ Quest #9 - Ghost Hunter Luna","📖 **__Task #9/12__** : Desert Dash\n\n\`Ghost Hunter Blaze and I used to be co-workers in Area 51... It was fun to work together... But... he started working on a top-secret project about Ghosts. He's what caused this mess. That's why I need to stop him, but enough about that. You're taking on another puzzle now. Your task is to find the clue in the Wild West and solve it. Return to me for a reward.\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/3/32/Ghost_Hunter_Luna.png/revision/latest?cb=20210727014952","📜 __Goals:__",`• Solve the 🎯 Wild West Puzzle: **${o2}/1**`,message,sm,fs,q)
                         break;
                     case 10:
-                        createQuestMessage("🗺️ Quest #9 - Ghost Hunter Luna","📖 **__Task #10/12__** : Gadget Scavenge\n\n\`Just a few more tasks until you get the special badge and I can finally figure out how to stop Ghost Hunter Blaze. This time I'm sending you on a different task. I need the decoder gadget in order to fully translate the clues. Unfortunately, my agency hid it around Uni in pieces. It's up to you now. Find all five gadget fragments and then craft them together and return to me for a reward.\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/3/32/Ghost_Hunter_Luna.png/revision/latest?cb=20210727014952","📜 __Goals:__",`• Find a 🏹 Gadget Fragment: **${o1}/1**\n• Find a 🏹 Gadget Piece: **${o2}/1**\n• Find a 🏹 Gadget Particle: **${o3}/1**\n• Find a 🏹 Gadget Shard: **${o4}/1**\n• Find a 🏹 Gadget Scrap: **${o5}/1**\n• Craft a 🏹 Gadget Fragment: **${o1}/1**\n• Craft the 📟 Decoder Gadget: **${o6}/1**`,message,sm,fs,q)
+                        createQuestMessage("🗺️ Quest #9 - Ghost Hunter Luna","📖 **__Task #10/12__** : Gadget Scavenge\n\n\`Just a few more tasks until you get the special badge and I can finally figure out how to stop Ghost Hunter Blaze. This time I'm sending you on a different task. I need the decoder gadget in order to fully translate the clues. Unfortunately, my agency hid it around Uni in pieces. It's up to you now. Find all five gadget fragments and then craft them together and return to me for a reward.\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/3/32/Ghost_Hunter_Luna.png/revision/latest?cb=20210727014952","📜 __Goals:__",`• Find a 🏹 Gadget Fragment: **${o1}/1**\n• Find a 🏹 Gadget Piece: **${o2}/1**\n• Find a 🏹 Gadget Particle: **${o3}/1**\n• Find a 🏹 Gadget Shard: **${o4}/1**\n• Find a 🏹 Gadget Scrap: **${o5}/1**\n• Craft the 📟 Decoder Gadget: **${o6}/1**`,message,sm,fs,q)
                         break;
                     case 11:
                         if(o1>30){o1=30}

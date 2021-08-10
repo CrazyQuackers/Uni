@@ -16,11 +16,11 @@ exports.run = async (bot,message,args) => {
     let strGems = decreaseNumberLength(ez.gems)
     let tlArray = tl.split('#');
     let tlNew = tlArray[0];
-    let titleName = `${tlNew}'s Inventory`
-    if(sm.badge){titleName = titleName + " <:ghosthunterbadge:874405583959228477>"}
+    let titleText = `${tlNew}'s Inventory`
+    if(sm.badge){titleText = titleText + " <:ghosthunterbadge:874405583959228477>"}
     const embed = new Discord.MessageEmbed()
         .setColor(65535)
-        .setTitle(titleName)
+        .setTitle(titleText)
         .setThumbnail("https://imgur.com/8ECyipu.png")
         .addFields(
             {name: "Item", value: "<:ectotoken:825122939812315219>  Ecto-Tokens\n<:gems:825122942413045791>  Gems\n🔩  Antenna Parts\n<:acorn:825122942660509707>  Acorns\n📰  Newspapers\n<:tire:825122944128385054>  Tires\n🧦  Socks\n🔨  Hammers\n<:sherrifbadge:825122941637230613>  Sherrif Badges\n<:meteorite:825122930047320115>  Meteorites\n<:goldbar:825122939006746625>  Gold Bars\n<:artifact:825122914210414592>  Artifacts\n<:doubloon:825122941746151434>  Doubloons\n<:pearl:825122938457686057>  Pearls\n💎  Diamonds\n<:tusk:825122936927027289>  Ancient Tusks", inline: true},

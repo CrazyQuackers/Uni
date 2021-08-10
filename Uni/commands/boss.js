@@ -97,7 +97,7 @@ exports.run = async (bot,message,args) => {
                                         ez.gems = ez.gems + g
                                         ez.defeated = ez.defeated + 1
                                         bossPet = (Math.floor(Math.random()*100));
-                                        if(((sm.quest>=9)&&(bossPet<5))||((sm.quest<9)&&(bossPet==0))){bossPetStr = whichBossPet(type,q,sm,fs)}
+                                        if(((sm.bossLuck)&&(bossPet<5))||((!sm.bossLuck)&&(bossPet==0))){bossPetStr = whichBossPet(type,q,sm,fs)}
                                         checkQuests(sm,fs,q,type)
                                         fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
                                         str = str+`\n\n**▬▬▬▬▬▬▬**「RESULT」**▬▬▬▬▬▬▬▬▬▬▬▬▬▬**\n\n👑 Winner : <@${message.member.id}>\n💀 Defeated : ${boss}\n\n**▬▬▬▬▬**「YOUR EARNINGS」**▬▬▬▬▬▬▬▬▬▬▬▬**\n\n+ **${g}** <:gems:825122942413045791> gems!\n\n${bossPetStr}`
@@ -116,7 +116,7 @@ exports.run = async (bot,message,args) => {
         })
     }
     else{let dropRate = 1
-        if(sm.quest>=9){dropRate = 5}
+        if(sm.bossLuck){dropRate = 5}
         message.channel.send(`<@${message.member.id}>\n\n💀**Bosses Info** 💀\n\nBosses spawn with **10-20** ♥️ health.\nFight a random 💀 boss with the command **%boss fight**.\nAfter defeating a 💀 boss, you will recieve some <:gems:825122942413045791> Gems, and if you are lucky, a 🐶 boss pet! (${dropRate}%)\n\n📊 __Types of bosses__ 📊\n\n<:ghastlytree:825122934221307955>  Ghastly Tree\n<:georgethegorilla:825122935081664632>  George the Gorilla\n<:sludge:825122930471075880>  Sludge\n<:subjectone:825122932815691847>  Subject One\n<:kingkrab:825122934183559239>  King Krab\n<:magmoraug:825122942768644136>  Magmoraug`)}
 }
 exports.help = {
