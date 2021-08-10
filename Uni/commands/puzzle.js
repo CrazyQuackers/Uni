@@ -55,7 +55,7 @@ function PuzzleSolve(message,sm,fs,q,args)
 function SuccessfulSolve(message,sm,fs,q,biome)
 {
     message.delete()
-    message.channel.send(`<@${message.member.id}> You solved **The 🎯 Puzzle** in **The ${biome} biome!**`)
+    message.channel.send(`<@${message.member.id}> You solved **The 🎯 Puzzle** in the **${biome} biome!**`)
     sm.obj2=1
     fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})
 }
@@ -109,7 +109,7 @@ function PuzzleFind(message,sm,fs,q,args)
 
 function SuccessfulFind(message,sm,fs,q,biome)
 {
-    message.channel.send(`<@${message.member.id}> You found **a 🎯 puzzle** in **The ${biome} biome!**`)
+    message.channel.send(`<@${message.member.id}> You found **a 🎯 puzzle** in the **${biome} biome!**`)
     sm.obj1=1
     fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})
 }
