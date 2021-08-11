@@ -7,7 +7,8 @@ exports.run = async (bot,message,args) => {
     let ez = db[message.guild.id].users[message.member.id]
     let sm = q[message.guild.id].users[message.member.id]
     let tl = message.member.user.tag
-    if(other) {
+    let pp = message.member
+    if(other) {pp = other
         ez = db[message.guild.id].users[other.id]
         sm = q[message.guild.id].users[other.id]
         tl = other.user.tag
@@ -20,6 +21,7 @@ exports.run = async (bot,message,args) => {
     if(sm.badge){titleText = titleText + " <:ghosthunterbadge:874405583959228477>"}
     const embed = new Discord.MessageEmbed()
         .setColor(65535)
+        .setAuthor("",pp.user.avatarURL())
         .setTitle(titleText)
         .setThumbnail("https://imgur.com/8ECyipu.png")
         .addFields(

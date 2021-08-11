@@ -55,7 +55,7 @@ function PuzzleSolve(message,sm,fs,q,args)
 function SuccessfulSolve(message,sm,fs,q,biome)
 {
     message.delete()
-    message.channel.send(`<@${message.member.id}> You solved **The 🎯 Puzzle** in the **${biome} biome!**`)
+    message.channel.send(`<@${message.member.id}> You solved **the 🎯 puzzle** in the **${biome} biome!**`)
     sm.obj2=1
     fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})
 }
