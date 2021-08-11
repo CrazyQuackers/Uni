@@ -17,7 +17,7 @@ exports.run = async (bot,message,args) => {
     let strGems = decreaseNumberLength(ez.gems)
     let tlArray = tl.split('#');
     let tlNew = tlArray[0];
-    let titleText = `Inventory`
+    let titleText = `__Inventory__`
     if(sm.badge){titleText = titleText + " <:ghosthunterbadge:874405583959228477>"}
     const embed = new Discord.MessageEmbed()
         .setColor(65535)

@@ -52,7 +52,7 @@ exports.run = async (bot,message,args) => {
             n = "None"
 
     }
-    let titleText = `Profile`
+    let titleText = `__Profile__`
     if(sm.badge){titleText = titleText + " <:ghosthunterbadge:874405583959228477>"}
     const embed = {
         color: 38977,
