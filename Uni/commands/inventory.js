@@ -17,11 +17,11 @@ exports.run = async (bot,message,args) => {
     let strGems = decreaseNumberLength(ez.gems)
     let tlArray = tl.split('#');
     let tlNew = tlArray[0];
-    let titleText = `${tlNew}'s Inventory`
+    let titleText = `Inventory`
     if(sm.badge){titleText = titleText + " <:ghosthunterbadge:874405583959228477>"}
     const embed = new Discord.MessageEmbed()
         .setColor(65535)
-        .setAuthor("",pp.user.avatarURL())
+        .setAuthor(`${tlNew}'s`,pp.user.avatarURL())
         .setTitle(titleText)
         .setThumbnail("https://imgur.com/8ECyipu.png")
         .addFields(

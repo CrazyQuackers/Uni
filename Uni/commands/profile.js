@@ -52,11 +52,12 @@ exports.run = async (bot,message,args) => {
             n = "None"
 
     }
-    let titleText = `${tag.user.username}'s Profile`
+    let titleText = `Profile`
     if(sm.badge){titleText = titleText + " <:ghosthunterbadge:874405583959228477>"}
     const embed = {
         color: 38977,
         author: {
+            name: `${tag.user.username}'s`,
             icon_url: tag.user.avatarURL(),
         },
         title: titleText,
