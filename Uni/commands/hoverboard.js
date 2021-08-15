@@ -49,7 +49,7 @@ exports.run = async (bot,message,args) => {
                     .addFields(
                         {name: "Hoverboard", value: `<:skysurfer:842713851522056204> Sky Surfer\n<:feathershock:842713851044823071> Feather Shock\n<:oblivion:842713851450753024> Oblivion\n<:varus:842713851481030666> VARUS\n<:chromafloat:842713850897236029> Chroma Float`, inline: true},
                         {name: "Cost", value: `<:gems:825122942413045791> 15,000\n<:gems:825122942413045791> 75,000\n<:gems:825122942413045791> 150,000\n<:gems:825122942413045791> 250,000\n<:gems:825122942413045791> 400,000`, inline: true},
-                        {name: "Rarity", value: `Uncommon\nUncommon\nRare\nRare\nLegendary`, inline: true},
+                        {name: "Rarity", value: `💠 Uncommon\n💠 Uncommon\n💠 Rare\n💠 Rare\n💠 Legendary`, inline: true},
                     )
                     .setTimestamp()
                 message.channel.send({embed});

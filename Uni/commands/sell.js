@@ -20,16 +20,11 @@ exports.run = async (bot,message,args) => {
         let ex3 = getExchangeRate(petArr3,true)
         let ex4 = getExchangeRate(petArr4,false)
         let exchange = ex1 + ex2 + ex3 + ex4 + 1
-        console.log(exchange)
         ez.storage = 0
-        console.log(storage)
         let tokens = exchange * storage
-        console.log(tokens)
         tokens = Math.round(tokens)
-        console.log(tokens)
-        tokens = decreaseNumberLength(tokens)
-        console.log(tokens)
         ez.ectoTokens = ez.ectoTokens + tokens
+        tokens = decreaseNumberLength(tokens)
         sm.sellWait = ez.sellTime
         sm.lastSell = new Date().getTime()
         let c2 = 0;
