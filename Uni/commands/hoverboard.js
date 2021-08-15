@@ -37,6 +37,9 @@ exports.run = async (bot,message,args) => {
                     case "b-l-o-x":
                         u = "https://static.wikia.nocookie.net/ghost-simulator-roblox/images/4/40/B-L-O-X.png/revision/latest/scale-to-width-down/300?cb=20200318225349"
                         break;
+                    case "atom":
+                        u = "https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/b1/Atom_Surfer.png/revision/latest/scale-to-width-down/300?cb=20210208112002"
+                        break;
                     default:
                         u = "https://imgur.com/RV975Lr.png"}
                 const embed = new Discord.MessageEmbed()
@@ -56,10 +59,10 @@ exports.run = async (bot,message,args) => {
                 if(other){
                     tag = other.id
                     sm = q[message.guild.id].users[tag]}
-                let hbArr = [sm.hbUnlocked,sm.sky,sm.feather,sm.oblivion,sm.varus,sm.chroma,sm.champion,sm.blox]
-                let nameArr = ["<:hoverboard:842713851585495070>  **Basic**","<:skysurfer:842713851522056204>  **Sky Surfer**","<:feathershock:842713851044823071>  **Feather Shock**","<:oblivion:842713851450753024>  **Oblivion**","<:varus:842713851481030666>  **VARUS**","<:chromafloat:842713850897236029>  **Chroma Float**","<:champion:844610527669911602> **Champion**","<:BLOX:871140025016930324> **B-L-O-X**"]
-                let equipArr = ["basic","sky","feather","oblivion","varus","chroma","champion","b-l-o-x"]
-                let str = `<@${tag}>**'s Hoverboards**\n\n`
+                let hbArr = [sm.hbUnlocked,sm.sky,sm.feather,sm.oblivion,sm.varus,sm.chroma,sm.champion,sm.blox,sm.surfer]
+                let nameArr = ["<:hoverboard:842713851585495070>  **Basic**","<:skysurfer:842713851522056204>  **Sky Surfer**","<:feathershock:842713851044823071>  **Feather Shock**","<:oblivion:842713851450753024>  **Oblivion**","<:varus:842713851481030666>  **VARUS**","<:chromafloat:842713850897236029>  **Chroma Float**","<:champion:844610527669911602> **Champion**","<:BLOX:871140025016930324> **B-L-O-X**","<:atomsurfer:875150132277039114> **Atom Surfer**"]
+                let equipArr = ["basic","sky","feather","oblivion","varus","chroma","champion","b-l-o-x","atom"]
+                let str = `<@${tag}>**'s Hoverboards** \`${countHoverboards(hbArr)}/12\`\n\n`
                 let i = 0
                 let hb = ""
                 let helper = str
@@ -97,7 +100,7 @@ exports.run = async (bot,message,args) => {
                                         }
                                         else
                                         {
-                                            message.react("✅")
+                                            message.react("<:skysurfer:842713851522056204>")
                                             sm.sky = true
                                             ez.gems = ez.gems - 15000
                                             fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
@@ -128,7 +131,7 @@ exports.run = async (bot,message,args) => {
                                         }
                                         else
                                         {
-                                            message.react("✅")
+                                            message.react("<:feathershock:842713851044823071>")
                                             sm.feather = true
                                             ez.gems = ez.gems - 75000
                                             fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
@@ -157,7 +160,7 @@ exports.run = async (bot,message,args) => {
                                     }
                                     else
                                     {
-                                        message.react("✅")
+                                        message.react("<:oblivion:842713851450753024>")
                                         sm.oblivion = true
                                         ez.gems = ez.gems - 150000
                                         fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
@@ -181,7 +184,7 @@ exports.run = async (bot,message,args) => {
                                     }
                                     else
                                     {
-                                        message.react("✅")
+                                        message.react("<:varus:842713851481030666>")
                                         sm.varus = true
                                         ez.gems = ez.gems - 250000
                                         fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
@@ -207,7 +210,7 @@ exports.run = async (bot,message,args) => {
                                         }
                                         else
                                         {
-                                            message.react("✅")
+                                            message.react("<:chromafloat:842713850897236029>")
                                             sm.chroma = true
                                             ez.gems = ez.gems - 400000
                                             fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
@@ -226,6 +229,16 @@ exports.run = async (bot,message,args) => {
                                 break;
                             case "b-l-o-x":
                                 message.channel.send(`<@${message.member.id}> You cannot purchase The <:BLOX:871140025016930324> B-L-O-X Hoverboard.`)
+                                break;
+                            case "atom":
+                                if((args.length>2)&&(args[2]=="surfer"))
+                                {
+                                    message.channel.send(`<@${message.member.id}> You cannot purchase The <:atomsurfer:875150132277039114> Atom Surfer Hoverboard.`)
+                                }
+                                else
+                                {
+                                    notAHoverboardName(message)
+                                }
                                 break;
                             default:
                                 notAHoverboardName(message)
@@ -345,6 +358,23 @@ exports.run = async (bot,message,args) => {
                                     dontOwnThisHoverboard(message)
                                 }
                                 break;
+                            case "atom":
+                                if((args.length>2)&&(args[2]=="surfer"))
+                                {
+                                    if(sm.surfer)
+                                    {
+                                        equipHoverboard(message,args[1],fs,q,"Atom Surfer","<:atomsurfer:875150132277039114>",sm)
+                                    }
+                                    else
+                                    {
+                                        dontOwnThisHoverboard(message)
+                                    }
+                                }
+                                else
+                                {
+                                    notAHoverboardName(message)
+                                }
+                                break;
                             default:
                                 notAHoverboardName(message)
                         }
@@ -390,6 +420,12 @@ function equipHoverboard(message,str,fs,q,hb,emoji,sm)
     sm.equipped = str
     fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})
     message.channel.send(`<@${message.member.id}> **${hb}** successfully equipped! ${emoji} ⭐`)
+}
+
+function countHoverboards(arr)
+{
+    let c = 0
+    for(let i=0 ; i<arr.length ; i++){if(arr[i]){c++}}return c
 }
 
 function coinToStr(n)

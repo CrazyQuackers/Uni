@@ -409,5 +409,17 @@ function checkQuests(sm,fs,q,type)
             case 5:
                 sm.obj6=1}}
     if((sm.quest==9)&&(sm.task==2)&&(sm.qStarted)&&(type==5)){sm.obj1=1}
+    if((sm.quest==10)&&(sm.task==13)&&(sm.qStarted)){switch(type){
+        case 0:
+            sm.obj1=1
+            break;
+        case 1:
+            sm.obj2=1
+            break;
+        case 3:
+            sm.obj3=1
+            break;
+        case 4:
+            sm.obj4=1}}
     fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})
 }

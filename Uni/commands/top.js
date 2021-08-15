@@ -161,7 +161,7 @@ function countPets(mem,ez2,sm2)
 function countHoverboards(mem,sm2)
 {
     const sm = sm2.users[mem.id]
-    const arr = [sm.hbUnlocked,sm.sky,sm.feather,sm.oblivion,sm.varus,sm.chroma,sm.champion,sm.blox]
+    const arr = [sm.hbUnlocked,sm.sky,sm.feather,sm.oblivion,sm.varus,sm.chroma,sm.champion,sm.blox,sm.surfer]
     let c = 0
     let i = 0
     for(i=0 ; i<arr.length ; i++){if(arr[i]){c++}}

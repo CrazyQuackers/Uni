@@ -95,6 +95,7 @@ function checkQuests(sm,fs,q,tokens)
     if((sm.quest==5)&&(sm.task==2)&&(sm.qStarted)){sm.obj1=1}
     if((sm.quest==6)&&(sm.task==17)&&(sm.qStarted)){sm.obj3+=tokens}
     if((sm.quest==7)&&(sm.task==10)&&(sm.qStarted)){sm.obj1+=tokens}
+    if((sm.quest==10)&&(sm.task==4)&&(sm.qStarted)){sm.obj2+=tokens}
     fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})
 }
 

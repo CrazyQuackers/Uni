@@ -149,7 +149,8 @@ bot.on('message', (message) =>
             rainwave: false,
             badge: false,
             petLuck: false,
-            bossLuck: false
+            bossLuck: false,
+            surfer: false
         }
         fs.writeFile("./data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
         fs.writeFile("./data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})

@@ -123,8 +123,10 @@ exports.run = async (bot,message,args) => {
                 characterNotInUni(message,"Goro7","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/1/15/Void_NPC_Goro7.png/revision/latest?cb=20210228065449")
                 break;
             case "???":
-                characterNotInUni(message,"???","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/0/0a/Rebirth_NPC.png/revision/latest?cb=20210313001925")
+                talkToCharacter(message,sm,fs,q,0,"","???","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/0/0a/Rebirth_NPC.png/revision/latest?cb=20210313001925")
                 break;
+            case "rose":
+                characterNotInUni(message,"Rose","https://t3.rbxcdn.com/10655462bf6dd5408afc5c509be16ca4")
             default:
                 characterDoesNotExist(message,args[2])
                 break;
@@ -218,7 +220,9 @@ function getDescription(name,sm)
         case "Luna":
             return "Hey there Ghost Hunter! What are you doing here? You miss my puzzle tasks? Hehehehe, you're cute... If there's anything you need help with, you or Blaze, you can always come to me!"
         case "Blaze":
-            return ""
+            return "Ladies and Gentlemen... Here comes... The Savior of Uni! What is going on, Ghost Hunter? Is there another world we need to save!? Hahaha, I'm just kidding... Unless... that's why you came to me... Oh gosh please tell me no! Well, have you tried rebirthing, Hunter?"
+        case "???":
+            return "???"
     }
 }
 

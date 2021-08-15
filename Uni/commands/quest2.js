@@ -400,6 +400,100 @@ exports.run = async (bot,message,args) => {
                 }
                 break;
             case 10:
+                switch(sm.task)
+                {
+                    case 1:
+                        if((o1>=15)&&(o2>=15)&&(o3>=15)&&(o4>=15)){
+                            message.react("✅")
+                            createDoneMessage("\`They don't know you're working with me, right? Good... Very good. I can't let them know what I know. They'll find me for sure. Here's some Gems, but keep quiet...\`\n+**1500** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/bd/Blaze.png/revision/latest?cb=20200503095526",1500,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 2:
+                        if((o1>=15)&&(o2>=15)&&(o3>=15)&&(o4>=15)){
+                            message.react("✅")
+                            createDoneMessage("\`That was the true test. You went there, and they didn't think you were working for me! We have to be careful, you and I. We're in this together. Here's some Gems, but keep quiet...\`\n+**1750** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/bd/Blaze.png/revision/latest?cb=20200503095526",1750,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 3:
+                        if((o1>=15)&&(o2>=15)&&(o3>=15)&&(o4>=15)){
+                            message.react("✅")
+                            createDoneMessage("\`You found nothing? Of course... She's clean and safe to talk to, but others may not be... Just be cautious... who knows which Ghost Hunters are working with the enemy... Take your Gems.\`\n+**2000** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/bd/Blaze.png/revision/latest?cb=20200503095526",2000,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 4:
+                        if((o1==1)&&(o2>=10000000)){
+                            message.react("✅")
+                            createDoneMessage("\`Yes... this is what we need... it's enough, I think. He's always so stingy, but he's the smartest man I know. Here's those Gems. It'll be getting there, his payment. Don't worry... this tech is important.\`\n+**2250** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/bd/Blaze.png/revision/latest?cb=20200503095526",2250,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 5:
+                        if(sm.sky){
+                            message.react("✅")
+                            createDoneMessage("\`This board is exactly what we needed... Did you make sure no one saw you? We don't want any unwanted attention. Yes, your reward, have some Gems.\`\n+**2500** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/bd/Blaze.png/revision/latest?cb=20200503095526",2500,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 6:
+                        if((o1>=8)&&(o2>=8)&&(o3>=8)&&(o4>=8)){
+                            message.react("✅")
+                            createDoneMessage("\`I'm not crazy! They say it's classified. Take these Gems and no more questions!\`\n+**1250** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/bd/Blaze.png/revision/latest?cb=20200503095526",1250,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 7:
+                        if((o1>=8)&&(o2>=8)&&(o3>=8)&&(o4>=8)){
+                            message.react("✅")
+                            createDoneMessage("\`You gotta make sure you aren't followed! Take these Gems... I said no more questions!\`\n+**1500** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/bd/Blaze.png/revision/latest?cb=20200503095526",1500,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 8:
+                        if((o1>=8)&&(o2>=8)&&(o3>=8)&&(o4>=8)){
+                            message.react("✅")
+                            createDoneMessage("\`Shh! I heard something! Hm... it was just a magma monster ghost. Take these Gems and be careful!\`\n+**1750** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/bd/Blaze.png/revision/latest?cb=20200503095526",1750,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 9:
+                        if((ez.newspapers>=25)&&(ez.tires>=25)&&(ez.socks>=25)&&(ez.hammers>=50)){
+                            message.react("✅")
+                            ez.newspapers-=25
+                            ez.tires-=25
+                            ez.socks-=25
+                            ez.hammers-=50
+                            createDoneMessage("\`You still want to know? No, you could still be working for them. Take these Gems and leave it be.\`\n+**1000** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/bd/Blaze.png/revision/latest?cb=20200503095526",1000,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 10:
+                        if((ez.badges>=50)&&(ez.meteorites>=50)&&(ez.gold>=50)&&(ez.artifacts>=50)){
+                            message.react("✅")
+                            ez.badges-=50
+                            ez.meteorites-=50
+                            ez.gold-=50
+                            ez.artifacts-=50
+                            createDoneMessage("\`As long as we can build this machine, we can survive, and I'll tell you about it. Take. These. Gems. Now.\`\n+**1500** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/bd/Blaze.png/revision/latest?cb=20200503095526",1500,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 11:
+                        if((ez.doubloons>=100)&&(ez.pearls>=100)&&(ez.diamonds>=100)&&(ez.tusks>=200)){
+                            message.react("✅")
+                            ez.doubloons-=100
+                            ez.pearls-=100
+                            ez.diamonds-=100
+                            ez.tusks-=200
+                            createDoneMessage("\`Yes... YES!!! My machine is nearly complete! MWAHAHAHAHAHA... I mean, come on... it felt like and evil laugh would just fit so well in there. Here, your reward, take these Gems. Almost done.\`\n+**3000** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/bd/Blaze.png/revision/latest?cb=20200503095526",3000,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 12:
+                        if((o1>=15)&&(o2>=10)&&(o3>=5)){
+                            message.react("✅")
+                            createDoneMessage("\`Hm... None of these will work, but thanks for the data. I'll have to think of something else to take the place of my power source... For now, take these Gems.\`\n+**7500** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/bd/Blaze.png/revision/latest?cb=20200503095526",7500,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                    case 13:
+                        if((o1==1)&&(o2==1)&&(o3==1)&&(o4==1)){
+                            message.react("✅")
+                            sm.surfer = true
+                            createDoneMessage("\`Ghost Hunter, It's time... I'm gonna send these bosses you've defeated through the rift, and activate the stabilizer. When I tell you to kill the power, kill the power. Ready? KILL THE POWER! Bosses Sent. Stabilizer Initiated. Process Complete! We did it, Ghost Hunter! The rift has stopped growing! WE SAVED UNI! Let's gooooooo!!! This reward is for you, Hunter! My Atom Surfer Hoverboard! Take good care of it! Wow... I can't believe we actually did it... I can't wait to tell Luna... and Riley... and Gabe, Adam, Liz, Jesse, Hans, Captain Finsley and Shelly! This is the end of your quests in Uni, Ghost Hunter. What to do now? Well... Idk... Hey, what's that? Next to the rift? It says... '%rebirth'... I wonder what that means.\`\n+**Atom Surfer** <:atomsurfer:875150132277039114>\n+**Rebirth Unlocked** ♻️\n+**9000** <:gems:825122942413045791>","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/bd/Blaze.png/revision/latest?cb=20200503095526",9000,fs,db,q,ez,message,sm)
+                        }else{message.react("❌")}
+                        break;
+                }
                 break;
         }
     }else{
@@ -718,8 +812,109 @@ exports.run = async (bot,message,args) => {
                 }
                 break;
             case 10:
+                switch(sm.task)
+                {
+                    case 1:
+                        if(o1>15){o1=15}
+                        if(o2>15){o2=15}
+                        if(o3>15){o3=15}
+                        if(o4>15){o4=15}
+                        createQuestMessage("🗺️ Quest #10 - Ghost Hunter Blaze","📖 **__Task #1/13__** : You're My Eyes\n\n\`HUMAN! Ah... Ghost Hunter, did I startle you? Good... Good... Good reflexes. Sorry Hunter, I've been living in this Volcano for weeks! It's done wonders for my tan... Why? Why not? There's a rift forming, a rift that will destroy this world! It's going to open here. I don't know when. Oh... My name's Ghost Hunter Blaze! I'm building a device to stabilize the rift, and you're gonna help me! I'll give you my special Atom Surfer Hoverboard in exchange! One last thing, the enemy ghosts are watching me... every single move! They don't know that I'm trying to stop them so you can't let them see you... Now that we're both on board, I need you to catch some ghosts from the first area for me... Yes, of course I'll reward you well.\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/bd/Blaze.png/revision/latest?cb=20200503095526","📜 __Goals:__",`• Vacuum **15** 🤵‍♂️ Businessmen Ghosts in The 🏙️ City: **${o1}/15**\n• Vacuum **15** 🧑‍🔧 Mechanic Ghosts in The 💡 Junkyard: **${o2}/15**\n• Vacuum **15** 🛍️ Paper Bag Ghosts in The <:manhole:825122943133941821> Sewers: **${o3}/15**\n• Vacuum **15** 👷‍♀️ Worker Ghosts in The 🏗️ Construction Site: **${o4}/15**`,message,sm,fs,q)
+                        break;
+                    case 2:
+                        if(o1>15){o1=15}
+                        if(o2>15){o2=15}
+                        if(o3>15){o3=15}
+                        if(o4>15){o4=15}
+                        createQuestMessage("🗺️ Quest #10 - Ghost Hunter Blaze","📖 **__Task #2/13__** : An Irregular Regular Task\n\n\`You're getting there. If you prove yourself, I'll give you that Atom Surfer Hoverboard. Next stop, you'll be heading to the Wild West to catch some more ghosts for me from that area. I'll reward you again when you're done. Keep it hush.\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/bd/Blaze.png/revision/latest?cb=20200503095526","📜 __Goals:__",`• Vacuum **15** <:bandit:825122917930500147> Bandit Ghosts in The 🏜️ Wild West: **${o1}/15**\n• Vacuum **15** 👨‍🔬 Scientist Ghosts in ☄️ Area 51: **${o2}/15**\n• Vacuum **15** 🧑‍🏭 Miner Ghosts in The ⛏️ Mine: **${o3}/15**\n• Vacuum **15** <:pharaoh:825122944514523226> Pharaoh Ghosts in The <:pyramid:825122937236357164> Pyramids: **${o4}/15**`,message,sm,fs,q)
+                        break;
+                    case 3:
+                        if(o1>15){o1=15}
+                        if(o2>15){o2=15}
+                        if(o3>15){o3=15}
+                        if(o4>15){o4=15}
+                        createQuestMessage("🗺️ Quest #10 - Ghost Hunter Blaze","📖 **__Task #3/13__** : Undercover Underwater\n\n\`Ghost Hunter Luna sent you, right? She knows where I am. She thinks I didn't notice her spying on me but she was so obvious! Anyways, we need to scope out the area she's in. Catch some more ghosts from the third area. Be cautious about it. This is an excuse to stakeout the area... see who's spying. I'll reward you after.\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/bd/Blaze.png/revision/latest?cb=20200503095526","📜 __Goals:__",`• Vacuum **15** 🏴‍☠️ Pirate Ghosts on The 🏖️ Beach: **${o1}/15**\n• Vacuum **15** 🤿 Diver Ghosts at 💦 Underwater: **${o2}/15**\n• Vacuum **15** <:islander:825122941963993099> Islander Ghosts in The 🌋 Volcano: **${o3}/15**\n• Vacuum **15** <:explorer:825123592290172939> Explorer Ghosts in The 🧊 Ice Cave: **${o4}/15**`,message,sm,fs,q)
+                        break;
+                    case 4:
+                        if(o2>10000000){o2=10000000}
+                        createQuestMessage("🗺️ Quest #10 - Ghost Hunter Blaze","📖 **__Task #4/13__** : Converto-matic\n\n\`Hm... I don't have enough to afford it, but we need to buy some tech from Ghost Hunter Adam. You'll be selling your ghosts and converting Ecto-Tokens into Gems for me. That will give us enough to actually afford his tech. I'll give you a reward, but don't tell him I'm here.\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/bd/Blaze.png/revision/latest?cb=20200503095526","📜 __Goals:__",`• Sell your 👻 Ghosts once: **${o1}/1**\n• Convert **10,000,000** <:ectotoken:825122939812315219> Ecto-Tokens to <:gems:825122942413045791> Gems: **${coinToStr(o2)}/10,000,000**`,message,sm,fs,q)
+                        break;
+                    case 5:
+                        if(sm.sky){o1=1}
+                        createQuestMessage("🗺️ Quest #10 - Ghost Hunter Blaze","📖 **__Task #5/13__** : Adam's Tech\n\n\`Alright Hunter, we need to get one of Adam's Tech in order to build the stabilizer for the rift... Head to Adam's Hoverboard Shop and purchase the Sky Surfer Hoverboard. Come back to me for a reward.\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/bd/Blaze.png/revision/latest?cb=20200503095526","📜 __Goals:__",`• Purchase the Sky Surfer Hoverboard: **${o1}/1**`,message,sm,fs,q)
+                        break;
+                    case 6:
+                        if(o1>8){o1=8}
+                        if(o2>8){o2=8}
+                        if(o3>8){o3=8}
+                        if(o4>8){o4=8}
+                        createQuestMessage("🗺️ Quest #10 - Ghost Hunter Blaze","📖 **__Task #6/13__** : The Major Ghost Hunt\n\n\`You're getting closer to the Atom Surfer Board but don't tell them I have it. I took it... It was mine. Who's them? People that know I know stuff... Too much stuff. I did a lot of experiments... Enough chat! Collect 8 special ghosts from each biome in the first area. I'll reward you and talk more.\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/bd/Blaze.png/revision/latest?cb=20200503095526","📜 __Goals:__",`• Vacuum **8** 🐈‍⬛ Street Cat Ghosts in The 🏙️ City: **${o1}/8**\n• Vacuum **8** 🗑️ Garbage Bin Ghosts in The 💡 Junkyard: **${o2}/8**\n• Vacuum **8** 🐀 Rat Ghosts in The <:manhole:825122943133941821> Sewers: **${o3}/8**\n• Vacuum **8** <:pigeon:825122931721371690> Pigeon Ghosts in The 🏗️ Construction Site: **${o4}/8**`,message,sm,fs,q)
+                        break;
+                    case 7:
+                        if(o1>8){o1=8}
+                        if(o2>8){o2=8}
+                        if(o3>8){o3=8}
+                        if(o4>8){o4=8}
+                        createQuestMessage("🗺️ Quest #10 - Ghost Hunter Blaze","📖 **__Task #7/13__** : Peek-a-Boo\n\n\`My expirements? I made things... things that they marked classified. Just be careful, no one can know! Quick! No questions! Collect 8 special ghosts from each biome in the second area and I'll reward you.\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/bd/Blaze.png/revision/latest?cb=20200503095526","📜 __Goals:__",`• Vacuum **8** 🤠 Cowboy Ghosts in The 🏜️ Wild West: **${o1}/8**\n• Vacuum **8** 👽 Zorg Ghosts in ☄️ Area 51: **${o2}/8**\n• Vacuum **8** 🪨 Rock Ghosts in The ⛏️ Mine: **${o3}/8**\n• Vacuum **8** <:mummy:825122924318556200> Mummy Ghosts in The <:pyramid:825122937236357164> Pyramids: **${o4}/8**`,message,sm,fs,q)
+                        break;
+                    case 8:
+                        if(o1>8){o1=8}
+                        if(o2>8){o2=8}
+                        if(o3>8){o3=8}
+                        if(o4>8){o4=8}
+                        createQuestMessage("🗺️ Quest #10 - Ghost Hunter Blaze","📖 **__Task #8/13__** : Spooky Waters\n\n\`Continue working like this and you'll be getting the Atom Surfer Board in no time! Once again! Collect 8 special ghosts from each biome in the third area and I'll reward you.\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/bd/Blaze.png/revision/latest?cb=20200503095526","📜 __Goals:__",`• Vacuum **8** 🦜 Parrot Ghosts on The 🏖️ Beach: **${o1}/8**\n• Vacuum **8** 🧜‍♀️ Mermaid Ghosts at 💦 Underwater: **${o2}/8**\n• Vacuum **8** <:magmamonster:825122940290859009> Magma Monster Ghosts in The 🌋 Volcano: **${o3}/8**\n• Vacuum **8** 🐧 Penguin Ghosts in The 🧊 Ice Cave: **${o4}/8**`,message,sm,fs,q)
+                        break;
+                    case 9:
+                        o1 = ez.newspapers
+                        o2 = ez.tires
+                        o3 = ez.socks
+                        o4 = ez.hammers
+                        if(o1>25){o1=25}
+                        if(o2>25){o2=25}
+                        if(o3>25){o3=25}
+                        if(o4>50){o4=50}
+                        createQuestMessage("🗺️ Quest #10 - Ghost Hunter Blaze","📖 **__Task #9/13__** : Urban Jungle\n\n\`You really want to know... everything? I'm not sure I can trust you yet... prove it to me first. Go collect items from every biome in the first area. What are you waiting for? If you stop asking questions, I'll reward you well.\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/bd/Blaze.png/revision/latest?cb=20200503095526","📜 __Goals:__",`• Collect **25** 📰 Newspapers from The 🏙️ City: **${o1}/25**\n• Collect **25** <:tire:825122944128385054> Tires from The 💡 Junkyard: **${o2}/25**\n• Collect **25** 🧦 Socks from The <:manhole:825122943133941821> Sewers: **${o3}/25**\n• Collect **50** 🔨 Hammers from The 🏗️ Construction Site: **${o4}/50**`,message,sm,fs,q)
+                        break;
+                    case 10:
+                        o1 = ez.badges
+                        o2 = ez.meteorites
+                        o3 = ez.gold
+                        o4 = ez.artifacts
+                        if(o1>50){o1=50}
+                        if(o2>50){o2=50}
+                        if(o3>50){o3=50}
+                        if(o4>50){o4=50}
+                        createQuestMessage("🗺️ Quest #10 - Ghost Hunter Blaze","📖 **__Task #10/13__** : Desert Sunset\n\n\`Look! There are things you don't know about our world. You're still learning. There are people that... I can't say... Go collect items from every biome in the second area. Come back for a reward.\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/bd/Blaze.png/revision/latest?cb=20200503095526","📜 __Goals:__",`• Collect **50** <:sherrifbadge:825122941637230613> Sherriff Badges from The 🏜️ Wild West: **${o1}/50**\n• Collect **50** <:meteorite:825122930047320115> Meteorites from ☄️ Area 51: **${o2}/50**\n• Collect **50** <:goldbar:825122939006746625> Gold Bars from The ⛏️ Mine: **${o3}/50**\n• Collect **50** <:artifact:825122914210414592> Artifacts from The <:pyramid:825122937236357164> Pyramids: **${o4}/50**`,message,sm,fs,q)
+                        break;
+                    case 11:
+                        o1 = ez.doubloons
+                        o2 = ez.pearls
+                        o3 = ez.diamonds
+                        o4 = ez.tusks
+                        if(o1>100){o1=100}
+                        if(o2>100){o2=100}
+                        if(o3>100){o3=100}
+                        if(o4>200){o4=200}
+                        createQuestMessage("🗺️ Quest #10 - Ghost Hunter Blaze","📖 **__Task #11/13__** : Sandy Shores\n\n\`The Atom Surfer Board is within your reach... Only three more tasks to complete. A final item task... Collect items from every biome in the third area. Come back for a reward.\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/bd/Blaze.png/revision/latest?cb=20200503095526","📜 __Goals:__",`• Collect **100** <:doubloon:825122941746151434> Doubloons from The 🏖️ Beach: **${o1}/100**\n• Collect **100** <:pearl:825122938457686057> Pearls from 💦 Underwater: **${o2}/100**\n• Collect **100** 💎 Diamonds from The 🌋 Volcano: **${o3}/100**\n• Collect **200** <:tusk:825122936927027289> Ancient Tusks from The 🧊 Ice Cave: **${o4}/200**`,message,sm,fs,q)
+                        break;
+                    case 12:
+                        if(o1>15){o1=15}
+                        if(o2>10){o2=10}
+                        if(o3>5){o3=5}
+                        createQuestMessage("🗺️ Quest #10 - Ghost Hunter Blaze","📖 **__Task #12/13__** : Replacement Search\n\n\`If I'm going to give you my power source, the Atom Surfer Board, then I'm gonna need a replacement. I think pets will do. Collect data from pets by unboxing different pet crates multiple times. I gave you a list. Come back for a reward.\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/bd/Blaze.png/revision/latest?cb=20200503095526","📜 __Goals:__",`• Unbox **15** 🐶 Pets from Pet Crate #1: **${o1}/15**\n• Unbox **10** 🐶 Pets from Pet Crate #2: **${o2}/10**\n• Unbox **5** 🐶 Pets from Pet Crate #3: **${o3}/5**`,message,sm,fs,q)
+                        break;
+                    case 13:
+                        createQuestMessage("🗺️ Quest #10 - Ghost Hunter Blaze","📖 **__Task #13/13__** : Uni Champion\n\n\`Alright Hunter! This is your final task in Uni! And this one is extremely important... I mean, our entire world is in stake here! You helped me build the stabilizer to finally work, and together, we will stop this rift from destroying our beloved world! We just need to make a diversion... something that will stop the enemy ghosts on the other side of this rift for just a few moments... Then, we will have enough time to stabilize the rift and save our world! Ooo, I got it Ghost Hunter! Let's send what they sent here, back to them! The Bosses! You need to go defeat some Bosses so we can put them in the rift! Come back as quickly as you can so we can save Uni!\`","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/bd/Blaze.png/revision/latest?cb=20200503095526","📜 __Goals:__",`• Defeat <:ghastlytree:825122934221307955> Ghastly Tree once: **${o1}/1**\n• Defeat <:georgethegorilla:825122935081664632> George the Gorilla once: **${o2}/1**\n• Defeat <:subjectone:825122932815691847> Subject One once: **${o3}/1**\n• Defeat <:kingkrab:825122934183559239> King Krab once: **${o4}/1**`,message,sm,fs,q)
+                        break;
+                }
                 break;
             case 11:
+                const noMoreEmbed = new Discord.MessageEmbed()
+                .setColor(6340040)
+                .setAuthor(`${message.author.username}'s Questline`,message.author.avatarURL())
+                .setDescription("**You have finished all your quests!**\n\nTry using the command **\'%rebirth\'** and see what happens...")
+                .setThumbnail("https://static.wikia.nocookie.net/ghost-simulator-roblox/images/e/e0/AoL_Trio.png/revision/latest?cb=20210511033242")
+                message.channel.send({ embed: noMoreEmbed });
                 break;
         }
     }

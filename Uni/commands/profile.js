@@ -47,6 +47,10 @@ exports.run = async (bot,message,args) => {
             u = "https://static.wikia.nocookie.net/ghost-simulator-roblox/images/4/40/B-L-O-X.png/revision/latest/scale-to-width-down/300?cb=20200318225349"
             n = "B-L-O-X"
             break;
+        case "atom":
+            u = "https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/b1/Atom_Surfer.png/revision/latest/scale-to-width-down/300?cb=20210208112002"
+            n = "Atom Surfer"
+            break;
         default:
             u = "https://imgur.com/RV975Lr.png"
             n = "None"

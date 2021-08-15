@@ -87,17 +87,16 @@ function fullCatchFunction(ez,fs,db,sm,message,args,q)
                     return;}
                 if((args.length>1)&&(isNumeric(args[1]))&&(parseInt(args[1],10)!=1)){
                     let num = parseInt(args[1],10)
-                    let ghost2 = secondGhost(args[0])
-                    if(((num-1)*ghost2+storage)<capacity){
-                        for(p=0 ; p<num ; p++){
-                            arr = mainCatch(ez,fs,db,args,ez.storage,capacity)
-                            if((arr[0]=="a 🧚 **Fairy!**")||(arr[0]=="a 🤵‍♂️ **Businessman!**")||(arr[0]=="a 🧑‍🔧 **Mechanic!**")||(arr[0]=="a 🛍️ **Paper Bag!**")||(arr[0]=="a 👷‍♀️ **Worker!**")||(arr[0]=="a <:bandit:825122917930500147> **Bandit!**")||(arr[0]=="a 👨‍🔬 **Scientist!**")||(arr[0]=="a 🧑‍🏭 **Miner!**")||(arr[0]=="a <:pharaoh:825122944514523226> **Pharaoh!**")||(arr[0]=="a 🏴‍☠️ **Pirate!**")||(arr[0]=="a 🤿 **Diver!**")||(arr[0]=="an <:islander:825122941963993099> **Islander!**")||(arr[0]=="an <:explorer:825123592290172939> **Explorer!**")){g1++}else{g2++}
-                            if(arr[2]=="<:gems:825122942413045791> gems"){i1+=arr[1]}else{if(arr[2]=="🔩 antenna parts"){i2+=arr[1]}else{i3+=arr[1]}}
-                            f+=arr[3]
-                        }let b = multipleCatchArr(args[0])
-                        message.channel.send(`<@${message.member.id}>\n\nYou caught **${coinToStr(g1)}** ${b[0]}\nYou caught **${coinToStr(g2)}** ${b[1]}\n\n__You also found:__\n\n+ **${coinToStr(i1)}** <:gems:825122942413045791> gems\n+ **${coinToStr(i2)}** 🔩 antenna parts\n+ **${coinToStr(i3)}** ${arr[4]}\n+ **${coinToStr(f)}** <:pack:825122944204013588> pack storage **\`${coinToStr(ez.storage)}/${coinToStr(ez.capacity)}\`**`)
-                        checkQuests(args,num,q,sm,g2,fs,g1,f)
-                    }else{message.channel.send(`<@${message.member.id}> Your <:pack:825122944204013588> pack may not have enough space to catch **${coinToStr(num)}** 👻 ghosts right now.`)}
+                    let p = 0
+                    while((ez.storage<capacity)&&(p<num)){
+                        p++
+                        arr = mainCatch(ez,fs,db,args,ez.storage,capacity)
+                        if((arr[0]=="a 🧚 **Fairy!**")||(arr[0]=="a 🤵‍♂️ **Businessman!**")||(arr[0]=="a 🧑‍🔧 **Mechanic!**")||(arr[0]=="a 🛍️ **Paper Bag!**")||(arr[0]=="a 👷‍♀️ **Worker!**")||(arr[0]=="a <:bandit:825122917930500147> **Bandit!**")||(arr[0]=="a 👨‍🔬 **Scientist!**")||(arr[0]=="a 🧑‍🏭 **Miner!**")||(arr[0]=="a <:pharaoh:825122944514523226> **Pharaoh!**")||(arr[0]=="a 🏴‍☠️ **Pirate!**")||(arr[0]=="a 🤿 **Diver!**")||(arr[0]=="an <:islander:825122941963993099> **Islander!**")||(arr[0]=="an <:explorer:825123592290172939> **Explorer!**")){g1++}else{g2++}
+                        if(arr[2]=="<:gems:825122942413045791> gems"){i1+=arr[1]}else{if(arr[2]=="🔩 antenna parts"){i2+=arr[1]}else{i3+=arr[1]}}
+                        f+=arr[3]
+                    }let b = multipleCatchArr(args[0])
+                    message.channel.send(`<@${message.member.id}>\n\nYou caught **${coinToStr(g1)}** ${b[0]}\nYou caught **${coinToStr(g2)}** ${b[1]}\n\n__You also found:__\n\n+ **${coinToStr(i1)}** <:gems:825122942413045791> gems\n+ **${coinToStr(i2)}** 🔩 antenna parts\n+ **${coinToStr(i3)}** ${arr[4]}\n+ **${coinToStr(f)}** <:pack:825122944204013588> pack storage **\`${coinToStr(ez.storage)}/${coinToStr(ez.capacity)}\`**`)
+                    checkQuests(args,p,q,sm,g2,fs,g1,f)
                 }else{
                     let arr = mainCatch(ez,fs,db,args,storage,capacity)
                     message.channel.send(`<@${message.member.id}> You caught ${arr[0]}\n\n__You also found:__\n\n+ **${coinToStr(arr[1])}** ${arr[2]}\n+ **${coinToStr(arr[3])}** <:pack:825122944204013588> pack storage **\`${coinToStr(ez.storage)}/${coinToStr(ez.capacity)}\`**`)
@@ -170,6 +169,12 @@ function checkQuests(args,num,q,sm,g2,fs,g1,f)
     if((sm.quest==8)&&(sm.task==2)&&(sm.qStarted)){if(args[0]=="city"){sm.obj1+=g1
             sm.obj2+=g2}if(args[0]=="beach"){sm.obj3+=g1
             sm.obj4+=g2}}
+    if((sm.quest==10)&&(sm.task==1)&&(sm.qStarted)){if(args[0]=="city"){sm.obj1+=g1}if(args[0]=="junkyard"){sm.obj2+=g1}if(args[0]=="sewers"){sm.obj3+=g1}if(args[0]=="construction"){sm.obj4+=g1}}
+    if((sm.quest==10)&&(sm.task==2)&&(sm.qStarted)){if(args[0]=="wild"){sm.obj1+=g1}if(args[0]=="area"){sm.obj2+=g1}if(args[0]=="mine"){sm.obj3+=g1}if(args[0]=="pyramids"){sm.obj4+=g1}}
+    if((sm.quest==10)&&(sm.task==3)&&(sm.qStarted)){if(args[0]=="beach"){sm.obj1+=g1}if(args[0]=="underwater"){sm.obj2+=g1}if(args[0]=="volcano"){sm.obj3+=g1}if(args[0]=="ice"){sm.obj4+=g1}}
+    if((sm.quest==10)&&(sm.task==6)&&(sm.qStarted)){if(args[0]=="city"){sm.obj1+=g2}if(args[0]=="junkyard"){sm.obj2+=g2}if(args[0]=="sewers"){sm.obj3+=g2}if(args[0]=="construction"){sm.obj4+=g2}}
+    if((sm.quest==10)&&(sm.task==7)&&(sm.qStarted)){if(args[0]=="wild"){sm.obj1+=g2}if(args[0]=="area"){sm.obj2+=g2}if(args[0]=="mine"){sm.obj3+=g2}if(args[0]=="pyramids"){sm.obj4+=g2}}
+    if((sm.quest==10)&&(sm.task==8)&&(sm.qStarted)){if(args[0]=="beach"){sm.obj1+=g2}if(args[0]=="underwater"){sm.obj2+=g2}if(args[0]=="volcano"){sm.obj3+=g2}if(args[0]=="ice"){sm.obj4+=g2}}
     fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})
 }
 
@@ -232,39 +237,6 @@ function multipleCatchArr(str)
             return ["<:islander:825122941963993099> **Islanders!**","<:magmamonster:825122940290859009> **Magma Monsters!**"]
         case "ice":
             return ["<:explorer:825123592290172939> **Explorers!**","🐧 **Penguins!**"]
-    }
-}
-
-function secondGhost(str)
-{
-    switch(str)
-    {
-        case "forest":
-            return 15
-        case "city":
-            return 30
-        case "junkyard":
-            return 75
-        case "sewers":
-            return 190
-        case "construction":
-            return 450
-        case "wild":
-            return 825
-        case "area":
-            return 1650
-        case "mine":
-            return 3000
-        case "pyramids":
-            return 6750
-        case "beach":
-            return 14500
-        case "underwater":
-            return 26500
-        case "volcano":
-            return 67500
-        case "ice":
-            return 150000
     }
 }
 

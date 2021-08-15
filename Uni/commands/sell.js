@@ -41,8 +41,9 @@ exports.help = {
 
 function checkQuests(sm,tokens)
 {
-    if((sm.quest==1)&&(sm.task==2)&&(sm.qStarted)){sm.obj1=sm.obj1+1}
+    if((sm.quest==1)&&(sm.task==2)&&(sm.qStarted)){sm.obj1=1}
     if((sm.quest==8)&&(sm.task==6)&&(sm.qStarted)){sm.obj1+=tokens}
+    if((sm.quest==10)&&(sm.task==4)&&(sm.qStarted)){sm.obj1=1}
 }
 
 function getExchangeRate(arr,n)

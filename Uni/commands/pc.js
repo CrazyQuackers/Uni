@@ -74,6 +74,9 @@ function unboxedPetMessage(message,rarity,pet,attack,effective,duplicate)
 {
     if(duplicate){pet = pet + "!  \`duplicate\`"}else{pet = pet + "!"}
     message.channel.send(`<@${message.member.id}> You've unboxed **${rarity}** ${pet}\nThis pet has **${attack}** ⚔️ Attack and is effective against ${effective}!`)
+    let petSplit = pet.split('*')
+    let petEmoji = petSplit[0].substring(0,petSplit[0].length-1)
+    message.react(petEmoji)
 }
 
 function mainPetFunction(message,c,ez,fs,db,sm,q)
@@ -84,6 +87,7 @@ function mainPetFunction(message,c,ez,fs,db,sm,q)
         let whatPet = 0
         if((object==1)&&(c==200))
         {
+            message.react("<:rainwave:874390657991598091>")
             if(sm.rainwave){message.channel.send(`<@${message.member.id}> **HOW DID YOU DO THAT!?!?!?! YOU'VE JUST UNBOXED THE MOST RAREST PET IN UNI!!!!**\n**A Classified <:rainwave:874390657991598091> Rainwave!**  \`duplicate\`\nThis pet has **3** ⚔️ Attack and is effective against <:ghastlytree:825122934221307955><:georgethegorilla:825122935081664632><:sludge:825122930471075880><:subjectone:825122932815691847><:kingkrab:825122934183559239><:magmoraug:825122942768644136> **all bosses!**`)}else{message.channel.send(`<@${message.member.id}> **HOW DID YOU DO THAT!?!?!?! YOU'VE JUST UNBOXED THE MOST RAREST PET IN UNI!!!!**\n**A Classified <:rainwave:874390657991598091> Rainwave!**\nThis pet has **3** ⚔️ Attack and is effective against <:ghastlytree:825122934221307955><:georgethegorilla:825122935081664632><:sludge:825122930471075880><:subjectone:825122932815691847><:kingkrab:825122934183559239><:magmoraug:825122942768644136> **all bosses!**`)}
             sm.rainwave = true;
             return;
@@ -301,6 +305,7 @@ function checkQuests(c,sm,fs,q)
     if((c==6000)&&(sm.quest==6)&&(sm.task==13)&&(sm.qStarted)){sm.obj1=1}
     if((sm.quest==7)&&(sm.task==6)&&(sm.qStarted)){if(c==200){sm.obj1++}if(c==1200){sm.obj2++}if(c==6000){sm.obj3++}}
     if((sm.quest==9)&&(sm.task==11)&&(sm.qStarted)&&(c==200)){sm.obj1++}
+    if((sm.quest==10)&&(sm.task==12)&&(sm.qStarted)){if(c==200){sm.obj1++}if(c==1200){sm.obj2++}if(c==6000){sm.obj3++}}
     fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})
 }
 
@@ -308,6 +313,9 @@ function unboxedPetMessageGodly(message,pet,effective,duplicate)
 {
     if(duplicate){pet = pet + "!  \`duplicate\`"}else{pet = pet + "!"}
     message.channel.send(`<@${message.member.id}> **YOU'VE UNBOXED AN AMAZING GODLY** ${pet}\nThis pet has **10** ⚔️ Attack and is effective against ${effective}!`)
+    let petSplit = pet.split('*')
+    let petEmoji = petSplit[0].substring(0,petSplit[0].length-1)
+    message.react(petEmoji)
 }
 
 function coinToStr(n)
