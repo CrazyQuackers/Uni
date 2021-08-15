@@ -49,6 +49,7 @@ exports.run = async (bot,message,args) => {
                     .addFields(
                         {name: "Hoverboard", value: `<:skysurfer:842713851522056204> Sky Surfer\n<:feathershock:842713851044823071> Feather Shock\n<:oblivion:842713851450753024> Oblivion\n<:varus:842713851481030666> VARUS\n<:chromafloat:842713850897236029> Chroma Float`, inline: true},
                         {name: "Cost", value: `<:gems:825122942413045791> 15,000\n<:gems:825122942413045791> 75,000\n<:gems:825122942413045791> 150,000\n<:gems:825122942413045791> 250,000\n<:gems:825122942413045791> 400,000`, inline: true},
+                        {name: "Rarity", value: `Uncommon\nUncommon\nRare\nRare\nLegendary`, inline: true},
                     )
                     .setTimestamp()
                 message.channel.send({embed});
@@ -62,12 +63,13 @@ exports.run = async (bot,message,args) => {
                 let hbArr = [sm.hbUnlocked,sm.sky,sm.feather,sm.oblivion,sm.varus,sm.chroma,sm.champion,sm.blox,sm.surfer]
                 let nameArr = ["<:hoverboard:842713851585495070>  **Basic**","<:skysurfer:842713851522056204>  **Sky Surfer**","<:feathershock:842713851044823071>  **Feather Shock**","<:oblivion:842713851450753024>  **Oblivion**","<:varus:842713851481030666>  **VARUS**","<:chromafloat:842713850897236029>  **Chroma Float**","<:champion:844610527669911602> **Champion**","<:BLOX:871140025016930324> **B-L-O-X**","<:atomsurfer:875150132277039114> **Atom Surfer**"]
                 let equipArr = ["basic","sky","feather","oblivion","varus","chroma","champion","b-l-o-x","atom"]
+                let rarityArr = ["Common","Uncommon","Uncommon","Rare","Rare","Legendary","Godly","Godly","Mythical"]
                 let str = `<@${tag}>**'s Hoverboards** \`${countHoverboards(hbArr)}/12\`\n\n`
                 let i = 0
                 let hb = ""
                 let helper = str
                 for(i ; i<hbArr.length ; i++){if(hbArr[i]){hb = nameArr[i]
-                        if(equipArr[i]==sm.equipped){hb = hb + "  ⭐"}
+                        if(equipArr[i]==sm.equipped){hb = hb + "  ⭐"}hb = hb + ` - 💠 _${rarityArr[i]}_`
                         str = str + `${hb}\n`}}
                 if(str==helper){str = str + "*no hoverboards found*"}
                 message.channel.send(str)

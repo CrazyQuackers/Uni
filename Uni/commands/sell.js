@@ -20,15 +20,22 @@ exports.run = async (bot,message,args) => {
         let ex3 = getExchangeRate(petArr3,true)
         let ex4 = getExchangeRate(petArr4,false)
         let exchange = ex1 + ex2 + ex3 + ex4 + 1
+        console.log(exchange)
         ez.storage = 0
+        console.log(storage)
         let tokens = exchange * storage
+        console.log(tokens)
+        tokens = Math.round(tokens)
+        console.log(tokens)
+        tokens = decreaseNumberLength(tokens)
+        console.log(tokens)
         ez.ectoTokens = ez.ectoTokens + tokens
         sm.sellWait = ez.sellTime
         sm.lastSell = new Date().getTime()
         let c2 = 0;
         let i2 = ez.sellTime;
         for(i2 ; i2>59 ; i2-=60){c2++}
-        message.channel.send(`<@${message.member.id}> You succesfully sold your 👻 ghosts and recieved **${coinToStr(tokens)} <:ectotoken:825122939812315219> Ecto-Tokens!**\nYou can start catching more 👻 ghosts once your <:pack:825122944204013588> pack finishes recharging: **\`${c2}h${i2}m\`**`)
+        message.channel.send(`<@${message.member.id}> You succesfully sold your 👻 ghosts and recieved **${tokens} <:ectotoken:825122939812315219> Ecto-Tokens!**\nYou can start catching more 👻 ghosts once your <:pack:825122944204013588> pack finishes recharging: **\`${c2}h${i2}m\`**`)
         message.react("✅");
         checkQuests(sm,tokens)
         fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
@@ -70,4 +77,49 @@ function coinToStr(n)
         }
     }
     return newStrC
+}
+
+function decreaseNumberLength(n)
+{
+    if(n>=1000)
+    {
+        if(n>=1000000)
+        {
+            if(n>=1000000000)
+            {
+                if(n>=1000000000000)
+                {
+                    if(n>=1000000000000000)
+                    {
+                        n/=1000000000000000;
+                        return(`${accountForDecimal(n)} Quadrillion`);
+                    }
+                    n/=1000000000000;
+                    return(`${accountForDecimal(n)} Trillion`);
+                }
+                n/=1000000000;
+                return(`${accountForDecimal(n)} Billion`);
+            }
+            n/=1000000;
+            return(`${accountForDecimal(n)} Million`);
+        }
+        n/=1000;
+        return(`${accountForDecimal(n)} Thousand`);
+    }
+    return(`${n}`);
+}
+
+function accountForDecimal(n)
+{
+    let str = n.toString()
+    let arr = str.split('.')
+    arr[0] = coinToStr(arr[0])
+    if(arr.length>1){arr[1] = removeAfter2(arr[1])
+        return(`${arr[0]}.${arr[1]}`)}
+    return arr[0];
+}
+
+function removeAfter2(str)
+{
+    if(str[1]){return(`${str[0]}${str[1]}`)}return(`${str[0]}`)
 }

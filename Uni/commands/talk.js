@@ -39,94 +39,95 @@ exports.run = async (bot,message,args) => {
                 talkToCharacter(message,sm,fs,q,10,"him","Blaze","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/bd/Blaze.png/revision/latest?cb=20200503095526")
                 break;
             case "uwu":
-                characterNotInUni(message,"Uwu","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/d/d4/Ghost_Hunter_Uwu.png/revision/latest?cb=20210731120656")
+                characterNotInUni(message,"her","Uwu","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/d/d4/Ghost_Hunter_Uwu.png/revision/latest?cb=20210731120656")
                 break;
             case "dylan":
-                characterNotInUni(message,"Dylan","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/7/72/Dylan.png/revision/latest?cb=20210727015251")
+                characterNotInUni(message,"him","Dylan","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/7/72/Dylan.png/revision/latest?cb=20210727015251")
                 break;
             case "morgan":
-                characterNotInUni(message,"Morgan","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/7/76/Ghost_Hunter_Morgan.png/revision/latest?cb=20210727173423")
+                characterNotInUni(message,"him","Morgan","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/7/76/Ghost_Hunter_Morgan.png/revision/latest?cb=20210727173423")
                 break;
             case "hu-man":
-                characterNotInUni(message,"Hu-man","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/1/1a/Hu-man.png/revision/latest?cb=20210727180321")
+                characterNotInUni(message,"her","Hu-man","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/1/1a/Hu-man.png/revision/latest?cb=20210727180321")
                 break;
             case "archie":
-                characterNotInUni(message,"Archie","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/4/4e/Ghost_Hunter_Archie.png/revision/latest?cb=20210717212725")
+                characterNotInUni(message,"him","Archie","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/4/4e/Ghost_Hunter_Archie.png/revision/latest?cb=20210717212725")
                 break;
             case "jylan":
-                characterNotInUni(message,"Jylan","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/a/a5/Jylan.png/revision/latest?cb=20191221185031")
+                characterNotInUni(message,"him","Jylan","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/a/a5/Jylan.png/revision/latest?cb=20191221185031")
                 break;
             case "victor":
-                characterNotInUni(message,"Victor","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/6/69/Image0_%281%29-0.png/revision/latest?cb=20200126011122")
+                characterNotInUni(message,"him","Victor","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/6/69/Image0_%281%29-0.png/revision/latest?cb=20200126011122")
                 break;
             case "ace":
-                characterNotInUni(message,"Ace","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/c/c3/Image1.png/revision/latest?cb=20200126011525")
+                characterNotInUni(message,"him","Ace","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/c/c3/Image1.png/revision/latest?cb=20200126011525")
                 break;
             case "joven":
-                characterNotInUni(message,"Joven","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/c/c8/Joven.png/revision/latest?cb=20200503093340")
+                characterNotInUni(message,"him","Joven","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/c/c8/Joven.png/revision/latest?cb=20200503093340")
                 break;
             case "leo":
-                characterNotInUni(message,"Leo","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/1/1d/Leo.png/revision/latest?cb=20200228120658")
+                characterNotInUni(message,"him","Leo","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/1/1d/Leo.png/revision/latest?cb=20200228120658")
                 break;
             case "yoko":
-                characterNotInUni(message,"Yoko","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/5/50/Image4.png/revision/latest?cb=20200126011838")
+                characterNotInUni(message,"him","Yoko","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/5/50/Image4.png/revision/latest?cb=20200126011838")
                 break;
             case "fern":
-                characterNotInUni(message,"Fern","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/a/ad/Fern1.png/revision/latest?cb=20200426184241")
+                characterNotInUni(message,"her","Fern","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/a/ad/Fern1.png/revision/latest?cb=20200426184241")
                 break;
             case "gatekeeper":
-                characterNotInUni(message,"Gatekeeper","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/e/ee/Image2.png/revision/latest?cb=20200126015531")
+                characterNotInUni(message,"him","Gatekeeper","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/e/ee/Image2.png/revision/latest?cb=20200126015531")
                 break;
             case "jax":
-                characterNotInUni(message,"Jax","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/c/cc/Image3.png/revision/latest?cb=20200126020357")
+                characterNotInUni(message,"her","Jax","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/c/cc/Image3.png/revision/latest?cb=20200126020357")
                 break;
             case "gab3":
-                characterNotInUni(message,"Gab3","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/2/24/Image0-0.png/revision/latest?cb=20200126020551")
+                characterNotInUni(message,"him","Gab3","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/2/24/Image0-0.png/revision/latest?cb=20200126020551")
                 break;
             case "billy":
-                characterNotInUni(message,"Billy","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/9/95/Billy.png/revision/latest?cb=20200507211807")
+                characterNotInUni(message,"him","Billy","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/9/95/Billy.png/revision/latest?cb=20200507211807")
                 break;
             case "rowan":
-                characterNotInUni(message,"Rowan","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/1/14/Rowan1.png/revision/latest?cb=20200426044857")
+                characterNotInUni(message,"him","Rowan","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/1/14/Rowan1.png/revision/latest?cb=20200426044857")
                 break;
             case "wylan":
-                characterNotInUni(message,"Wylan","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/e/e7/Ghost_Hunter_Wylan.png/revision/latest?cb=20210718131304")
+                characterNotInUni(message,"him","Wylan","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/e/e7/Ghost_Hunter_Wylan.png/revision/latest?cb=20210718131304")
                 break;
             case "boven":
-                characterNotInUni(message,"Boven","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/c/cf/Ghost_Hunter_Boven.png/revision/latest?cb=20210723180227")
+                characterNotInUni(message,"him","Boven","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/c/cf/Ghost_Hunter_Boven.png/revision/latest?cb=20210723180227")
                 break;
             case "allie":
-                characterNotInUni(message,"Allie","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/6/65/Allie.png/revision/latest?cb=20200704013144")
+                characterNotInUni(message,"her","Allie","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/6/65/Allie.png/revision/latest?cb=20200704013144")
                 break;
             case "julian":
-                characterNotInUni(message,"Julian","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/a/ad/Screencap_Julian.jpg/revision/latest?cb=20210407043925")
+                characterNotInUni(message,"him","Julian","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/a/ad/Screencap_Julian.jpg/revision/latest?cb=20210407043925")
                 break;
             case "bo":
-                characterNotInUni(message,"Bo","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/a/ac/Golden_Turkey_Bo.png/revision/latest?cb=20201120232315")
+                characterNotInUni(message,"him","Bo","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/a/ac/Golden_Turkey_Bo.png/revision/latest?cb=20201120232315")
                 break;
             case "da-vid":
-                characterNotInUni(message,"Da-vid","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/bc/Ghost_Hunter_Da-vid.png/revision/latest?cb=20210727143247")
+                characterNotInUni(message,"him","Da-vid","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/bc/Ghost_Hunter_Da-vid.png/revision/latest?cb=20210727143247")
                 break;
             case "covenk":
-                characterNotInUni(message,"CovenK","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/6/66/Void_NPC_CovenK.png/revision/latest?cb=20210228065439")
+                characterNotInUni(message,"her","CovenK","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/6/66/Void_NPC_CovenK.png/revision/latest?cb=20210228065439")
                 break;
             case "didi1147":
-                characterNotInUni(message,"Didi1147","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/6/66/Void_NPC_Didi1147.png/revision/latest?cb=20210228065444")
+                characterNotInUni(message,"him","Didi1147","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/6/66/Void_NPC_Didi1147.png/revision/latest?cb=20210228065444")
                 break;
             case "makkiemon":
-                characterNotInUni(message,"MakkieMon","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/2/26/Void_NPC_MakkieMon.png/revision/latest?cb=20210228065454")
+                characterNotInUni(message,"her","MakkieMon","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/2/26/Void_NPC_MakkieMon.png/revision/latest?cb=20210228065454")
                 break;
             case "thexz":
-                characterNotInUni(message,"Thexz","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/2/20/Void_NPC_Thexz.png/revision/latest?cb=20210228065459")
+                characterNotInUni(message,"him","Thexz","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/2/20/Void_NPC_Thexz.png/revision/latest?cb=20210228065459")
                 break;
             case "goro7":
-                characterNotInUni(message,"Goro7","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/1/15/Void_NPC_Goro7.png/revision/latest?cb=20210228065449")
+                characterNotInUni(message,"him","Goro7","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/1/15/Void_NPC_Goro7.png/revision/latest?cb=20210228065449")
                 break;
             case "???":
                 talkToCharacter(message,sm,fs,q,0,"","???","https://static.wikia.nocookie.net/ghost-simulator-roblox/images/0/0a/Rebirth_NPC.png/revision/latest?cb=20210313001925")
                 break;
             case "rose":
-                characterNotInUni(message,"Rose","https://t3.rbxcdn.com/10655462bf6dd5408afc5c509be16ca4")
+                characterNotInUni(message,"her","Rose","https://t3.rbxcdn.com/10655462bf6dd5408afc5c509be16ca4")
+                break;
             default:
                 characterDoesNotExist(message,args[2])
                 break;
@@ -149,7 +150,7 @@ function characterDoesNotExist(message,name)
     message.channel.send(`<@${message.member.id}> Could not find \`Ghost Hunter ${name}\`.`)
 }
 
-function characterNotInUni(message,name,link)
+function characterNotInUni(message,gender,name,link)
 {
     message.react("📬")
     const embed = new Discord.MessageEmbed()
@@ -158,7 +159,7 @@ function characterNotInUni(message,name,link)
     .setURL("https://www.roblox.com/games/2685347741")
     .setAuthor(message.author.username,message.author.avatarURL())
     .setThumbnail("https://t4.rbxcdn.com/ea4f118bf2e20f027f7d91de4d19e39d")
-    .setDescription(`Ghost Hunter ${name}, does not make an appearance in Uni.\nBut you will find him in **'Ghost Simulator'** on Roblox.\nClick the link in the top of this message to play the game!`)
+    .setDescription(`Ghost Hunter ${name}, does not make an appearance in Uni.\nBut you will find ${gender} in **'Ghost Simulator'** on Roblox.\nClick the link in the top of this message to play the game!`)
     .setImage(link)
     .setTimestamp()
     message.author.send({embed})
@@ -185,7 +186,7 @@ function badTalk(message,name,link,description)
 function goodTalk(message,name,link,sm,fs,q)
 {
     description = getDescription(name,sm)
-    message.react("📬")
+    message.react("✅")
     const embed = new Discord.MessageEmbed()
     .setColor(10145074)
     .setTitle(`Ghost Hunter ${name}`)

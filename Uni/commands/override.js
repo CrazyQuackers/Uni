@@ -8,7 +8,14 @@ exports.run = async (bot,message,args) => {
     {
         if(args.length > 0){
             if(args[0]=="t"){sm.task++;}else{sm.quest++
-                sm.task=1}
+                sm.task = 1}
+            sm.obj1 = 0
+            sm.obj2 = 0 
+            sm.obj3 = 0
+            sm.obj4 = 0
+            sm.obj5 = 0
+            sm.obj6 = 0
+            sm.qStarted = false
             fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})
             return;
         }
@@ -32,13 +39,14 @@ exports.run = async (bot,message,args) => {
         ez.shark = true
         ez.jack = true
         sm.quest = 10
-        sm.task = 1
+        sm.task = 4
         sm.converter = 3
         ez.constructionOpen = true
         ez.pyramidsOpen = true
         ez.iceOpen = true
         sm.hbUnlocked = true
         sm.champion = true
+        sm.equipped = "basic"
         sm.blox = true
         sm.atom = true
         sm.petLuck = true

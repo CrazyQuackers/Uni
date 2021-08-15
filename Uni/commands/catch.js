@@ -197,7 +197,7 @@ function mainCatch(ez,fs,db,args,storage,capacity)
         item = ghostArr[2]
         amount = howMuchItems(args[0],item,ez)
     }else{
-        item = "🔩 antenna parts"
+        if((args[0]=="construction")||(args[0]=="pyramids")||(args[0]=="ice")){item = ghostArr[2]}else{item = "🔩 antenna parts"}
         amount = howMuchItems(args[0],item,ez)
     }}
     storage = storage + fill
