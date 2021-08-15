@@ -39,7 +39,11 @@ exports.run = async (bot,message,args) => {
         ez.shark = true
         ez.jack = true
         sm.quest = 10
-        sm.task = 4
+        sm.task = 13
+        sm.obj1 = 1
+        sm.obj2 = 1
+        sm.obj3 = 1
+        sm.obj4 = 1
         sm.converter = 3
         ez.constructionOpen = true
         ez.pyramidsOpen = true

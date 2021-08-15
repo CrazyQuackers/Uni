@@ -63,7 +63,7 @@ exports.run = async (bot,message,args) => {
                 message.react("✅")
                 ez.ectoTokens=tokens
                 ez.gems+=i
-                message.channel.send(`<@${message.member.id}> You recieved **${i}** <:gems:825122942413045791> Gems!`)
+                message.channel.send(`<@${message.member.id}> You recieved **${coinToStr(i)}** <:gems:825122942413045791> Gems!`)
                 checkQuests(sm,fs,q,(i*1000000))
             }
         }
