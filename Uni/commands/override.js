@@ -38,12 +38,8 @@ exports.run = async (bot,message,args) => {
         ez.rex = true
         ez.shark = true
         ez.jack = true
-        sm.quest = 10
-        sm.task = 13
-        sm.obj1 = 1
-        sm.obj2 = 1
-        sm.obj3 = 1
-        sm.obj4 = 1
+        sm.quest = 11
+        sm.task = 1
         sm.converter = 3
         ez.constructionOpen = true
         ez.pyramidsOpen = true
@@ -52,6 +48,8 @@ exports.run = async (bot,message,args) => {
         sm.champion = true
         sm.equipped = "basic"
         sm.blox = true
+        sm.sky = true
+        sm.surfer = true
         sm.atom = true
         sm.petLuck = true
         sm.bossLuck = true

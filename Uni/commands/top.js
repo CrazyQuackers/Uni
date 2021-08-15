@@ -54,7 +54,7 @@ exports.run = async (bot,message,args) => {
                 t = "Pets"
                 break;
             case "hoverboard":
-                for(i=0 ; i<topTen.length ; i++){str=str+`${i+1}. **${topTen[i].username}** - ${countHoverboards(topTen[i],sm)} <:hoverboard:842713851585495070>\n`}
+                for(i=0 ; i<topTen.length ; i++){str=str+`${i+1}. **${topTen[i].username}** - ${countHoverboards(topTen[i],sm)} ${equippedHoverboardEmoji(sm.users[topTen[i].id].equipped)}\n`}
                 t = "Hoverboards"
                 break;
             case "boss":
@@ -66,7 +66,7 @@ exports.run = async (bot,message,args) => {
                 t = "Ghosts"
                 break;
             case "quest":
-                for(i=0 ; i<topTen.length ; i++){str=str+`${i+1}. **${topTen[i].username}** - Quest #${sm.users[topTen[i].id].quest}, Task#${sm.users[topTen[i].id].task} 📖\n`}
+                for(i=0 ; i<topTen.length ; i++){str=str+`${i+1}. **${topTen[i].username}** - ${getQuestMessage(sm.users[topTen[i].id])}\n`}
                 t = "Quests"
                 break;
         }
@@ -118,6 +118,11 @@ function topInfo(message)
                 inline: false,
             },
             {
+                name: "%top quest",
+                value: "Lists the members with the farthest quests",
+                inline: false,
+            },
+            {
                 name: "%top pet",
                 value: "Lists the members with the most pets",
                 inline: false,
@@ -135,11 +140,6 @@ function topInfo(message)
             {
                 name: "%top boss",
                 value: "Lists the members with the most bosses defeated",
-                inline: false,
-            },
-            {
-                name: "%top quest",
-                value: "Lists the members with the farthest quests",
                 inline: false,
             },
         ],
@@ -168,10 +168,42 @@ function countHoverboards(mem,sm2)
     return c;
 }
 
+function equippedHoverboardEmoji(equipped)
+{
+    switch(equipped)
+    {
+        case "basic":
+            return "<:hoverboard:842713851585495070>"
+        case "sky":
+            return "<:skysurfer:842713851522056204>"
+        case "feather":
+            return "<:feathershock:842713851044823071>"
+        case "oblivion":
+            return "<:oblivion:842713851450753024>"
+        case "varus":
+            return "<:varus:842713851481030666>"
+        case "chroma":
+            return "<:chromafloat:842713850897236029>"
+        case "champion":
+            return "<:champion:844610527669911602>"
+        case "b-l-o-x":
+            return "<:BLOX:871140025016930324>"
+        case "atom":
+            return "<:atomsurfer:875150132277039114>"
+        default:
+            return "<:hoverboard:842713851585495070>"
+    }
+}
+
 function getQuestNumber(mem,sm2)
 {
     const sm = sm2.users[mem.id]
     let num = ((sm.quest*100) + sm.task)
     console.log(num)
     return num
+}
+
+function getQuestMessage(sm)
+{
+    if(sm.quest==11){return "Rebirth ♻️"}else{return `Quest #${sm.quest}, Task #${sm.task} 📖`}
 }

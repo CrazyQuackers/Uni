@@ -97,11 +97,10 @@ exports.run = async (bot,message,args) => {
                                         ez.gems = ez.gems + g
                                         ez.defeated = ez.defeated + 1
                                         bossPet = (Math.floor(Math.random()*100));
-                                        bossPetStr = whichBossPet(type,q,sm,fs)
-                                        //if(((sm.bossLuck)&&(bossPet<5))||((!sm.bossLuck)&&(bossPet==0))){bossPetStr = whichBossPet(type,q,sm,fs)}
+                                        if(((sm.bossLuck)&&(bossPet<5))||((!sm.bossLuck)&&(bossPet==0))){bossPetStr = whichBossPet(type,q,sm,fs)}
                                         checkQuests(sm,fs,q,type)
                                         fs.writeFile("../data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
-                                        str = str+`\n\n**▬▬▬▬▬▬▬**「RESULT」**▬▬▬▬▬▬▬▬▬▬▬▬▬▬**\n\n👑 Winner : <@${message.member.id}>\n💀 Defeated : ${boss}\n\n**▬▬▬▬▬**「YOUR EARNINGS」**▬▬▬▬▬▬▬▬▬▬▬▬**\n\n+ **${g}** <:gems:825122942413045791> gems!\n\n${bossPetStr}`
+                                        str = str+`\n\n**▬▬▬▬▬▬▬**「RESULT」**▬▬▬▬▬▬▬▬▬▬▬▬▬▬**\n\n👑 Winner : <@${message.member.id}>\n💀 Defeated : ${boss}\n\n**▬▬▬▬▬**「YOUR EARNINGS」**▬▬▬▬▬▬▬▬▬▬▬▬**\n\n+ **${g}** <:gems:825122942413045791> gems!\n${bossPetStr}`
                                     }
                                     else
                                     {
@@ -155,7 +154,7 @@ function whichBossPet(type,q,sm,fs)
             break;
     }
     fs.writeFile("../data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})
-    str = str + "\n**YOU GOT A BOSS PET! CONGRATULATIONS! THOSE ARE EXTREMELY RARE!**"
+    str = str + "\n\n**YOU GOT A BOSS PET! CONGRATULATIONS! THOSE ARE EXTREMELY RARE!**"
     return str;
 }
 

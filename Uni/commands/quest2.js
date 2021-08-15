@@ -911,8 +911,8 @@ exports.run = async (bot,message,args) => {
             case 11:
                 const noMoreEmbed = new Discord.MessageEmbed()
                 .setColor(6340040)
-                .setAuthor(`${message.author.username}'s Questline`,message.author.avatarURL())
-                .setDescription("**You have finished all your quests!**\n\nTry using the command **\'%rebirth\'** and see what happens...")
+                .setAuthor(message.author.username,message.author.avatarURL())
+                .setDescription("You have finished all your quests!\nTry using the command **\'%rebirth\'** and see what happens...")
                 .setThumbnail("https://static.wikia.nocookie.net/ghost-simulator-roblox/images/e/e0/AoL_Trio.png/revision/latest?cb=20210511033242")
                 message.channel.send({ embed: noMoreEmbed });
                 break;

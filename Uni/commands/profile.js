@@ -12,50 +12,6 @@ exports.run = async (bot,message,args) => {
     let c = 0
     let i = 0
     for(i=0 ; i<arr.length ; i++){if(arr[i]){c++}}
-    let u = ""
-    let n = ""
-    switch(sm.equipped){
-        case "basic":
-            u = "https://imgur.com/2uLSAQ4.png"
-            n = "Basic"
-            break;
-        case "sky":
-            u = "https://imgur.com/85XE61R.png"
-            n = "Sky Surfer"
-            break;
-        case "feather":
-            u = "https://imgur.com/kyuzhW6.png"
-            n = "Feather Shock"
-            break;
-        case "oblivion":
-            u = "https://imgur.com/Nsp9ixl.png"
-            n = "Oblivion"
-            break;
-        case "varus":
-            u = "https://imgur.com/6Y4PubN.png"
-            n = "VARUS"
-            break;
-        case "chroma":
-            u = "https://imgur.com/PC3qyZb.png"
-            n = "Chroma Float"
-            break;
-        case "champion":
-            u = "https://imgur.com/XGyBAAm.png"
-            n = "Champion"
-            break;
-        case "b-l-o-x":
-            u = "https://static.wikia.nocookie.net/ghost-simulator-roblox/images/4/40/B-L-O-X.png/revision/latest/scale-to-width-down/300?cb=20200318225349"
-            n = "B-L-O-X"
-            break;
-        case "atom":
-            u = "https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/b1/Atom_Surfer.png/revision/latest/scale-to-width-down/300?cb=20210208112002"
-            n = "Atom Surfer"
-            break;
-        default:
-            u = "https://imgur.com/RV975Lr.png"
-            n = "None"
-
-    }
     let titleText = `__Profile__`
     if(sm.badge){titleText = titleText + " <:ghosthunterbadge:874405583959228477>"}
     const embed = {
@@ -65,9 +21,9 @@ exports.run = async (bot,message,args) => {
             icon_url: tag.user.avatarURL(),
         },
         title: titleText,
-        description: `<:hoverboard:842713851585495070> **Equipped Hoverboard:** ${n}\n\n📡 **Antenna Level:** ${ez.antenna}\n\n<:pack:825122944204013588> **Pack Name:** ${ez.pack}\n\n🗺️ **Questline:** Quest #${sm.quest} - Task #${sm.task}\n\n🐶 **Number of Pets:** ${c}\n\n💀 **Bosses Defeated:** ${ez.defeated}`,
+        description: `📡 **Antenna Level:** ${ez.antenna}\n\n<:pack:825122944204013588> **Pack Name:** ${ez.pack}\n\n🗺️ **Questline:** ${getQuest(sm.quest,sm.task)}\n\n🐶 **Number of Pets:** ${c}\n\n<:hoverboard:842713851585495070> **Number of Hoverboards:** ${countHoverboards(sm)}\n\n👻 **Ghosts caught:** ${ez.caught}\n\n💀 **Bosses Defeated:** ${ez.defeated}`,
         thumbnail: {
-            url: u,
+            url: getThumbnail(sm.equipped),
         },
         timestamp: new Date(),
         footer: {
@@ -78,4 +34,45 @@ exports.run = async (bot,message,args) => {
 }
 exports.help = {
     name: 'profile'
+}
+
+function getQuest(quest,task)
+{
+    if(quest==11){return "Rebirth ♻️"}else{return `Quest #${quest}, Task #${task} 📖`}
+}
+
+function getThumbnail(equipped)
+{
+    switch(sm.equipped)
+    {
+        case "basic":
+            return "https://imgur.com/2uLSAQ4.png"
+        case "sky":
+            return "https://imgur.com/85XE61R.png"
+        case "feather":
+            return "https://imgur.com/kyuzhW6.png"
+        case "oblivion":
+            return "https://imgur.com/Nsp9ixl.png"
+        case "varus":
+            return "https://imgur.com/6Y4PubN.png"
+        case "chroma":
+            return "https://imgur.com/PC3qyZb.png"
+        case "champion":
+            return "https://imgur.com/XGyBAAm.png"
+        case "b-l-o-x":
+            return "https://static.wikia.nocookie.net/ghost-simulator-roblox/images/4/40/B-L-O-X.png/revision/latest/scale-to-width-down/300?cb=20200318225349"
+        case "atom":
+            return "https://static.wikia.nocookie.net/ghost-simulator-roblox/images/b/b1/Atom_Surfer.png/revision/latest/scale-to-width-down/300?cb=20210208112002"
+
+    }
+    return "https://imgur.com/RV975Lr.png"
+}
+
+function countHoverboards(sm)
+{
+    const arr = [sm.hbUnlocked,sm.sky,sm.feather,sm.oblivion,sm.varus,sm.chroma,sm.champion,sm.blox,sm.surfer]
+    let c = 0
+    let i = 0
+    for(i=0 ; i<arr.length ; i++){if(arr[i]){c++}}
+    return c;
 }
