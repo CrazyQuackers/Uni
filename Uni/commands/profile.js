@@ -43,7 +43,7 @@ function getQuest(quest,task)
 
 function getThumbnail(equipped)
 {
-    switch(sm.equipped)
+    switch(equipped)
     {
         case "basic":
             return "https://imgur.com/2uLSAQ4.png"
