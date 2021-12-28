@@ -148,8 +148,8 @@ exports.run = async (bot,message,args) => {
                             ez.tires-=10
                             ez.socks-=10
                             ez.hammers-=15
+                            if(!sm.hbUnlocked){sm.equipped = "basic"}
                             sm.hbUnlocked = true
-                            sm.equipped = "basic"
                             createDoneMessage("\`Alright, alright... I'll say it. You're pretty tough. You deserve the Hoverboard... it's yours. You can get a bunch of different Skins for it. Just use the %hoverboard command. That's it for me. You can find Ghost Hunter Liz just around the corner. I believe she has a powerful pet she can give you...\`\n+**Hoverboard** <:hoverboard:842713851585495070>\n+**500** <:gems:825122942413045791>","https://imgur.com/IGLh00t.png",500,fs,db,q,ez,message,sm)
                         }else{message.react("❌")}
                         break;

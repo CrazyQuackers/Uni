@@ -79,7 +79,7 @@ exports.run = async (bot,message,args) => {
                         {
                             for(i = 0 ; i<mainArr.length ; i++)
                             {
-                                let str2 = fightMessage(mainArr[i]);
+                                let str2 = fightMessage(mainArr[i],sm.petEvolve);
                                 let helpArr = str2.split('**');
                                 hpLeft = hpLeft - helpArr[3];
                                 if(hpLeft<0){hpLeft=0}
@@ -158,94 +158,94 @@ function whichBossPet(type,q,sm,fs)
     return str;
 }
 
-function fightMessage(str)
+function fightMessage(str,b)
 {
     switch(str)
     {
         case "pug":
-            return "\nYour <:pug:825122919789232169> **pug** does **1** ⚔️ attack!"
+            return `\nYour <:pug:825122919789232169> **pug** does **${1+b}** ⚔️ attack!`
         case "fox":
-            return "\nYour 🦊 **fox** does **1** ⚔️ attack!"
+            return `\nYour 🦊 **fox** does **${1+b}** ⚔️ attack!`
         case "cow":
-            return "\nYour 🐮 **cow** does **1** ⚔️ attack!"
+            return `\nYour 🐮 **cow** does **${1+b}** ⚔️ attack!`
         case "pig":
-            return "\nYour 🐷 **pig** does **1** ⚔️ attack!"
+            return `\nYour 🐷 **pig** does **${1+b}** ⚔️ attack!`
         case "mouse":
-            return "\nYour 🐭 **mouse** does **3** ⚔️ attack!"
+            return `\nYour 🐭 **mouse** does **${3+b}** ⚔️ attack!`
         case "deer":
-            return "\nYour 🦌 **deer** does **3** ⚔️ attack!"
+            return `\nYour 🦌 **deer** does **${3+b}** ⚔️ attack!`
         case "wolf":
-            return "\nYour 🐺 **wolf** does **3** ⚔️ attack!"
+            return `\nYour 🐺 **wolf** does **${3+b}** ⚔️ attack!`
         case "duck":
-            return "\nYour <:quackers:825122927547908137> **duck** does **5** ⚔️ attack!"
+            return `\nYour <:quackers:825122927547908137> **duck** does **${5+b}** ⚔️ attack!`
         case "unicorn":
-            return "\nYour <:uni:825122929778884658> **unicorn** does **5** ⚔️ attack!"
+            return `\nYour <:uni:825122929778884658> **unicorn** does **${5+b}** ⚔️ attack!`
         case "bat":
-            return "\nYour 🦇 **bat** does **7** ⚔️ attack!"
+            return `\nYour 🦇 **bat** does **${7+b}** ⚔️ attack!`
         case "jack":
-            return "\nYour 🎃 **jack-o-lantern** does **10** ⚔️ attack!"
+            return `\nYour 🎃 **jack-o-lantern** does **${10+b}** ⚔️ attack!`
         case "bear":
-            return "\nYour 🐻 **bear** does **1** ⚔️ attack!"
+            return `\nYour 🐻 **bear** does **${1+b}** ⚔️ attack!`
         case "cat":
-            return "\nYour 🐱 **cat** does **1** ⚔️ attack!"
+            return `\nYour 🐱 **cat** does **${1+b}** ⚔️ attack!`
         case "cyborg":
-            return "\nYour <:cyborg:825122930836111441> **cyborg** does **1** ⚔️ attack!"
+            return `\nYour <:cyborg:825122930836111441> **cyborg** does **${1+b}** ⚔️ attack!`
         case "horse":
-            return "\nYour 🐴 **horse** does **1** ⚔️ attack!"
+            return `\nYour 🐴 **horse** does **${1+b}** ⚔️ attack!`
         case "fish":
-            return "\nYour 🐟 **fish** does **3** ⚔️ attack!"
+            return `\nYour 🐟 **fish** does **${3+b}** ⚔️ attack!`
         case "chicken":
-            return "\nYour 🐔 **chicken** does **3** ⚔️ attack!"
+            return `\nYour 🐔 **chicken** does **${3+b}** ⚔️ attack!`
         case "giraffe":
-            return "\nYour 🦒 **giraffe** does **3** ⚔️ attack!"
+            return `\nYour 🦒 **giraffe** does **${3+b}** ⚔️ attack!`
         case "bob":
-            return "\nYour <:bob:825122926873411604> **bob** does **5** ⚔️ attack!"
+            return `\nYour <:bob:825122926873411604> **bob** does **${5+b}** ⚔️ attack!`
         case "butterfly":
-            return "\nYour 🦋 **butterfly** does **5** ⚔️ attack!"
+            return `\nYour 🦋 **butterfly** does **${5+b}** ⚔️ attack!`
         case "peacock":
-            return "\nYour 🦚 **peacock** does **7** ⚔️ attack!"
+            return `\nYour 🦚 **peacock** does **${7+b}** ⚔️ attack!`
         case "tiger":
-            return "\nYour 🐯 **tiger** does **10** ⚔️ attack!"
+            return `\nYour 🐯 **tiger** does **${10+b}** ⚔️ attack!`
         case "flamingo":
-            return "\nYour 🦩 **flamingo** does **1** ⚔️ attack!"
+            return `\nYour 🦩 **flamingo** does **${1+b}** ⚔️ attack!`
         case "koala":
-            return "\nYour 🐨 **koala** does **1** ⚔️ attack!"
+            return `\nYour 🐨 **koala** does **${1+b}** ⚔️ attack!`
         case "bot":
-            return "\nYour <:bot:825139488962379787> **bot** does **1** ⚔️ attack!"
+            return `\nYour <:bot:825139488962379787> **bot** does **${1+b}** ⚔️ attack!`
         case "dino":
-            return "\nYour 🦕 **dino** does **1** ⚔️ attack!"
+            return `\nYour 🦕 **dino** does **${1+b}** ⚔️ attack!`
         case "clownfish":
-            return "\nYour <:clownfish:825122930211684402> **clownfish** does **3** ⚔️ attack!"
+            return `\nYour <:clownfish:825122930211684402> **clownfish** does **${3+b}** ⚔️ attack!`
         case "panda":
-            return "\nYour 🐼 **panda** does **3** ⚔️ attack!"
+            return `\nYour 🐼 **panda** does **${3+b}** ⚔️ attack!`
         case "bee":
-            return "\nYour 🐝 **bee** does **3** ⚔️ attack!"
+            return `\nYour 🐝 **bee** does **${3+b}** ⚔️ attack!`
         case "shark":
-            return "\nYour 🦈 **shark** does **5** ⚔️ attack!"
+            return `\nYour 🦈 **shark** does **${5+b}** ⚔️ attack!`
         case "steve":
-            return "\nYour <:steve:825122936469192705> **steve** does **5** ⚔️ attack!"
+            return `\nYour <:steve:825122936469192705> **steve** does **${5+b}** ⚔️ attack!`
         case "rabbit":
-            return "\nYour <:magicrabbit:825122932484341760> **magic rabbit** does **7** ⚔️ attack!"
+            return `\nYour <:magicrabbit:825122932484341760> **magic rabbit** does **${7+b}** ⚔️ attack!`
         case "rex":
-            return "\nYour 🦖 **t-rex** does **10** ⚔️ attack!"
+            return `\nYour 🦖 **t-rex** does **${10+b}** ⚔️ attack!`
         case "hypno":
-            return "\nYour <:hypnotize:843489441724628992> **hypnotize** does **1** ⚔️ attack!"
+            return `\nYour <:hypnotize:843489441724628992> **hypnotize** does **${1+b}** ⚔️ attack!`
         case "atom":
-            return "\nYour <:atomPet:874094373938286652> **atom** does **2** ⚔️ attack!"
+            return `\nYour <:atomPet:874094373938286652> **atom** does **${2+b}** ⚔️ attack!`
         case "tree":
-            return "\nYour <:ghastlytree:825122934221307955> **mini ghast** does **5** ⚔️ attack!"
+            return `\nYour <:ghastlytree:825122934221307955> **mini ghast** does **${5+b}** ⚔️ attack!`
         case "george":
-            return "\nYour <:georgethegorilla:825122935081664632> **mini george** does **5** ⚔️ attack!"
+            return `\nYour <:georgethegorilla:825122935081664632> **mini george** does **${5+b}** ⚔️ attack!`
         case "sludge":
-            return "\nYour <:sludge:825122930471075880> **mini sludge** does **5** ⚔️ attack!"
+            return `\nYour <:sludge:825122930471075880> **mini sludge** does **${5+b}** ⚔️ attack!`
         case "subject":
-            return "\nYour <:subjectone:825122932815691847> **mini one** does **5** ⚔️ attack!"
+            return `\nYour <:subjectone:825122932815691847> **mini one** does **${5+b}** ⚔️ attack!`
         case "king":
-            return "\nYour <:kingkrab:825122934183559239> **mini krab** does **5** ⚔️ attack!"
+            return `\nYour <:kingkrab:825122934183559239> **mini krab** does **${5+b}** ⚔️ attack!`
         case "mag":
-            return "\nYour <:magmoraug:825122942768644136> **mini mag** does **5** ⚔️ attack!"
+            return `\nYour <:magmoraug:825122942768644136> **mini mag** does **${5+b}** ⚔️ attack!`
         case "rainwave":
-            return "\nYour <:rainwave:874390657991598091> **rainwave** does **3** ⚔️ attack!"
+            return `\nYour <:rainwave:874390657991598091> **rainwave** does **${3+b}** ⚔️ attack!`
     }
 }
 

@@ -21,7 +21,7 @@ exports.run = async (bot,message,args) => {
         let ex4 = getExchangeRate(petArr4,false)
         let exchange = ex1 + ex2 + ex3 + ex4 + 1
         ez.storage = 0
-        let tokens = exchange * storage
+        let tokens = exchange * storage * sm.tokenConversion
         tokens = Math.round(tokens)
         ez.ectoTokens = ez.ectoTokens + tokens
         tokens = decreaseNumberLength(tokens)

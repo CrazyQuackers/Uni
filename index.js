@@ -150,7 +150,10 @@ bot.on('message', (message) =>
             badge: false,
             petLuck: false,
             bossLuck: false,
-            surfer: false
+            surfer: false,
+            tokenConversion: 1,
+            gemDrop: 1,
+            petEvolve: 0
         }
         fs.writeFile("./data/db.json", JSON.stringify(db,null,4), function(error){if(error){let pog = 1}})
         fs.writeFile("./data/q.json", JSON.stringify(q,null,4), function(error){if(error){let pog = 1}})
